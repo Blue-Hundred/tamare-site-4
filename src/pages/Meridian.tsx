@@ -307,7 +307,7 @@ export default function Meridian() {
             <Reveal className="lg:col-span-5">
               <article>
                 <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Results</h2>
-                <p className="text-body-32 mt-5" style={{ color: '#0f0f0e' }}>
+                <p className="text-body-18 mt-5" style={{ color: '#0f0f0e' }}>
                   We launched Cloud Relational Databases and established the foundation for future control planes, consolidating previously fragmented experience into a consistent and scaleable product.
                 </p>
               </article>
