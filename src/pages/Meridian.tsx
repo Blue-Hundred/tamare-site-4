@@ -204,7 +204,7 @@ export default function Meridian() {
 
         <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
           <div className={contentWidth}>
-            <Reveal className="block mb-12 md:mb-20">
+            <Reveal className="block mb-24 md:mb-[180px]">
               <SectionHeading
                 title="Framing the Problem with Data"
                 body={
