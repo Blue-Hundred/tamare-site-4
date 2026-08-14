@@ -38,12 +38,12 @@ function Reveal({ children, delay = 0, className }: { children: ReactNode; delay
   )
 }
 
-function SectionHeading({ title, body }: { title: string; body?: string }) {
+function SectionHeading({ title, body }: { title: string; body?: ReactNode }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
       <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>{title}</h2>
       {body ? (
-        <p className="text-body-18 lg:col-span-6 lg:col-start-7" style={{ color: '#0f0f0e' }}>{body}</p>
+        <div className="text-body-18 lg:col-span-6 lg:col-start-7 flex flex-col gap-5" style={{ color: '#0f0f0e' }}>{body}</div>
       ) : null}
     </div>
   )
@@ -207,7 +207,13 @@ export default function Meridian() {
             <Reveal>
               <SectionHeading
                 title="Framing the Problem with Data"
-                body="The initiative began with an audit of existing control planes and expanded through multiple rounds of research to understand the customer and operational challenges behind the fragmented experience."
+                body={
+                  <>
+                    <p>The initiative began with an audit of existing control planes and expanded through multiple rounds of research to build an evidence-based view of the broader database experience.</p>
+                    <p>We synthesized the findings into personas, Jobs to Be Done, and service blueprints that connected customer needs with the systems, teams, and processes supporting them. This helped us identify where experiences could be standardized, where technology-specific differences mattered, and which opportunities would have the greatest impact on self-service.</p>
+                    <p>The result was a shared understanding of the problem that helped align product, design, and engineering around a scalable experience strategy rather than a series of disconnected UI improvements.</p>
+                  </>
+                }
               />
             </Reveal>
             <Reveal delay={0.08}>
