@@ -7,12 +7,21 @@ import NavBar from '../components/NavBar'
 export type CursorCtx = { setHovered: (v: boolean) => void }
 export const CursorContext = React.createContext<CursorCtx>({ setHovered: () => {} })
 
+// Elements anywhere on the site that should trigger the enlarged "hover" cursor.
+const INTERACTIVE_SELECTOR = 'a, button, [role="button"], [role="link"], input, textarea, select, label, summary, [data-cursor-hover]'
+
 function Cursor({ ctxRef }: { ctxRef: React.MutableRefObject<CursorCtx> }) {
   const mx = useMotionValue(-200)
   const my = useMotionValue(-200)
-  const [hovered, setHovered] = useState(false)
+  // Hover can be driven from two sources: explicit context calls (e.g. the
+  // homepage project cards) and automatic detection of interactive elements
+  // anywhere on the site. We track them separately so one turning off does
+  // not cancel the other.
+  const [ctxHovered, setCtxHovered] = useState(false)
+  const [autoHovered, setAutoHovered] = useState(false)
+  const hovered = ctxHovered || autoHovered
 
-  useEffect(() => { ctxRef.current.setHovered = setHovered }, [ctxRef, setHovered])
+  useEffect(() => { ctxRef.current.setHovered = setCtxHovered }, [ctxRef])
 
   const rx = useSpring(mx, { stiffness: 90, damping: 20, mass: 0.4 })
   const ry = useSpring(my, { stiffness: 90, damping: 20, mass: 0.4 })
@@ -22,6 +31,29 @@ function Cursor({ ctxRef }: { ctxRef: React.MutableRefObject<CursorCtx> }) {
     window.addEventListener('mousemove', onMove)
     return () => window.removeEventListener('mousemove', onMove)
   }, [mx, my])
+
+  // Globally enlarge the cursor when the pointer is over any interactive
+  // element, on every page — using event delegation so no per-page wiring
+  // is required.
+  useEffect(() => {
+    const onOver = (e: MouseEvent) => {
+      const t = e.target as Element | null
+      if (t && t.closest?.(INTERACTIVE_SELECTOR)) setAutoHovered(true)
+    }
+    const onOut = (e: MouseEvent) => {
+      const from = e.target as Element | null
+      const to = (e.relatedTarget as Element | null)
+      const leftInteractive = from?.closest?.(INTERACTIVE_SELECTOR)
+      const enteredInteractive = to?.closest?.(INTERACTIVE_SELECTOR)
+      if (leftInteractive && !enteredInteractive) setAutoHovered(false)
+    }
+    document.addEventListener('mouseover', onOver)
+    document.addEventListener('mouseout', onOut)
+    return () => {
+      document.removeEventListener('mouseover', onOver)
+      document.removeEventListener('mouseout', onOut)
+    }
+  }, [])
 
   return (
     <motion.div
