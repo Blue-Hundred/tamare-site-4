@@ -249,13 +249,13 @@ export default function Meridian() {
         </section>
 
         <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
-          <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10`}>
-            <Reveal className="lg:col-span-4">
-              <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Defining Personas and Service Blueprint</h2>
-            </Reveal>
-            <Reveal delay={0.08} className="lg:col-span-8">
-              <p className="text-body-18" style={{ color: '#0f0f0e' }}>
-                Research identified two primary personas. Service blueprints connected the dots between technology, data, product, and user experience to better understand how customer friction and pain points correlated to the backend technologies orchestrating the experience.
+              <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12`}>
+                <Reveal className="lg:col-span-5">
+                  <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Defining Personas and Service Blueprint</h2>
+                </Reveal>
+                <Reveal delay={0.08} className="lg:col-span-7">
+                  <p className="text-body-18" style={{ color: '#0f0f0e' }}>
+                    Research identified two primary personas. Service blueprints connected the dots between technology, data, product, and user experience to better understand how customer friction and pain points correlated to the backend technologies orchestrating the experience.
               </p>
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-12">
