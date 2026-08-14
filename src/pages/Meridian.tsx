@@ -160,7 +160,7 @@ export default function Meridian() {
             <Reveal>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                 <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>Summary</h2>
-                <div className="text-body-18 lg:col-span-6" style={{ color: '#0f0f0e', marginTop: 132, marginBottom: 132 }}>
+                <div className="text-body-18 lg:col-span-6" style={{ color: '#0f0f0e' }}>
                   <p>Enterprise engineers relied on more than ten independent database control planes to provision and manage database services. Each product had evolved independently, resulting in inconsistent workflows, terminology, navigation patterns, and operational experiences. Engineers frequently switched between systems, searched multiple documentation sources, and relied on tribal knowledge to complete routine tasks.</p>
                   <p className="mt-5">The long-term vision was to create a shared experience that could scale across database products while providing a consistent foundation for the Integrated Engineers Portal (IEP).</p>
                   <p className="mt-5">This case study focuses on one representative workflow—database onboarding and provisioning—to illustrate the broader experience strategy developed for the platform. Although the platform supports many database management capabilities, this workflow best demonstrates the research, systems thinking, and product design decisions that established reusable patterns across the ecosystem.</p>
