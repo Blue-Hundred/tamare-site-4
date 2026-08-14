@@ -386,14 +386,16 @@ export default function Meridian() {
             <Reveal delay={0.08} className="lg:col-span-6 lg:col-start-7">
               <div className="grid grid-cols-2 gap-4 md:gap-5">
                 {[
-                  { n: '92%', l: 'Task completion Rate' },
-                  { n: '95', l: 'Task completion Rate' },
-                  { n: '95', l: 'Task completion Rate' },
-                  { n: '100%', l: 'User preference of new experience' },
-                ].map(stat => (
-                  <div key={stat.n + stat.l} className="bg-white rounded-xl p-4 md:p-5 flex flex-col gap-3">
+                  { n: 92, suffix: '%', l: 'Task completion Rate' },
+                  { n: 95, suffix: '', l: 'Task completion Rate' },
+                  { n: 95, suffix: '', l: 'Task completion Rate' },
+                  { n: 100, suffix: '%', l: 'User preference of new experience' },
+                ].map((stat, i) => (
+                  <div key={i} className="bg-white rounded-xl p-4 md:p-5 flex flex-col gap-3">
                     <StatArrowIcon />
-                    <p style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 4vw, 3.375rem)', lineHeight: 1.05, letterSpacing: '-0.03em' }}>{stat.n}</p>
+                    <p style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 4vw, 3.375rem)', lineHeight: 1.05, letterSpacing: '-0.03em' }}>
+                      <CountUp value={stat.n} suffix={stat.suffix} duration={1.6 + i * 0.15} />
+                    </p>
                     <p className="text-body-14" style={{ color: '#0f0f0e' }}>{stat.l}</p>
                   </div>
                 ))}
