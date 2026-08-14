@@ -40,10 +40,10 @@ function Reveal({ children, delay = 0, className }: { children: ReactNode; delay
 
 function SectionHeading({ title, body }: { title: string; body?: string }) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
-      <h2 className="text-h2 lg:col-span-4" style={{ color: '#0f0f0e' }}>{title}</h2>
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>{title}</h2>
       {body ? (
-        <p className="text-body-18 lg:col-span-8" style={{ color: '#0f0f0e' }}>{body}</p>
+        <p className="text-body-18 lg:col-span-7" style={{ color: '#0f0f0e' }}>{body}</p>
       ) : null}
     </div>
   )
