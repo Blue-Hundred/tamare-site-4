@@ -30,13 +30,14 @@ export default defineConfig(({ mode }) => {
       },
     },
     server: {
+      // Bind all interfaces so the sandbox proxy can reach the dev server.
       host: '0.0.0.0',
-      // Honor an explicit PORT (e.g. Figma Make's tooling sets one); otherwise
-      // fall back to 3000, the port the v0 preview proxy forwards to. The
-      // previous 8443 fallback meant nothing listened on the port the v0
-      // preview expects, so the preview returned SANDBOX_NOT_LISTENING.
-      port: parseInt(process.env.PORT || '3000'),
-      strictPort: true,
+      // Honor an explicit PORT when provided; otherwise fall back to Vite's
+      // default (5173) — the port the v0 sandbox supervisor launches `vite`
+      // on and waits for. Hard-coding any other port here means Vite never
+      // binds the port v0 expects, so the preview fails with "Dev server
+      // process exited before port 5173 became available."
+      port: parseInt(process.env.PORT || '5173'),
       // Allow requests from the v0 preview's proxied hostname. Without this,
       // Vite's dev-server host check rejects the proxied preview origin with
       // "Blocked request. This host is not allowed." even though the server
@@ -46,7 +47,7 @@ export default defineConfig(({ mode }) => {
     },
     preview: {
       host: '0.0.0.0',
-      port: parseInt(process.env.PORT || '3000'),
+      port: parseInt(process.env.PORT || '5173'),
       allowedHosts: true,
     },
   }
