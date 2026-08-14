@@ -15,9 +15,9 @@ import { CursorContext } from '../app/Root'
 const projects = [
   {
     id: '01',
-    title: 'Rethinking personal finance for the next generation',
+    title: 'Creating a Unified Database Management Platform',
     company: 'Meridian',
-    tags: ['Brand Identity', 'Web Design'],
+    tags: ['Product Design', 'Experience Research', 'Service Design'],
     year: '2024',
     image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=800&fit=crop&auto=format',
     href: '/work/meridian',
