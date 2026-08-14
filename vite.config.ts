@@ -5,6 +5,8 @@ import path from 'node:path'
 
 import siteConfiguration from './.figma/make/site.json'
 
+// Vite dev/preview server binds the port the v0 sandbox probes (5173 by
+// default, or PORT when provided). See the `server` block below.
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // .figma/make/deploy-preview passes `--mode development` for cached-preview builds.
