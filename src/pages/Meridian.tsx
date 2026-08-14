@@ -43,7 +43,7 @@ function SectionHeading({ title, body }: { title: string; body?: string }) {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
       <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>{title}</h2>
       {body ? (
-        <p className="text-body-18 lg:col-span-7" style={{ color: '#0f0f0e' }}>{body}</p>
+        <p className="text-body-18 lg:col-span-6" style={{ color: '#0f0f0e' }}>{body}</p>
       ) : null}
     </div>
   )
@@ -158,9 +158,9 @@ export default function Meridian() {
         <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[88px]">
           <div className={contentWidth}>
             <Reveal>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                 <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>Summary</h2>
-                <div className="text-body-18 lg:col-span-7" style={{ color: '#0f0f0e' }}>
+                <div className="text-body-18 lg:col-span-6" style={{ color: '#0f0f0e' }}>
                   <p>Enterprise engineers relied on more than ten independent database control planes to provision and manage database services. Each product had evolved independently, resulting in inconsistent workflows, terminology, navigation patterns, and operational experiences. Engineers frequently switched between systems, searched multiple documentation sources, and relied on tribal knowledge to complete routine tasks.</p>
                   <p className="mt-5">The long-term vision was to create a shared experience that could scale across database products while providing a consistent foundation for the Integrated Engineers Portal (IEP).</p>
                   <p className="mt-5">This case study focuses on one representative workflow—database onboarding and provisioning—to illustrate the broader experience strategy developed for the platform. Although the platform supports many database management capabilities, this workflow best demonstrates the research, systems thinking, and product design decisions that established reusable patterns across the ecosystem.</p>
@@ -183,7 +183,7 @@ export default function Meridian() {
                 </p>
               </div>
             </Reveal>
-            <Reveal delay={0.08} className="lg:col-span-7">
+            <Reveal delay={0.08} className="lg:col-span-6">
               <div className="grid grid-cols-1 gap-4 md:gap-5">
                 {challengeCards.map(card => (
                   <article key={card.title} className="bg-white rounded-xl p-5 md:p-6">
@@ -253,7 +253,7 @@ export default function Meridian() {
                 <Reveal className="lg:col-span-5">
                   <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Defining Personas and Service Blueprint</h2>
                 </Reveal>
-                <Reveal delay={0.08} className="lg:col-span-7">
+                <Reveal delay={0.08} className="lg:col-span-6">
                   <p className="text-body-18" style={{ color: '#0f0f0e' }}>
                     Research identified two primary personas. Service blueprints connected the dots between technology, data, product, and user experience to better understand how customer friction and pain points correlated to the backend technologies orchestrating the experience.
               </p>
@@ -277,11 +277,11 @@ export default function Meridian() {
         </section>
 
         <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
-          <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10`}>
+          <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12`}>
             <Reveal className="lg:col-span-5">
               <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Redesigning the Information Architecture</h2>
             </Reveal>
-            <Reveal delay={0.06} className="lg:col-span-7">
+            <Reveal delay={0.06} className="lg:col-span-6">
               <p className="text-body-18" style={{ color: '#0f0f0e' }}>
                 One of the clearest manifestations of fragmentation was navigation. Database products organized similar capabilities differently, forcing engineers to develop a new mental model for each technology. I established a common information architecture organized around customer tasks.
               </p>
@@ -300,7 +300,7 @@ export default function Meridian() {
         </section>
 
         <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
-          <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start`}>
+          <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start`}>
             <Reveal className="lg:col-span-5">
               <article>
                 <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Results</h2>
@@ -309,7 +309,7 @@ export default function Meridian() {
                 </p>
               </article>
             </Reveal>
-            <Reveal delay={0.08} className="lg:col-span-7">
+            <Reveal delay={0.08} className="lg:col-span-6">
               <div className="grid grid-cols-2 gap-4 md:gap-5">
                 {[
                   { n: '92%', l: 'Task completion Rate' },
