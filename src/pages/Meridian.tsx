@@ -1,7 +1,8 @@
 import { useRef, useState, useEffect, type ReactNode } from 'react'
+import { Link } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
-import NavBar from '../components/NavBar'
+import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 import architectureImage from '../imports/Databases/246c5a6d9c942f00012f575ad446d86a09c5dab6.png'
 import experienceMapImage from '../imports/Databases/c38b9a065ae6afc6e3f13f2d46efee0586b97afa.png'
 import prototypeImage from '../imports/Databases/d837be23860c1da0ac7bcafedc4dc6b06b226433.png'
@@ -48,27 +49,72 @@ function SectionHeading({ title, body }: { title: string; body?: string }) {
   )
 }
 
+function BackArrow({ flip = false }: { flip?: boolean }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+      style={flip ? { transform: 'rotate(180deg)' } : undefined}>
+      <path d="M12 19L5 12L12 5" stroke="#999999" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M19 12H5" stroke="#999999" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+    </svg>
+  )
+}
+
+function CaseStudyTopBar() {
+  const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 16, color: '#999' } as const
+  return (
+    <div className="fixed top-0 left-0 right-0 z-40 flex items-center px-5 sm:px-8 md:px-9 bg-white"
+      style={{ height: 77, borderBottom: '1px solid #d2d2d2' }}>
+      <Link to="/#work" className="flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
+        <BackArrow />
+        <span className="hidden sm:inline" style={linkText}>Back to portfolio</span>
+      </Link>
+      <div className="absolute left-1/2 -translate-x-1/2 flex items-center" aria-hidden="true">
+        <svg width="30" height="40" viewBox="0 0 31.5145 42.0193" fill="none">
+          <path d={svgPaths.p1b65ed80} fill="black" />
+          <path d={svgPaths.p11c45c00} fill="black" />
+          <path d={svgPaths.pd915a80} fill="black" />
+          <path d={svgPaths.p2e1b9140} fill="black" />
+          <path d={svgPaths.p32ecd500} fill="black" />
+        </svg>
+      </div>
+      <Link to="/#work" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
+        <span style={linkText}>Next Project</span>
+        <BackArrow flip />
+      </Link>
+    </div>
+  )
+}
+
+function StatArrowIcon() {
+  return (
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+      <rect fill="#E4E4E4" height="34" rx="17" width="34" />
+      <path d={svgPaths.p3f21df00} stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+    </svg>
+  )
+}
+
 export default function Meridian() {
   const pixelSize = usePixelSize(3)
   const contentWidth = 'max-w-[1156px] mx-auto'
   const challengeCards = [
     {
-      title: 'Customer friction',
-      body: 'Engineers had to relearn workflows across database products and repeatedly depend on support teams.',
+      title: 'Customer Friction',
+      body: 'Engineers had to relearn workflows across database products and frequently relied on support.',
     },
     {
       title: 'Duplicated investment',
-      body: 'Each team redesigned similar capabilities independently, increasing delivery and maintenance cost.',
+      body: 'Teams independently designed and engineered similar capabilities, increasing development and maintenance costs.',
     },
     {
       title: 'Limited scalability',
-      body: 'Fragmented interactions made it difficult to onboard products into the Integrated Engineers Portal (IEP).',
+      body: 'Fragmented experiences made it difficult to bring database products into the broader Integrated Engineers Portal (IEP).',
     },
   ]
 
   return (
     <div style={{ background: '#f9f9f9' }}>
-      <NavBar />
+      <CaseStudyTopBar />
       <main>
         <section className="relative overflow-hidden px-4 sm:px-8 md:px-14 pt-28 md:pt-[178px] pb-14 md:pb-20 md:min-h-[723px]">
           <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
@@ -109,7 +155,7 @@ export default function Meridian() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[88px] bg-white">
+        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[88px]">
           <div className={contentWidth}>
             <Reveal>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
@@ -117,12 +163,12 @@ export default function Meridian() {
                 <div className="text-body-18 lg:col-span-7" style={{ color: '#0f0f0e' }}>
                   <p>Enterprise engineers relied on more than ten independent database control planes to provision and manage database services. Each product had evolved independently, resulting in inconsistent workflows, terminology, navigation patterns, and operational experiences. Engineers frequently switched between systems, searched multiple documentation sources, and relied on tribal knowledge to complete routine tasks.</p>
                   <p className="mt-5">The long-term vision was to create a shared experience that could scale across database products while providing a consistent foundation for the Integrated Engineers Portal (IEP).</p>
-                  <p className="mt-5">This case study focuses on one representative workflow—database onboarding and provisioning—to illustrate the broader experience strategy developed for the platform.</p>
+                  <p className="mt-5">This case study focuses on one representative workflow—database onboarding and provisioning—to illustrate the broader experience strategy developed for the platform. Although the platform supports many database management capabilities, this workflow best demonstrates the research, systems thinking, and product design decisions that established reusable patterns across the ecosystem.</p>
                 </div>
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="mt-10 md:mt-[70px] rounded-[20px] bg-[#f9f9f9] min-h-[180px] md:min-h-[474px]" />
+              <div className="mt-10 md:mt-[70px] rounded-[20px] bg-white min-h-[180px] md:min-h-[474px]" />
             </Reveal>
           </div>
         </section>
@@ -153,7 +199,7 @@ export default function Meridian() {
           </Reveal>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px] bg-white">
+        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
               <SectionHeading
@@ -162,31 +208,40 @@ export default function Meridian() {
               />
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="mt-8 md:mt-10 bg-[#f7f8fa] rounded-xl p-5 md:p-7">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-                  {[
-                    { k: 'Stakeholder Interviews & UI Audit', v: 'Engineers had to relearn workflows across database products and frequently relied on support.' },
-                    { k: 'Usability Study', v: 'Customers struggled to discover the right services and complete recurring tasks.' },
-                    { k: 'Self-service Research', v: 'Research revealed significant gaps in self-service and workflow guidance.' },
-                  ].map(item => (
-                    <article key={item.k} className="bg-white rounded-lg p-4 md:p-5">
-                      <h4 className="text-brow" style={{ color: '#0f0f0e', letterSpacing: '0.08em' }}>{item.k}</h4>
-                      <p className="text-body-14 mt-2" style={{ color: '#0f0f0e' }}>{item.v}</p>
-                    </article>
-                  ))}
+              <div className="mt-8 md:mt-10 bg-white rounded-[20px] p-6 md:p-10 flex flex-col gap-10 md:gap-[70px]">
+                <div className="flex flex-col gap-8 md:gap-10">
+                  <div className="flex flex-col gap-3">
+                    <p style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>Discovery Research</p>
+                    <p className="text-body-18" style={{ color: '#0f0f0e' }}>I conducted three rounds of research to understand the challenges behind the fragmented experience.</p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+                    {[
+                      { n: '1', t: 'Stakeholder Interviews & UI Audit', b: 'Engineers had to relearn workflows across database products and frequently relied on support.' },
+                      { n: '2', t: 'Usability Tests', b: 'Engineers had to relearn workflows across database products and frequently relied on support.' },
+                      { n: '3', t: 'Qualitative Interviews', b: 'Engineers had to relearn workflows across database products and frequently relied on support.' },
+                    ].map(item => (
+                      <article key={item.n} className="flex flex-col gap-6 md:gap-8">
+                        <div className="bg-[#f5f5f5] rounded-full flex items-center justify-center shrink-0" style={{ width: 68, height: 68 }}>
+                          <span style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>{item.n}</span>
+                        </div>
+                        <div className="flex flex-col gap-3">
+                          <h3 style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px' }}>{item.t}</h3>
+                          <p className="text-body-18" style={{ color: '#0f0f0e' }}>{item.b}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 mt-6">
-                  {[
-                    { n: '73%', l: 'Customers experienced friction navigating control planes' },
-                    { n: '85%', l: 'Customers relied on support to complete tasks' },
-                    { n: '85%', l: 'Engineers wanted one consistent experience' },
-                    { n: '69%', l: 'Customers struggled to find documentation' },
-                  ].map(stat => (
-                    <div key={stat.n + stat.l} className="bg-white rounded-lg p-4 md:p-5">
-                      <p className="text-h3" style={{ color: '#0f0f0e' }}>{stat.n}</p>
-                      <p className="text-body-14 mt-1" style={{ color: '#0f0f0e' }}>{stat.l}</p>
-                    </div>
-                  ))}
+                <div className="flex flex-col gap-8">
+                  <p style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>Round 3 research revealed significant gaps in self-service.</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-9">
+                    {['73%', '85%', '85%', '69%'].map((n, i) => (
+                      <div key={i} className={`flex flex-col gap-3 ${i < 3 ? 'md:border-r md:border-[#e4e4e4] md:pr-6' : ''}`}>
+                        <p style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 4vw, 3.375rem)', lineHeight: 1.05, letterSpacing: '-0.03em' }}>{n}</p>
+                        <p style={{ color: '#0f0f0e', fontSize: 14, lineHeight: '24px' }}>Of users needed SRE support to complete the onboarding and provisioning processes</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Reveal>
@@ -221,10 +276,10 @@ export default function Meridian() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px] bg-white">
+        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
           <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10`}>
             <Reveal className="lg:col-span-5">
-              <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Redesigning Information Architecture</h2>
+              <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Redesigning the Information Architecture</h2>
             </Reveal>
             <Reveal delay={0.06} className="lg:col-span-7">
               <p className="text-body-18" style={{ color: '#0f0f0e' }}>
@@ -262,9 +317,10 @@ export default function Meridian() {
                   { n: '95', l: 'Task completion Rate' },
                   { n: '100%', l: 'User preference of new experience' },
                 ].map(stat => (
-                  <div key={stat.n + stat.l} className="bg-white rounded-xl p-4 md:p-5">
+                  <div key={stat.n + stat.l} className="bg-white rounded-xl p-4 md:p-5 flex flex-col gap-3">
+                    <StatArrowIcon />
                     <p className="text-h3" style={{ color: '#0f0f0e' }}>{stat.n}</p>
-                    <p className="text-body-14 mt-2" style={{ color: '#0f0f0e' }}>{stat.l}</p>
+                    <p className="text-body-14" style={{ color: '#0f0f0e' }}>{stat.l}</p>
                   </div>
                 ))}
               </div>
@@ -289,72 +345,20 @@ export default function Meridian() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 py-14 md:py-20 bg-[#f9f9f9]">
-          <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-2 gap-8 items-start`}>
-            <div />
+        <section className="px-4 sm:px-8 md:px-14 pt-8 md:pt-12 pb-24 md:pb-[120px]">
+          <div className={`${contentWidth} flex flex-col items-center text-center`}>
+            <div style={{ width: 1, height: 220, background: '#dadada' }} />
             <Reveal>
-              <aside className="border-l border-[#dadada] pl-6 md:pl-10">
-                <p className="text-brow" style={{ color: '#999', letterSpacing: '0.12em' }}>Next Case Study →</p>
-                <h3 className="text-h3 mt-3" style={{ color: '#0f0f0e' }}>Modernizing Family Banking</h3>
-                <p className="text-body-14 mt-3" style={{ color: '#0f0f0e' }}>Engineers had to relearn workflows across database products and frequently relied on support.</p>
-              </aside>
+              <div className="flex items-center justify-center gap-[10px] mt-10">
+                <span style={{ color: '#999', fontWeight: 600, fontSize: 14, lineHeight: '26px' }}>Next Case Study</span>
+                <BackArrow flip />
+              </div>
+              <h3 className="mt-4" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>Modernizing Family Banking</h3>
+              <p className="mt-3 mx-auto" style={{ color: '#0f0f0e', fontSize: 18, lineHeight: '28px', maxWidth: 509 }}>Engineers had to relearn workflows across database products and frequently relied on support.</p>
             </Reveal>
           </div>
         </section>
       </main>
-
-      {/* Contact — matches homepage */}
-      <section id="contact" className="px-4 sm:px-8 md:px-14 py-24 md:py-32 lg:py-40" style={{ position: 'relative', background: '#ffffff' }}>
-        <div className="absolute top-0 bottom-0 right-0 left-0 md:left-[15%] lg:left-[30%] z-0">
-          <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
-            edgeFade={0.08} speed={2} enableRipples={true} transparent />
-        </div>
-        <div className={contentWidth} style={{ position: 'relative', zIndex: 1 }}>
-          <Reveal>
-            <span className="text-xs font-light tracking-widest" style={{ opacity: 1, color: '#0f0f0e', letterSpacing: '0.15em', background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4, display: 'inline-block' }}>CONTACT</span>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-light mt-6" style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.05, fontWeight: 400, color: '#0f0f0e' }}>
-              Let's<br />
-              <a
-                href="mailto:alex@mercer.studio"
-                style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.5' }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1' }}
-              >
-                Connect.
-              </a>
-            </h2>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 md:gap-10 mt-16 md:mt-24">
-              <div className="flex flex-col gap-2" style={{ background: '#ffffff', padding: '8px 12px', borderRadius: 4 }}>
-                <a href="mailto:alex@mercer.studio" className="text-sm font-light" style={{ color: '#0f0f0e', textDecoration: 'none' }}>alex@mercer.studio</a>
-                <span className="text-sm font-light" style={{ color: '#0f0f0e' }}>Amsterdam, NL</span>
-              </div>
-              <div className="flex items-center gap-4 sm:gap-8 flex-wrap" style={{ background: '#ffffff', padding: '8px 12px', borderRadius: 4 }}>
-                {['Instagram', 'LinkedIn', 'Are.na'].map(l => (
-                  <a key={l} href="#" className="text-sm font-light"
-                    style={{ color: '#0f0f0e', textDecoration: 'none', transition: 'opacity 0.2s' }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.6' }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1' }}
-                  >
-                    {l}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="px-4 sm:px-8 md:px-14 py-6 md:py-8" style={{ background: '#ffffff', borderTop: '1px solid rgba(15,15,14,0.08)' }}>
-        <div className={`${contentWidth} flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0`}>
-          <span className="text-xs font-light" style={{ color: '#767675' }}>© 2026 Alex Mercer</span>
-          <span className="text-xs font-light" style={{ color: '#767675' }}>All rights reserved</span>
-        </div>
-      </footer>
     </div>
   )
 }
