@@ -111,7 +111,7 @@ function Loader({ onDone }: { onDone: () => void }) {
         className="flex flex-col items-center gap-8"
       >
         <span style={{ fontFamily: "'Aeonik','DM Sans',sans-serif", fontSize: 'clamp(2.5rem,6vw,5rem)', fontWeight: 300, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1 }}>
-          Alex Mercer
+          Tamaré Reese
         </span>
         <div style={{ width: 240, height: 1, background: 'rgba(255,255,255,0.12)', position: 'relative', overflow: 'hidden' }}>
           <motion.div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, background: '#ffffff', width: `${count}%`, transition: 'width 0.1s linear' }} />

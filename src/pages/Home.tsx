@@ -277,7 +277,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="px-8 md:px-14 py-8" style={{ borderTop: '1px solid rgba(15,15,14,0.08)' }}>
         <div className="max-w-screen-xl mx-auto flex items-center justify-between">
-          <span className="text-xs font-light" style={{ color: '#767675' }}>© 2026 Alex Mercer</span>
+          <span className="text-xs font-light" style={{ color: '#767675' }}>© 2026 Tamaré Reese</span>
           <span className="text-xs font-light" style={{ color: '#767675' }}>All rights reserved</span>
         </div>
       </footer>

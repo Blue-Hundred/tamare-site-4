@@ -60,7 +60,7 @@ export default function NavBar() {
           to="/"
           style={{ letterSpacing: '0.04em', textDecoration: 'none', color: '#0f0f0e', fontSize: '0.95rem', fontWeight: 500 }}
         >
-          Alex Mercer
+          Tamaré Reese
         </Link>
 
         {/* Desktop links */}

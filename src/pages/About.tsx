@@ -99,7 +99,7 @@ export default function About() {
               <div className="flex flex-col gap-6">
                 <Reveal delay={0.1}>
                   <p className="font-light" style={{ fontSize: '1.05rem', lineHeight: 1.75, color: '#595958', fontWeight: 300 }}>
-                    I'm Alex Mercer, a designer and art director with twelve years of practice across brand, digital, and print. My work emerges from close collaboration — I prefer fewer, better projects.
+                    I'm Tamaré Reese, a designer and art director with twelve years of practice across brand, digital, and print. My work emerges from close collaboration — I prefer fewer, better projects.
                   </p>
                 </Reveal>
                 <Reveal delay={0.15}>
@@ -190,7 +190,7 @@ export default function About() {
       {/* Footer */}
       <footer className="px-8 md:px-14 py-8" style={{ background: '#ffffff', borderTop: '1px solid rgba(15,15,14,0.08)' }}>
         <div className="max-w-screen-xl mx-auto flex items-center justify-between">
-          <span className="text-xs font-light" style={{ color: '#767675' }}>© 2026 Alex Mercer</span>
+              <span className="text-xs font-light" style={{ color: '#767675' }}>© 2026 Tamaré Reese</span>
           <span className="text-xs font-light" style={{ color: '#767675' }}>All rights reserved</span>
         </div>
       </footer>
