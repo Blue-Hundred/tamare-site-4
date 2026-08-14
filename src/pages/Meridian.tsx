@@ -240,7 +240,14 @@ export default function Meridian() {
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <div className={`${contentWidth} mt-4 md:mt-[70px] rounded-[20px] bg-white min-h-[180px] md:min-h-[474px]`} />
+            <div className={`${contentWidth} mt-4 md:mt-[70px] rounded-[20px] bg-white overflow-hidden min-h-[180px] md:min-h-[474px] flex items-center justify-center p-6 md:p-12`}>
+              <img
+                src="/images/legacy-databases-experiences.png"
+                alt="Collage of legacy database control-plane interfaces — Gaia MS SQL, Cockroach DB, Oracle Services, MySQL, TigerGraph, and Cassandra dashboards — each with different navigation, terminology, and visual styling"
+                className="w-full h-full object-contain"
+                loading="lazy"
+              />
+            </div>
           </Reveal>
         </section>
 
