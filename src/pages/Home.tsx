@@ -19,7 +19,7 @@ const projects = [
     company: 'JPMorgan Chase & Co.',
     tags: ['Product Design', 'Experience Research', 'Service Design'],
     year: '2025-2026',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=800&fit=crop&auto=format',
+    image: '/images/databases-cover.png',
     href: '/work/meridian',
   },
   {
