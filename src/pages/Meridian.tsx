@@ -116,14 +116,14 @@ export default function Meridian() {
     <div style={{ background: '#f9f9f9' }}>
       <CaseStudyTopBar />
       <main>
-        <section className="relative overflow-hidden px-4 sm:px-8 md:px-14 pt-28 md:pt-[178px] pb-14 md:pb-20 md:min-h-[723px]">
+        <section className="relative overflow-hidden bg-white px-4 sm:px-8 md:px-14 pt-28 md:pt-[178px] pb-14 md:pb-20 md:min-h-[723px]">
           <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
             <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.6} patternScale={1.5}
               edgeFade={0.18} speed={2} enableRipples={true} transparent />
           </div>
           <div className={`relative z-10 ${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start`}>
             <Reveal className="lg:col-span-6 lg:col-start-1">
-              <div className="bg-[#f9f9f9] rounded p-4 md:p-5">
+              <div className="bg-white rounded p-4 md:p-5">
                 <h1 className="text-h1" style={{ color: '#0f0f0e', fontSize: 'clamp(1.8rem, 5.8vw, 3rem)', lineHeight: 'clamp(2.2rem, 6.8vw, 3.625rem)', letterSpacing: '-0.02em' }}>
                   Creating a Unified Database Management Platform
                 </h1>
@@ -133,7 +133,7 @@ export default function Meridian() {
               </div>
             </Reveal>
             <Reveal delay={0.08} className="lg:col-span-5 lg:col-start-8">
-              <aside className="bg-[#f9f9f9] rounded p-4 md:p-5">
+              <aside className="bg-white rounded p-4 md:p-5">
                 {[
                   { label: 'CLIENT', value: 'JPMorgan Chase & Co.' },
                   { label: 'ROLE', value: 'Lead Experience Designer\nLead Experience Researcher' },
