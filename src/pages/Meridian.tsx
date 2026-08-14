@@ -155,7 +155,7 @@ export default function Meridian() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 pt-16 pb-8 md:py-[88px]">
+        <section className="px-4 sm:px-8 md:px-14 pt-16 pb-4 md:py-[88px]">
           <div className={contentWidth}>
             <Reveal>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mt-16 mb-8 md:mt-[132px] md:mb-[132px]">
@@ -173,8 +173,8 @@ export default function Meridian() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
-          <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start`} style={{ marginBottom: 132 }}>
+        <section className="px-4 sm:px-8 md:px-14 pt-16 pb-4 md:py-[90px]">
+          <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12 md:mb-[132px]`}>
             <Reveal className="lg:col-span-5">
               <div>
                 <h2 className="text-h2" style={{ color: '#0f0f0e' }}>The Challenge</h2>
@@ -195,7 +195,7 @@ export default function Meridian() {
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <div className={`${contentWidth} mt-10 md:mt-[70px] rounded-[20px] bg-white min-h-[180px] md:min-h-[474px]`} />
+            <div className={`${contentWidth} mt-4 md:mt-[70px] rounded-[20px] bg-white min-h-[180px] md:min-h-[474px]`} />
           </Reveal>
         </section>
 
