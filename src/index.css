@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Inter:wght@500&display=swap');
+
+/* Font-family aliases for Figma-imported code (space and underscore variants) */
+@font-face { font-family: 'DM Sans:Light'; font-style: normal; font-weight: 300; src: local('DM Sans Light'), local('DMSans-Light'); }
+@font-face { font-family: 'DM Sans:Regular'; font-style: normal; font-weight: 400; src: local('DM Sans Regular'), local('DMSans-Regular'); }
+@font-face { font-family: 'DM Sans:Medium'; font-style: normal; font-weight: 500; src: local('DM Sans Medium'), local('DMSans-Medium'); }
+@font-face { font-family: 'DM Sans:SemiBold'; font-style: normal; font-weight: 600; src: local('DM Sans SemiBold'), local('DMSans-SemiBold'); }
+@font-face { font-family: 'DM_Sans:Light'; font-style: normal; font-weight: 300; src: local('DM Sans Light'), local('DMSans-Light'); }
+@font-face { font-family: 'DM_Sans:Regular'; font-style: normal; font-weight: 400; src: local('DM Sans Regular'), local('DMSans-Regular'); }
+@font-face { font-family: 'DM_Sans:Medium'; font-style: normal; font-weight: 500; src: local('DM Sans Medium'), local('DMSans-Medium'); }
+@font-face { font-family: 'DM_Sans:SemiBold'; font-style: normal; font-weight: 600; src: local('DM Sans SemiBold'), local('DMSans-SemiBold'); }
+@font-face { font-family: 'Inter:Medium'; font-style: normal; font-weight: 500; src: local('Inter Medium'), local('Inter-Medium'); }
+@font-face { font-family: 'Inter_Medium'; font-style: normal; font-weight: 500; src: local('Inter Medium'), local('Inter-Medium'); }
+
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Aeonik', 'DM Sans', system-ui, sans-serif;
+  --color-background: #ffffff;
+  --color-foreground: #0f0f0e;
+  --color-muted: #888888;
+  --color-border: #e0e0e0;
+  --color-accent: #0f0f0e;
+}
+
+/* Redirect Figma-generated DM_Sans:* and Inter:* aliases to the Google-loaded fonts */
+[class*="DM_Sans"], [class*="DM Sans"] {
+  font-family: 'DM Sans', sans-serif !important;
+}
+[class*="Inter_Medium"], [class*="Inter:Medium"] {
+  font-family: 'Inter', sans-serif !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Aeonik', 'DM Sans', system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #0f0f0e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #0f0f0e;
+  color: #f5f4f0;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* ── Type scale ────────────────────────────────────────────── */
+.text-h1 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 58px;
+  letter-spacing: -0.96px;
+}
+
+.text-h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 52px;
+}
+
+.text-h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: -0.4px;
+}
+
+.text-h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.text-body-14 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.text-body-18 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.text-body-32 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 42px;
+  letter-spacing: -0.52px;
+}
+
+.text-brow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 1.96px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Create stunning modern portfolio websites with a minimalist design, tailored for creatives to showcase their work effortlessly.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
