@@ -38,6 +38,40 @@ function Reveal({ children, delay = 0, className }: { children: ReactNode; delay
   )
 }
 
+function CountUp({ value, suffix = '', duration = 1.6 }: { value: number; suffix?: string; duration?: number }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const inView = useInView(ref, { once: true, margin: '-60px 0px' })
+  const [display, setDisplay] = useState(0)
+
+  useEffect(() => {
+    if (!inView) return
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) {
+      setDisplay(value)
+      return
+    }
+    let raf = 0
+    let start: number | null = null
+    const tick = (now: number) => {
+      if (start === null) start = now
+      const progress = Math.min((now - start) / (duration * 1000), 1)
+      // easeOutExpo for a snappy count that settles smoothly
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress)
+      setDisplay(Math.round(eased * value))
+      if (progress < 1) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [inView, value, duration])
+
+  return (
+    <span ref={ref}>
+      {display}
+      {suffix}
+    </span>
+  )
+}
+
 function SectionHeading({ title, body }: { title: string; body?: ReactNode }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -273,9 +307,11 @@ export default function Meridian() {
                 <div className="flex flex-col gap-8">
                   <p style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>Round 3 research revealed significant gaps in self-service.</p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-9">
-                    {['73%', '85%', '85%', '69%'].map((n, i) => (
+                    {[73, 85, 85, 69].map((n, i) => (
                       <div key={i} className={`flex flex-col gap-3 ${i < 3 ? 'md:border-r md:border-[#e4e4e4] md:pr-6' : ''}`}>
-                        <p style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 4vw, 3.375rem)', lineHeight: 1.05, letterSpacing: '-0.03em' }}>{n}</p>
+                        <p style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 4vw, 3.375rem)', lineHeight: 1.05, letterSpacing: '-0.03em' }}>
+                          <CountUp value={n} suffix="%" duration={1.6 + i * 0.15} />
+                        </p>
                         <p style={{ color: '#0f0f0e', fontSize: 14, lineHeight: '24px' }}>Of users needed SRE support to complete the onboarding and provisioning processes</p>
                       </div>
                     ))}
