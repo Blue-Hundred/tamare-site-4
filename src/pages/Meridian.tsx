@@ -244,7 +244,7 @@ export default function Meridian() {
               <img
                 src="/images/legacy-databases-experiences.png"
                 alt="Collage of legacy database control-plane interfaces — Gaia MS SQL, Cockroach DB, Oracle Services, MySQL, TigerGraph, and Cassandra dashboards — each with different navigation, terminology, and visual styling"
-                className="w-full h-auto block"
+                className="w-full h-auto block rounded-[20px]"
                 loading="lazy"
               />
             </div>
