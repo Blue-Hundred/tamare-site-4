@@ -174,7 +174,7 @@ export default function Meridian() {
         </section>
 
         <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
-          <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start`}>
+          <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start`} style={{ marginBottom: 132 }}>
             <Reveal className="lg:col-span-5">
               <div>
                 <h2 className="text-h2" style={{ color: '#0f0f0e' }}>The Challenge</h2>
