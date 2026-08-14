@@ -216,6 +216,27 @@ export default function Meridian() {
                 }
               />
             </Reveal>
+            <Reveal delay={0.04}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                {[
+                  { src: '/images/databases-synthesis.png', alt: 'Research synthesis board grouping customer friction points, risks, design process, and ideal UX states into color-coded sticky notes', caption: 'Synthesis' },
+                  { src: '/images/ui-audit.png', alt: 'Zoomed-out UI audit board mapping every existing database control plane side by side, from DB Portal to Gaia MS SQL', caption: 'UI Audit' },
+                ].map(img => (
+                  <figure key={img.caption} className="flex flex-col gap-3">
+                    <div className="bg-white rounded-[20px] overflow-hidden" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
+                      <img
+                        src={img.src || "/placeholder.svg"}
+                        alt={img.alt}
+                        className="w-full h-auto block"
+                        style={{ aspectRatio: '16 / 9', objectFit: 'cover', objectPosition: 'top left' }}
+                        loading="lazy"
+                      />
+                    </div>
+                    <figcaption style={{ color: '#767675', fontSize: 14, lineHeight: '24px' }}>{img.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </Reveal>
             <Reveal delay={0.08}>
               <div className="mt-8 md:mt-10 bg-white rounded-[20px] p-6 md:p-10 flex flex-col gap-10 md:gap-[70px]">
                 <div className="flex flex-col gap-8 md:gap-10">
