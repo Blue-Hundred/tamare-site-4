@@ -51,16 +51,16 @@ function SectionHeading({ title, body }: { title: string; body?: string }) {
 
 function BackArrow({ flip = false }: { flip?: boolean }) {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"
       style={flip ? { transform: 'rotate(180deg)' } : undefined}>
-      <path d="M12 19L5 12L12 5" stroke="#999999" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-      <path d="M19 12H5" stroke="#999999" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M12 19L5 12L12 5" stroke="#0f0f0e" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <path d="M19 12H5" stroke="#0f0f0e" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>
   )
 }
 
 function CaseStudyTopBar() {
-  const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 16, color: '#999' } as const
+  const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#0f0f0e' } as const
   return (
     <div className="fixed top-0 left-0 right-0 z-40 flex items-center px-5 sm:px-8 md:px-9 bg-white"
       style={{ height: 77, borderBottom: '1px solid #d2d2d2' }}>
