@@ -124,10 +124,10 @@ export default function Meridian() {
           <div className={`relative z-10 ${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start`}>
             <Reveal className="lg:col-span-6 lg:col-start-1">
               <div className="bg-white rounded p-4 md:p-5">
-                <h1 className="text-h1" style={{ color: '#0f0f0e', fontSize: 'clamp(1.8rem, 5.8vw, 3rem)', lineHeight: 'clamp(2.2rem, 6.8vw, 3.625rem)', letterSpacing: '-0.02em' }}>
+                <h1 className="text-h1" style={{ color: '#0f0f0e', fontSize: 'clamp(1.375rem, 5.8vw, 3rem)', lineHeight: 'clamp(1.7rem, 6.8vw, 3.625rem)', letterSpacing: '-0.02em' }}>
                   Creating a Unified Database Management Platform
                 </h1>
-                <p className="text-body-32 mt-4 md:mt-6" style={{ color: '#0f0f0e', fontSize: 'clamp(1rem, 2.8vw, 1.625rem)', lineHeight: 'clamp(1.6rem, 3.8vw, 2.625rem)', letterSpacing: '-0.02em' }}>
+                <p className="text-body-32 mt-4 md:mt-6" style={{ color: '#0f0f0e', fontSize: 'clamp(0.9375rem, 2.8vw, 1.625rem)', lineHeight: 'clamp(1.45rem, 3.8vw, 2.625rem)', letterSpacing: '-0.02em' }}>
                   Designing a scalable enterprise platform that standardized database onboarding, provisioning, and service management across multiple database products.
                 </p>
               </div>
