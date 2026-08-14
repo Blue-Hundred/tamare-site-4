@@ -142,7 +142,7 @@ export default function Meridian() {
                   { label: 'ROLE', value: 'Lead Experience Designer\nLead Experience Researcher' },
                   { label: 'YEAR', value: '2025' },
                   { label: 'DURATION', value: '6 months' },
-                  { label: 'RESPONSIBILITIES', value: 'Experience Research, Experience Design, Service Design, Clickable Prototype' },
+                  { label: 'TASKS', value: 'Experience Research, Experience Design, Service Design, Clickable Prototype' },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 border-b border-[rgba(15,15,14,0.15)] py-3">
                     <div className="text-brow sm:w-[140px] shrink-0" style={{ color: '#0f0f0e', lineHeight: 1.5 }}>
