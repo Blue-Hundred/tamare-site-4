@@ -31,13 +31,23 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       host: '0.0.0.0',
-      port: parseInt(process.env.PORT || '8443'),
+      // Honor an explicit PORT (e.g. Figma Make's tooling sets one); otherwise
+      // fall back to 3000, the port the v0 preview proxy forwards to. The
+      // previous 8443 fallback meant nothing listened on the port the v0
+      // preview expects, so the preview returned SANDBOX_NOT_LISTENING.
+      port: parseInt(process.env.PORT || '3000'),
       strictPort: true,
+      // Allow requests from the v0 preview's proxied hostname. Without this,
+      // Vite's dev-server host check rejects the proxied preview origin with
+      // "Blocked request. This host is not allowed." even though the server
+      // is running and serving correctly on localhost.
+      allowedHosts: true,
       watch: { ignored: ['**/.figma/**'] },
     },
     preview: {
       host: '0.0.0.0',
-      port: parseInt(process.env.PORT || '8443'),
+      port: parseInt(process.env.PORT || '3000'),
+      allowedHosts: true,
     },
   }
 })
