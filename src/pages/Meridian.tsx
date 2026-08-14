@@ -170,7 +170,7 @@ export default function Meridian() {
                     { k: 'Self-service Research', v: 'Research revealed significant gaps in self-service and workflow guidance.' },
                   ].map(item => (
                     <article key={item.k} className="bg-white rounded-lg p-4 md:p-5">
-                      <p className="text-brow" style={{ color: '#0f0f0e', letterSpacing: '0.08em' }}>{item.k}</p>
+                      <h4 className="text-brow" style={{ color: '#0f0f0e', letterSpacing: '0.08em' }}>{item.k}</h4>
                       <p className="text-body-14 mt-2" style={{ color: '#0f0f0e' }}>{item.v}</p>
                     </article>
                   ))}
