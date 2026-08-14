@@ -155,10 +155,10 @@ export default function Meridian() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[88px]">
+        <section className="px-4 sm:px-8 md:px-14 pt-16 pb-8 md:py-[88px]">
           <div className={contentWidth}>
             <Reveal>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start" style={{ marginTop: 132, marginBottom: 132 }}>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mt-16 mb-8 md:mt-[132px] md:mb-[132px]">
                 <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>Summary</h2>
                 <div className="text-body-18 lg:col-span-6" style={{ color: '#0f0f0e' }}>
                   <p>Enterprise engineers relied on more than ten independent database control planes to provision and manage database services. Each product had evolved independently, resulting in inconsistent workflows, terminology, navigation patterns, and operational experiences. Engineers frequently switched between systems, searched multiple documentation sources, and relied on tribal knowledge to complete routine tasks.</p>
@@ -168,7 +168,7 @@ export default function Meridian() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="mt-10 md:mt-[70px] rounded-[20px] bg-white min-h-[180px] md:min-h-[474px]" />
+              <div className="mt-6 md:mt-[70px] rounded-[20px] bg-white min-h-[180px] md:min-h-[474px]" />
             </Reveal>
           </div>
         </section>
