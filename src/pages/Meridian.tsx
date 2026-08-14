@@ -171,7 +171,15 @@ export default function Meridian() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="mt-6 md:mt-[70px] rounded-[20px] bg-white min-h-[180px] md:min-h-[474px]" />
+              <div className="mt-6 md:mt-[70px] rounded-[20px] bg-white overflow-hidden min-h-[180px] md:min-h-[474px]">
+                <img
+                  src="/images/databases-cover.png"
+                  alt="Perspective mockup of the Cloud Relational Databases dashboard showing the My Databases view with recent services, performance and health, applications, pricing charts, and the product knowledge base"
+                  className="w-full h-full object-cover"
+                  style={{ minHeight: 'inherit' }}
+                  loading="lazy"
+                />
+              </div>
             </Reveal>
           </div>
         </section>
