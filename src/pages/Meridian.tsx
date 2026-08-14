@@ -364,7 +364,7 @@ export default function Meridian() {
       </main>
 
       {/* Contact */}
-      <section id="contact" className="px-8 md:px-14 py-40" style={{ position: 'relative' }}>
+      <section id="contact" className="px-8 md:px-14 py-40 bg-white" style={{ position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: '30%', zIndex: 0 }}>
           <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
             edgeFade={0.08} speed={2} enableRipples={true} transparent />
