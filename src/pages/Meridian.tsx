@@ -429,6 +429,20 @@ export default function Meridian() {
                 />
               </div>
             </Reveal>
+            <Reveal delay={0.12}>
+              <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
+                <video
+                  className="w-full h-auto block"
+                  src="/videos/databases-repave-schedule.mov"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="Screen recording walking through scheduling a database repave"
+                />
+              </div>
+            </Reveal>
           </div>
         </section>
 
