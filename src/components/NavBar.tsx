@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router'
 import { motion, AnimatePresence } from 'framer-motion'
+import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 function NavItem({ href, label, isActive }: { href: string; label: string; isActive: boolean }) {
   const [hovered, setHovered] = useState(false)
@@ -56,11 +57,14 @@ export default function NavBar() {
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-8 md:px-14 py-6"
         style={{ background: '#ffffff', borderBottom: '1px solid rgba(15,15,14,0.06)' }}
       >
-        <Link
-          to="/"
-          style={{ letterSpacing: '0.04em', textDecoration: 'none', color: '#0f0f0e', fontSize: '0.95rem', fontWeight: 500 }}
-        >
-          Tamaré Reese
+        <Link to="/" className="flex items-center" style={{ textDecoration: 'none' }} aria-label="Tamaré Reese — home">
+          <svg width="24" height="32" viewBox="0 0 31.5145 42.0193" fill="none" aria-hidden="true">
+            <path d={svgPaths.p1b65ed80} fill="#0f0f0e" />
+            <path d={svgPaths.p11c45c00} fill="#0f0f0e" />
+            <path d={svgPaths.pd915a80} fill="#0f0f0e" />
+            <path d={svgPaths.p2e1b9140} fill="#0f0f0e" />
+            <path d={svgPaths.p32ecd500} fill="#0f0f0e" />
+          </svg>
         </Link>
 
         {/* Desktop links */}
