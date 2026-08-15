@@ -367,7 +367,7 @@ export default function Meridian() {
             </Reveal>
             <Reveal delay={0.1} className="lg:col-span-12">
               <div className="grid grid-cols-1 gap-5 md:gap-6">
-                <div className="rounded-[20px] overflow-hidden">
+                <div className="rounded-[20px] overflow-hidden md:mt-[100px]">
                   <img src="/images/databases-information-architecture.png" alt="Information architecture diagram mapping the Databases hub into seven top-level sections and a second row of user-journey screens ending in the numbered Create Database Service provisioning flow" className="w-full h-auto block" loading="lazy" />
                 </div>
                 <div className="rounded-[20px] overflow-hidden">
