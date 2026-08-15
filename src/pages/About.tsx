@@ -99,17 +99,17 @@ export default function About() {
               <div className="flex flex-col gap-6">
                 <Reveal delay={0.1}>
                   <p className="font-light" style={{ fontSize: '1.05rem', lineHeight: 1.75, color: '#595958', fontWeight: 300 }}>
-                    I'm Tamaré Reese, a designer and art director with twelve years of practice across brand, digital, and print. My work emerges from close collaboration — I prefer fewer, better projects.
+                    I solve complex problems, improve experiences, and build products that create meaningful business results. My career has taken me from agency work designing financial products for KeyBank and First National Bank to enterprise roles at Bath &amp; Body Works and JPMorgan Chase, where I&apos;ve worked across customer experiences, internal platforms, and developer tools.
                   </p>
                 </Reveal>
                 <Reveal delay={0.15}>
                   <p className="font-light" style={{ fontSize: '1.05rem', lineHeight: 1.75, color: '#595958', fontWeight: 300 }}>
-                    Previously creative director at Studio Norte, design lead at Pentagram New York. Now independent and working with a select group of clients.
+                    At JPMorgan Chase, I&apos;ve learned to look beyond the interface and understand how customer needs, business strategy, technology, architecture, operations, and data connect. I&apos;m also fascinated by the shift toward faster experimentation, machine learning, and AI, and I enjoy thoughtful conversations about the future of technology, modern design, and design philosophy.
                   </p>
                 </Reveal>
                 <Reveal delay={0.2}>
                   <div className="flex flex-wrap gap-2 pt-2">
-                    {['Brand Identity', 'Art Direction', 'Editorial Design', 'Motion', 'Product Design', 'Typography'].map(s => (
+                    {['Product Strategy', '0-to-1 Product Design', 'Complex Workflows', 'Systems Thinking', 'Interaction Design', 'Information Architecture', 'Design Systems', 'User Research', 'Rapid Prototyping', 'AI & Automation Experiences', 'Fintech', 'Financial Operations', 'Enterprise Platforms', 'Cross-functional Leadership', 'Stakeholder Alignment', 'Figma', 'GitHub Copilot', 'Vercel v0', 'Claude Code'].map(s => (
                       <span key={s} style={{ fontSize: '0.75rem', fontWeight: 400, letterSpacing: '0.02em', color: '#0f0f0e', border: '1px solid rgba(15,15,14,0.2)', borderRadius: 100, padding: '5px 14px', display: 'inline-block' }}>{s}</span>
                     ))}
                   </div>
@@ -124,7 +124,7 @@ export default function About() {
       <div className="px-8 md:px-14 py-20" style={{ borderTop: '1px solid rgba(15,15,14,0.08)' }}>
         <div className="max-w-screen-xl mx-auto">
           <Reveal>
-            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>RECOGNITION</span>
+            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>EXPERIENCE</span>
           </Reveal>
           <div className="mt-10 flex flex-col">
             {awards.map((a, i) => (
