@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Outlet, Link, useLocation } from 'react-router'
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
 import NavBar from '../components/NavBar'
+import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 // ─── Cursor context ────────────────────────────────────────────────────────
 export type CursorCtx = { setHovered: (v: boolean) => void }
@@ -110,9 +111,13 @@ function Loader({ onDone }: { onDone: () => void }) {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="flex flex-col items-center gap-8"
       >
-        <span style={{ fontFamily: "'Aeonik','DM Sans',sans-serif", fontSize: 'clamp(2.5rem,6vw,5rem)', fontWeight: 300, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1 }}>
-          Tamaré Reese
-        </span>
+        <svg width="60" height="80" viewBox="0 0 31.5145 42.0193" fill="none" aria-label="Tamaré Reese" role="img">
+          <path d={svgPaths.p1b65ed80} fill="#ffffff" />
+          <path d={svgPaths.p11c45c00} fill="#ffffff" />
+          <path d={svgPaths.pd915a80} fill="#ffffff" />
+          <path d={svgPaths.p2e1b9140} fill="#ffffff" />
+          <path d={svgPaths.p32ecd500} fill="#ffffff" />
+        </svg>
         <div style={{ width: 240, height: 1, background: 'rgba(255,255,255,0.12)', position: 'relative', overflow: 'hidden' }}>
           <motion.div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, background: '#ffffff', width: `${count}%`, transition: 'width 0.1s linear' }} />
         </div>
