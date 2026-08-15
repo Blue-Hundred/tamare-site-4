@@ -440,12 +440,17 @@ export default function Meridian() {
                 <div className="flex flex-col gap-8">
                   <p style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>Round 3 research revealed significant gaps in self-service.</p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-9">
-                    {[73, 85, 85, 69].map((n, i) => (
+                    {[
+                      { n: 73, label: 'Of users needed SRE support to complete the onboarding and provisioning processes' },
+                      { n: 85, label: 'Want stronger observability and monitoring' },
+                      { n: 85, label: 'Had concerns about cost transparency' },
+                      { n: 69, label: 'Were uncertain when choosing database service sizes' },
+                    ].map((stat, i) => (
                       <div key={i} className={`flex flex-col gap-3 ${i < 3 ? 'md:border-r md:border-[#e4e4e4] md:pr-6' : ''}`}>
                         <p style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 4vw, 3.375rem)', lineHeight: 1.05, letterSpacing: '-0.03em' }}>
-                          <CountUp value={n} suffix="%" duration={1.6 + i * 0.15} />
+                          <CountUp value={stat.n} suffix="%" duration={1.6 + i * 0.15} />
                         </p>
-                        <p style={{ color: '#0f0f0e', fontSize: 14, lineHeight: '24px' }}>Of users needed SRE support to complete the onboarding and provisioning processes</p>
+                        <p style={{ color: '#0f0f0e', fontSize: 14, lineHeight: '24px' }}>{stat.label}</p>
                       </div>
                     ))}
                   </div>
@@ -518,8 +523,8 @@ export default function Meridian() {
               <div className="grid grid-cols-2 gap-4 md:gap-5">
                 {[
                   { n: 92, suffix: '%', l: 'Task completion Rate' },
-                  { n: 95, suffix: '', l: 'Task completion Rate' },
-                  { n: 95, suffix: '', l: 'Task completion Rate' },
+                  { n: 95, suffix: '', l: 'CSAT' },
+                  { n: 95, suffix: '', l: 'UMUX Lite' },
                   { n: 100, suffix: '%', l: 'User preference of new experience' },
                 ].map((stat, i) => (
                   <div key={i} className="bg-white rounded-xl p-4 md:p-5 flex flex-col gap-3">
