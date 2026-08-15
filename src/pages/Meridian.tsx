@@ -25,6 +25,7 @@ import {
   Sparkles,
   Target,
   TrendingUp,
+  Star,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -245,12 +246,36 @@ function CaseStudyTopBar() {
   )
 }
 
-function StatArrowIcon() {
+// Renders a 5-star scale filled proportionally to `percent` (0–100) in purple,
+// e.g. percent={92} fills 92% of the five-star row.
+function StarRating({ percent }: { percent: number }) {
+  const PURPLE = '#4b3fa6'
+  const clamped = Math.max(0, Math.min(100, percent))
+  const size = 22
+  const gap = 4
+  const stars = (fill: string) =>
+    Array.from({ length: 5 }).map((_, i) => (
+      <Star key={i} size={size} strokeWidth={1.75} fill={fill} style={{ color: PURPLE, flexShrink: 0 }} aria-hidden="true" />
+    ))
+
   return (
-    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-      <rect fill="#4b3fa6" height="34" rx="17" width="34" />
-      <path d={svgPaths.p3f21df00} stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
+    <div
+      className="relative inline-flex w-fit"
+      role="img"
+      aria-label={`${clamped} out of 100, shown as a five-star rating`}
+      style={{ gap }}
+    >
+      {/* Empty stars (outline) */}
+      <div className="flex" style={{ gap }}>
+        {stars('transparent')}
+      </div>
+      {/* Filled overlay clipped to the percentage */}
+      <div className="absolute inset-0 overflow-hidden" style={{ width: `${clamped}%` }}>
+        <div className="flex" style={{ gap }}>
+          {stars(PURPLE)}
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -528,7 +553,7 @@ export default function Meridian() {
                   { n: 100, suffix: '%', l: 'User preference of new experience' },
                 ].map((stat, i) => (
                   <div key={i} className="bg-white rounded-xl p-4 md:p-5 flex flex-col gap-3">
-                    <StatArrowIcon />
+                    <StarRating percent={stat.n} />
                     <p style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 4vw, 3.375rem)', lineHeight: 1.05, letterSpacing: '-0.03em' }}>
                       <CountUp value={stat.n} suffix={stat.suffix} duration={1.6 + i * 0.15} />
                     </p>
