@@ -426,8 +426,8 @@ export default function Meridian() {
                       { n: '3', t: 'Qualitative Interviews', b: 'Engineers had to relearn workflows across database products and frequently relied on support.' },
                     ].map(item => (
                       <article key={item.n} className="flex flex-col gap-6 md:gap-8">
-                        <div className="bg-[#f5f5f5] rounded-full flex items-center justify-center shrink-0" style={{ width: 68, height: 68 }}>
-                          <span style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>{item.n}</span>
+                        <div className="rounded-full flex items-center justify-center shrink-0" style={{ width: 68, height: 68, backgroundColor: '#4b3fa6' }}>
+                          <span style={{ color: '#ffffff', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>{item.n}</span>
                         </div>
                         <div className="flex flex-col gap-3">
                           <h3 style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px' }}>{item.t}</h3>
