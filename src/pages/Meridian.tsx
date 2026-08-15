@@ -3,7 +3,6 @@ import { Link, useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
-import workflowImage from '../imports/Databases/e32937999a0fce8d57bcb9ae5e6c08abacbd1f3b.png'
 import personasImage from '../imports/Databases/267c205dc382f590b717a76a3b90365da5afb8b2.png'
 import blueprintImage from '../imports/Databases/1887e9d636693dc6c50eebc16511159b07b7d0ff.png'
 
@@ -418,7 +417,16 @@ export default function Meridian() {
             </Reveal>
             <Reveal delay={0.06}>
               <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
-                <img src={workflowImage} alt="Provisioning panel UI" className="w-full h-auto block" />
+                <video
+                  className="w-full h-auto block"
+                  src="/videos/databases-nav-to-service-flow.mov"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="Screen recording walking through navigating from the databases hub to a specific service"
+                />
               </div>
             </Reveal>
           </div>
