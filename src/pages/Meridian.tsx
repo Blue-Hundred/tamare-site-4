@@ -417,13 +417,8 @@ export default function Meridian() {
               </div>
             </Reveal>
             <Reveal delay={0.06}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-                <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
-                  <img src={workflowImage} alt="Provisioning panel UI" className="w-full h-auto block" />
-                </div>
-                <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
-                  <img src={workflowImage} alt="Service request detail view" className="w-full h-auto block" />
-                </div>
+              <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
+                <img src={workflowImage} alt="Provisioning panel UI" className="w-full h-auto block" />
               </div>
             </Reveal>
           </div>
