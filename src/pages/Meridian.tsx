@@ -3,7 +3,6 @@ import { Link, useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
-import prototypeImage from '../imports/Databases/d837be23860c1da0ac7bcafedc4dc6b06b226433.png'
 import workflowImage from '../imports/Databases/e32937999a0fce8d57bcb9ae5e6c08abacbd1f3b.png'
 import personasImage from '../imports/Databases/267c205dc382f590b717a76a3b90365da5afb8b2.png'
 import blueprintImage from '../imports/Databases/1887e9d636693dc6c50eebc16511159b07b7d0ff.png'
@@ -405,7 +404,16 @@ export default function Meridian() {
           <div className={`${contentWidth} grid grid-cols-1 gap-5 md:gap-6`}>
             <Reveal>
               <div className="rounded-none overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
-                <img src={prototypeImage} alt="Database operations dashboard overview" className="w-full h-auto block" />
+                <video
+                  className="w-full h-auto block"
+                  src="/videos/databases-monitoring-flow.mov"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="Screen recording walking through the database monitoring flow"
+                />
               </div>
             </Reveal>
             <Reveal delay={0.06}>
