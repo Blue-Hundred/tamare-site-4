@@ -178,7 +178,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             style={{ alignSelf: 'flex-start', background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4 }}
           >
-            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>DESIGNER & ART DIRECTOR</span>
+            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>PRODUCT & SERVICE DESIGNER</span>
             <span className="text-xs font-light" style={{ color: '#0f0f0e' }}>—</span>
           </motion.div>
 
@@ -187,11 +187,11 @@ export default function Home() {
             style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.2, fontWeight: 400, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
           >
             <span style={{ background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="Shaping problems" play={loaded} delay={0.07} />
+              <BlurText text="Framing problems," play={loaded} delay={0.07} />
             </span>
             <br />
             <span style={{ background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="into solutions." play={loaded} delay={0.12} />
+              <BlurText text="crafting solutions." play={loaded} delay={0.12} />
             </span>
           </motion.h1>
 
@@ -202,7 +202,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.9, color: '#0f0f0e', fontWeight: 300, display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', background: '#ffffff', padding: '2px 0' }}>
-              Independent designer based in Amsterdam. I work with studios, startups, and cultural institutions on identity, digital, and editorial projects.
+              Product designer utilizing AI to streamline workflows and simplify experiences.
             </p>
             <div className="flex items-center gap-2" style={{ background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4, alignSelf: 'flex-end' }}>
               <span className="text-xs font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Available for projects —</span>
