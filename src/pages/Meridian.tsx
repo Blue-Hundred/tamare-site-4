@@ -370,7 +370,7 @@ export default function Meridian() {
                 <div className="rounded-[20px] overflow-hidden md:mt-[100px]">
                   <img src="/images/databases-information-architecture.png" alt="Information architecture diagram mapping the Databases hub into seven top-level sections and a second row of user-journey screens ending in the numbered Create Database Service provisioning flow" className="w-full h-auto block" loading="lazy" />
                 </div>
-                <div className="rounded-[20px] overflow-hidden">
+                <div className="rounded-[20px] overflow-hidden md:mt-[80px]">
                   <img src="/images/databases-components.png" alt="Databases design system component library organized into nine groups: navigation, dashboard and overview components, resource and service cards, tables and lists, search and filters, detail sections, steps and progress, form components, and actions and feedback" className="w-full h-auto block" loading="lazy" />
                 </div>
               </div>
