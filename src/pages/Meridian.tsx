@@ -266,8 +266,8 @@ export default function Meridian() {
             <Reveal delay={0.04}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {[
-                  { src: '/images/databases-synthesis.png', alt: 'Research synthesis board grouping customer friction points, risks, design process, and ideal UX states into color-coded sticky notes', caption: 'Synthesis' },
                   { src: '/images/ui-audit.png', alt: 'Zoomed-out UI audit board mapping every existing database control plane side by side, from DB Portal to Gaia MS SQL', caption: 'UI Audit' },
+                  { src: '/images/databases-synthesis.png', alt: 'Research synthesis board grouping customer friction points, risks, design process, and ideal UX states into color-coded sticky notes', caption: 'Synthesis' },
                 ].map(img => (
                   <figure key={img.caption} className="flex flex-col gap-3">
                     <div className="bg-white rounded-[20px] overflow-hidden" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
