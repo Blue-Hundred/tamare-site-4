@@ -3,7 +3,6 @@ import { Link, useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
-import experienceMapImage from '../imports/Databases/c38b9a065ae6afc6e3f13f2d46efee0586b97afa.png'
 import prototypeImage from '../imports/Databases/d837be23860c1da0ac7bcafedc4dc6b06b226433.png'
 import workflowImage from '../imports/Databases/e32937999a0fce8d57bcb9ae5e6c08abacbd1f3b.png'
 import personasImage from '../imports/Databases/267c205dc382f590b717a76a3b90365da5afb8b2.png'
@@ -371,8 +370,8 @@ export default function Meridian() {
                 <div className="rounded-[20px] overflow-hidden">
                   <img src="/images/databases-information-architecture.png" alt="Information architecture diagram mapping the Databases hub into seven top-level sections and a second row of user-journey screens ending in the numbered Create Database Service provisioning flow" className="w-full h-auto block" loading="lazy" />
                 </div>
-                <div className="rounded-[20px] overflow-hidden bg-[#f9fbfd] p-4 md:p-8">
-                  <img src={experienceMapImage} alt="Unified information architecture and interface system" className="w-full h-auto block" />
+                <div className="rounded-[20px] overflow-hidden">
+                  <img src="/images/databases-components.png" alt="Databases design system component library organized into nine groups: navigation, dashboard and overview components, resource and service cards, tables and lists, search and filters, detail sections, steps and progress, form components, and actions and feedback" className="w-full h-auto block" loading="lazy" />
                 </div>
               </div>
             </Reveal>
