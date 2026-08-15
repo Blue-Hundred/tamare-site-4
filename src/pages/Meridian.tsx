@@ -342,13 +342,8 @@ export default function Meridian() {
                 <div className="rounded-[10px] overflow-hidden bg-white">
                   <img src={personasImage} alt="Persona boards" className="w-full h-auto block" />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5 md:gap-6 md:h-[407px]">
-                  <div className="rounded-[10px] overflow-hidden bg-white flex items-center justify-center">
-                    <img src={blueprintImage} alt="Service blueprint map" className="w-full h-full object-contain block" />
-                  </div>
-                  <div className="rounded-[10px] overflow-hidden bg-white">
-                    <img src={blueprintImage} alt="Service blueprint detail" className="w-full h-full object-cover block" />
-                  </div>
+                <div className="rounded-[10px] overflow-hidden bg-white">
+                  <img src={blueprintImage} alt="Service blueprint map" className="w-full h-auto block" />
                 </div>
               </div>
             </Reveal>
