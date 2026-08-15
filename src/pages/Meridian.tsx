@@ -338,7 +338,7 @@ export default function Meridian() {
               </p>
             </Reveal>
             <Reveal delay={0.12} className="lg:col-span-12">
-              <div className="bg-white rounded-[20px] p-4 md:p-5 grid grid-cols-1 gap-5 md:gap-6">
+              <div className="grid grid-cols-1 gap-5 md:gap-6">
                 <div className="rounded-[10px] overflow-hidden bg-white">
                   <img src={personasImage} alt="Persona boards" className="w-full h-auto block" />
                 </div>
