@@ -3,7 +3,6 @@ import { Link, useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
-import architectureImage from '../imports/Databases/246c5a6d9c942f00012f575ad446d86a09c5dab6.png'
 import experienceMapImage from '../imports/Databases/c38b9a065ae6afc6e3f13f2d46efee0586b97afa.png'
 import prototypeImage from '../imports/Databases/d837be23860c1da0ac7bcafedc4dc6b06b226433.png'
 import workflowImage from '../imports/Databases/e32937999a0fce8d57bcb9ae5e6c08abacbd1f3b.png'
@@ -369,8 +368,8 @@ export default function Meridian() {
             </Reveal>
             <Reveal delay={0.1} className="lg:col-span-12">
               <div className="grid grid-cols-1 gap-5 md:gap-6">
-                <div className="rounded-[20px] overflow-hidden bg-[#fbfcfc]">
-                  <img src={architectureImage} alt="Information architecture redesign concept" className="w-full h-auto block" />
+                <div className="rounded-[20px] overflow-hidden">
+                  <img src="/images/databases-information-architecture.png" alt="Information architecture diagram mapping the Databases hub into seven top-level sections and a second row of user-journey screens ending in the numbered Create Database Service provisioning flow" className="w-full h-auto block" loading="lazy" />
                 </div>
                 <div className="rounded-[20px] overflow-hidden bg-[#f9fbfd] p-4 md:p-8">
                   <img src={experienceMapImage} alt="Unified information architecture and interface system" className="w-full h-auto block" />
