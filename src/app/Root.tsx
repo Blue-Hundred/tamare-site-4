@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Outlet, Link } from 'react-router'
+import { Outlet, Link, useLocation } from 'react-router'
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
 import NavBar from '../components/NavBar'
 
@@ -170,6 +170,18 @@ function NavItem({ href, label, isActive, hoverOn, hoverOff }: {
   )
 }
 
+// ─── ScrollToTop ─────────────────────────────────────────────────────────────
+// Reset the scroll position to the top whenever the route path changes, so a
+// newly navigated page always starts at the top instead of inheriting the
+// previous page's scroll offset.
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
+
 // ─── Root ──────────────────────────────────────────────────────────────────
 export default function Root() {
   const [loaded, setLoaded] = useState(false)
@@ -179,6 +191,7 @@ export default function Root() {
 
   return (
     <CursorContext.Provider value={cursorCtx.current}>
+      <ScrollToTop />
       <AnimatePresence>{!loaded && <Loader onDone={() => setLoaded(true)} />}</AnimatePresence>
 
       <motion.div
