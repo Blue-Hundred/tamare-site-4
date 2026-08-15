@@ -5,6 +5,28 @@ import PixelBlast from '../components/PixelBlast'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 import personasImage from '../imports/Databases/267c205dc382f590b717a76a3b90365da5afb8b2.png'
 import blueprintImage from '../imports/Databases/1887e9d636693dc6c50eebc16511159b07b7d0ff.png'
+import {
+  Headset,
+  Settings,
+  Puzzle,
+  CheckCircle2,
+  Clock,
+  UserPlus,
+  Database,
+  SlidersHorizontal,
+  PlayCircle,
+  Activity,
+  Wrench,
+  CircleDollarSign,
+  FileText,
+  Cog,
+  User,
+  Share2,
+  Sparkles,
+  Target,
+  TrendingUp,
+  type LucideIcon,
+} from 'lucide-react'
 
 function usePixelSize(base = 3) {
   const [size, setSize] = useState(base)
@@ -65,6 +87,114 @@ function CountUp({ value, suffix = '', duration = 1.6 }: { value: number; suffix
       {display}
       {suffix}
     </span>
+  )
+}
+
+function MvpStrategy() {
+  const BLUE = '#3651d4'
+  const GREEN = '#2f9e6b'
+  const PURPLE = '#4b3fa6'
+
+  const efficiencyItems: { icon: LucideIcon; text: string }[] = [
+    { icon: Headset, text: 'Reduce SRE support tickets and dependency on support teams for application onboarding and database service provisioning' },
+    { icon: Settings, text: 'Automate manual processes and integrate disconnected systems' },
+    { icon: Puzzle, text: 'Reduce fragmentation across database products and control planes' },
+    { icon: CheckCircle2, text: 'Simplify onboarding and provisioning workflows' },
+    { icon: Clock, text: 'Reduce the time required to complete each phase of the end-to-end experience' },
+  ]
+
+  const jobsItems: { icon: LucideIcon; text: string }[] = [
+    { icon: UserPlus, text: 'Onboard applications and establish required access' },
+    { icon: Database, text: 'Create and provision database services' },
+    { icon: SlidersHorizontal, text: 'Configure database services based on application requirements' },
+    { icon: PlayCircle, text: 'Complete post-provisioning requirements to get services running' },
+    { icon: Activity, text: 'Monitor applications and database services' },
+    { icon: Wrench, text: 'Perform ongoing service operations' },
+    { icon: CircleDollarSign, text: 'Understand service costs and key cost drivers' },
+    { icon: FileText, text: 'Access database service details, health, and management information' },
+  ]
+
+  const goals: { icon: LucideIcon; title: string; body: string }[] = [
+    { icon: Cog, title: 'Optimize backstage operations', body: 'Reduce manual effort, operational handoffs, and increase engineering efficiency.' },
+    { icon: User, title: 'Expand self-service capabilities', body: 'Enable engineers to complete critical onboarding, provisioning, and service management workflows with less SRE intervention.' },
+    { icon: Share2, title: 'Connect the end-to-end ecosystem', body: 'Integrate the applications, APIs, and data required to establish continuous data sequences across the database service lifecycle.' },
+    { icon: Clock, title: 'Reduce time-to-completion across the journey', body: 'Identify and remove friction, handoffs, and wait states within each phase of application onboarding, database provisioning, configuration, and service setup.' },
+    { icon: Sparkles, title: 'Introduce AI-assisted guidance', body: 'Improve engineer education, troubleshooting, and solutioning throughout the Create Database Service and application/service monitoring experiences.' },
+  ]
+
+  const columns: { accent: string; tint: string; headerIcon: LucideIcon; title: string; items: { icon: LucideIcon; text: string }[] }[] = [
+    { accent: BLUE, tint: '#eaeefb', headerIcon: TrendingUp, title: 'Driving operational efficiency and reducing support dependency', items: efficiencyItems },
+    { accent: GREEN, tint: '#e6f4ec', headerIcon: User, title: 'Prioritizing core customer jobs to be done', items: jobsItems },
+  ]
+
+  return (
+    <div className="bg-white rounded-[20px] p-6 md:p-10 flex flex-col gap-10 md:gap-14">
+      <div className="flex flex-col items-center gap-3 text-center">
+        <h3 className="text-h2 text-balance" style={{ color: '#0f0f0e' }}>MVP Strategy: Simplify. Automate. Empower.</h3>
+        <p className="text-body-18 max-w-[720px] text-pretty" style={{ color: '#566072' }}>
+          Building a unified experience that reduces operational overhead and empowers engineers to deliver faster.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {columns.map(col => (
+          <div
+            key={col.title}
+            className="rounded-2xl border border-[#e7e7ea] p-6 md:p-8 flex flex-col gap-6"
+            style={{ borderLeftWidth: 6, borderLeftColor: col.accent }}
+          >
+            <div className="flex items-center gap-4">
+              <span className="shrink-0 flex items-center justify-center rounded-full" style={{ width: 56, height: 56, backgroundColor: col.tint }}>
+                <col.headerIcon size={26} strokeWidth={2} style={{ color: col.accent }} aria-hidden="true" />
+              </span>
+              <h4 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 20, lineHeight: '28px', letterSpacing: '-0.3px' }}>{col.title}</h4>
+            </div>
+            <ul className="flex flex-col">
+              {col.items.map((it, i) => (
+                <li
+                  key={it.text}
+                  className={`flex items-start gap-4 py-4 ${i < col.items.length - 1 ? 'border-b border-[#eeeef0]' : ''}`}
+                >
+                  <it.icon size={24} strokeWidth={1.75} className="shrink-0 mt-0.5" style={{ color: col.accent }} aria-hidden="true" />
+                  <span style={{ color: '#0f0f0e', fontSize: 15, lineHeight: '24px' }}>{it.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-2xl border border-[#e7e7ea] p-6 md:p-8 flex flex-col gap-8">
+        <div className="flex items-center gap-4">
+          <span className="shrink-0 flex items-center justify-center rounded-full" style={{ width: 56, height: 56, backgroundColor: '#efeef8' }}>
+            <Target size={26} strokeWidth={2} style={{ color: PURPLE }} aria-hidden="true" />
+          </span>
+          <h4 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 20, lineHeight: '28px', letterSpacing: '-0.3px' }}>Product goals</h4>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-6 lg:gap-x-4">
+          {goals.map((g, i) => (
+            <div key={g.title} className="relative rounded-xl border border-[#e7e7ea] pt-8 px-5 pb-6 flex flex-col gap-4">
+              <span
+                className="absolute -top-4 left-5 flex items-center justify-center rounded-full text-white"
+                style={{ width: 32, height: 32, backgroundColor: PURPLE, fontSize: 13, fontWeight: 600 }}
+              >
+                {i + 1}
+              </span>
+              {i < goals.length - 1 && (
+                <span
+                  aria-hidden="true"
+                  className="hidden lg:block absolute top-[52px] -right-2 w-4 border-t border-dashed"
+                  style={{ borderColor: `${PURPLE}66` }}
+                />
+              )}
+              <g.icon size={34} strokeWidth={1.5} style={{ color: PURPLE }} aria-hidden="true" />
+              <h5 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 16, lineHeight: '22px' }}>{g.title}</h5>
+              <p style={{ color: '#0f0f0e', fontSize: 14, lineHeight: '22px' }}>{g.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -344,6 +474,9 @@ export default function Meridian() {
                   <img src={blueprintImage} alt="Service blueprint map" className="w-full h-auto block" />
                 </div>
               </div>
+            </Reveal>
+            <Reveal delay={0.16} className="lg:col-span-12">
+              <MvpStrategy />
             </Reveal>
           </div>
         </section>
