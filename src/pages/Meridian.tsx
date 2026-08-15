@@ -405,7 +405,7 @@ export default function Meridian() {
               <div className="rounded-none overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
                 <video
                   className="w-full h-auto block"
-                  src="/videos/databases-monitoring-flow.mov"
+                  src="/videos/databases-monitoring-flow.mp4"
                   autoPlay
                   loop
                   muted
@@ -419,7 +419,7 @@ export default function Meridian() {
               <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
                 <video
                   className="w-full h-auto block"
-                  src="/videos/databases-nav-to-service-flow.mov"
+                  src="/videos/databases-nav-to-service-flow.mp4"
                   autoPlay
                   loop
                   muted
@@ -433,7 +433,7 @@ export default function Meridian() {
               <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
                 <video
                   className="w-full h-auto block"
-                  src="/videos/databases-repave-schedule.mov"
+                  src="/videos/databases-repave-schedule.mp4"
                   autoPlay
                   loop
                   muted
