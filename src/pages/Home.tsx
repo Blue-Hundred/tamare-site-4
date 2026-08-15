@@ -241,10 +241,10 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="font-light mt-6" style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.05, fontWeight: 400 }}>
-              Let's<br />
+              <span style={{ background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.04em 0.12em' }}>Let&apos;s</span><br />
               <a
                 href="mailto:tamaredesign@outlook.com"
-                style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s' }}
+                style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s', background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.04em 0.12em' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.5'; hoverOn() }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
               >
@@ -254,9 +254,9 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.2}>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-10 mt-24">
-              <div className="flex flex-col gap-2" style={{ background: '#ffffff', padding: '8px 12px', borderRadius: 4 }}>
-                <a href="mailto:tamaredesign@outlook.com" className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e', textDecoration: 'none' }}>tamaredesign@outlook.com</a>
-                <span className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Tamaré Reese</span>
+              <div className="flex flex-col gap-2 items-start">
+                <a href="mailto:tamaredesign@outlook.com" className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e', textDecoration: 'none', background: '#ffffff', padding: '3px 8px', borderRadius: 4 }}>tamaredesign@outlook.com</a>
+                <span className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e', background: '#ffffff', padding: '3px 8px', borderRadius: 4 }}>Tamaré Reese</span>
               </div>
               <div className="flex items-center gap-8" style={{ background: '#ffffff', padding: '8px 12px', borderRadius: 4 }}>
                 <a
