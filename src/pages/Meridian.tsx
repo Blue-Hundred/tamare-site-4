@@ -443,6 +443,20 @@ export default function Meridian() {
                 />
               </div>
             </Reveal>
+            <Reveal delay={0.16}>
+              <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
+                <video
+                  className="w-full h-auto block"
+                  src="/videos/databases-provisioning-error.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="Screen recording walking through a database provisioning error state"
+                />
+              </div>
+            </Reveal>
           </div>
         </section>
 
