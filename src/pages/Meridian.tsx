@@ -248,8 +248,8 @@ function CaseStudyTopBar() {
 function StatArrowIcon() {
   return (
     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-      <rect fill="#E4E4E4" height="34" rx="17" width="34" />
-      <path d={svgPaths.p3f21df00} stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+      <rect fill="#4b3fa6" height="34" rx="17" width="34" />
+      <path d={svgPaths.p3f21df00} stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
     </svg>
   )
 }
