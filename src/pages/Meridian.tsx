@@ -469,7 +469,7 @@ export default function Meridian() {
                         <p style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 4vw, 3.375rem)', lineHeight: 1.05, letterSpacing: '-0.03em' }}>
                           <CountUp value={stat.n} suffix="%" duration={1.6 + i * 0.15} />
                         </p>
-                        <p style={{ color: '#0f0f0e', fontSize: 14, lineHeight: '24px' }}>{stat.label}</p>
+                        <p style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px' }}>{stat.label}</p>
                       </div>
                     ))}
                   </div>
