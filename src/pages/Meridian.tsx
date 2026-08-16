@@ -633,24 +633,13 @@ export default function Meridian() {
                   className="md:border-l md:border-[#dadada] px-6 sm:px-10 md:px-14 py-10 md:py-12 cursor-pointer outline-none"
                   style={{ backgroundColor: nextHover ? '#e8e8e8' : 'transparent', transition: 'background-color 0.35s ease' }}
                 >
-                  <div className="flex items-start gap-5 md:gap-7">
-                    <div
-                      aria-hidden="true"
-                      className="shrink-0 rounded-full flex items-center justify-center"
-                      style={{ width: 68, height: 68, background: '#0f0f0e' }}
-                    >
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M5 12h14M13 5l7 7-7 7" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+                  <div className="flex-1 min-w-0 text-right">
+                    <div className="flex items-center justify-end gap-[8px]">
+                      <span style={{ color: '#999', fontWeight: 300, fontSize: 13, lineHeight: '22px' }}>Next</span>
+                      <BackArrow flip />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-end gap-[8px]">
-                        <span style={{ color: '#999', fontWeight: 600, fontSize: 13, lineHeight: '22px' }}>Next</span>
-                        <BackArrow flip />
-                      </div>
-                      <h3 className="mt-3" style={{ color: nextHover ? '#6eac01' : '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px', transition: 'color 0.3s ease' }}>Modernizing Family Banking</h3>
-                      <p className="mt-2" style={{ color: '#0f0f0e', fontSize: 15, lineHeight: '24px', maxWidth: 520 }}>Engineers had to relearn workflows across database products and frequently relied on support.</p>
-                    </div>
+                    <h3 className="mt-3" style={{ color: nextHover ? '#6eac01' : '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px', transition: 'color 0.3s ease' }}>Modernizing Family Banking</h3>
+                    <p className="mt-2 ml-auto" style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px', maxWidth: 520 }}>Engineers had to relearn workflows across database products and frequently relied on support.</p>
                   </div>
                 </div>
               </div>
