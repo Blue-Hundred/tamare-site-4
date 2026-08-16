@@ -24,10 +24,10 @@ const projects = [
   },
   {
     id: '02',
-    title: 'Adaptive reuse across Northern Europe',
-    company: 'Forma Studio',
-    tags: ['Art Direction', 'Campaign'],
-    year: '2024',
+    title: 'Enabling In-Store Pickup',
+    company: 'Bath & Body Works',
+    tags: ['Product Design', 'Service Design'],
+    year: '2019',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&h=800&fit=crop&auto=format',
   },
   {
