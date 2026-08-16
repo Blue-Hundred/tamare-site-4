@@ -330,7 +330,7 @@ export default function Meridian() {
                   { label: 'TASKS', value: 'Experience Research, Experience Design, Service Design, Clickable Prototype' },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 border-b border-[rgba(15,15,14,0.15)] py-3">
-                    <div className="text-brow sm:w-[140px] shrink-0" style={{ color: '#0f0f0e', lineHeight: 1.5 }}>
+                    <div className="text-xs font-light tracking-widest sm:w-[140px] shrink-0" style={{ color: '#0f0f0e', letterSpacing: '0.15em', lineHeight: 1.5 }}>
                       {label}
                     </div>
                     <div className="text-body-14 flex-1" style={{ color: '#0f0f0e', whiteSpace: 'pre-line' }}>
