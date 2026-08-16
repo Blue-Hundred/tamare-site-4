@@ -80,11 +80,18 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   )
 }
 
-function ParallaxImage({ src, alt }: { src: string; alt: string }) {
+function ParallaxImage({ src, alt, fullWidth }: { src: string; alt: string; fullWidth?: boolean }) {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const rawY = useTransform(scrollYProgress, [0, 1], ['6%', '-6%'])
   const y = useSpring(rawY, { stiffness: 60, damping: 20 })
+  if (fullWidth) {
+    return (
+      <div style={{ width: '100%', overflow: 'hidden', borderRadius: 4 }}>
+        <img src={src} alt={alt} style={{ width: '100%', height: 'auto', display: 'block' }} />
+      </div>
+    )
+  }
   return (
     <div ref={ref} style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', borderRadius: 4 }}>
       <motion.img src={src} alt={alt}
@@ -105,7 +112,7 @@ function ProjectCard({ p, index, activeProject, setActiveProject }: {
       animate={{ opacity: dimmed ? 0.3 : 1 }}
       transition={{ duration: 0.3 }}
     >
-      <ParallaxImage src={p.image} alt={p.title} />
+      <ParallaxImage src={p.image} alt={p.title} fullWidth={p.id === '02'} />
       <div className="pt-5 flex flex-col gap-3">
         <div className="flex items-center gap-3">
           <span style={{ fontSize: '0.65rem', color: '#767675', letterSpacing: '0.1em', fontWeight: 300 }}>{p.id}</span>
