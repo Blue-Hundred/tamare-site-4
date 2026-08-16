@@ -2,6 +2,7 @@ import { useRef, useState, useEffect, type ReactNode } from 'react'
 import { Link, useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
+import ContactSection from '../components/ContactSection'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 import personasImage from '../imports/Databases/267c205dc382f590b717a76a3b90365da5afb8b2.png'
 import blueprintImage from '../imports/Databases/1887e9d636693dc6c50eebc16511159b07b7d0ff.png'
@@ -649,49 +650,7 @@ export default function Meridian() {
       </main>
 
       {/* Contact */}
-      <section id="contact" className="px-8 md:px-14 py-40 bg-white" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: '30%', zIndex: 0 }}>
-          <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
-            edgeFade={0.08} speed={2} enableRipples={true} transparent />
-        </div>
-        <div className="max-w-screen-xl mx-auto" style={{ position: 'relative', zIndex: 1 }}>
-          <Reveal>
-            <span className="text-xs font-light tracking-widest" style={{ opacity: 1, color: '#0f0f0e', letterSpacing: '0.15em', background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4, display: 'inline-block' }}>CONTACT</span>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-light mt-6" style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.05, fontWeight: 400 }}>
-              Let&apos;s<br />
-              <a
-                href="mailto:alex@mercer.studio"
-                style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.5'; hoverOn() }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
-              >
-                Connect.
-              </a>
-            </h2>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-10 mt-24">
-              <div className="flex flex-col gap-2" style={{ background: '#ffffff', padding: '8px 12px', borderRadius: 4 }}>
-                <a href="mailto:alex@mercer.studio" className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e', textDecoration: 'none' }}>alex@mercer.studio</a>
-                <span className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Amsterdam, NL</span>
-              </div>
-              <div className="flex items-center gap-8" style={{ background: '#ffffff', padding: '8px 12px', borderRadius: 4 }}>
-                {['Instagram', 'LinkedIn', 'Are.na'].map(l => (
-                  <a key={l} href="#" className="text-sm font-light"
-                    style={{ opacity: 1, color: '#0f0f0e', textDecoration: 'none', transition: 'opacity 0.2s' }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.6'; hoverOn() }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
-                  >
-                    {l}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <ContactSection />
 
       {/* Footer */}
       <footer className="px-8 md:px-14 py-8 bg-white" style={{ borderTop: '1px solid rgba(15,15,14,0.08)' }}>
