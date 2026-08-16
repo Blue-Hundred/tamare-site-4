@@ -617,34 +617,45 @@ export default function Meridian() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 pb-24 md:pb-[120px]">
-          <div className={contentWidth}>
-            <Reveal>
-              <div style={{ borderTop: '1px solid #dadada' }}>
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                  <div className="hidden md:block" aria-hidden="true" />
-                  <div
-                    role="link"
-                    tabIndex={0}
-                    aria-label="Next case study: Modernizing Family Banking"
-                    onMouseEnter={() => { setNextHover(true); hoverOn() }}
-                    onMouseLeave={() => { setNextHover(false); hoverOff() }}
-                    onFocus={() => setNextHover(true)}
-                    onBlur={() => setNextHover(false)}
-                    className="md:border-l md:border-[#dadada] px-6 py-14 md:py-20 text-center cursor-pointer outline-none"
-                    style={{ backgroundColor: nextHover ? '#e8e8e8' : 'transparent', transition: 'background-color 0.35s ease' }}
-                  >
-                    <div className="flex items-center justify-center gap-[10px]">
-                      <span style={{ color: '#999', fontWeight: 600, fontSize: 14, lineHeight: '26px' }}>Next</span>
-                      <BackArrow flip />
+        <section className="pb-24 md:pb-[120px]">
+          <Reveal>
+            <div style={{ borderTop: '1px solid #dadada' }}>
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="hidden md:block" aria-hidden="true" />
+                <div
+                  role="link"
+                  tabIndex={0}
+                  aria-label="Next case study: Modernizing Family Banking"
+                  onMouseEnter={() => { setNextHover(true); hoverOn() }}
+                  onMouseLeave={() => { setNextHover(false); hoverOff() }}
+                  onFocus={() => setNextHover(true)}
+                  onBlur={() => setNextHover(false)}
+                  className="md:border-l md:border-[#dadada] px-6 sm:px-10 md:px-14 py-10 md:py-12 cursor-pointer outline-none"
+                  style={{ backgroundColor: nextHover ? '#e8e8e8' : 'transparent', transition: 'background-color 0.35s ease' }}
+                >
+                  <div className="flex items-start gap-5 md:gap-7">
+                    <div
+                      aria-hidden="true"
+                      className="shrink-0 rounded-full flex items-center justify-center"
+                      style={{ width: 68, height: 68, background: '#0f0f0e' }}
+                    >
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 12h14M13 5l7 7-7 7" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
                     </div>
-                    <h3 className="mt-4" style={{ color: nextHover ? '#6eac01' : '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px', transition: 'color 0.3s ease' }}>Modernizing Family Banking</h3>
-                    <p className="mt-3 mx-auto" style={{ color: '#0f0f0e', fontSize: 18, lineHeight: '28px', maxWidth: 509 }}>Engineers had to relearn workflows across database products and frequently relied on support.</p>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-end gap-[8px]">
+                        <span style={{ color: '#999', fontWeight: 600, fontSize: 13, lineHeight: '22px' }}>Next</span>
+                        <BackArrow flip />
+                      </div>
+                      <h3 className="mt-3" style={{ color: nextHover ? '#6eac01' : '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px', transition: 'color 0.3s ease' }}>Modernizing Family Banking</h3>
+                      <p className="mt-2" style={{ color: '#0f0f0e', fontSize: 15, lineHeight: '24px', maxWidth: 520 }}>Engineers had to relearn workflows across database products and frequently relied on support.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
         </section>
       </main>
 
