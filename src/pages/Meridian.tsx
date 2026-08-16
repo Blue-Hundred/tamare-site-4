@@ -315,7 +315,7 @@ export default function Meridian() {
                 <h1 className="text-h1" style={{ color: '#0f0f0e' }}>
                   Creating a Unified Database Management Platform
                 </h1>
-                <p className="text-body-32 mt-4 md:mt-6" style={{ color: '#595958' }}>
+                <p className="text-body-18 mt-4 md:mt-6" style={{ color: '#595958' }}>
                   Designing a scalable enterprise platform that standardized database onboarding, provisioning, and service management across multiple database products.
                 </p>
               </div>
