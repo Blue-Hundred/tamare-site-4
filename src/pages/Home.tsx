@@ -28,7 +28,7 @@ const projects = [
     company: 'Bath & Body Works',
     tags: ['Product Design', 'Service Design'],
     year: '2019',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&h=800&fit=crop&auto=format',
+    image: '/images/bbw-cover.png',
   },
   {
     id: '03',
