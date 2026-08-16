@@ -278,6 +278,7 @@ export default function Meridian() {
   const { hoverOn, hoverOff } = useOutletContext<OutletCtx>()
   const pixelSize = usePixelSize(3)
   const contentWidth = 'max-w-[1156px] mx-auto'
+  const [nextHover, setNextHover] = useState(false)
   const challengeCards = [
     {
       title: 'Customer Friction',
@@ -616,16 +617,32 @@ export default function Meridian() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 pt-8 md:pt-12 pb-24 md:pb-[120px]">
-          <div className={`${contentWidth} flex flex-col items-center text-center`}>
-            <div style={{ width: 1, height: 220, background: '#dadada' }} />
+        <section className="px-4 sm:px-8 md:px-14 pb-24 md:pb-[120px]">
+          <div className={contentWidth}>
             <Reveal>
-              <div className="flex items-center justify-center gap-[10px] mt-10">
-                <span style={{ color: '#999', fontWeight: 600, fontSize: 14, lineHeight: '26px' }}>Next Case Study</span>
-                <BackArrow flip />
+              <div style={{ borderTop: '1px solid #dadada' }}>
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  <div className="hidden md:block" aria-hidden="true" />
+                  <div
+                    role="link"
+                    tabIndex={0}
+                    aria-label="Next case study: Modernizing Family Banking"
+                    onMouseEnter={() => { setNextHover(true); hoverOn() }}
+                    onMouseLeave={() => { setNextHover(false); hoverOff() }}
+                    onFocus={() => setNextHover(true)}
+                    onBlur={() => setNextHover(false)}
+                    className="md:border-l md:border-[#dadada] px-6 py-14 md:py-20 text-center cursor-pointer outline-none"
+                    style={{ backgroundColor: nextHover ? '#e8e8e8' : 'transparent', transition: 'background-color 0.35s ease' }}
+                  >
+                    <div className="flex items-center justify-center gap-[10px]">
+                      <span style={{ color: '#999', fontWeight: 600, fontSize: 14, lineHeight: '26px' }}>Next</span>
+                      <BackArrow flip />
+                    </div>
+                    <h3 className="mt-4" style={{ color: nextHover ? '#6eac01' : '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px', transition: 'color 0.3s ease' }}>Modernizing Family Banking</h3>
+                    <p className="mt-3 mx-auto" style={{ color: '#0f0f0e', fontSize: 18, lineHeight: '28px', maxWidth: 509 }}>Engineers had to relearn workflows across database products and frequently relied on support.</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="mt-4" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>Modernizing Family Banking</h3>
-              <p className="mt-3 mx-auto" style={{ color: '#0f0f0e', fontSize: 18, lineHeight: '28px', maxWidth: 509 }}>Engineers had to relearn workflows across database products and frequently relied on support.</p>
             </Reveal>
           </div>
         </section>
