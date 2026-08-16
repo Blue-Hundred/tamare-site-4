@@ -157,7 +157,7 @@ function MvpStrategy() {
                   className={`flex items-start gap-4 py-4 ${i < col.items.length - 1 ? 'border-b border-[#eeeef0]' : ''}`}
                 >
                   <it.icon size={24} strokeWidth={1.75} className="shrink-0 mt-0.5" style={{ color: col.accent }} aria-hidden="true" />
-                  <span style={{ color: '#0f0f0e', fontSize: 15, lineHeight: '24px' }}>{it.text}</span>
+                  <span style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px' }}>{it.text}</span>
                 </li>
               ))}
             </ul>
@@ -183,7 +183,7 @@ function MvpStrategy() {
               </span>
               <g.icon size={34} strokeWidth={1.5} style={{ color: PURPLE }} aria-hidden="true" />
               <h5 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 16, lineHeight: '22px' }}>{g.title}</h5>
-              <p style={{ color: '#0f0f0e', fontSize: 14, lineHeight: '22px' }}>{g.body}</p>
+              <p style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '22px' }}>{g.body}</p>
             </div>
           ))}
         </div>
