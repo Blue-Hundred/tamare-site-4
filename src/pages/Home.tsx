@@ -86,7 +86,7 @@ function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   const rawY = useTransform(scrollYProgress, [0, 1], ['6%', '-6%'])
   const y = useSpring(rawY, { stiffness: 60, damping: 20 })
   return (
-    <div ref={ref} style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', borderRadius: 4 }}>
+    <div ref={ref} style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', borderRadius: 12 }}>
       <motion.img src={src} alt={alt}
         style={{ width: '100%', height: '120%', objectFit: 'cover', display: 'block', marginTop: '-10%', y }} />
     </div>
