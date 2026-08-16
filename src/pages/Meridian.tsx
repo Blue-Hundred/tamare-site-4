@@ -304,7 +304,7 @@ export default function Meridian() {
     <div style={{ background: '#f9f9f9' }}>
       <CaseStudyTopBar />
       <main>
-        <section className="relative overflow-hidden bg-white px-4 sm:px-8 md:px-14 pt-28 md:pt-[178px] pb-14 md:pb-20 md:min-h-[723px]">
+        <section className="relative overflow-hidden bg-white px-4 sm:px-8 md:px-14 pt-28 md:pt-[178px] pb-14 md:pb-20 md:min-h-[723px] flex flex-col justify-center">
           <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
             <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.6} patternScale={1.5}
               edgeFade={0.18} speed={2} enableRipples={true} transparent />
