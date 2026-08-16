@@ -181,13 +181,6 @@ function MvpStrategy() {
               >
                 {i + 1}
               </span>
-              {i < goals.length - 1 && (
-                <span
-                  aria-hidden="true"
-                  className="hidden lg:block absolute top-[52px] -right-2 w-4 border-t border-dashed"
-                  style={{ borderColor: `${PURPLE}66` }}
-                />
-              )}
               <g.icon size={34} strokeWidth={1.5} style={{ color: PURPLE }} aria-hidden="true" />
               <h5 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 16, lineHeight: '22px' }}>{g.title}</h5>
               <p style={{ color: '#0f0f0e', fontSize: 14, lineHeight: '22px' }}>{g.body}</p>
