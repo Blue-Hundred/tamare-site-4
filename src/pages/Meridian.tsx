@@ -145,7 +145,7 @@ function MvpStrategy() {
             className="rounded-2xl border border-[#e7e7ea] p-6 md:p-8 flex flex-col gap-6"
             style={{ borderLeftWidth: 6, borderLeftColor: col.accent }}
           >
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
               <span className="shrink-0 flex items-center justify-center rounded-full" style={{ width: 56, height: 56, backgroundColor: col.tint }}>
                 <col.headerIcon size={26} strokeWidth={2} style={{ color: col.accent }} aria-hidden="true" />
               </span>
@@ -167,7 +167,7 @@ function MvpStrategy() {
       </div>
 
       <div className="rounded-2xl border border-[#e7e7ea] p-6 md:p-8 flex flex-col gap-8">
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
           <span className="shrink-0 flex items-center justify-center rounded-full" style={{ width: 56, height: 56, backgroundColor: '#efeef8' }}>
             <Target size={26} strokeWidth={2} style={{ color: PURPLE }} aria-hidden="true" />
           </span>
