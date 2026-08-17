@@ -560,6 +560,7 @@ export default function Meridian() {
           </div>
           <div className={`${contentWidth} grid grid-cols-1 gap-5 md:gap-6`}>
             <Reveal>
+              <h3 className="mb-4 text-body-18" style={{ color: '#0f0f0e', fontWeight: 500 }}>Performance &amp; Health AI Assisted issue remediation</h3>
               <div className="rounded-none overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
                 <video
                   className="w-full h-auto block"
