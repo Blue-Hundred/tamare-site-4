@@ -233,7 +233,7 @@ function CaseStudyTopBar() {
         </svg>
       </div>
       <Link to="/#work" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
-        <span style={linkText}>Next Project</span>
+        <span className="font-light sm:font-medium" style={{ ...linkText, fontWeight: undefined }}>Next Project</span>
         <BackArrow flip />
       </Link>
     </div>
