@@ -135,7 +135,7 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.05}>
             <p className="font-light mt-6 max-w-2xl" style={{ fontSize: '1.05rem', lineHeight: 1.75, color: '#595958', fontWeight: 300 }}>
-              In my free time, I&apos;m a novice DJ, listening mostly to classic RnB. Check out a few vinyls I&apos;ve been listening to below.
+              In my free time, I love hanging out with my family and two dogs, Ruth and Boogie. I&apos;m a novice DJ, listening mostly to classic RnB. Check out a few of the vinyls I&apos;m listening to below.
             </p>
           </Reveal>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-24 md:gap-36">
