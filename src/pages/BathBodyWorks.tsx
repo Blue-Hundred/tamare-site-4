@@ -570,7 +570,7 @@ export default function BathBodyWorks() {
         </section>
 
         {/* Research & Discovery */}
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
+        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -644,7 +644,7 @@ export default function BathBodyWorks() {
         </section>
 
         {/* Designing Beyond the Interface — journey map */}
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
+        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -667,7 +667,7 @@ export default function BathBodyWorks() {
         </section>
 
         {/* Designing the Experience */}
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
+        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
               <h2 className="text-h2 mb-10 md:mb-[70px]" style={{ color: '#0f0f0e' }}>Designing the Experience</h2>
@@ -738,7 +738,7 @@ export default function BathBodyWorks() {
         </section>
 
         {/* Beyond Checkout */}
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
+        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
               <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Beyond Checkout</h2>
