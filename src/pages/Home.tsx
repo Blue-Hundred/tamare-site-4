@@ -190,8 +190,8 @@ export default function Home() {
             <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.9, color: '#0f0f0e', fontWeight: 300, display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', background: '#ffffff', padding: '2px 0' }}>
               Product designer utilizing AI to streamline workflows and simplify experiences.
             </p>
-            <div className="flex items-center gap-2" style={{ background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4, alignSelf: 'flex-end' }}>
-              <span className="text-xs font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Available for projects —</span>
+            <div className="flex items-center gap-2 self-start md:self-end" style={{ background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4 }}>
+              <span className="text-xs font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Available for projects</span>
               <a href="#contact" className="text-xs font-light underline" style={{ textUnderlineOffset: 4, color: '#0f0f0e' }}>Get in touch</a>
             </div>
           </motion.div>
