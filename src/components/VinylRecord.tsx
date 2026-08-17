@@ -34,7 +34,14 @@ export default function VinylRecord({
       className={className}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      style={{ position: 'relative', width: '100%', aspectRatio: '1 / 1', cursor: href ? 'pointer' : 'default' }}
+      style={{
+        position: 'relative',
+        width: '100%',
+        aspectRatio: '1 / 1',
+        cursor: href ? 'pointer' : 'default',
+        // Lift the hovered card so its slid-out disc paints above neighbors
+        zIndex: revealed ? 10 : 1,
+      }}
     >
       {/* Vinyl disc — sits behind the sleeve and slides out to the right */}
       <motion.div
