@@ -194,6 +194,12 @@ export default function Root() {
   const hoverOn = () => cursorCtx.current.setHovered(true)
   const hoverOff = () => cursorCtx.current.setHovered(false)
 
+  // Case study pages render their own fixed top bar (CaseStudyTopBar), so the
+  // site NavBar must not render there — otherwise two fixed bars stack at the
+  // top and the taller NavBar peeks out as a white strip beneath the top bar.
+  const { pathname } = useLocation()
+  const isCaseStudy = pathname.startsWith('/work/')
+
   return (
     <CursorContext.Provider value={cursorCtx.current}>
       <ScrollToTop />
@@ -208,7 +214,7 @@ export default function Root() {
       >
         <Cursor ctxRef={cursorCtx} />
 
-        <NavBar />
+        {!isCaseStudy && <NavBar />}
 
         <Outlet context={{ loaded, hoverOn, hoverOff }} />
       </motion.div>
