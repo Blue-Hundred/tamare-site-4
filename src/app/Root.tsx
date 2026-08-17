@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Outlet, Link, useLocation } from 'react-router'
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
 import NavBar from '../components/NavBar'
+import CaseStudyLock from '../components/CaseStudyLock'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 // ─── Cursor context ────────────────────────────────────────────────────────
@@ -200,6 +201,19 @@ export default function Root() {
   const { pathname } = useLocation()
   const isCaseStudy = pathname.startsWith('/work/')
 
+  // Client-side password gate for all case study pages. Once unlocked, the
+  // state persists for the browser session so navigating between case studies
+  // does not re-prompt.
+  const [unlocked, setUnlocked] = useState(() => {
+    if (typeof window === 'undefined') return false
+    return window.sessionStorage.getItem('caseStudiesUnlocked') === 'true'
+  })
+  const unlock = () => {
+    window.sessionStorage.setItem('caseStudiesUnlocked', 'true')
+    setUnlocked(true)
+  }
+  const locked = isCaseStudy && !unlocked
+
   return (
     <CursorContext.Provider value={cursorCtx.current}>
       <ScrollToTop />
@@ -216,7 +230,9 @@ export default function Root() {
 
         {!isCaseStudy && <NavBar />}
 
-        <Outlet context={{ loaded, hoverOn, hoverOff }} />
+        {locked
+          ? <CaseStudyLock onUnlock={unlock} />
+          : <Outlet context={{ loaded, hoverOn, hoverOff }} />}
       </motion.div>
     </CursorContext.Provider>
   )
