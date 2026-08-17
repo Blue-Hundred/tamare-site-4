@@ -480,7 +480,7 @@ export default function Meridian() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
+        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
               <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12`}>
                 <Reveal className="lg:col-span-5">
                   <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Defining Personas and Service Blueprint</h2>
@@ -506,7 +506,7 @@ export default function Meridian() {
           </div>
         </section>
 
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
+        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
           <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12`}>
             <Reveal className="lg:col-span-5">
               <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Redesigning the Information Architecture</h2>
