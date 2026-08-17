@@ -164,14 +164,14 @@ export default function NavBar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-30 flex flex-col justify-center px-8 md:hidden"
+            className="fixed inset-0 z-30 flex flex-col justify-start px-8 pt-28 md:hidden"
             style={{ background: '#ffffff' }}
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="flex flex-col gap-8 mt-16">
+            <div className="flex flex-col gap-8 mt-8">
               {navLinks.map(([href, label], i) => {
                 const isActive = location.pathname === '/about' && label === 'About'
                 return (
@@ -226,7 +226,7 @@ export default function NavBar() {
               </motion.div>
             </div>
             <div className="mt-auto pb-12">
-              <p style={{ fontSize: '0.8rem', opacity: 0.3, fontWeight: 300 }}>alex@mercer.studio</p>
+              <p style={{ fontSize: '0.8rem', opacity: 0.3, fontWeight: 300 }}>tamaredesign@outlook.com</p>
             </div>
           </motion.div>
         )}
