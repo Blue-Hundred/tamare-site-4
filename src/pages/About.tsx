@@ -3,6 +3,13 @@ import { useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import ContactSection from '../components/ContactSection'
 import ProfileCard from '../components/ProfileCard'
+import VinylRecord from '../components/VinylRecord'
+
+const vinyls = [
+  { cover: '/images/vinyl-cover-1.png', label: '/images/vinyl-label-1.png', title: 'Midnight Velvet' },
+  { cover: '/images/vinyl-cover-2.png', label: '/images/vinyl-label-2.png', title: 'Golden Hour' },
+  { cover: '/images/vinyl-cover-3.png', label: '/images/vinyl-label-3.png', title: 'Slow Jams Vol. 3' },
+]
 
 const awards = [
   { title: 'JPMorgan Chase & Co.', project: 'Vice President, Experience Designer', year: '2022-2026' },
@@ -113,6 +120,30 @@ export default function About() {
                     <span className="text-sm font-light" style={{ color: '#595958' }}>{a.project}</span>
                     <span className="text-sm font-light" style={{ color: '#767675' }}>{a.year}</span>
                   </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Hobbies */}
+      <div className="px-8 md:px-14 py-20" style={{ borderTop: '1px solid rgba(15,15,14,0.08)' }}>
+        <div className="max-w-screen-xl mx-auto">
+          <Reveal>
+            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>HOBBIES</span>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <p className="font-light mt-6 max-w-2xl" style={{ fontSize: '1.05rem', lineHeight: 1.75, color: '#595958', fontWeight: 300 }}>
+              In my free time, I&apos;m a novice DJ, listening mostly to classic RnB. Check out a few vinyls I&apos;ve been listening to below.
+            </p>
+          </Reveal>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
+            {vinyls.map((v, i) => (
+              <Reveal key={v.title} delay={0.1 + i * 0.08}>
+                <div className="flex flex-col gap-4">
+                  <VinylRecord coverImage={v.cover} labelImage={v.label} title={v.title} />
+                  <span className="text-sm font-light" style={{ color: '#595958' }}>{v.title}</span>
                 </div>
               </Reveal>
             ))}
