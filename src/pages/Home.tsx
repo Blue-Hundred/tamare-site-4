@@ -10,41 +10,27 @@ import {
 } from 'framer-motion'
 import { Link } from 'react-router'
 import PixelBlast from '../components/PixelBlast'
+import ContactSection from '../components/ContactSection'
 import { CursorContext } from '../app/Root'
 
 const projects = [
   {
     id: '01',
-    title: 'Rethinking personal finance for the next generation',
-    company: 'Meridian',
-    tags: ['Brand Identity', 'Web Design'],
-    year: '2024',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=800&fit=crop&auto=format',
+    title: 'Creating a Unified Database Management Platform',
+    company: 'JPMorgan Chase & Co.',
+    tags: ['Product Design', 'Experience Research', 'Service Design'],
+    year: '2025-2026',
+    image: '/images/databases-cover.png',
     href: '/work/meridian',
   },
   {
     id: '02',
-    title: 'Adaptive reuse across Northern Europe',
-    company: 'Forma Studio',
-    tags: ['Art Direction', 'Campaign'],
-    year: '2024',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&h=800&fit=crop&auto=format',
-  },
-  {
-    id: '03',
-    title: 'A design system for limited-edition art publishing',
-    company: 'Olio Press',
-    tags: ['Editorial', 'Typography'],
-    year: '2023',
-    image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&h=800&fit=crop&auto=format',
-  },
-  {
-    id: '04',
-    title: 'Habit formation through sparse, calming interfaces',
-    company: 'Cairn',
-    tags: ['Product Design', 'UX'],
-    year: '2023',
-    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&h=800&fit=crop&auto=format',
+    title: 'Enabling In-Store Pickup',
+    company: 'Bath & Body Works',
+    tags: ['Product Design', 'Service Design'],
+    year: '2019',
+    image: '/images/bbw-cover.png',
+    href: '/work/bath-body-works',
   },
 ]
 
@@ -86,7 +72,7 @@ function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   const rawY = useTransform(scrollYProgress, [0, 1], ['6%', '-6%'])
   const y = useSpring(rawY, { stiffness: 60, damping: 20 })
   return (
-    <div ref={ref} style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', borderRadius: 4 }}>
+    <div ref={ref} style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', borderRadius: 12 }}>
       <motion.img src={src} alt={alt}
         style={{ width: '100%', height: '120%', objectFit: 'cover', display: 'block', marginTop: '-10%', y }} />
     </div>
@@ -154,7 +140,7 @@ function usePixelSize(base = 3) {
 type OutletCtx = { loaded: boolean; hoverOn: () => void; hoverOff: () => void }
 
 export default function Home() {
-  const { loaded, hoverOn, hoverOff } = useOutletContext<OutletCtx>()
+  const { loaded } = useOutletContext<OutletCtx>()
   const [activeProject, setActiveProject] = useState<number | null>(null)
   const pixelSize = usePixelSize(3)
 
@@ -178,7 +164,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             style={{ alignSelf: 'flex-start', background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4 }}
           >
-            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>DESIGNER & ART DIRECTOR</span>
+            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>PRODUCT & SERVICE DESIGNER</span>
             <span className="text-xs font-light" style={{ color: '#0f0f0e' }}>—</span>
           </motion.div>
 
@@ -187,11 +173,11 @@ export default function Home() {
             style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.2, fontWeight: 400, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
           >
             <span style={{ background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="Shaping problems" play={loaded} delay={0.07} />
+              <BlurText text="Framing problems," play={loaded} delay={0.07} />
             </span>
             <br />
             <span style={{ background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="into solutions." play={loaded} delay={0.12} />
+              <BlurText text="crafting solutions." play={loaded} delay={0.12} />
             </span>
           </motion.h1>
 
@@ -202,10 +188,10 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.9, color: '#0f0f0e', fontWeight: 300, display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', background: '#ffffff', padding: '2px 0' }}>
-              Independent designer based in Amsterdam. I work with studios, startups, and cultural institutions on identity, digital, and editorial projects.
+              Product designer utilizing AI to streamline workflows and simplify experiences.
             </p>
-            <div className="flex items-center gap-2" style={{ background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4, alignSelf: 'flex-end' }}>
-              <span className="text-xs font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Available for projects —</span>
+            <div className="flex items-center gap-2 self-start md:self-end" style={{ background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4 }}>
+              <span className="text-xs font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Available for projects</span>
               <a href="#contact" className="text-xs font-light underline" style={{ textUnderlineOffset: 4, color: '#0f0f0e' }}>Get in touch</a>
             </div>
           </motion.div>
@@ -230,54 +216,12 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="px-8 md:px-14 py-40" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: '30%', zIndex: 0 }}>
-          <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
-            edgeFade={0.08} speed={2} enableRipples={true} transparent />
-        </div>
-        <div className="max-w-screen-xl mx-auto" style={{ position: 'relative', zIndex: 1 }}>
-          <Reveal>
-            <span className="text-xs font-light tracking-widest" style={{ opacity: 1, color: '#0f0f0e', letterSpacing: '0.15em', background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4, display: 'inline-block' }}>CONTACT</span>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-light mt-6" style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.05, fontWeight: 400 }}>
-              Let's<br />
-              <a
-                href="mailto:alex@mercer.studio"
-                style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.5'; hoverOn() }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
-              >
-                Connect.
-              </a>
-            </h2>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-10 mt-24">
-              <div className="flex flex-col gap-2" style={{ background: '#ffffff', padding: '8px 12px', borderRadius: 4 }}>
-                <a href="mailto:alex@mercer.studio" className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e', textDecoration: 'none' }}>alex@mercer.studio</a>
-                <span className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Amsterdam, NL</span>
-              </div>
-              <div className="flex items-center gap-8" style={{ background: '#ffffff', padding: '8px 12px', borderRadius: 4 }}>
-                {['Instagram', 'LinkedIn', 'Are.na'].map(l => (
-                  <a key={l} href="#" className="text-sm font-light"
-                    style={{ opacity: 1, color: '#0f0f0e', textDecoration: 'none', transition: 'opacity 0.2s' }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.6'; hoverOn() }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
-                  >
-                    {l}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <ContactSection />
 
       {/* Footer */}
       <footer className="px-8 md:px-14 py-8" style={{ borderTop: '1px solid rgba(15,15,14,0.08)' }}>
         <div className="max-w-screen-xl mx-auto flex items-center justify-between">
-          <span className="text-xs font-light" style={{ color: '#767675' }}>© 2026 Alex Mercer</span>
+          <span className="text-xs font-light" style={{ color: '#767675' }}>© 2026 Tamaré Reese</span>
           <span className="text-xs font-light" style={{ color: '#767675' }}>All rights reserved</span>
         </div>
       </footer>

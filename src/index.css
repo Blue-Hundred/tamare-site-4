@@ -104,8 +104,8 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 28px;
+  font-weight: 300;
+  line-height: 1.75;
 }
 
 .text-body-32 {
@@ -125,4 +125,43 @@ body {
   line-height: 30px;
   letter-spacing: 1.96px;
   text-transform: uppercase;
+}
+
+/* ── Mobile type scale ─────────────────────────────────────── */
+/* Global mobile alternates for the type scale. Applies below the
+   Tailwind `md` breakpoint (768px) so every element using these
+   classes scales down automatically on phones. */
+@media (max-width: 767px) {
+  .text-h1 {
+    font-size: 34px;
+    line-height: 42px;
+    letter-spacing: -0.68px;
+  }
+
+  .text-h2 {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.4px;
+  }
+
+  .text-h3 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .text-h4 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .text-body-18 {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .text-body-32 {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.4px;
+  }
 }

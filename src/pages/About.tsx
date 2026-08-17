@@ -1,30 +1,21 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef } from 'react'
 import { useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
-import PixelBlast from '../components/PixelBlast'
+import ContactSection from '../components/ContactSection'
+import ProfileCard from '../components/ProfileCard'
+import VinylRecord from '../components/VinylRecord'
 
-function usePixelSize(base = 3) {
-  const [size, setSize] = useState(base)
-  useEffect(() => {
-    const calc = () => {
-      const w = window.innerWidth
-      if (w < 480) setSize(base * 0.85)
-      else if (w < 768) setSize(base * 0.9)
-      else if (w < 1024) setSize(base * 0.95)
-      else setSize(base)
-    }
-    calc()
-    window.addEventListener('resize', calc)
-    return () => window.removeEventListener('resize', calc)
-  }, [base])
-  return size
-}
+const vinyls = [
+  { cover: '/images/vinyl-cover-1.png', record: '/images/vinyl-record-1.png', title: 'Bruno Mars — The Romantic' },
+  { cover: '/images/vinyl-cover-2.png', record: '/images/vinyl-record-2.png', title: 'Marvin Gaye — Live at the London Palladium' },
+  { cover: '/images/vinyl-cover-3.png', record: '/images/vinyl-record-3.png', title: 'Michael Jackson — Xscape' },
+]
 
 const awards = [
-  { title: 'Awwwards Site of the Day', project: 'Cairn', year: '2023' },
-  { title: 'CSS Design Awards', project: 'Forma Studio Campaign', year: '2024' },
-  { title: 'Typewolf Featured', project: 'Olio Press', year: '2023' },
-  { title: 'Communication Arts', project: 'Meridian', year: '2024' },
+  { title: 'JPMorgan Chase & Co.', project: 'Vice President, Experience Designer', year: '2022-2026' },
+  { title: 'JPMorgan Chase & Co.', project: 'Associate, Sr. UX Designer', year: '2020-2022' },
+  { title: 'Bath & Body Works', project: 'Lead UX Designer', year: '2018-2020' },
+  { title: 'g20', project: 'UX Designer', year: '2018' },
 ]
 
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -41,8 +32,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 type OutletCtx = { loaded: boolean; hoverOn: () => void; hoverOff: () => void }
 
 export default function About() {
-  const { loaded, hoverOn, hoverOff } = useOutletContext<OutletCtx>()
-  const pixelSize = usePixelSize(3)
+  const { loaded } = useOutletContext<OutletCtx>()
 
   return (
     <section style={{ background: '#ffffff', color: '#0f0f0e', minHeight: '100vh', fontFamily: "'DM Sans', sans-serif", overflowX: 'hidden' }}>
@@ -58,30 +48,25 @@ export default function About() {
           </motion.div>
 
           <div className="mt-12 grid md:grid-cols-2 gap-12 items-start">
-            {/* Portrait placeholder */}
+            {/* Profile card */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 24 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              style={{
-                width: '100%',
-                aspectRatio: '3/4',
-                background: 'rgba(15,15,14,0.04)',
-                border: '1px solid rgba(15,15,14,0.1)',
-                borderRadius: 6,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 12,
-                maxWidth: 480,
-              }}
+              className="flex justify-center md:justify-start"
             >
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style={{ opacity: 0.2 }}>
-                <circle cx="24" cy="18" r="9" stroke="#0f0f0e" strokeWidth="1.5" />
-                <path d="M6 42c0-9.941 8.059-18 18-18s18 8.059 18 18" stroke="#0f0f0e" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-              <span style={{ fontSize: '0.7rem', opacity: 0.25, letterSpacing: '0.12em', fontWeight: 300 }}>YOUR PHOTO HERE</span>
+              <ProfileCard
+                avatarUrl="/images/profile-avatar.png"
+                iconUrl="/images/profile-logo-pattern.svg"
+                name="Tamaré Reese"
+                title="Product Designer"
+                handle="tamarereese"
+                status="Available for work"
+                contactText="Contact"
+                onContactClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              />
             </motion.div>
 
             {/* Bio */}
@@ -99,17 +84,17 @@ export default function About() {
               <div className="flex flex-col gap-6">
                 <Reveal delay={0.1}>
                   <p className="font-light" style={{ fontSize: '1.05rem', lineHeight: 1.75, color: '#595958', fontWeight: 300 }}>
-                    I'm Alex Mercer, a designer and art director with twelve years of practice across brand, digital, and print. My work emerges from close collaboration — I prefer fewer, better projects.
+                    I solve complex problems, improve experiences, and build products that create meaningful business results. My career has taken me from agency work designing financial products for KeyBank and First National Bank to enterprise roles at Bath &amp; Body Works and JPMorgan Chase, where I&apos;ve worked across customer experiences, internal platforms, and developer tools.
                   </p>
                 </Reveal>
                 <Reveal delay={0.15}>
                   <p className="font-light" style={{ fontSize: '1.05rem', lineHeight: 1.75, color: '#595958', fontWeight: 300 }}>
-                    Previously creative director at Studio Norte, design lead at Pentagram New York. Now independent and working with a select group of clients.
+                    At JPMorgan Chase, I&apos;ve learned to look beyond the interface and understand how customer needs, business strategy, technology, architecture, operations, and data connect. I&apos;m also fascinated by the shift toward faster experimentation, machine learning, and AI, and I enjoy thoughtful conversations about the future of technology, modern design, and design philosophy.
                   </p>
                 </Reveal>
                 <Reveal delay={0.2}>
                   <div className="flex flex-wrap gap-2 pt-2">
-                    {['Brand Identity', 'Art Direction', 'Editorial Design', 'Motion', 'Product Design', 'Typography'].map(s => (
+                    {['Product Strategy', '0-to-1 Product Design', 'Complex Workflows', 'Systems Thinking', 'Interaction Design', 'Information Architecture', 'Design Systems', 'User Research', 'Rapid Prototyping', 'AI & Automation Experiences', 'Fintech', 'Financial Operations', 'Enterprise Platforms', 'Cross-functional Leadership', 'Stakeholder Alignment', 'Figma', 'GitHub Copilot', 'Vercel v0', 'Claude Code'].map(s => (
                       <span key={s} style={{ fontSize: '0.75rem', fontWeight: 400, letterSpacing: '0.02em', color: '#0f0f0e', border: '1px solid rgba(15,15,14,0.2)', borderRadius: 100, padding: '5px 14px', display: 'inline-block' }}>{s}</span>
                     ))}
                   </div>
@@ -124,7 +109,7 @@ export default function About() {
       <div className="px-8 md:px-14 py-20" style={{ borderTop: '1px solid rgba(15,15,14,0.08)' }}>
         <div className="max-w-screen-xl mx-auto">
           <Reveal>
-            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>RECOGNITION</span>
+            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>EXPERIENCE</span>
           </Reveal>
           <div className="mt-10 flex flex-col">
             {awards.map((a, i) => (
@@ -142,55 +127,37 @@ export default function About() {
         </div>
       </div>
 
-      {/* Contact */}
-      <section id="contact" className="px-8 md:px-14 py-40" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
-            edgeFade={0.08} speed={2} enableRipples={true} transparent />
-        </div>
-        <div className="max-w-screen-xl mx-auto" style={{ position: 'relative', zIndex: 1 }}>
+      {/* Hobbies */}
+      <div className="px-8 md:px-14 py-20" style={{ borderTop: '1px solid rgba(15,15,14,0.08)' }}>
+        <div className="max-w-screen-xl mx-auto">
           <Reveal>
-            <span className="text-xs font-light tracking-widest" style={{ opacity: 1, color: '#0f0f0e', letterSpacing: '0.15em', background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4, display: 'inline-block' }}>CONTACT</span>
+            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>HOBBIES</span>
           </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-light mt-6" style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.05, fontWeight: 400 }}>
-              Let's make<br />
-              <a
-                href="mailto:alex@mercer.studio"
-                style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.5'; hoverOn() }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
-              >
-                something.
-              </a>
-            </h2>
+          <Reveal delay={0.05}>
+            <p className="font-light mt-6 max-w-2xl" style={{ fontSize: '1.05rem', lineHeight: 1.75, color: '#595958', fontWeight: 300 }}>
+              In my free time, I love hanging out with my family and two dogs, Ruth and Boogie. I&apos;m a novice DJ, listening mostly to classic RnB. Check out a few of the vinyls I&apos;m listening to below.
+            </p>
           </Reveal>
-          <Reveal delay={0.2}>
-            <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-10 mt-24">
-              <div className="flex flex-col gap-2" style={{ background: '#ffffff', padding: '8px 12px', borderRadius: 4 }}>
-                <a href="mailto:alex@mercer.studio" className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e', textDecoration: 'none' }}>alex@mercer.studio</a>
-                <span className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Amsterdam, NL</span>
-              </div>
-              <div className="flex items-center gap-8" style={{ background: '#ffffff', padding: '8px 12px', borderRadius: 4 }}>
-                {['Instagram', 'LinkedIn', 'Are.na'].map(l => (
-                  <a key={l} href="#" className="text-sm font-light"
-                    style={{ opacity: 1, color: '#0f0f0e', textDecoration: 'none', transition: 'opacity 0.2s' }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.6'; hoverOn() }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
-                  >
-                    {l}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </Reveal>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-24 md:gap-36">
+            {vinyls.map((v, i) => (
+              <Reveal key={v.title} delay={0.1 + i * 0.08}>
+                <div className="relative z-0 hover:z-20 flex flex-col gap-4 w-full max-w-[270px]">
+                  <VinylRecord coverImage={v.cover} recordImage={v.record} title={v.title} />
+                  <span className="text-sm font-light" style={{ color: '#595958' }}>{v.title}</span>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
-      </section>
+      </div>
+
+      {/* Contact */}
+      <ContactSection />
 
       {/* Footer */}
       <footer className="px-8 md:px-14 py-8" style={{ background: '#ffffff', borderTop: '1px solid rgba(15,15,14,0.08)' }}>
         <div className="max-w-screen-xl mx-auto flex items-center justify-between">
-          <span className="text-xs font-light" style={{ color: '#767675' }}>© 2026 Alex Mercer</span>
+              <span className="text-xs font-light" style={{ color: '#767675' }}>© 2026 Tamaré Reese</span>
           <span className="text-xs font-light" style={{ color: '#767675' }}>All rights reserved</span>
         </div>
       </footer>

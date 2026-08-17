@@ -5,6 +5,8 @@ import path from 'node:path'
 
 import siteConfiguration from './.figma/make/site.json'
 
+// Vite dev/preview server binds the port the v0 sandbox probes (5173 by
+// default, or PORT when provided). See the `server` block below.
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // .figma/make/deploy-preview passes `--mode development` for cached-preview builds.
@@ -30,14 +32,25 @@ export default defineConfig(({ mode }) => {
       },
     },
     server: {
+      // Bind all interfaces so the sandbox proxy can reach the dev server.
       host: '0.0.0.0',
-      port: parseInt(process.env.PORT || '8443'),
-      strictPort: true,
+      // Honor an explicit PORT when provided; otherwise fall back to Vite's
+      // default (5173) — the port the v0 sandbox supervisor launches `vite`
+      // on and waits for. Hard-coding any other port here means Vite never
+      // binds the port v0 expects, so the preview fails with "Dev server
+      // process exited before port 5173 became available."
+      port: parseInt(process.env.PORT || '5173'),
+      // Allow requests from the v0 preview's proxied hostname. Without this,
+      // Vite's dev-server host check rejects the proxied preview origin with
+      // "Blocked request. This host is not allowed." even though the server
+      // is running and serving correctly on localhost.
+      allowedHosts: true,
       watch: { ignored: ['**/.figma/**'] },
     },
     preview: {
       host: '0.0.0.0',
-      port: parseInt(process.env.PORT || '8443'),
+      port: parseInt(process.env.PORT || '5173'),
+      allowedHosts: true,
     },
   }
 })

@@ -1,18 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Outlet, Link } from 'react-router'
+import { Outlet, Link, useLocation } from 'react-router'
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
 import NavBar from '../components/NavBar'
+import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 // ─── Cursor context ────────────────────────────────────────────────────────
 export type CursorCtx = { setHovered: (v: boolean) => void }
 export const CursorContext = React.createContext<CursorCtx>({ setHovered: () => {} })
 
+// Elements anywhere on the site that should trigger the enlarged "hover" cursor.
+const INTERACTIVE_SELECTOR = 'a, button, [role="button"], [role="link"], input, textarea, select, label, summary, [data-cursor-hover]'
+
 function Cursor({ ctxRef }: { ctxRef: React.MutableRefObject<CursorCtx> }) {
   const mx = useMotionValue(-200)
   const my = useMotionValue(-200)
-  const [hovered, setHovered] = useState(false)
+  // Hover can be driven from two sources: explicit context calls (e.g. the
+  // homepage project cards) and automatic detection of interactive elements
+  // anywhere on the site. We track them separately so one turning off does
+  // not cancel the other.
+  const [ctxHovered, setCtxHovered] = useState(false)
+  const [autoHovered, setAutoHovered] = useState(false)
+  const hovered = ctxHovered || autoHovered
 
-  useEffect(() => { ctxRef.current.setHovered = setHovered }, [ctxRef, setHovered])
+  useEffect(() => { ctxRef.current.setHovered = setCtxHovered }, [ctxRef])
 
   const rx = useSpring(mx, { stiffness: 90, damping: 20, mass: 0.4 })
   const ry = useSpring(my, { stiffness: 90, damping: 20, mass: 0.4 })
@@ -22,6 +32,29 @@ function Cursor({ ctxRef }: { ctxRef: React.MutableRefObject<CursorCtx> }) {
     window.addEventListener('mousemove', onMove)
     return () => window.removeEventListener('mousemove', onMove)
   }, [mx, my])
+
+  // Globally enlarge the cursor when the pointer is over any interactive
+  // element, on every page — using event delegation so no per-page wiring
+  // is required.
+  useEffect(() => {
+    const onOver = (e: MouseEvent) => {
+      const t = e.target as Element | null
+      if (t && t.closest?.(INTERACTIVE_SELECTOR)) setAutoHovered(true)
+    }
+    const onOut = (e: MouseEvent) => {
+      const from = e.target as Element | null
+      const to = (e.relatedTarget as Element | null)
+      const leftInteractive = from?.closest?.(INTERACTIVE_SELECTOR)
+      const enteredInteractive = to?.closest?.(INTERACTIVE_SELECTOR)
+      if (leftInteractive && !enteredInteractive) setAutoHovered(false)
+    }
+    document.addEventListener('mouseover', onOver)
+    document.addEventListener('mouseout', onOut)
+    return () => {
+      document.removeEventListener('mouseover', onOver)
+      document.removeEventListener('mouseout', onOut)
+    }
+  }, [])
 
   return (
     <motion.div
@@ -78,9 +111,13 @@ function Loader({ onDone }: { onDone: () => void }) {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="flex flex-col items-center gap-8"
       >
-        <span style={{ fontFamily: "'Aeonik','DM Sans',sans-serif", fontSize: 'clamp(2.5rem,6vw,5rem)', fontWeight: 300, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1 }}>
-          Alex Mercer
-        </span>
+        <svg width="60" height="80" viewBox="0 0 31.5145 42.0193" fill="none" aria-label="Tamaré Reese" role="img">
+          <path d={svgPaths.p1b65ed80} fill="#ffffff" />
+          <path d={svgPaths.p11c45c00} fill="#ffffff" />
+          <path d={svgPaths.pd915a80} fill="#ffffff" />
+          <path d={svgPaths.p2e1b9140} fill="#ffffff" />
+          <path d={svgPaths.p32ecd500} fill="#ffffff" />
+        </svg>
         <div style={{ width: 240, height: 1, background: 'rgba(255,255,255,0.12)', position: 'relative', overflow: 'hidden' }}>
           <motion.div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, background: '#ffffff', width: `${count}%`, transition: 'width 0.1s linear' }} />
         </div>
@@ -138,6 +175,18 @@ function NavItem({ href, label, isActive, hoverOn, hoverOff }: {
   )
 }
 
+// ─── ScrollToTop ─────────────────────────────────────────────────────────────
+// Reset the scroll position to the top whenever the route path changes, so a
+// newly navigated page always starts at the top instead of inheriting the
+// previous page's scroll offset.
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
+
 // ─── Root ──────────────────────────────────────────────────────────────────
 export default function Root() {
   const [loaded, setLoaded] = useState(false)
@@ -145,8 +194,15 @@ export default function Root() {
   const hoverOn = () => cursorCtx.current.setHovered(true)
   const hoverOff = () => cursorCtx.current.setHovered(false)
 
+  // Case study pages render their own fixed top bar (CaseStudyTopBar), so the
+  // site NavBar must not render there — otherwise two fixed bars stack at the
+  // top and the taller NavBar peeks out as a white strip beneath the top bar.
+  const { pathname } = useLocation()
+  const isCaseStudy = pathname.startsWith('/work/')
+
   return (
     <CursorContext.Provider value={cursorCtx.current}>
+      <ScrollToTop />
       <AnimatePresence>{!loaded && <Loader onDone={() => setLoaded(true)} />}</AnimatePresence>
 
       <motion.div
@@ -158,7 +214,7 @@ export default function Root() {
       >
         <Cursor ctxRef={cursorCtx} />
 
-        <NavBar />
+        {!isCaseStudy && <NavBar />}
 
         <Outlet context={{ loaded, hoverOn, hoverOff }} />
       </motion.div>
