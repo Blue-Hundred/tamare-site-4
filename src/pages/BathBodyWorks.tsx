@@ -175,6 +175,33 @@ const results = [
   },
 ]
 
+const sources = [
+  {
+    title: 'Bath & Body Works / L Brands 2020 Annual Report',
+    body: "Documents the early BOPIS rollout and Bath & Body Works' investment in digital and omnichannel capabilities.",
+  },
+  {
+    title: 'L Brands Q1 2021 Earnings Call',
+    body: 'Provides leadership commentary on the BOPIS pilot, early customer feedback, operational learnings, financial performance, and expansion.',
+  },
+  {
+    title: 'Bath & Body Works FY2021 Annual Report',
+    body: 'Source for FY2021 net sales, store sales, and company financial performance.',
+  },
+  {
+    title: 'Bath & Body Works FY2022 Form 10-K',
+    body: 'Documents the addition of BOPIS to more than 800 stores, availability across more than 1,300 locations, and customer adoption of BOPIS.',
+  },
+  {
+    title: 'Bath & Body Works FY2023 Form 10-K',
+    body: 'Documents completion of the U.S. BOPIS rollout in Q1 2023.',
+  },
+  {
+    title: '',
+    body: 'Public company metrics describe the subsequent scale, adoption, and business context of the BOPIS capability. They are not presented as outcomes solely attributable to my individual design contribution.',
+  },
+]
+
 const journeyStages = [
   {
     name: 'Discovery',
@@ -727,6 +754,22 @@ export default function BathBodyWorks() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <div className="mt-12 md:mt-16" style={{ fontSize: 12, fontWeight: 300, color: 'rgb(89, 89, 88)', lineHeight: 1.6 }}>
+                <p style={{ fontWeight: 600 }}>Sources</p>
+                <ol className="mt-2 flex flex-col gap-2">
+                  {sources.map((s, i) => (
+                    <li key={s.title || i} className="flex gap-2">
+                      <span style={{ minWidth: 16, textAlign: 'right' }}>{`${i + 1}.`}</span>
+                      <span>
+                        {s.title && <span className="block">{s.title}</span>}
+                        <span className="block">{s.body}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ol>
               </div>
             </Reveal>
           </div>
