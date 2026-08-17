@@ -30,6 +30,7 @@ const projects = [
     tags: ['Product Design', 'Service Design'],
     year: '2019',
     image: '/images/bbw-cover.png',
+    href: '/work/bath-body-works',
   },
 ]
 
