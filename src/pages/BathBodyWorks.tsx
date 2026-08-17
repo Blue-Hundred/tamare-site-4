@@ -350,17 +350,34 @@ export default function BathBodyWorks() {
             </Reveal>
             <Reveal delay={0.06}>
               <p className="text-xs font-light tracking-widest mb-5" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>KEY THEMES</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-                {themes.map(theme => (
-                  <article
-                    key={theme.title}
-                    className="rounded-[14px] p-5 md:p-6 flex flex-col gap-3"
-                    style={{ background: theme.tint, boxShadow: '0 14px 24px rgba(0,0,0,0.06)' }}
-                  >
-                    <h4 className="text-h4" style={{ color: '#0f0f0e' }}>{theme.title}</h4>
-                    <p className="text-body-14" style={{ color: '#464646', lineHeight: 1.6 }}>{theme.body}</p>
-                  </article>
-                ))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 pt-4">
+                {themes.map((theme, i) => {
+                  const rotations = [-2.2, 1.6, -1.2, 2, -1.7, 1.3]
+                  const rot = rotations[i % rotations.length]
+                  return (
+                    <article
+                      key={theme.title}
+                      className="group relative p-6 md:p-7 flex flex-col gap-3"
+                      style={{
+                        background: theme.tint,
+                        transform: `rotate(${rot}deg)`,
+                        transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                        boxShadow: '0 1px 1px rgba(0,0,0,0.04), 0 10px 18px -6px rgba(0,0,0,0.18)',
+                      }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'rotate(0deg) translateY(-4px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 1px 1px rgba(0,0,0,0.04), 0 20px 30px -8px rgba(0,0,0,0.22)' }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = `rotate(${rot}deg)`; (e.currentTarget as HTMLElement).style.boxShadow = '0 1px 1px rgba(0,0,0,0.04), 0 10px 18px -6px rgba(0,0,0,0.18)' }}
+                    >
+                      {/* tape strip */}
+                      <span
+                        aria-hidden="true"
+                        className="absolute left-1/2 -top-2.5 -translate-x-1/2"
+                        style={{ width: 74, height: 20, background: 'rgba(255,255,255,0.5)', border: '1px solid rgba(0,0,0,0.05)', transform: 'translateX(-50%) rotate(-1.5deg)' }}
+                      />
+                      <h4 className="text-h4" style={{ color: '#0f0f0e' }}>{theme.title}</h4>
+                      <p className="text-body-14" style={{ color: '#464646', lineHeight: 1.6 }}>{theme.body}</p>
+                    </article>
+                  )
+                })}
               </div>
             </Reveal>
           </div>
