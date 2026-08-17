@@ -50,7 +50,7 @@ export default function About() {
             >
               <ProfileCard
                 avatarUrl="/images/profile-avatar.png"
-                iconUrl="/images/profile-holo-icon.png"
+                iconUrl="/images/profile-logo-pattern.svg"
                 name="Tamaré Reese"
                 title="Product Designer"
                 handle="tamarereese"
