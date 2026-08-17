@@ -804,8 +804,8 @@ export default function BathBodyWorks() {
                 {results.map(r => (
                   <div
                     key={r.label}
-                    className="rounded-[20px] bg-white p-7 md:p-8 flex flex-col"
-                    style={{ minHeight: 300, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
+                    className="rounded-[20px] bg-white p-7 md:p-8 flex flex-col sm:min-h-[300px]"
+                    style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
                   >
                     <CountUp
                       value={r.value}
