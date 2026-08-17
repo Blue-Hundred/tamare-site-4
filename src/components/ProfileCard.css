@@ -249,8 +249,8 @@
   backface-visibility: hidden;
 }
 
-.pc-avatar-content .avatar {
-  width: 100%;
+  .pc-avatar-content .avatar {
+  width: 66%;
   position: absolute;
   left: 50%;
   transform-origin: 50% 100%;
