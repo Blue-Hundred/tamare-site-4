@@ -618,7 +618,7 @@ export default function BathBodyWorks() {
                   <div className="lg:col-span-6 lg:col-start-7">
                     <div className="grid grid-cols-2 gap-4 md:gap-5">
                       <div className="rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                        <img src="/images/bbw-order-summary.png" alt="Order summary showing a mixed fulfillment cart — items being shipped alongside items being picked up at the Taylor Square store — with subtotals and a $70.09 order total" className="w-full h-auto block" loading="lazy" />
+                        <img src="/images/bbw-order-summary-v2.png" alt="Order summary showing a mixed fulfillment cart — items being shipped alongside items being picked up at the Taylor Square store — with subtotals and a $70.09 order total" className="w-full h-auto block" loading="lazy" />
                       </div>
                     </div>
                   </div>
