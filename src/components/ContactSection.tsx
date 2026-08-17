@@ -44,7 +44,7 @@ export default function ContactSection() {
   const pixelSize = usePixelSize(3)
 
   return (
-    <section id="contact" className="px-8 md:px-14 py-40" style={{ position: 'relative' }}>
+    <section id="contact" className="px-8 md:px-14 py-40" style={{ position: 'relative', background: '#ffffff' }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
         <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
           edgeFade={0.08} speed={2} enableRipples={true} transparent />
