@@ -232,7 +232,7 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
       </div>
-      <Link to="/#work" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
+      <Link to="/work/bath-body-works" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
         <span className="font-light sm:font-medium" style={{ ...linkText, fontWeight: undefined }}>Next Project</span>
         <BackArrow flip />
       </Link>
@@ -623,26 +623,25 @@ export default function Meridian() {
             <div style={{ borderTop: '1px solid #dadada' }}>
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="hidden md:block" aria-hidden="true" />
-                <div
-                  role="link"
-                  tabIndex={0}
-                  aria-label="Next case study: Modernizing Family Banking"
+                <Link
+                  to="/work/bath-body-works"
+                  aria-label="Next case study: Creating an Omnichannel Pickup Experience"
                   onMouseEnter={() => { setNextHover(true); hoverOn() }}
                   onMouseLeave={() => { setNextHover(false); hoverOff() }}
                   onFocus={() => setNextHover(true)}
                   onBlur={() => setNextHover(false)}
                   className="md:border-l md:border-[#dadada] px-6 sm:px-10 md:px-14 py-10 md:py-12 cursor-pointer outline-none"
-                  style={{ backgroundColor: nextHover ? '#f2f2f2' : 'transparent', transition: 'background-color 0.35s ease' }}
+                  style={{ backgroundColor: nextHover ? '#f2f2f2' : 'transparent', transition: 'background-color 0.35s ease', textDecoration: 'none', display: 'block' }}
                 >
                   <div className="flex-1 min-w-0 text-right">
                     <div className="flex items-center justify-end gap-[8px]">
                       <span style={{ color: '#999', fontWeight: 300, fontSize: 13, lineHeight: '22px' }}>Next</span>
                       <BackArrow flip />
                     </div>
-                    <h3 className="mt-3" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px' }}>Modernizing Family Banking</h3>
-                    <p className="mt-2 ml-auto" style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px', maxWidth: 520 }}>Engineers had to relearn workflows across database products and frequently relied on support.</p>
+                    <h3 className="mt-3" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px' }}>Creating an Omnichannel Pickup Experience</h3>
+                    <p className="mt-2 ml-auto" style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px', maxWidth: 520 }}>Bath &amp; Body Works set out to introduce Buy Online, Pick Up In Store (BOPIS), giving customers the convenience of shopping online while fulfilling their purchase through a nearby store.</p>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </Reveal>
