@@ -575,7 +575,7 @@ export default function Meridian() {
               </div>
             </Reveal>
             <Reveal delay={0.06}>
-              <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
+              <div className="mt-[60px] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
                 <video
                   className="w-full h-auto block"
                   src="/videos/databases-nav-to-service-flow.mp4"
