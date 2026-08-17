@@ -6,9 +6,9 @@ import ProfileCard from '../components/ProfileCard'
 import VinylRecord from '../components/VinylRecord'
 
 const vinyls = [
-  { cover: '/images/vinyl-cover-1.png', label: '/images/vinyl-label-1.png', title: 'Midnight Velvet' },
-  { cover: '/images/vinyl-cover-2.png', label: '/images/vinyl-label-2.png', title: 'Golden Hour' },
-  { cover: '/images/vinyl-cover-3.png', label: '/images/vinyl-label-3.png', title: 'Slow Jams Vol. 3' },
+  { cover: '/images/vinyl-cover-1.png', label: '/images/vinyl-cover-1.png', title: 'Bruno Mars — The Romantic' },
+  { cover: '/images/vinyl-cover-2.png', label: '/images/vinyl-cover-2.png', title: 'Marvin Gaye — Live at the London Palladium' },
+  { cover: '/images/vinyl-cover-3.png', label: '/images/vinyl-cover-3.png', title: 'Michael Jackson — Xscape' },
 ]
 
 const awards = [
