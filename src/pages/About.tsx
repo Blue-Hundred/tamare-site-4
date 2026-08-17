@@ -5,10 +5,10 @@ import ContactSection from '../components/ContactSection'
 import ProfileCard from '../components/ProfileCard'
 
 const awards = [
-  { title: 'Awwwards Site of the Day', project: 'Cairn', year: '2023' },
-  { title: 'CSS Design Awards', project: 'Forma Studio Campaign', year: '2024' },
-  { title: 'Typewolf Featured', project: 'Olio Press', year: '2023' },
-  { title: 'Communication Arts', project: 'Meridian', year: '2024' },
+  { title: 'JPMorgan Chase & Co.', project: 'Vice President, Experience Designer', year: '2022-2026' },
+  { title: 'JPMorgan Chase & Co.', project: 'Associate, Sr. UX Designer', year: '2020-2022' },
+  { title: 'Bath & Body Works', project: 'Lead UX Designer', year: '2018-2020' },
+  { title: 'g20', project: 'UX Designer', year: '2018' },
 ]
 
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
