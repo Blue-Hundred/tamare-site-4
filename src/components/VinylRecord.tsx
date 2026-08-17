@@ -3,7 +3,8 @@ import { motion } from 'framer-motion'
 
 type VinylRecordProps = {
   coverImage: string
-  labelImage: string
+  /** Full vinyl-record image (disc + label) that slides out and spins. */
+  recordImage: string
   /** 'hover' reveals the record on hover; 'revealed' keeps it slid out. */
   variant?: 'hover' | 'revealed'
   showLighting?: boolean
@@ -19,7 +20,7 @@ const EASE: [number, number, number, number] = [0.19, 0, 0.39, 1]
 
 export default function VinylRecord({
   coverImage,
-  labelImage,
+  recordImage,
   variant = 'hover',
   showLighting = true,
   href,
@@ -61,7 +62,11 @@ export default function VinylRecord({
           zIndex: 1,
         }}
       >
-        <motion.div
+        <motion.img
+          src={recordImage}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
           initial={false}
           animate={{ rotate: revealed ? 360 : 0 }}
           transition={
@@ -70,60 +75,13 @@ export default function VinylRecord({
               : { rotate: { duration: 0.3, ease: EASE } }
           }
           style={{
-            width: '92%',
-            height: '92%',
-            borderRadius: '50%',
-            // Groove texture: fine concentric rings over a near-black disc
-            background: `
-              repeating-radial-gradient(circle at center, #0b0b0d 0px, #0b0b0d 1px, #17171b 2px, #0b0b0d 3px),
-              radial-gradient(circle at center, #202024 0%, #0b0b0d 62%, #050506 100%)
-            `,
-            boxShadow: '0 12px 30px rgba(0,0,0,0.35), inset 0 0 40px rgba(0,0,0,0.6)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            position: 'relative',
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+            display: 'block',
+            filter: 'drop-shadow(0 12px 30px rgba(0,0,0,0.35))',
           }}
-        >
-          {/* Sheen sweep across the disc */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              borderRadius: '50%',
-              background:
-                'conic-gradient(from 210deg at 50% 50%, rgba(255,255,255,0) 0deg, rgba(255,255,255,0.14) 40deg, rgba(255,255,255,0) 90deg, rgba(255,255,255,0) 270deg, rgba(255,255,255,0.08) 310deg, rgba(255,255,255,0) 360deg)',
-              mixBlendMode: 'screen',
-            }}
-          />
-          {/* Center label */}
-          <div
-            style={{
-              width: '34%',
-              height: '34%',
-              borderRadius: '50%',
-              overflow: 'hidden',
-              boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.4)',
-              position: 'relative',
-            }}
-          >
-            <img src={labelImage} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-            {/* Spindle hole */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: '7%',
-                height: '7%',
-                borderRadius: '50%',
-                background: '#050506',
-                boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.6)',
-              }}
-            />
-          </div>
-        </motion.div>
+        />
       </motion.div>
 
       {/* Album cover sleeve — sits on top of the disc */}

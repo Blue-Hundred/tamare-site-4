@@ -6,9 +6,9 @@ import ProfileCard from '../components/ProfileCard'
 import VinylRecord from '../components/VinylRecord'
 
 const vinyls = [
-  { cover: '/images/vinyl-cover-1.png', label: '/images/vinyl-cover-1.png', title: 'Bruno Mars — The Romantic' },
-  { cover: '/images/vinyl-cover-2.png', label: '/images/vinyl-cover-2.png', title: 'Marvin Gaye — Live at the London Palladium' },
-  { cover: '/images/vinyl-cover-3.png', label: '/images/vinyl-cover-3.png', title: 'Michael Jackson — Xscape' },
+  { cover: '/images/vinyl-cover-1.png', record: '/images/vinyl-record-1.png', title: 'Bruno Mars — The Romantic' },
+  { cover: '/images/vinyl-cover-2.png', record: '/images/vinyl-record-2.png', title: 'Marvin Gaye — Live at the London Palladium' },
+  { cover: '/images/vinyl-cover-3.png', record: '/images/vinyl-record-3.png', title: 'Michael Jackson — Xscape' },
 ]
 
 const awards = [
@@ -142,7 +142,7 @@ export default function About() {
             {vinyls.map((v, i) => (
               <Reveal key={v.title} delay={0.1 + i * 0.08}>
                 <div className="relative z-0 hover:z-20 flex flex-col gap-4">
-                  <VinylRecord coverImage={v.cover} labelImage={v.label} title={v.title} />
+                  <VinylRecord coverImage={v.cover} recordImage={v.record} title={v.title} />
                   <span className="text-sm font-light" style={{ color: '#595958' }}>{v.title}</span>
                 </div>
               </Reveal>
