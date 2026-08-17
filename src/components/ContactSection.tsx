@@ -78,7 +78,7 @@ export default function ContactSection() {
                   <Link
                     key={label}
                     to={to}
-                    style={{ fontSize: 14, fontWeight: 300, color: '#0f0f0e', textDecoration: 'none', transition: 'opacity 0.2s' }}
+                    style={{ fontSize: 14, fontWeight: 300, color: '#0f0f0e', textDecoration: 'none', transition: 'opacity 0.2s', background: '#ffffff', padding: '3px 8px', borderRadius: 4 }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.6'; hoverOn() }}
                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
                   >
