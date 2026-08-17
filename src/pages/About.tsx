@@ -138,10 +138,10 @@ export default function About() {
               In my free time, I&apos;m a novice DJ, listening mostly to classic RnB. Check out a few vinyls I&apos;ve been listening to below.
             </p>
           </Reveal>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-20 md:gap-28">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-24 md:gap-36">
             {vinyls.map((v, i) => (
               <Reveal key={v.title} delay={0.1 + i * 0.08}>
-                <div className="relative z-0 hover:z-20 flex flex-col gap-4">
+                <div className="relative z-0 hover:z-20 flex flex-col gap-4 w-full max-w-[200px]">
                   <VinylRecord coverImage={v.cover} recordImage={v.record} title={v.title} />
                   <span className="text-sm font-light" style={{ color: '#595958' }}>{v.title}</span>
                 </div>
