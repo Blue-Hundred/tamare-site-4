@@ -90,7 +90,7 @@ function NavExternalItem({ href, label }: { href: string; label: string }) {
 }
 
 const navLinks = [['/#work', 'Work'], ['/about', 'About'], ['/#contact', 'Contact']] as const
-const RESUME_HREF = '/resume.pdf'
+const RESUME_HREF = '/tamare-reese-resume.pdf'
 
 export default function NavBar() {
   const location = useLocation()
