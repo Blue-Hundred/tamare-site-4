@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, type ReactNode } from 'react'
 import { Link, useOutletContext } from 'react-router'
-import { motion, useInView } from 'framer-motion'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
@@ -175,6 +175,172 @@ const sources = [
   },
 ]
 
+const journeyStages = [
+  {
+    name: 'Discovery',
+    color: '#0a7d9e',
+    frictions: [
+      'Online experience disconnected from physical stores',
+      'No indication of nearby availability or faster fulfillment options',
+      'Customers outside metro areas already anticipate delays',
+    ],
+  },
+  {
+    name: 'Consideration',
+    color: '#1a93b3',
+    frictions: [
+      'Only free fulfillment option is standard shipping',
+      'No ability to compare delivery speed vs. pickup',
+      'Uncertainty around delivery dates',
+    ],
+  },
+  {
+    name: 'Purchase',
+    color: '#34a8c8',
+    frictions: [
+      'High friction checkout with limited fulfillment flexibility',
+      'Shipping fees feel unjustified for everyday products',
+      'No option to expedite without high cost',
+    ],
+  },
+  {
+    name: 'Fulfillment',
+    color: '#6fc4da',
+    frictions: [
+      'Long delivery windows (often 5–10+ days)',
+      'No way to leverage nearby store inventory',
+      'Delays during peak seasons',
+    ],
+  },
+  {
+    name: 'Post Purchase',
+    color: '#b7dfe9',
+    textDark: true,
+    frictions: [
+      'Missed gifting or time-sensitive needs',
+      'Frustration turns into reduced repeat purchase behavior',
+      'Customer support burden increases',
+    ],
+  },
+]
+
+function JourneyMap() {
+  const [active, setActive] = useState(0)
+  return (
+    <div>
+      {/* Desktop: horizontal expanding accordion */}
+      <div className="hidden md:flex gap-3" style={{ height: 440 }}>
+        {journeyStages.map((stage, i) => {
+          const isActive = i === active
+          const fg = stage.textDark ? '#0a3d4c' : '#ffffff'
+          return (
+            <div
+              key={stage.name}
+              onMouseEnter={() => setActive(i)}
+              onClick={() => setActive(i)}
+              className="relative rounded-[20px] overflow-hidden cursor-pointer"
+              style={{
+                flexGrow: isActive ? 4.2 : 1,
+                flexBasis: 0,
+                background: stage.color,
+                transition: 'flex-grow 0.55s cubic-bezier(0.22,1,0.36,1)',
+              }}
+            >
+              <span className="absolute top-6 left-7" style={{ color: fg, opacity: 0.5, fontWeight: 600, fontSize: 14, letterSpacing: '0.1em' }}>
+                {`0${i + 1}`}
+              </span>
+              {!isActive && (
+                <div className="absolute inset-0 flex items-end justify-center pb-7">
+                  <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', color: fg, fontWeight: 600, fontSize: 18, letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>
+                    {stage.name}
+                  </span>
+                </div>
+              )}
+              <AnimatePresence>
+                {isActive && (
+                  <motion.div
+                    key="content"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.35, delay: 0.12 }}
+                    className="absolute inset-0 p-7 md:p-9 flex flex-col justify-center"
+                  >
+                    <h4 style={{ color: fg, fontWeight: 600, fontSize: 'clamp(1.4rem, 2.1vw, 2rem)', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+                      {stage.name}
+                    </h4>
+                    <ul className="mt-6 flex flex-col gap-4 max-w-[420px]">
+                      {stage.frictions.map((f, fi) => (
+                        <motion.li
+                          key={f}
+                          initial={{ opacity: 0, x: 14 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.4, delay: 0.18 + fi * 0.08 }}
+                          className="flex gap-3"
+                        >
+                          <span style={{ color: fg, opacity: 0.55 }}>—</span>
+                          <span style={{ color: fg, fontSize: 16, lineHeight: 1.5, opacity: 0.95 }}>{f}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Mobile: vertical accordion */}
+      <div className="md:hidden flex flex-col gap-3">
+        {journeyStages.map((stage, i) => {
+          const isActive = i === active
+          const fg = stage.textDark ? '#0a3d4c' : '#ffffff'
+          return (
+            <div key={stage.name} className="rounded-[16px] overflow-hidden" style={{ background: stage.color }}>
+              <button
+                type="button"
+                onClick={() => setActive(isActive ? -1 : i)}
+                className="w-full flex items-center justify-between px-5 py-4"
+                style={{ color: fg }}
+                aria-expanded={isActive}
+              >
+                <span className="flex items-center gap-3">
+                  <span style={{ opacity: 0.6, fontWeight: 600, fontSize: 13, letterSpacing: '0.1em' }}>{`0${i + 1}`}</span>
+                  <span style={{ fontWeight: 600, fontSize: 17 }}>{stage.name}</span>
+                </span>
+                <span style={{ fontSize: 22, lineHeight: 1, transform: isActive ? 'rotate(45deg)' : 'none', transition: 'transform 0.25s ease' }}>+</span>
+              </button>
+              <AnimatePresence initial={false}>
+                {isActive && (
+                  <motion.ul
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    className="px-5 pb-5 flex flex-col gap-3 overflow-hidden"
+                  >
+                    {stage.frictions.map(f => (
+                      <li key={f} className="flex gap-2">
+                        <span style={{ color: fg, opacity: 0.6 }}>—</span>
+                        <span style={{ color: fg, fontSize: 15, lineHeight: 1.5, opacity: 0.95 }}>{f}</span>
+                      </li>
+                    ))}
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+            </div>
+          )
+        })}
+      </div>
+
+      <p className="mt-5 text-body-14 hidden md:block" style={{ color: '#767675' }}>
+        Hover a stage to explore the friction customers experienced at each step of the journey.
+      </p>
+    </div>
+  )
+}
+
 type OutletCtx = { loaded: boolean; hoverOn: () => void; hoverOff: () => void }
 
 export default function BathBodyWorks() {
@@ -250,6 +416,21 @@ export default function BathBodyWorks() {
           </div>
         </section>
 
+        {/* Opportunity visual */}
+        <section className="px-4 sm:px-8 md:px-14 pt-8 md:pt-[70px]">
+          <Reveal className={`block ${contentWidth}`}>
+            <div className="rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
+              <img
+                src="/images/bbw-store-photo.png"
+                alt="Inside a Bath & Body Works store where online pickup orders are staged and handed to customers"
+                className="w-full h-auto block"
+                style={{ maxHeight: 560, objectFit: 'cover', objectPosition: 'center' }}
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
+        </section>
+
         {/* The Opportunity */}
         <section className="px-4 sm:px-8 md:px-14 pt-8 pb-4 md:py-[70px]">
           <div className={contentWidth}>
@@ -264,17 +445,6 @@ export default function BathBodyWorks() {
                     <p>The opportunity wasn&apos;t simply to add another checkout option. It was to create a connected service across digital commerce and the store experience.</p>
                   </div>
                 </div>
-              </div>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <div className="mt-10 md:mt-[70px] rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                <img
-                  src="/images/bbw-store-photo.png"
-                  alt="Inside a Bath & Body Works store where online pickup orders are staged and handed to customers"
-                  className="w-full h-auto block"
-                  style={{ maxHeight: 560, objectFit: 'cover', objectPosition: 'center' }}
-                  loading="lazy"
-                />
               </div>
             </Reveal>
           </div>
@@ -295,8 +465,8 @@ export default function BathBodyWorks() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
                 {objectives.map(obj => (
                   <article key={obj.n} className="bg-white rounded-[10px] p-5 md:p-6 flex flex-col gap-6 md:gap-8">
-                    <div className="rounded-full flex items-center justify-center shrink-0" style={{ width: 60, height: 60, backgroundColor: '#f5f5f5' }}>
-                      <span style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, letterSpacing: '-0.4px' }}>{obj.n}</span>
+                    <div className="rounded-full flex items-center justify-center shrink-0" style={{ width: 44, height: 44, backgroundColor: '#f5f5f5' }}>
+                      <span style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 16, letterSpacing: '-0.3px' }}>{obj.n}</span>
                     </div>
                     <div className="flex flex-col gap-3">
                       <h3 className="text-h4" style={{ color: '#0f0f0e' }}>{obj.title}</h3>
@@ -327,7 +497,7 @@ export default function BathBodyWorks() {
             <Reveal delay={0.08}>
               <div className="mt-10 md:mt-[70px] grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
                 <div className="md:col-span-2 rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                  <img src="/images/bbw-key-visual.png" alt="Concept visual illustrating the connected BOPIS shopping and pickup journey" className="w-full h-full object-cover block" loading="lazy" />
+                  <img src="/images/bbw-key-visual.png" alt="Concept visual illustrating the connected BOPIS shopping and pickup journey" className="w-full h-auto block" loading="lazy" />
                 </div>
                 <div className="rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
                   <img src="/images/bbw-key-visual-side.png" alt="Mobile view of the Bath & Body Works pickup experience" className="w-full h-full object-cover block" loading="lazy" />
@@ -399,8 +569,8 @@ export default function BathBodyWorks() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="mt-10 md:mt-[70px] rounded-[20px] overflow-hidden bg-white p-4 md:p-8" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                <img src="/images/bbw-journey-map.png" alt="End-to-end BOPIS journey map across Discovery, Consideration, Purchase, Fulfillment, and Post Purchase, listing the friction points at each stage" className="w-full h-auto block" loading="lazy" />
+              <div className="mt-10 md:mt-[70px]">
+                <JourneyMap />
               </div>
             </Reveal>
           </div>
