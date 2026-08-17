@@ -45,7 +45,52 @@ function NavItem({ href, label, isActive }: { href: string; label: string; isAct
   )
 }
 
+function NavExternalItem({ href, label }: { href: string; label: string }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        textDecoration: 'none',
+        fontSize: '1rem',
+        fontWeight: 400,
+        color: '#0f0f0e',
+        letterSpacing: '-0.01em',
+        position: 'relative',
+        paddingBottom: '2px',
+        opacity: hovered ? 1 : 0.45,
+        transition: 'opacity 0.18s',
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {label}
+      {hovered && (
+        <motion.span
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          exit={{ scaleX: 0 }}
+          transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          style={{
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            width: '100%',
+            height: 1,
+            background: '#0f0f0e',
+            transformOrigin: 'left',
+            borderRadius: 1,
+          }}
+        />
+      )}
+    </a>
+  )
+}
+
 const navLinks = [['/#work', 'Work'], ['/about', 'About'], ['/#contact', 'Contact']] as const
+const RESUME_HREF = '/resume.pdf'
 
 export default function NavBar() {
   const location = useLocation()
@@ -73,6 +118,7 @@ export default function NavBar() {
             const isActive = location.pathname === '/about' && label === 'About'
             return <NavItem key={label} href={href} label={label} isActive={isActive} />
           })}
+          <NavExternalItem href={RESUME_HREF} label="Resume" />
           <a
             href="https://www.linkedin.com/"
             target="_blank"
@@ -154,6 +200,30 @@ export default function NavBar() {
                   </motion.div>
                 )
               })}
+              <motion.div
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: navLinks.length * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <a
+                  href={RESUME_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  style={{
+                    textDecoration: 'none',
+                    fontSize: 'clamp(2.5rem, 10vw, 3.5rem)',
+                    fontWeight: 300,
+                    color: 'rgba(15,15,14,0.45)',
+                    letterSpacing: '-0.02em',
+                    lineHeight: 1,
+                    display: 'block',
+                    transition: 'color 0.2s',
+                  }}
+                >
+                  Resume
+                </a>
+              </motion.div>
             </div>
             <div className="mt-auto pb-12">
               <p style={{ fontSize: '0.8rem', opacity: 0.3, fontWeight: 300 }}>alex@mercer.studio</p>
