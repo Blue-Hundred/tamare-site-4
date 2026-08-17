@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import ContactSection from '../components/ContactSection'
+import ProfileCard from '../components/ProfileCard'
 
 const awards = [
   { title: 'Awwwards Site of the Day', project: 'Cairn', year: '2023' },
@@ -40,30 +41,25 @@ export default function About() {
           </motion.div>
 
           <div className="mt-12 grid md:grid-cols-2 gap-12 items-start">
-            {/* Portrait placeholder */}
+            {/* Profile card */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 24 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              style={{
-                width: '100%',
-                aspectRatio: '3/4',
-                background: 'rgba(15,15,14,0.04)',
-                border: '1px solid rgba(15,15,14,0.1)',
-                borderRadius: 6,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 12,
-                maxWidth: 480,
-              }}
+              className="flex justify-center md:justify-start"
             >
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style={{ opacity: 0.2 }}>
-                <circle cx="24" cy="18" r="9" stroke="#0f0f0e" strokeWidth="1.5" />
-                <path d="M6 42c0-9.941 8.059-18 18-18s18 8.059 18 18" stroke="#0f0f0e" strokeWidth="1.5" strokeLinecap="round" />
-              </svg>
-              <span style={{ fontSize: '0.7rem', opacity: 0.25, letterSpacing: '0.12em', fontWeight: 300 }}>YOUR PHOTO HERE</span>
+              <ProfileCard
+                avatarUrl="/images/profile-avatar.png"
+                iconUrl="/images/profile-holo-icon.png"
+                name="Tamaré Reese"
+                title="Product Designer"
+                handle="tamarereese"
+                status="Available for work"
+                contactText="Contact"
+                onContactClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              />
             </motion.div>
 
             {/* Bio */}
