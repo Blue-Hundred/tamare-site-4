@@ -45,7 +45,7 @@ function NavItem({ href, label, isActive }: { href: string; label: string; isAct
   )
 }
 
-const navLinks = [['/#work', 'Work'], ['/about', 'About'], ['/#contact', 'Resume'], ['/#contact', 'Contact']] as const
+const navLinks = [['/#work', 'Work'], ['/about', 'About'], ['/#contact', 'Contact']] as const
 
 export default function NavBar() {
   const location = useLocation()

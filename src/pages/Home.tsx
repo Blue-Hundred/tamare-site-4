@@ -31,22 +31,6 @@ const projects = [
     year: '2019',
     image: '/images/bbw-cover.png',
   },
-  {
-    id: '03',
-    title: 'A design system for limited-edition art publishing',
-    company: 'Olio Press',
-    tags: ['Editorial', 'Typography'],
-    year: '2023',
-    image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&h=800&fit=crop&auto=format',
-  },
-  {
-    id: '04',
-    title: 'Habit formation through sparse, calming interfaces',
-    company: 'Cairn',
-    tags: ['Product Design', 'UX'],
-    year: '2023',
-    image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&h=800&fit=crop&auto=format',
-  },
 ]
 
 function BlurText({ text, play, delay = 0.06, className, style }: {
