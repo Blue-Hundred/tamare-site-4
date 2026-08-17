@@ -678,28 +678,29 @@ export default function BathBodyWorks() {
         <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>Beyond Checkout</h2>
-                <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-5">
-                  <SubHead>Placing the order wasn&apos;t the end of the BOPIS experience.</SubHead>
-                  <div className="text-body-18 flex flex-col gap-5" style={{ color: '#595958' }}>
-                    <p>Store associates still needed to receive, locate, prepare, and stage the customer&apos;s products before pickup. The customer therefore needed to understand the difference between an order being received and actually being ready.</p>
-                    <p>We designed post-purchase experiences that communicated order status and helped customers understand when they should travel to the store.</p>
-                  </div>
-                </div>
-              </div>
+              <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Beyond Checkout</h2>
             </Reveal>
-            <Reveal delay={0.06}>
-              <div className="mt-10 md:mt-[60px] flex flex-col gap-3">
-                <h3 className="text-h3" style={{ color: '#0f0f0e' }}>Bridging Digital and Physical</h3>
-                <p className="text-body-18 max-w-[720px]" style={{ color: '#595958' }}>
-                  The final digital touchpoints needed to prepare customers for what would happen when they arrived. Pickup communications provided the information customers needed to transition from the online experience to the store and successfully retrieve their purchase. The experience didn&apos;t end when the browser closed—it ended when the customer had their products.
-                </p>
+            <Reveal delay={0.05}>
+              <div className="mt-6 md:mt-8">
+                <SubHead>Placing the order wasn&apos;t the end of the BOPIS experience.</SubHead>
+              </div>
+              <div className="text-body-18 flex flex-col gap-5 mt-7 max-w-[960px]" style={{ color: '#595958' }}>
+                <p>Store associates still needed to receive, locate, prepare, and stage the customer&apos;s products before pickup. The customer therefore needed to understand the difference between an order being received and actually being ready.</p>
+                <p>We designed post-purchase experiences that communicated order status and helped customers understand when they should travel to the store. Pickup communications provided the information customers needed to transition from the online experience to the store and successfully retrieve their purchase.</p>
+                <p>The experience didn&apos;t end when the browser closed—it ended when the customer had their products.</p>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="mt-8 md:mt-10 rounded-[20px] overflow-hidden bg-white p-4 md:p-8" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                <img src="/images/bbw-pickup-emails.png" alt="Series of pickup notification emails: order placed, ready for pickup, and pickup complete with receipt" className="w-full h-auto block" loading="lazy" />
+              <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 items-start">
+                {[
+                  { src: '/images/bbw-email-1.png', alt: 'Order confirmation email — "Thanks for your order!" — with an order-status stepper and Taylor Square pickup details' },
+                  { src: '/images/bbw-email-2.png', alt: 'Ready-for-pickup email — "Stop in and see an associate!" — with the status stepper advanced to Ready for Pickup' },
+                  { src: '/images/bbw-email-3.png', alt: 'Pickup-complete email — "Thanks for stopping in." — with picked-up items, receipt, and billing details' },
+                ].map(e => (
+                  <div key={e.src} className="rounded-[12px] overflow-hidden bg-white" style={{ boxShadow: '0 10px 30px rgba(0,0,0,0.10)' }}>
+                    <img src={e.src} alt={e.alt} className="w-full h-auto block" loading="lazy" />
+                  </div>
+                ))}
               </div>
             </Reveal>
           </div>
