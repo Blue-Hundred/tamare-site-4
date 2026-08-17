@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useInView } from 'framer-motion'
 
 type VinylRecordProps = {
   coverImage: string
@@ -28,10 +28,25 @@ export default function VinylRecord({
   className = '',
 }: VinylRecordProps) {
   const [hovered, setHovered] = useState(false)
-  const revealed = variant === 'revealed' || hovered
+  const [isTouch, setIsTouch] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  // On touch/no-hover devices, reveal the record while the card is in view.
+  const inView = useInView(ref, { amount: 0.6 })
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return
+    const mq = window.matchMedia('(hover: none)')
+    const update = () => setIsTouch(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+
+  const revealed = variant === 'revealed' || hovered || (isTouch && inView)
 
   const content = (
     <motion.div
+      ref={ref}
       className={className}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
