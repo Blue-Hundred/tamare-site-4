@@ -141,7 +141,7 @@ export default function About() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-24 md:gap-36">
             {vinyls.map((v, i) => (
               <Reveal key={v.title} delay={0.1 + i * 0.08}>
-                <div className="relative z-0 hover:z-20 flex flex-col gap-4 w-full max-w-[200px]">
+                <div className="relative z-0 hover:z-20 flex flex-col gap-4 w-full max-w-[270px]">
                   <VinylRecord coverImage={v.cover} recordImage={v.record} title={v.title} />
                   <span className="text-sm font-light" style={{ color: '#595958' }}>{v.title}</span>
                 </div>
