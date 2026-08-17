@@ -152,26 +152,26 @@ const experienceSteps = [
   },
 ]
 
-const sources = [
+const results = [
   {
-    title: 'Bath & Body Works / L Brands 2020 Annual Report',
-    body: "Documents the early BOPIS rollout and Bath & Body Works' investment in digital and omnichannel capabilities.",
+    stat: '1,300+',
+    label: 'Stores adopted BOPIS experience',
+    body: '',
   },
   {
-    title: 'L Brands Q1 2021 Earnings Call',
-    body: 'Provides leadership commentary on the BOPIS pilot, early customer feedback, operational learnings, financial performance, and expansion.',
+    stat: '$5.71B',
+    label: 'U.S. & Canada Store Sales',
+    body: 'Store sales reached approximately $5.71 billion in FY2021, increasing 35.7% year over year.',
   },
   {
-    title: 'Bath & Body Works FY2021 Annual Report',
-    body: 'Source for FY2021 net sales, store sales, and company financial performance.',
+    stat: '$7.88B',
+    label: 'FY2021 Net Sales',
+    body: 'Bath & Body Works generated approximately $7.88 billion in net sales during FY2021.',
   },
   {
-    title: 'Bath & Body Works FY2022 Form 10-K',
-    body: 'Documents the addition of BOPIS to more than 800 stores, availability across more than 1,300 locations, and customer adoption of BOPIS.',
-  },
-  {
-    title: 'Bath & Body Works FY2023 Form 10-K',
-    body: 'Documents completion of the U.S. BOPIS rollout in Q1 2023.',
+    stat: '+22.5%',
+    label: 'Year-over-Year Growth',
+    body: 'Net sales increased 22.5% compared with FY2020 and approximately 45.8% compared with 2019.',
   },
 ]
 
@@ -696,24 +696,38 @@ export default function BathBodyWorks() {
           </div>
         </section>
 
-        {/* Sources */}
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]" style={{ borderTop: '1px solid #dadada' }}>
+        {/* Results */}
+        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]" style={{ backgroundColor: '#f4f4f3' }}>
           <div className={contentWidth}>
             <Reveal>
-              <h3 className="text-h3 mb-8 md:mb-10" style={{ color: '#0f0f0e' }}>Sources</h3>
+              <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Results</h2>
             </Reveal>
-            <Reveal delay={0.06}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-                {sources.map(s => (
-                  <div key={s.title} className="flex flex-col gap-1 border-b border-[rgba(15,15,14,0.12)] pb-5">
-                    <p className="text-h4" style={{ color: '#0f0f0e' }}>{s.title}</p>
-                    <p className="text-body-14" style={{ color: '#595958', lineHeight: 1.6 }}>{s.body}</p>
+            <Reveal delay={0.05}>
+              <h3 className="text-h3 mt-6 md:mt-8" style={{ color: '#3f3f3f' }}>From New Experience to National Capability</h3>
+              <p className="text-body-18 mt-5 max-w-[760px]" style={{ color: '#595958' }}>
+                BOPIS ultimately grew far beyond its initial rollout, becoming a core component of Bath &amp; Body Works&apos; omnichannel experience.
+              </p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+                {results.map(r => (
+                  <div
+                    key={r.stat}
+                    className="rounded-[20px] bg-white p-7 md:p-8 flex flex-col"
+                    style={{ minHeight: 300, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
+                  >
+                    <span style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 3.6vw, 3.25rem)', letterSpacing: '-0.03em', lineHeight: 1 }}>
+                      {r.stat}
+                    </span>
+                    <div className="mt-10 md:mt-12 flex flex-col gap-2">
+                      <p className="text-h4" style={{ color: '#0f0f0e' }}>{r.label}</p>
+                      {r.body && (
+                        <p className="text-body-14" style={{ color: '#595958', lineHeight: 1.6 }}>{r.body}</p>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
-              <p className="text-body-14 mt-8 max-w-[860px]" style={{ color: '#767675', lineHeight: 1.6 }}>
-                Public company metrics describe the subsequent scale, adoption, and business context of the BOPIS capability. They are not presented as outcomes solely attributable to my individual design contribution.
-              </p>
             </Reveal>
           </div>
         </section>
