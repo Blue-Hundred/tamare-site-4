@@ -154,26 +154,89 @@ const experienceSteps = [
 
 const results = [
   {
-    stat: '1,300+',
+    prefix: '',
+    value: 1300,
+    decimals: 0,
+    suffix: '+',
     label: 'Stores adopted BOPIS experience',
     body: '',
   },
   {
-    stat: '$5.71B',
+    prefix: '$',
+    value: 5.71,
+    decimals: 2,
+    suffix: 'B',
     label: 'U.S. & Canada Store Sales',
     body: 'Store sales reached approximately $5.71 billion in FY2021, increasing 35.7% year over year.',
   },
   {
-    stat: '$7.88B',
+    prefix: '$',
+    value: 7.88,
+    decimals: 2,
+    suffix: 'B',
     label: 'FY2021 Net Sales',
     body: 'Bath & Body Works generated approximately $7.88 billion in net sales during FY2021.',
   },
   {
-    stat: '+22.5%',
+    prefix: '+',
+    value: 22.5,
+    decimals: 1,
+    suffix: '%',
     label: 'Year-over-Year Growth',
     body: 'Net sales increased 22.5% compared with FY2020 and approximately 45.8% compared with 2019.',
   },
 ]
+
+function CountUp({
+  value,
+  decimals = 0,
+  prefix = '',
+  suffix = '',
+  duration = 1800,
+  className,
+  style,
+}: {
+  value: number
+  decimals?: number
+  prefix?: string
+  suffix?: string
+  duration?: number
+  className?: string
+  style?: React.CSSProperties
+}) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const inView = useInView(ref, { once: true, margin: '-15% 0px' })
+  const [display, setDisplay] = useState(0)
+
+  useEffect(() => {
+    if (!inView) return
+    let raf = 0
+    const start = performance.now()
+    const tick = (now: number) => {
+      const t = Math.min((now - start) / duration, 1)
+      // easeOutExpo for a lively, decelerating count
+      const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t)
+      setDisplay(value * eased)
+      if (t < 1) raf = requestAnimationFrame(tick)
+      else setDisplay(value)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [inView, value, duration])
+
+  const formatted = display.toLocaleString('en-US', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  })
+
+  return (
+    <span ref={ref} className={className} style={style}>
+      {prefix}
+      {formatted}
+      {suffix}
+    </span>
+  )
+}
 
 const sources = [
   {
@@ -740,14 +803,18 @@ export default function BathBodyWorks() {
               <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
                 {results.map(r => (
                   <div
-                    key={r.stat}
+                    key={r.label}
                     className="rounded-[20px] bg-white p-7 md:p-8 flex flex-col"
                     style={{ minHeight: 300, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
                   >
-                    <span style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 3.6vw, 3.25rem)', letterSpacing: '-0.03em', lineHeight: 1 }}>
-                      {r.stat}
-                    </span>
-                    <div className="mt-10 md:mt-12 flex flex-col gap-2">
+                    <CountUp
+                      value={r.value}
+                      decimals={r.decimals}
+                      prefix={r.prefix}
+                      suffix={r.suffix}
+                      style={{ color: '#0f0f0e', fontWeight: 500, fontSize: 'clamp(2.25rem, 3.6vw, 3.25rem)', letterSpacing: '-0.03em', lineHeight: 1 }}
+                    />
+                    <div className="mt-4 flex flex-col gap-2">
                       <p className="text-h4" style={{ color: '#0f0f0e' }}>{r.label}</p>
                       {r.body && (
                         <p className="text-body-14" style={{ color: '#595958', lineHeight: 1.6 }}>{r.body}</p>
