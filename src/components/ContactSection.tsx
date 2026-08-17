@@ -36,7 +36,7 @@ type OutletCtx = { loaded: boolean; hoverOn: () => void; hoverOff: () => void }
 const navLinks = [
   { label: 'Work', to: '/#work' },
   { label: 'About', to: '/about' },
-  { label: 'Resume', to: '/#contact' },
+  { label: 'Resume', href: '/tamare-reese-resume.pdf' },
   ] as const
 
 export default function ContactSection() {
@@ -74,20 +74,37 @@ export default function ContactSection() {
             </div>
             <div className="flex items-center gap-8">
               <nav className="flex items-center gap-6" aria-label="Footer">
-                {navLinks.map(({ label, to }) => (
-                  <Link
-                    key={label}
-                    to={to}
-                    style={{ fontSize: 14, fontWeight: 300, color: '#0f0f0e', textDecoration: 'none', transition: 'opacity 0.2s', background: '#ffffff', padding: '3px 8px', borderRadius: 4 }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.6'; hoverOn() }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
-                  >
-                    {label}
-                  </Link>
-                ))}
+                {navLinks.map((item) => {
+                  const linkStyle = { fontSize: 14, fontWeight: 300, color: '#0f0f0e', textDecoration: 'none', transition: 'opacity 0.2s', background: '#ffffff', padding: '3px 8px', borderRadius: 4 } as const
+                  const onEnter = (e: React.MouseEvent) => { (e.currentTarget as HTMLElement).style.opacity = '0.6'; hoverOn() }
+                  const onLeave = (e: React.MouseEvent) => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }
+                  return 'href' in item ? (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={linkStyle}
+                      onMouseEnter={onEnter}
+                      onMouseLeave={onLeave}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.label}
+                      to={item.to}
+                      style={linkStyle}
+                      onMouseEnter={onEnter}
+                      onMouseLeave={onLeave}
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                })}
               </nav>
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/tamarereese/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
