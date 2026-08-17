@@ -307,7 +307,7 @@ export default function Meridian() {
           <div className={`relative z-10 ${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start`}>
             <Reveal className="lg:col-span-6 lg:col-start-1">
               <div>
-                <h1 className="text-h1" style={{ color: '#0f0f0e', lineHeight: 1.5 }}>
+                <h1 className="text-h1" style={{ color: '#0f0f0e' }}>
                   <span
                     style={{
                       backgroundColor: '#ffffff',
