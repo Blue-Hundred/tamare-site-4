@@ -34,10 +34,10 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 type OutletCtx = { loaded: boolean; hoverOn: () => void; hoverOff: () => void }
 
 const navLinks = [
+  { label: 'Work', to: '/#work' },
   { label: 'About', to: '/about' },
   { label: 'Resume', to: '/#contact' },
-  { label: 'Home', to: '/' },
-] as const
+  ] as const
 
 export default function ContactSection() {
   const { hoverOn, hoverOff } = useOutletContext<OutletCtx>()
