@@ -32,6 +32,14 @@ const projects = [
     image: '/images/bbw-cover.png',
     href: '/work/bath-body-works',
   },
+  {
+    id: '03',
+    title: 'Apple Pay Integration',
+    company: 'Bath & Body Works',
+    tags: ['Experience Design', 'Experience Mapping'],
+    year: '2021',
+    image: '/images/bbw-applepay-cover.png',
+  },
 ]
 
 function BlurText({ text, play, delay = 0.06, className, style }: {
