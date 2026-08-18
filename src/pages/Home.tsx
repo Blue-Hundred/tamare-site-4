@@ -21,7 +21,7 @@ const projects = [
     tags: ['Product Design', 'Experience Research', 'Service Design'],
     year: '2025-2026',
     image: '/images/databases-cover.png',
-    href: '/work/meridian',
+    href: '/work/databases',
   },
   {
     id: '02',

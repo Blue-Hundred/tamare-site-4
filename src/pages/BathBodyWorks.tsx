@@ -63,7 +63,7 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
       </div>
-      <Link to="/work/meridian" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
+      <Link to="/work/databases" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
         <span style={linkText}>Next Project</span>
         <BackArrow flip />
       </Link>
@@ -850,7 +850,7 @@ export default function BathBodyWorks() {
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="hidden md:block" aria-hidden="true" />
                 <Link
-                  to="/work/meridian"
+                  to="/work/databases"
                   aria-label="Next case study: Creating a Unified Database Management Platform"
                   onMouseEnter={() => { setNextHover(true); hoverOn() }}
                   onMouseLeave={() => { setNextHover(false); hoverOff() }}

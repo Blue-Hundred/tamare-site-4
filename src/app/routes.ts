@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
       { path: 'about', Component: About },
-      { path: 'work/meridian', Component: Meridian },
+      { path: 'work/databases', Component: Meridian },
       { path: 'work/bath-body-works', Component: BathBodyWorks },
     ],
   },
