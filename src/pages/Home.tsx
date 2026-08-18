@@ -40,6 +40,14 @@ const projects = [
     year: '2018',
     image: '/images/bbw-applepay-cover.png',
   },
+  {
+    id: '04',
+    title: 'Modernizing Family Banking',
+    company: 'JPMorgan Chase',
+    tags: ['Experience Design', 'UI Design and Delivery'],
+    year: '2020',
+    image: '/images/family-banking-cover.png',
+  },
 ]
 
 function BlurText({ text, play, delay = 0.06, className, style }: {
