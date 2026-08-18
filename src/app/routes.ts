@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import About from '../pages/About'
 import Meridian from '../pages/Meridian'
 import BathBodyWorks from '../pages/BathBodyWorks'
+import ApplePay from '../pages/ApplePay'
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
       { path: 'about', Component: About },
       { path: 'work/databases', Component: Meridian },
       { path: 'work/bath-body-works', Component: BathBodyWorks },
+      { path: 'work/apple-pay', Component: ApplePay },
     ],
   },
 ])

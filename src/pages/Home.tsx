@@ -39,6 +39,7 @@ const projects = [
     tags: ['Experience Design', 'Experience Mapping'],
     year: '2018',
     image: '/images/bbw-applepay-cover.png',
+    href: '/work/apple-pay',
   },
   {
     id: '04',
