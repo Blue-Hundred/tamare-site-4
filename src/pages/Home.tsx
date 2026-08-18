@@ -169,8 +169,8 @@ export default function Home() {
       {/* Hero */}
       <section className="px-8 md:px-14 pt-40 pb-24 overflow-hidden" style={{ position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.6} patternScale={1.5}
-            edgeFade={0.18} speed={2} enableRipples={true} transparent />
+  <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
+  edgeFade={0.08} speed={2} enableRipples={true} transparent />
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col gap-10" style={{ position: 'relative', zIndex: 1 }}>
           <motion.div
