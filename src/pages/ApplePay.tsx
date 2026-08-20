@@ -5,6 +5,7 @@ import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import { PostItGrid } from '../components/PostItGrid'
 import KeyUXDiagram from '../components/KeyUXDiagram'
+import CaseStudyCard from '../components/CaseStudyCard'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -226,12 +227,12 @@ export default function ApplePay() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {frictionPoints.map((point, i) => (
                 <Reveal key={point} delay={i * 0.06}>
-                  <div className="h-full flex items-start gap-4 rounded-[16px] bg-white p-5 md:p-6" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                    <span className="shrink-0 flex items-center justify-center rounded-full text-white" style={{ width: 40, height: 40, background: '#014ba6', fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 16 }}>
-                      {i + 1}
-                    </span>
-                    <p className="text-body-18" style={{ color: '#0f0f0e' }}>{point}</p>
-                  </div>
+<CaseStudyCard className="h-full flex items-start gap-4 p-5 md:p-6">
+                  <span className="shrink-0 flex items-center justify-center rounded-full text-white" style={{ width: 40, height: 40, background: '#014ba6', fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 16 }}>
+                    {i + 1}
+                  </span>
+                  <p className="text-body-18" style={{ color: '#0f0f0e' }}>{point}</p>
+                </CaseStudyCard>
                 </Reveal>
               ))}
             </div>
@@ -279,9 +280,9 @@ export default function ApplePay() {
               <h2 className="text-h2 mb-8 md:mb-12" style={{ color: '#0f0f0e' }}>Checkout Experience Modernization</h2>
             </Reveal>
             <Reveal>
-              <div className="rounded-[20px] overflow-hidden bg-white px-6 py-4 md:px-14 md:py-8" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                <KeyUXDiagram />
-              </div>
+<CaseStudyCard className="overflow-hidden px-6 py-4 md:px-14 md:py-8">
+              <KeyUXDiagram />
+            </CaseStudyCard>
             </Reveal>
           </div>
         </section>

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import CaseStudyCard from './CaseStudyCard'
 
 type ObjectiveCardProps = {
   number: ReactNode
@@ -22,12 +23,12 @@ export function NumberIcon({ number }: { number: ReactNode }) {
 
 export default function ObjectiveCard({ number, title, body }: ObjectiveCardProps) {
   return (
-    <article className="bg-white rounded-[10px] p-5 md:p-6 flex flex-col gap-6 md:gap-8">
+    <CaseStudyCard className="p-5 md:p-6 flex flex-col gap-6 md:gap-8">
       <NumberIcon number={number} />
       <div className="flex flex-col gap-3">
         <h3 className="text-h4" style={{ color: '#0f0f0e' }}>{title}</h3>
         <p className="text-body-18" style={{ color: '#595958' }}>{body}</p>
       </div>
-    </article>
+    </CaseStudyCard>
   )
 }
