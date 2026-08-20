@@ -81,7 +81,7 @@ const meta = [
 ]
 
 const stripImages = [
-  { src: '/images/family-banking-hero.png', alt: 'Family Banking dashboard showing spending and savings balances' },
+  { src: '/images/family-banking-research-1.png', alt: 'Overall satisfaction with the Family Banking experience and usability research findings' },
   { src: '/images/family-banking-strip-2.png', alt: 'Savings screen listing savings goals and recent transfers' },
   { src: '/images/family-banking-strip-3.png', alt: 'Create savings goal form with goal name and amount fields' },
   { src: '/images/family-banking-strip-4.png', alt: 'Confirmation screen after creating a savings goal' },
