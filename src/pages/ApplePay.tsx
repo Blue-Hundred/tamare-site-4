@@ -3,6 +3,8 @@ import { Link, useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
+import { PostItGrid } from '../components/PostItGrid'
+import KeyUXDiagram from '../components/KeyUXDiagram'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -120,11 +122,17 @@ const insights = [
 ]
 
 const outcomes = [
-  'Contributed to a 12% YoY increase in net sales, with significant growth in digital and mobile conversion rates.',
-  'Reinforced customer trust and satisfaction, with CSAT scores exceeding 90% across demographic groups.',
-  'Created a flexible design foundation for future wallet and loyalty integrations.',
-  'Received full approval from executive leadership teams, validating the scalable mobile UI system introduced during the Apple Pay MVP launch',
+  'Contributed to a **12% YoY increase in net sales**, with significant growth in digital and mobile conversion rates.',
+  'Reinforced customer trust and satisfaction, with **CSAT scores exceeding 90%** across demographic groups.',
+  'Created a **flexible design foundation** for future wallet and loyalty integrations.',
+  'Received **full approval from executive leadership teams**, validating the scalable mobile UI system introduced during the Apple Pay MVP launch.',
 ]
+
+function renderBold(text: string) {
+  return text.split('**').map((part, i) =>
+    i % 2 === 1 ? <strong key={i} style={{ fontWeight: 700 }}>{part}</strong> : part
+  )
+}
 
 type OutletCtx = { loaded: boolean; hoverOn: () => void; hoverOff: () => void }
 
@@ -260,16 +268,7 @@ export default function ApplePay() {
             <Reveal>
               <h2 className="text-h2 mb-10 md:mb-14" style={{ color: '#0f0f0e' }}>Key Insights</h2>
             </Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              {insights.map((insight, i) => (
-                <Reveal key={insight.title} delay={i * 0.08}>
-                  <div className="h-full flex flex-col gap-4 rounded-[20px] p-6 md:p-8" style={{ background: insight.tint }}>
-                    <h3 style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: 1.3, letterSpacing: '-0.02em' }}>{insight.title}</h3>
-                    <p className="text-body-18" style={{ color: '#464646' }}>{insight.body}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+            <PostItGrid items={insights} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 pt-4" />
           </div>
         </section>
 
@@ -280,13 +279,8 @@ export default function ApplePay() {
               <h2 className="text-h2 mb-8 md:mb-12" style={{ color: '#0f0f0e' }}>Checkout Experience Modernization</h2>
             </Reveal>
             <Reveal>
-              <div className="rounded-[20px] overflow-hidden bg-white p-4 md:p-10" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                <img
-                  src="/images/applepay-key-ux.png"
-                  alt="Key UX innovations: contextual prompts, secure checkout messaging, a net-new payment drawer, and UI modernization"
-                  className="w-full h-auto block"
-                  loading="lazy"
-                />
+              <div className="rounded-[20px] overflow-hidden bg-white p-6 md:p-14" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
+                <KeyUXDiagram />
               </div>
             </Reveal>
           </div>
@@ -336,14 +330,11 @@ export default function ApplePay() {
         </section>
 
         {/* Outcomes */}
-        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
+        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[100px]" style={{ background: '#0b3d91' }}>
           <div className={contentWidth}>
-            <Reveal>
-              <h2 className="text-h2 mb-10 md:mb-14" style={{ color: '#0f0f0e' }}>Outcomes</h2>
-            </Reveal>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               <Reveal>
-                <div className="rounded-[20px] overflow-hidden flex items-center justify-center" style={{ background: '#fff5f5' }}>
+                <div className="rounded-[20px] overflow-hidden flex items-center justify-center">
                   <img
                     src="/images/applepay-outcome.png"
                     alt="Bath & Body Works mobile secure checkout with the Apple Pay button held on an iPhone"
@@ -352,14 +343,26 @@ export default function ApplePay() {
                   />
                 </div>
               </Reveal>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                {outcomes.map((outcome, i) => (
-                  <Reveal key={outcome} delay={i * 0.06}>
-                    <div className="h-full rounded-[16px] bg-white p-5 md:p-6" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                      <p className="text-body-18" style={{ color: '#0f0f0e' }}>{outcome}</p>
-                    </div>
-                  </Reveal>
-                ))}
+              <div className="flex flex-col gap-8">
+                <Reveal>
+                  <div className="flex flex-col gap-5">
+                    <h2 className="text-h2" style={{ color: '#ffffff' }}>Outcomes</h2>
+                    <p className="text-body-18" style={{ color: 'rgba(255,255,255,0.78)' }}>
+                      The Apple Pay MVP shipped as a scalable, mobile-first foundation for secure checkout—one that
+                      built customer trust, simplified fulfillment across payment types, and earned buy-in for the
+                      broader digital wallet roadmap.
+                    </p>
+                  </div>
+                </Reveal>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                  {outcomes.map((outcome, i) => (
+                    <Reveal key={outcome} delay={i * 0.06}>
+                      <div className="h-full rounded-[16px] p-5 md:p-6" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
+                        <p className="text-body-18" style={{ color: '#ffffff' }}>{renderBold(outcome)}</p>
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
