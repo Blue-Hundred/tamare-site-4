@@ -5,6 +5,7 @@ import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import { PostItGrid } from '../components/PostItGrid'
 import ObjectiveCard from '../components/ObjectiveCard'
+import CaseStudyParagraph from '../components/CaseStudyParagraph'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -597,9 +598,9 @@ export default function BathBodyWorks() {
             <Reveal>
               <div className="flex flex-col gap-3 mb-8 md:mb-12">
                 <h3 className="text-h3" style={{ color: '#0f0f0e' }}>Translating Feedback Into Design Decisions</h3>
-                <p className="text-body-18 max-w-[720px]" style={{ color: '#595958' }}>
-                  The sessions helped us understand where the proposed experience aligned with customer expectations and where additional clarity was needed. We used qualitative feedback to evaluate how customers responded to important moments throughout the journey—from finding pickup availability and selecting a store to choosing fulfillment and understanding what would happen after an order was placed. These observations helped us refine the experience and establish clearer patterns across the BOPIS journey.
-                </p>
+  <CaseStudyParagraph>
+  The sessions helped us understand where the proposed experience aligned with customer expectations and where additional clarity was needed. We used qualitative feedback to evaluate how customers responded to important moments throughout the journey—from finding pickup availability and selecting a store to choosing fulfillment and understanding what would happen after an order was placed. These observations helped us refine the experience and establish clearer patterns for pickup and delivery.
+  </CaseStudyParagraph>
               </div>
             </Reveal>
             <Reveal delay={0.06}>
