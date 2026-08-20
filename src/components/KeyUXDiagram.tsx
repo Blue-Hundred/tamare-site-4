@@ -133,7 +133,7 @@ export default function KeyUXDiagram() {
       </div>
 
       {/* Desktop: hub-and-spoke layout */}
-      <div ref={containerRef} className="hidden md:block relative" style={{ minHeight: 620 }}>
+      <div ref={containerRef} className="hidden md:block relative" style={{ minHeight: 540 }}>
         <svg
           className="absolute inset-0 w-full h-full"
           viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}
