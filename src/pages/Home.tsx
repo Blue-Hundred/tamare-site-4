@@ -205,7 +205,7 @@ export default function Home() {
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.9, color: '#0f0f0e', fontWeight: 300, display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)', background: 'transparent', padding: '2px 0' }}>
+            <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.9, color: '#0f0f0e', fontWeight: 300, display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', backdropFilter: 'blur(6px)', padding: '2px 0' }}>
               Product designer utilizing AI to streamline workflows and simplify experiences.
             </p>
             <div className="flex items-center gap-2 self-start md:self-end" style={{ background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4 }}>
