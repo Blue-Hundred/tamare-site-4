@@ -158,7 +158,7 @@ export default function FamilyBanking() {
         {/* Hero visual */}
         <section className="px-4 sm:px-8 md:px-14 pt-10 md:pt-[70px]">
           <Reveal className={`block ${contentWidth}`}>
-            <div className="rounded-[20px] overflow-hidden relative flex items-center justify-center h-[520px] md:h-[706px]" style={{ background: '#014ba6' }}>
+            <div className="rounded-[20px] overflow-hidden relative flex items-center justify-center h-[474px] md:h-[474px]" style={{ background: '#014ba6' }}>
               <img
                 src="/images/family-banking-hero.png"
                 alt="Family Banking parent dashboard showing a child's spending and savings balances on an iPhone"
