@@ -21,10 +21,18 @@ export default function MobileNavMenu() {
   return (
     <>
       <button
-        className="md:hidden flex flex-col items-center justify-center gap-[5px] w-8 h-8"
+        className="md:hidden fixed z-50 flex flex-col items-center justify-center gap-[5px] w-8 h-8"
         onClick={() => setMenuOpen(o => !o)}
-        style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-        aria-label="Toggle menu"
+        style={{
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          padding: 0,
+          top: 22,
+          left: menuOpen ? undefined : 20,
+          right: menuOpen ? 20 : undefined,
+        }}
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
       >
         <motion.span
           animate={{ rotate: menuOpen ? 45 : 0, y: menuOpen ? 7 : 0 }}

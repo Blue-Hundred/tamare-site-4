@@ -220,11 +220,11 @@ function CaseStudyTopBar() {
   return (
     <div className="fixed top-0 left-0 right-0 z-40 flex items-center px-5 sm:px-8 md:px-9 bg-white"
       style={{ height: 77, borderBottom: '1px solid #d2d2d2' }}>
-      <Link to="/#work" className="flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
+      <Link to="/#work" className="hidden md:flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
         <BackArrow />
-        <span className="hidden sm:inline" style={linkText}>Back to Portfolio</span>
+        <span style={linkText}>Back to Portfolio</span>
       </Link>
-      <Link to="/" aria-label="Home" className="absolute left-1/2 -translate-x-1/2 flex items-center">
+      <Link to="/" aria-label="Home" className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center">
         <svg width="30" height="40" viewBox="0 0 31.5145 42.0193" fill="none">
           <path d={svgPaths.p1b65ed80} fill="black" />
           <path d={svgPaths.p11c45c00} fill="black" />
@@ -232,6 +232,9 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p2e1b9140} fill="black" />
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
+      </Link>
+      <Link to="/" aria-label="Home" className="flex md:hidden absolute left-1/2 -translate-x-1/2 items-center">
+        <img src="/tamare-reese-logo.svg" alt="Tamaré Reese" width={110} height={20} style={{ height: 20, width: 'auto', display: 'block' }} />
       </Link>
       <div className="ml-auto flex items-center">
         <Link to="/work/applepay" className="hidden md:flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>

@@ -108,8 +108,16 @@ export default function NavBar() {
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-8 md:px-14 py-6"
         style={{ background: '#ffffff', borderBottom: '1px solid rgba(15,15,14,0.06)' }}
       >
-        <Link to="/" className="flex items-center" style={{ textDecoration: 'none' }} aria-label="Tamaré Reese — home">
+        <Link to="/" className="hidden md:flex items-center" style={{ textDecoration: 'none' }} aria-label="Tamaré Reese — home">
           <img src="/tamare-reese-logo.svg" alt="Tamaré Reese" width={132} height={24} style={{ height: 24, width: 'auto', display: 'block' }} />
+        </Link>
+        <Link
+          to="/"
+          className="flex md:hidden items-center absolute left-1/2 -translate-x-1/2"
+          style={{ textDecoration: 'none' }}
+          aria-label="Tamaré Reese — home"
+        >
+          <img src="/tamare-reese-logo.svg" alt="Tamaré Reese" width={110} height={20} style={{ height: 20, width: 'auto', display: 'block' }} />
         </Link>
 
         {/* Desktop links */}
