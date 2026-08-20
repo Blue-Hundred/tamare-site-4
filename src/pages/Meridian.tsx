@@ -313,7 +313,7 @@ export default function Meridian() {
                       background: '#ffffff',
                       boxDecorationBreak: 'clone',
                       WebkitBoxDecorationBreak: 'clone',
-                      padding: '0.08em 0.3em',
+                      padding: '0 0.3em',
                     }}
                   >
                     Creating a Unified Database Management Platform
