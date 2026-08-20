@@ -279,7 +279,7 @@ export default function ApplePay() {
               <h2 className="text-h2 mb-8 md:mb-12" style={{ color: '#0f0f0e' }}>Checkout Experience Modernization</h2>
             </Reveal>
             <Reveal>
-              <div className="rounded-[20px] overflow-hidden bg-white p-6 md:p-14" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
+              <div className="rounded-[20px] overflow-hidden bg-white px-6 py-4 md:px-14 md:py-8" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
                 <KeyUXDiagram />
               </div>
             </Reveal>
