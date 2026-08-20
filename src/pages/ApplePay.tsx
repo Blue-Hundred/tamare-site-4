@@ -213,13 +213,13 @@ export default function ApplePay() {
         <section className="px-4 sm:px-8 md:px-14 pt-8 pb-4 md:py-[70px]">
           <div className={contentWidth}>
             <Reveal>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10 md:mb-14">
-                <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>The Solution</h2>
-                <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-5">
-                  <SubHead>Uncovering the friction in mobile checkout</SubHead>
-                  <div className="text-body-18 flex flex-col gap-5" style={{ color: '#595958' }}>
-                    <p>As Lead UX Designer, I led the co-led collaboration with research, design, and validation of a new, mobile-optimized checkout experience anchored by the Apple Pay MVP. Our team conducted qualitative research with VIP panels and usability testing to uncover key friction points:</p>
-                  </div>
+              <h2 className="text-h2" style={{ color: '#0f0f0e' }}>The Solution</h2>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <div className="mt-4 mb-10 md:mb-14 flex flex-col gap-5 max-w-[960px]">
+                <SubHead>Uncovering the friction in mobile checkout</SubHead>
+                <div className="text-body-18 flex flex-col gap-5" style={{ color: '#595958' }}>
+                  <p>As Lead UX Designer, I led the co-led collaboration with research, design, and validation of a new, mobile-optimized checkout experience anchored by the Apple Pay MVP. Our team conducted qualitative research with VIP panels and usability testing to uncover key friction points:</p>
                 </div>
               </div>
             </Reveal>
@@ -242,12 +242,12 @@ export default function ApplePay() {
         <section className="px-4 sm:px-8 md:px-14 pt-8 pb-4 md:py-[70px]">
           <div className={contentWidth}>
             <Reveal>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10 md:mb-14">
-                <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>Research Strategy</h2>
-                <div className="text-body-18 lg:col-span-6 lg:col-start-7 flex flex-col gap-5" style={{ color: '#595958' }}>
-                  <p>Customer interviews were conducted at Home Office in Reynoldsburg, OH to understand reactions to the placement of the ApplePay checkout button on the website for desktop and mobile experiences and to determine intuitiveness and ease of use of the secure checkout feature on mobile checkout. We spoke with:</p>
-                </div>
-              </div>
+              <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Research Strategy</h2>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <p className="text-body-18 mt-4 mb-10 md:mb-14 max-w-[960px]" style={{ color: '#595958' }}>
+                Customer interviews were conducted at Home Office in Reynoldsburg, OH to understand reactions to the placement of the ApplePay checkout button on the website for desktop and mobile experiences and to determine intuitiveness and ease of use of the secure checkout feature on mobile checkout. We spoke with:
+              </p>
             </Reveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {participants.map((p, i) => (
