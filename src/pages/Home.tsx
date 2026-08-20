@@ -21,7 +21,7 @@ const projects = [
     tags: ['Product Design', 'Experience Research', 'Service Design'],
     year: '2025-2026',
     image: '/images/databases-cover.png',
-    href: '/work/meridian',
+    href: '/work/databases',
   },
   {
     id: '02',
@@ -31,6 +31,24 @@ const projects = [
     year: '2019',
     image: '/images/bbw-cover.png',
     href: '/work/bath-body-works',
+  },
+  {
+    id: '03',
+    title: 'Apple Pay Integration',
+    company: 'Bath & Body Works',
+    tags: ['Experience Design', 'Experience Mapping'],
+    year: '2018',
+    image: '/images/bbw-applepay-cover.png',
+    href: '/work/apple-pay',
+  },
+  {
+    id: '04',
+    title: 'Modernizing Family Banking',
+    company: 'JPMorgan Chase',
+    tags: ['Experience Design', 'UI Design and Delivery'],
+    year: '2025',
+    image: '/images/family-banking-cover.png',
+    href: '/work/family-banking',
   },
 ]
 
@@ -153,8 +171,8 @@ export default function Home() {
       {/* Hero */}
       <section className="px-8 md:px-14 pt-40 pb-24 overflow-hidden" style={{ position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.6} patternScale={1.5}
-            edgeFade={0.18} speed={2} enableRipples={true} transparent />
+  <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
+  edgeFade={0.08} speed={2} enableRipples={true} transparent />
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col gap-10" style={{ position: 'relative', zIndex: 1 }}>
           <motion.div

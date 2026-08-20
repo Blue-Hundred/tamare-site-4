@@ -3,6 +3,9 @@ import { Link, useOutletContext } from 'react-router'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
+import { PostItGrid } from '../components/PostItGrid'
+import ObjectiveCard from '../components/ObjectiveCard'
+import CaseStudyParagraph from '../components/CaseStudyParagraph'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -63,7 +66,7 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
       </div>
-      <Link to="/work/meridian" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
+      <Link to="/work/databases" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
         <span style={linkText}>Next Project</span>
         <BackArrow flip />
       </Link>
@@ -553,17 +556,9 @@ export default function BathBodyWorks() {
             </Reveal>
             <Reveal delay={0.06}>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-                {objectives.map(obj => (
-                  <article key={obj.n} className="bg-white rounded-[10px] p-5 md:p-6 flex flex-col gap-6 md:gap-8">
-                    <div className="rounded-full flex items-center justify-center shrink-0" style={{ width: 44, height: 44, backgroundColor: '#f5f5f5' }}>
-                      <span style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 16, letterSpacing: '-0.3px' }}>{obj.n}</span>
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      <h3 className="text-h4" style={{ color: '#0f0f0e' }}>{obj.title}</h3>
-                      <p className="text-body-18" style={{ color: '#595958' }}>{obj.body}</p>
-                    </div>
-                  </article>
-                ))}
+  {objectives.map(obj => (
+  <ObjectiveCard key={obj.n} number={obj.n} title={obj.title} body={obj.body} />
+  ))}
               </div>
             </Reveal>
           </div>
@@ -603,42 +598,14 @@ export default function BathBodyWorks() {
             <Reveal>
               <div className="flex flex-col gap-3 mb-8 md:mb-12">
                 <h3 className="text-h3" style={{ color: '#0f0f0e' }}>Translating Feedback Into Design Decisions</h3>
-                <p className="text-body-18 max-w-[720px]" style={{ color: '#595958' }}>
-                  The sessions helped us understand where the proposed experience aligned with customer expectations and where additional clarity was needed. We used qualitative feedback to evaluate how customers responded to important moments throughout the journey—from finding pickup availability and selecting a store to choosing fulfillment and understanding what would happen after an order was placed. These observations helped us refine the experience and establish clearer patterns across the BOPIS journey.
-                </p>
+  <CaseStudyParagraph>
+  The sessions helped us understand where the proposed experience aligned with customer expectations and where additional clarity was needed. We used qualitative feedback to evaluate how customers responded to important moments throughout the journey—from finding pickup availability and selecting a store to choosing fulfillment and understanding what would happen after an order was placed. These observations helped us refine the experience and establish clearer patterns for pickup and delivery.
+  </CaseStudyParagraph>
               </div>
             </Reveal>
             <Reveal delay={0.06}>
               <p className="text-xs font-light tracking-widest mb-5" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>KEY THEMES</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 pt-4">
-                {themes.map((theme, i) => {
-                  const rotations = [-2.2, 1.6, -1.2, 2, -1.7, 1.3]
-                  const rot = rotations[i % rotations.length]
-                  return (
-                    <article
-                      key={theme.title}
-                      className="group relative p-6 md:p-7 flex flex-col gap-3"
-                      style={{
-                        background: theme.tint,
-                        transform: `rotate(${rot}deg)`,
-                        transition: 'transform 0.25s ease, box-shadow 0.25s ease',
-                        boxShadow: '0 1px 1px rgba(0,0,0,0.04), 0 10px 18px -6px rgba(0,0,0,0.18)',
-                      }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'rotate(0deg) translateY(-4px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 1px 1px rgba(0,0,0,0.04), 0 20px 30px -8px rgba(0,0,0,0.22)' }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = `rotate(${rot}deg)`; (e.currentTarget as HTMLElement).style.boxShadow = '0 1px 1px rgba(0,0,0,0.04), 0 10px 18px -6px rgba(0,0,0,0.18)' }}
-                    >
-                      {/* tape strip */}
-                      <span
-                        aria-hidden="true"
-                        className="absolute left-1/2 -top-2.5 -translate-x-1/2"
-                        style={{ width: 74, height: 20, background: 'rgba(255,255,255,0.5)', border: '1px solid rgba(0,0,0,0.05)', transform: 'translateX(-50%) rotate(-1.5deg)' }}
-                      />
-                      <h4 className="text-h4" style={{ color: '#0f0f0e' }}>{theme.title}</h4>
-                      <p className="text-body-14" style={{ color: '#464646', lineHeight: 1.6 }}>{theme.body}</p>
-                    </article>
-                  )
-                })}
-              </div>
+              <PostItGrid items={themes} />
             </Reveal>
           </div>
         </section>
@@ -850,7 +817,7 @@ export default function BathBodyWorks() {
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="hidden md:block" aria-hidden="true" />
                 <Link
-                  to="/work/meridian"
+                  to="/work/databases"
                   aria-label="Next case study: Creating a Unified Database Management Platform"
                   onMouseEnter={() => { setNextHover(true); hoverOn() }}
                   onMouseLeave={() => { setNextHover(false); hoverOff() }}
