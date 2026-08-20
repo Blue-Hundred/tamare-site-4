@@ -272,15 +272,14 @@ export default function FamilyBanking() {
               </div>
             </Reveal>
             <Reveal>
-              <div className="flex gap-3 overflow-x-auto md:grid md:grid-cols-5 md:gap-4 md:overflow-visible">
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5 md:gap-4">
                 {stripImages.map((img) => (
                   <img
                     key={img.src}
                     src={img.src}
                     alt={img.alt}
                     loading="lazy"
-                    className="h-auto block w-full rounded-[12px] shrink-0"
-                    style={{ minWidth: 180 }}
+                    className="h-auto block w-full rounded-[12px]"
                   />
                 ))}
               </div>
