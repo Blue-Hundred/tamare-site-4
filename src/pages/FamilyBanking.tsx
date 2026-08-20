@@ -135,7 +135,7 @@ export default function FamilyBanking() {
                 <h1 className="text-h1" style={{ color: '#0f0f0e' }}>
                   Modernizing Family Banking
                 </h1>
-                <p className="text-body-32 mt-4 md:mt-6" style={{ color: '#0f0f0e' }}>
+                <p className="text-body-18 mt-4 md:mt-6" style={{ color: '#595958' }}>
                   Delivering customer-focused outcomes through transformation and replatform.
                 </p>
               </div>
