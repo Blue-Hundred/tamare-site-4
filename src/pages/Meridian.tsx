@@ -314,6 +314,7 @@ export default function Meridian() {
                       boxDecorationBreak: 'clone',
                       WebkitBoxDecorationBreak: 'clone',
                       padding: '0 0.3em',
+                      marginLeft: '-0.3em',
                     }}
                   >
                     Creating a Unified Database Management Platform
@@ -326,6 +327,7 @@ export default function Meridian() {
                       boxDecorationBreak: 'clone',
                       WebkitBoxDecorationBreak: 'clone',
                       padding: '0.1em 0.3em',
+                      marginLeft: '-0.3em',
                     }}
                   >
                     Designing a scalable enterprise platform that standardized database onboarding, provisioning, and service management across multiple database products.
