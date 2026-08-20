@@ -71,7 +71,6 @@
   transition: transform 1s ease;
   transform: translateZ(0) rotateX(0deg) rotateY(0deg);
   background: rgba(0, 0, 0, 0.9);
-  backface-visibility: hidden;
   overflow: hidden;
 }
 
@@ -250,7 +249,6 @@
   mix-blend-mode: luminosity;
   overflow: visible;
   transform: translateZ(2);
-  backface-visibility: hidden;
 }
 
   .pc-avatar-content .avatar {
@@ -261,7 +259,6 @@
   transform: translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px)) translateZ(0)
     scaleY(calc(1 + (var(--pointer-from-top) - 0.5) * 0.02)) scaleX(calc(1 + (var(--pointer-from-left) - 0.5) * 0.01));
   bottom: -1px;
-  backface-visibility: hidden;
   will-change: transform;
   transition: transform 120ms ease-out;
 }
