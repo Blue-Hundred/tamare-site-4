@@ -160,7 +160,7 @@ export default function KeyUXDiagram() {
         <motion.div
           ref={hubRef}
           className="absolute rounded-full flex items-center justify-center text-center px-6"
-          style={{ left: '50%', top: '50%', width: 260, height: 260, marginLeft: -130, marginTop: -130, background: '#0f7bf0', color: '#ffffff', fontWeight: 700, fontSize: 26, lineHeight: 1.25 }}
+          style={{ left: '50%', top: 'calc(50% - 30px)', width: 260, height: 260, marginLeft: -130, marginTop: -130, background: '#0f7bf0', color: '#ffffff', fontWeight: 700, fontSize: 26, lineHeight: 1.25 }}
           initial={{ opacity: 0, scale: 0.7 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
