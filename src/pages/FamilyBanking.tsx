@@ -81,7 +81,7 @@ const meta = [
 ]
 
 const stripImages = [
-  { src: '/images/family-banking-strip-1.png', alt: "Parent dashboard showing a child's spending and savings balances with quick actions" },
+  { src: '/images/family-banking-strip-1.png', alt: "Child's account dashboard showing spending and savings balances with quick actions" },
   { src: '/images/family-banking-strip-2.png', alt: 'Savings screen showing a $15.00 balance and general savings goal' },
   { src: '/images/family-banking-strip-3.png', alt: 'Create savings goal form with a headphones goal name and $150.00 amount' },
   { src: '/images/family-banking-strip-4.png', alt: 'Confirmation screen after creating the headphones savings goal' },
