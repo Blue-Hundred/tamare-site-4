@@ -248,7 +248,7 @@ export default function NavBar() {
                 </motion.div>
               </div>
               <div className="mt-auto pb-12">
-              <p style={{ fontSize: '0.8rem', opacity: 0.3, fontWeight: 300 }}>tamaredesign@outlook.com</p>
+              <a href="mailto:tamaredesign@outlook.com" style={{ fontSize: '0.8rem', opacity: 0.3, fontWeight: 300 }}>tamaredesign@outlook.com</a>
             </div>
           </motion.div>
         )}
