@@ -5,6 +5,7 @@ import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import CaseStudyCard from '../components/CaseStudyCard'
 import CaseStudyParagraph from '../components/CaseStudyParagraph'
+import CountUp from '../components/CountUp'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -307,10 +308,10 @@ export default function FamilyBanking() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 mt-12 md:mt-14 pt-8">
                   {outcomeStats.map((stat, i) => (
                     <Reveal key={stat.label} delay={i * 0.06}>
-                      <div className="flex flex-col gap-2 md:px-6">
-                        <span className="text-h1" style={{ color: '#0f0f0e', fontSize: 'clamp(2rem, 3.4vw, 3.375rem)', lineHeight: 1 }}>{stat.value}</span>
-                        <span className="text-body-14" style={{ color: '#595958' }}>{stat.label}</span>
-                      </div>
+                <div className="flex flex-col gap-2 md:px-6">
+                  <CountUp value={stat.value} className="text-h1" style={{ color: '#0f0f0e', fontSize: 'clamp(2rem, 3.4vw, 3.375rem)', lineHeight: 1 }} />
+                  <span className="text-body-14" style={{ color: '#595958' }}>{stat.label}</span>
+                </div>
                     </Reveal>
                   ))}
                 </div>
