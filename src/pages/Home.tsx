@@ -46,7 +46,7 @@ const projects = [
     title: 'Modernizing Family Banking',
     company: 'JPMorgan Chase',
     tags: ['Experience Design', 'UI Design and Delivery'],
-    year: '2020',
+    year: '2025',
     image: '/images/family-banking-cover.png',
     href: '/work/family-banking',
   },
