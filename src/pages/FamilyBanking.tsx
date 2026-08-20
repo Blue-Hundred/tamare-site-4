@@ -131,12 +131,30 @@ export default function FamilyBanking() {
           </div>
           <div className={`relative z-10 ${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start`}>
             <Reveal className="lg:col-span-6 lg:col-start-1">
-              <div className="bg-white p-4 md:p-5">
+              <div>
                 <h1 className="text-h1" style={{ color: '#0f0f0e' }}>
-                  Modernizing Family Banking
+                  <span
+                    style={{
+                      background: '#ffffff',
+                      boxDecorationBreak: 'clone',
+                      WebkitBoxDecorationBreak: 'clone',
+                      padding: '0.08em 0.3em',
+                    }}
+                  >
+                    Modernizing Family Banking
+                  </span>
                 </h1>
                 <p className="text-body-18 mt-4 md:mt-6" style={{ color: '#595958' }}>
-                  Delivering customer-focused outcomes through transformation and replatform.
+                  <span
+                    style={{
+                      background: '#ffffff',
+                      boxDecorationBreak: 'clone',
+                      WebkitBoxDecorationBreak: 'clone',
+                      padding: '0.1em 0.3em',
+                    }}
+                  >
+                    Delivering customer-focused outcomes through transformation and replatform.
+                  </span>
                 </p>
               </div>
             </Reveal>
