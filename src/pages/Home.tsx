@@ -48,6 +48,7 @@ const projects = [
     tags: ['Experience Design', 'UI Design and Delivery'],
     year: '2020',
     image: '/images/family-banking-cover.png',
+    href: '/work/family-banking',
   },
 ]
 
