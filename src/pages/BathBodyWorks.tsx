@@ -55,9 +55,9 @@ function CaseStudyTopBar() {
       style={{ height: 77, borderBottom: '1px solid #d2d2d2' }}>
       <Link to="/#work" className="flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
         <BackArrow />
-        <span className="hidden sm:inline" style={linkText}>Back to portfolio</span>
+        <span className="hidden sm:inline" style={linkText}>Back to Portfolio</span>
       </Link>
-      <div className="absolute left-1/2 -translate-x-1/2 flex items-center" aria-hidden="true">
+      <Link to="/" aria-label="Home" className="absolute left-1/2 -translate-x-1/2 flex items-center">
         <svg width="30" height="40" viewBox="0 0 31.5145 42.0193" fill="none">
           <path d={svgPaths.p1b65ed80} fill="black" />
           <path d={svgPaths.p11c45c00} fill="black" />
@@ -65,8 +65,8 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p2e1b9140} fill="black" />
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
-      </div>
-      <Link to="/work/databases" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
+      </Link>
+      <Link to="/work/family-banking" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
         <span style={linkText}>Next Project</span>
         <BackArrow flip />
       </Link>
@@ -817,8 +817,8 @@ export default function BathBodyWorks() {
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="hidden md:block" aria-hidden="true" />
                 <Link
-                  to="/work/databases"
-                  aria-label="Next case study: Creating a Unified Database Management Platform"
+                  to="/work/family-banking"
+                  aria-label="Next case study: Modernizing Family Banking"
                   onMouseEnter={() => { setNextHover(true); hoverOn() }}
                   onMouseLeave={() => { setNextHover(false); hoverOff() }}
                   onFocus={() => setNextHover(true)}
@@ -831,8 +831,8 @@ export default function BathBodyWorks() {
                       <span style={{ color: '#999', fontWeight: 300, fontSize: 13, lineHeight: '22px' }}>Next</span>
                       <BackArrow flip />
                     </div>
-                    <h3 className="mt-3" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px' }}>Creating a Unified Database Management Platform</h3>
-                    <p className="mt-2 ml-auto" style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px', maxWidth: 520 }}>A scalable enterprise platform that standardized database onboarding, provisioning, and service management.</p>
+                    <h3 className="mt-3" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px' }}>Modernizing Family Banking</h3>
+                    <p className="mt-2 ml-auto" style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px', maxWidth: 520 }}>Delivering customer-focused outcomes through transformation and replatform.</p>
                   </div>
                 </Link>
               </div>

@@ -221,9 +221,9 @@ function CaseStudyTopBar() {
       style={{ height: 77, borderBottom: '1px solid #d2d2d2' }}>
       <Link to="/#work" className="flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
         <BackArrow />
-        <span className="hidden sm:inline" style={linkText}>Back to portfolio</span>
+        <span className="hidden sm:inline" style={linkText}>Back to Portfolio</span>
       </Link>
-      <div className="absolute left-1/2 -translate-x-1/2 flex items-center" aria-hidden="true">
+      <Link to="/" aria-label="Home" className="absolute left-1/2 -translate-x-1/2 flex items-center">
         <svg width="30" height="40" viewBox="0 0 31.5145 42.0193" fill="none">
           <path d={svgPaths.p1b65ed80} fill="black" />
           <path d={svgPaths.p11c45c00} fill="black" />
@@ -231,8 +231,8 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p2e1b9140} fill="black" />
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
-      </div>
-      <Link to="/work/Buy-Online-Pickup-in-Store" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
+      </Link>
+      <Link to="/work/applepay" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
         <span className="font-light sm:font-medium" style={{ ...linkText, fontWeight: undefined }}>Next Project</span>
         <BackArrow flip />
       </Link>
@@ -628,8 +628,8 @@ export default function Meridian() {
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="hidden md:block" aria-hidden="true" />
                 <Link
-                  to="/work/Buy-Online-Pickup-in-Store"
-                  aria-label="Next case study: Creating an Omnichannel Pickup Experience"
+                  to="/work/applepay"
+                  aria-label="Next case study: Bath & Body Works Apple Pay Integration"
                   onMouseEnter={() => { setNextHover(true); hoverOn() }}
                   onMouseLeave={() => { setNextHover(false); hoverOff() }}
                   onFocus={() => setNextHover(true)}
@@ -642,8 +642,8 @@ export default function Meridian() {
                       <span style={{ color: '#999', fontWeight: 300, fontSize: 13, lineHeight: '22px' }}>Next</span>
                       <BackArrow flip />
                     </div>
-                    <h3 className="mt-3" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px' }}>Creating an Omnichannel Pickup Experience</h3>
-                    <p className="mt-2 ml-auto" style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px', maxWidth: 520 }}>Bath &amp; Body Works set out to introduce Buy Online, Pick Up In Store (BOPIS), giving customers the convenience of shopping online while fulfilling their purchase through a nearby store.</p>
+                    <h3 className="mt-3" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px' }}>Bath &amp; Body Works Apple Pay Integration</h3>
+                    <p className="mt-2 ml-auto" style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px', maxWidth: 520 }}>Bath &amp; Body Works needed to enhance payment options to support digital wallets.</p>
                   </div>
                 </Link>
               </div>

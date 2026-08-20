@@ -54,9 +54,9 @@ function CaseStudyTopBar() {
       style={{ height: 77, borderBottom: '1px solid #d2d2d2' }}>
       <Link to="/#work" className="flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
         <BackArrow />
-        <span className="hidden sm:inline" style={linkText}>Back to portfolio</span>
+        <span className="hidden sm:inline" style={linkText}>Back to Portfolio</span>
       </Link>
-      <div className="absolute left-1/2 -translate-x-1/2 flex items-center" aria-hidden="true">
+      <Link to="/" aria-label="Home" className="absolute left-1/2 -translate-x-1/2 flex items-center">
         <svg width="30" height="40" viewBox="0 0 31.5145 42.0193" fill="none">
           <path d={svgPaths.p1b65ed80} fill="black" />
           <path d={svgPaths.p11c45c00} fill="black" />
@@ -64,7 +64,7 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p2e1b9140} fill="black" />
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
-      </div>
+      </Link>
       <Link to="/work/databases" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
         <span style={linkText}>Next Project</span>
         <BackArrow flip />
