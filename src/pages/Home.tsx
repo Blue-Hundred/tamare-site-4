@@ -190,11 +190,11 @@ export default function Home() {
             className="font-light"
             style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.2, fontWeight: 400, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
           >
-            <span style={{ background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
+            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}>
               <BlurText text="Framing problems," play={loaded} delay={0.07} />
             </span>
             <br />
-            <span style={{ background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
+            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}>
               <BlurText text="crafting solutions." play={loaded} delay={0.12} />
             </span>
           </motion.h1>
