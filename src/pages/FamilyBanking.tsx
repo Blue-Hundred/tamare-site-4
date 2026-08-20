@@ -129,7 +129,7 @@ export default function FamilyBanking() {
           </div>
           <div className={`relative z-10 ${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start`}>
             <Reveal className="lg:col-span-6 lg:col-start-1">
-              <div className="rounded-[20px] p-4 md:p-5" style={{ background: 'rgba(255,255,255,0.50)', backdropFilter: 'blur(1px)' }}>
+              <div className="rounded-[20px] p-4 md:p-5" style={{ backdropFilter: 'blur(6px)' }}>
                 <h1 className="text-h1" style={{ color: '#0f0f0e' }}>
                   Modernizing Family Banking
                 </h1>
