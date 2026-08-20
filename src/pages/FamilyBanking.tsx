@@ -303,13 +303,10 @@ export default function FamilyBanking() {
                     </Reveal>
                   ))}
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 mt-12 md:mt-14 pt-8" style={{ borderTop: '1px solid #e4e4e4' }}>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 mt-12 md:mt-14 pt-8">
                   {outcomeStats.map((stat, i) => (
                     <Reveal key={stat.label} delay={i * 0.06}>
-                      <div
-                        className="flex flex-col gap-2 md:px-6"
-                        style={i > 0 ? { borderLeft: '1px solid #e4e4e4' } : undefined}
-                      >
+                      <div className="flex flex-col gap-2 md:px-6">
                         <span className="text-h1" style={{ color: '#0f0f0e', fontSize: 'clamp(2rem, 3.4vw, 3.375rem)', lineHeight: 1 }}>{stat.value}</span>
                         <span className="text-body-14" style={{ color: '#595958' }}>{stat.label}</span>
                       </div>
