@@ -343,8 +343,8 @@ export default function Meridian() {
                   { label: 'YEAR', value: '2025' },
                   { label: 'DURATION', value: '6 months' },
                   { label: 'TASKS', value: 'Experience Research, Experience Design, Service Design, Clickable Prototype' },
-                ].map(({ label, value }) => (
-                  <div key={label} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 border-b border-[rgba(15,15,14,0.15)] py-3">
+                ].map(({ label, value }, i, arr) => (
+                  <div key={label} className={`flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 py-3 ${i < arr.length - 1 ? 'border-b border-[rgba(15,15,14,0.15)]' : ''}`}>
                     <div className="text-xs font-light tracking-widest sm:w-[140px] shrink-0" style={{ color: '#0f0f0e', letterSpacing: '0.15em', lineHeight: 1.5 }}>
                       {label}
                     </div>
