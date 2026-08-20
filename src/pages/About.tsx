@@ -114,7 +114,7 @@ export default function About() {
           <div className="mt-10 flex flex-col">
             {awards.map((a, i) => (
               <Reveal key={i} delay={i * 0.07}>
-                <div className="flex items-center justify-between py-6" style={{ borderBottom: '1px solid rgba(15,15,14,0.08)' }}>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0 py-6" style={{ borderBottom: '1px solid rgba(15,15,14,0.08)' }}>
                   <span className="font-light" style={{ fontWeight: 300, color: '#0f0f0e', fontSize: '1rem' }}>{a.title}</span>
                   <div className="flex items-center gap-8">
                     <span className="text-sm font-light" style={{ color: '#595958' }}>{a.project}</span>
