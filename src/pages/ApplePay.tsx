@@ -336,8 +336,8 @@ export default function ApplePay() {
               <Reveal>
                 <div className="rounded-[20px] overflow-hidden flex items-center justify-center">
                   <img
-                    src="/images/applepay-outcome.png"
-                    alt="Bath & Body Works mobile secure checkout with the Apple Pay button held on an iPhone"
+                    src="/images/applepay-results.png"
+                    alt="Bath & Body Works secure checkout on an iPhone with Apple Pay and PayPal options"
                     className="w-full h-auto block"
                     loading="lazy"
                   />
