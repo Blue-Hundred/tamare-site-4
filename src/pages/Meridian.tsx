@@ -306,12 +306,32 @@ export default function Meridian() {
           </div>
           <div className={`relative z-10 ${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start`}>
             <Reveal className="lg:col-span-6 lg:col-start-1">
-              <div className="bg-white rounded p-4 md:p-5">
+              <div>
                 <h1 className="text-h1" style={{ color: '#0f0f0e' }}>
-                  Creating a Unified Database Management Platform
+                  <span
+                    style={{
+                      background: '#ffffff',
+                      boxDecorationBreak: 'clone',
+                      WebkitBoxDecorationBreak: 'clone',
+                      padding: '0 0.3em',
+                      marginLeft: '-0.3em',
+                    }}
+                  >
+                    Creating a Unified Database Management Platform
+                  </span>
                 </h1>
                 <p className="text-body-18 mt-4 md:mt-6" style={{ color: '#595958' }}>
-                  Designing a scalable enterprise platform that standardized database onboarding, provisioning, and service management across multiple database products.
+                  <span
+                    style={{
+                      background: '#ffffff',
+                      boxDecorationBreak: 'clone',
+                      WebkitBoxDecorationBreak: 'clone',
+                      padding: '0.1em 0.3em',
+                      marginLeft: '-0.3em',
+                    }}
+                  >
+                    Designing a scalable enterprise platform that standardized database onboarding, provisioning, and service management across multiple database products.
+                  </span>
                 </p>
               </div>
             </Reveal>
@@ -323,8 +343,8 @@ export default function Meridian() {
                   { label: 'YEAR', value: '2025' },
                   { label: 'DURATION', value: '6 months' },
                   { label: 'TASKS', value: 'Experience Research, Experience Design, Service Design, Clickable Prototype' },
-                ].map(({ label, value }) => (
-                  <div key={label} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 border-b border-[rgba(15,15,14,0.15)] py-3">
+                ].map(({ label, value }, i, arr) => (
+                  <div key={label} className={`flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 py-3 ${i < arr.length - 1 ? 'border-b border-[rgba(15,15,14,0.15)]' : ''}`}>
                     <div className="text-xs font-light tracking-widest sm:w-[140px] shrink-0" style={{ color: '#0f0f0e', letterSpacing: '0.15em', lineHeight: 1.5 }}>
                       {label}
                     </div>
