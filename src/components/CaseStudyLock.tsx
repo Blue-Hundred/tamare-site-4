@@ -63,7 +63,7 @@ export default function CaseStudyLock({ onUnlock }: { onUnlock: () => void }) {
             }}
             className="flex-1 outline-none"
             style={{
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: 300,
               color: '#0f0f0e',
               padding: '12px 14px',
