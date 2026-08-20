@@ -361,7 +361,7 @@ export default function ApplePay() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                   {outcomes.map((outcome, i) => (
                     <Reveal key={outcome} delay={i * 0.06}>
-                      <div className="h-full rounded-[16px] p-5 md:p-6" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
+                      <div className="h-full rounded-[16px] p-5 md:p-6" style={{ background: 'rgba(255,255,255,0.08)' }}>
                         <p className="text-body-18" style={{ color: '#ffffff' }}>{renderBold(outcome)}</p>
                       </div>
                     </Reveal>
