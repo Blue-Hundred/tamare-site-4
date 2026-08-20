@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, type MouseEvent } from 'react'
 import { Link, useLocation } from 'react-router'
 import { motion, AnimatePresence } from 'framer-motion'
 
-function NavItem({ href, label, isActive }: { href: string; label: string; isActive: boolean }) {
+function NavItem({ href, label, isActive, onClick }: { href: string; label: string; isActive: boolean; onClick?: (event: MouseEvent<HTMLAnchorElement>) => void }) {
   const [hovered, setHovered] = useState(false)
   return (
     <Link
@@ -20,6 +20,7 @@ function NavItem({ href, label, isActive }: { href: string; label: string; isAct
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={onClick}
     >
       {label}
       {(isActive || hovered) && (
@@ -94,6 +95,12 @@ const RESUME_HREF = '/tamare-reese-resume.pdf'
 export default function NavBar() {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
+  const scrollToContact = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/about') {
+      event.preventDefault()
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <>
@@ -109,7 +116,7 @@ export default function NavBar() {
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map(([href, label]) => {
             const isActive = location.pathname === '/about' && label === 'About'
-            return <NavItem key={label} href={href} label={label} isActive={isActive} />
+            return <NavItem key={label} href={href} label={label} isActive={isActive} onClick={label === 'Contact' ? scrollToContact : undefined} />
           })}
           <NavExternalItem href={RESUME_HREF} label="Resume" />
           <a
@@ -176,7 +183,10 @@ export default function NavBar() {
                   >
                     <Link
                       to={href}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={event => {
+                        setMenuOpen(false)
+                        if (label === 'Contact') scrollToContact(event)
+                      }}
                       style={{
                         textDecoration: 'none',
                         fontSize: 'clamp(2.5rem, 10vw, 3.5rem)',
