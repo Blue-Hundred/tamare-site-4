@@ -309,7 +309,7 @@ export default function ApplePay() {
                   className="w-full h-auto block"
                   loading="lazy"
                 />
-              </div>
+                </CaseStudyCard>
             </Reveal>
           </div>
         </section>
@@ -327,8 +327,8 @@ export default function ApplePay() {
                   alt="Apple Pay payment flow across customer experience, iOS, device security, Apple Pay services, and merchant layers"
                   className="w-full h-auto block"
                   loading="lazy"
-                />
-              </div>
+                  />
+                </CaseStudyCard>
             </Reveal>
           </div>
         </section>
