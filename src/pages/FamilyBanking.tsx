@@ -291,7 +291,7 @@ export default function FamilyBanking() {
         <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[100px]">
           <div className={contentWidth}>
             <Reveal>
-              <div className="rounded-[20px] bg-white p-6 md:p-10" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
+              <CaseStudyCard className="p-6 md:p-10">
                 <h2 className="text-h2 mb-8 md:mb-10" style={{ color: '#0f0f0e' }}>Outcome</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
                   {outcomeColumns.map((col, i) => (
@@ -316,7 +316,7 @@ export default function FamilyBanking() {
                     </Reveal>
                   ))}
                 </div>
-              </div>
+              </CaseStudyCard>
             </Reveal>
           </div>
         </section>
