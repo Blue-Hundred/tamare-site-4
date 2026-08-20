@@ -1,11 +1,13 @@
 import { useRef, useState, useEffect, type ReactNode } from 'react'
 import { Link, useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
+import { Users, Smartphone, UserRound, FlaskConical } from 'lucide-react'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import { PostItGrid } from '../components/PostItGrid'
 import KeyUXDiagram from '../components/KeyUXDiagram'
 import CaseStudyCard from '../components/CaseStudyCard'
+import ParticipantCriteriaCard from '../components/ParticipantCriteriaCard'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -251,14 +253,15 @@ export default function ApplePay() {
               </p>
             </Reveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-              {participants.map((p, i) => (
-                <Reveal key={p} delay={i * 0.06}>
-                  <div className="h-full flex items-start gap-4 rounded-[16px] p-5 md:p-6" style={{ background: '#ecf8ff' }}>
-                    <span className="shrink-0 rounded-full" style={{ width: 12, height: 12, marginTop: 8, background: '#014ba6' }} aria-hidden="true" />
-                    <p className="text-body-18" style={{ color: '#0f0f0e' }}>{p}</p>
-                  </div>
-                </Reveal>
-              ))}
+  {participants.map((p, i) => {
+  const icons = [Users, Smartphone, UserRound, FlaskConical]
+  const Icon = icons[i]
+  return (
+  <Reveal key={p} delay={i * 0.06}>
+  <ParticipantCriteriaCard text={p} icon={Icon} />
+  </Reveal>
+  )
+  })}
             </div>
           </div>
         </section>
