@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import { PostItGrid } from '../components/PostItGrid'
+import ObjectiveCard from '../components/ObjectiveCard'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -554,17 +555,9 @@ export default function BathBodyWorks() {
             </Reveal>
             <Reveal delay={0.06}>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-                {objectives.map(obj => (
-                  <article key={obj.n} className="bg-white rounded-[10px] p-5 md:p-6 flex flex-col gap-6 md:gap-8">
-                    <div className="rounded-full flex items-center justify-center shrink-0" style={{ width: 44, height: 44, backgroundColor: '#f5f5f5' }}>
-                      <span style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 16, letterSpacing: '-0.3px' }}>{obj.n}</span>
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      <h3 className="text-h4" style={{ color: '#0f0f0e' }}>{obj.title}</h3>
-                      <p className="text-body-18" style={{ color: '#595958' }}>{obj.body}</p>
-                    </div>
-                  </article>
-                ))}
+  {objectives.map(obj => (
+  <ObjectiveCard key={obj.n} number={obj.n} title={obj.title} body={obj.body} />
+  ))}
               </div>
             </Reveal>
           </div>
