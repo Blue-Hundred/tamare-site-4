@@ -15,10 +15,10 @@ const innovations: Innovation[] = [
 ]
 
 const cardLayout = [
-  { side: 'left' as const, top: 40, width: 340 },
-  { side: 'left' as const, top: 330, width: 340 },
-  { side: 'right' as const, top: 40, width: 340 },
-  { side: 'right' as const, top: 330, width: 340 },
+  { side: 'left' as const, top: 40 },
+  { side: 'left' as const, top: 360 },
+  { side: 'right' as const, top: 40 },
+  { side: 'right' as const, top: 360 },
 ]
 
 const pathVariants = {
@@ -26,25 +26,28 @@ const pathVariants = {
   visible: { pathLength: 1, opacity: 1 },
 }
 
+const HUB_GAP = 40 // gap between the circle edge and the bracket vertex
+
 /**
  * Animated hub-and-spoke diagram recreating the "Key UX Innovations" summary:
- * a central hub with four connected highlight pills, revealed with a
- * staggered, motion-driven entrance instead of a static exported image.
+ * a central hub, four full-width highlight pills, and bracket-style connectors
+ * whose two lines on each side converge to a single point aimed at the hub.
  *
- * Connector lines are computed from the real, measured positions of the hub
- * and each pill (via offsetLeft/offsetTop, which ignore the entrance
- * transform) so every line always starts at the hub's edge and ends exactly
- * at its pill, regardless of text length, viewport width, or resize.
+ * Every coordinate is measured from the real, laid-out DOM (offsetLeft/
+ * offsetTop, which ignore the entrance transform), so the connectors always
+ * meet their pills exactly regardless of text length, viewport width, or
+ * resize.
  */
 export default function KeyUXDiagram() {
   const wrapperRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const hubRef = useRef<HTMLDivElement>(null)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
+  const pillRefs = useRef<(HTMLSpanElement | null)[]>([])
   const inView = useInView(wrapperRef, { once: true, margin: '-80px 0px' })
 
   const [paths, setPaths] = useState<string[]>([])
-  const [viewBox, setViewBox] = useState({ width: 1160, height: 600 })
+  const [viewBox, setViewBox] = useState({ width: 1160, height: 620 })
 
   const measure = useCallback(() => {
     const container = containerRef.current
@@ -57,21 +60,31 @@ export default function KeyUXDiagram() {
     const hubCenterY = hub.offsetTop + hub.offsetHeight / 2
     const hubRadius = hub.offsetWidth / 2
 
+    // Shared bracket vertex on each side, pointed toward the hub.
+    const leftVertexX = hubCenterX - hubRadius - HUB_GAP
+    const rightVertexX = hubCenterX + hubRadius + HUB_GAP
+
     const nextPaths = cardLayout.map((layout, i) => {
       const card = cardRefs.current[i]
-      if (!card) return ''
+      const pill = pillRefs.current[i]
+      if (!card || !pill) return ''
 
-      const anchorX = layout.side === 'left' ? card.offsetLeft + card.offsetWidth : card.offsetLeft
-      const anchorY = card.offsetTop + 22
+      const isTop = layout.top < 200
+      const isLeft = layout.side === 'left'
 
-      const dx = anchorX - hubCenterX
-      const dy = anchorY - hubCenterY
-      const dist = Math.sqrt(dx * dx + dy * dy) || 1
-      const hubEdgeX = hubCenterX + (dx / dist) * hubRadius
-      const hubEdgeY = hubCenterY + (dy / dist) * hubRadius
+      // Card's offset parent is the container, so its coordinates are already
+      // in container space. The pill sits at the top of the card, so the pill's
+      // bottom edge is cardTop + pill height.
+      const anchorX = isLeft ? card.offsetLeft + card.offsetWidth : card.offsetLeft
+      const anchorY = isTop ? card.offsetTop : card.offsetTop + pill.offsetHeight
 
-      const midX = (hubEdgeX + anchorX) / 2
-      return `M ${hubEdgeX} ${hubEdgeY} C ${midX} ${hubEdgeY}, ${midX} ${anchorY}, ${anchorX} ${anchorY}`
+      const vertexX = isLeft ? leftVertexX : rightVertexX
+      const vertexY = hubCenterY
+
+      // Cubic that leaves the pill horizontally and arrives horizontally at the
+      // shared vertex, so top and bottom lines meet in a clean point.
+      const midX = (anchorX + vertexX) / 2
+      return `M ${anchorX} ${anchorY} C ${midX} ${anchorY}, ${midX} ${vertexY}, ${vertexX} ${vertexY}`
     })
 
     setPaths(nextPaths)
@@ -109,10 +122,9 @@ export default function KeyUXDiagram() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.15 + i * 0.1 }}
-            className="rounded-[16px] p-5 flex flex-col gap-3"
-            style={{ border: '1px solid rgba(15,15,14,0.08)', background: '#ffffff' }}
+            className="flex flex-col gap-3"
           >
-            <span className="self-start rounded-full px-4 py-2 text-white" style={{ background: item.color, fontWeight: 700, fontSize: 14 }}>
+            <span className="rounded-full px-5 py-3 text-white text-center" style={{ background: item.color, fontWeight: 700, fontSize: 15 }}>
               {item.title}
             </span>
             <p className="text-body-14" style={{ color: '#464646', lineHeight: 1.6 }}>{item.body}</p>
@@ -121,7 +133,7 @@ export default function KeyUXDiagram() {
       </div>
 
       {/* Desktop: hub-and-spoke layout */}
-      <div ref={containerRef} className="hidden md:block relative" style={{ minHeight: 600 }}>
+      <div ref={containerRef} className="hidden md:block relative" style={{ minHeight: 620 }}>
         <svg
           className="absolute inset-0 w-full h-full"
           viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}
@@ -133,8 +145,9 @@ export default function KeyUXDiagram() {
               <motion.path
                 key={innovations[i].title}
                 d={d}
-                stroke="#c9c9c9"
+                stroke="#333333"
                 strokeWidth="1.5"
+                strokeLinecap="round"
                 initial="hidden"
                 animate={inView ? 'visible' : 'hidden'}
                 variants={pathVariants}
@@ -159,8 +172,8 @@ export default function KeyUXDiagram() {
         {cardLayout.map((layout, i) => {
           const item = innovations[i]
           const positionStyle = layout.side === 'left'
-            ? { left: 0, top: layout.top, width: layout.width }
-            : { right: 0, top: layout.top, width: layout.width }
+            ? { left: 0, top: layout.top, width: 'calc(50% - 210px)' }
+            : { right: 0, top: layout.top, width: 'calc(50% - 210px)' }
           return (
             <motion.div
               key={item.title}
@@ -172,7 +185,11 @@ export default function KeyUXDiagram() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.45 + i * 0.12 }}
               onAnimationComplete={measure}
             >
-              <span className="self-start rounded-full px-5 py-2.5 text-white" style={{ background: item.color, fontWeight: 700, fontSize: 15 }}>
+              <span
+                ref={el => { pillRefs.current[i] = el }}
+                className="block w-full rounded-full px-6 py-3.5 text-white text-center"
+                style={{ background: item.color, fontWeight: 700, fontSize: 15 }}
+              >
                 {item.title}
               </span>
               <p className="text-body-14" style={{ color: '#464646', lineHeight: 1.6 }}>{item.body}</p>
