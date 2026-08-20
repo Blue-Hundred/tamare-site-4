@@ -291,7 +291,7 @@ export default function ApplePay() {
         </section>
 
         {/* Multi-Flow Optimization */}
-        <section className="px-4 sm:px-8 md:px-14 pt-8 pb-4 md:py-[70px]">
+        <section className="px-4 sm:px-8 md:px-14 py-8 md:py-[70px]">
           <div className={contentWidth}>
             <Reveal>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10 md:mb-14">
