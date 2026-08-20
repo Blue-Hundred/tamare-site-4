@@ -16,9 +16,9 @@ const innovations: Innovation[] = [
 
 const cardLayout = [
   { side: 'left' as const, top: 40 },
-  { side: 'left' as const, top: 360 },
+  { side: 'left' as const, top: 300 },
   { side: 'right' as const, top: 40 },
-  { side: 'right' as const, top: 360 },
+  { side: 'right' as const, top: 300 },
 ]
 
 const pathVariants = {
@@ -133,7 +133,7 @@ export default function KeyUXDiagram() {
       </div>
 
       {/* Desktop: hub-and-spoke layout */}
-      <div ref={containerRef} className="hidden md:block relative" style={{ minHeight: 540 }}>
+      <div ref={containerRef} className="hidden md:block relative" style={{ minHeight: 480 }}>
         <svg
           className="absolute inset-0 w-full h-full"
           viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}
