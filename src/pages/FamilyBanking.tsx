@@ -81,11 +81,11 @@ const meta = [
 ]
 
 const stripImages = [
-  { src: '/images/family-banking-research-1.png', alt: 'Overall satisfaction with the Family Banking experience and usability research findings' },
-  { src: '/images/family-banking-strip-2.png', alt: 'Savings screen listing savings goals and recent transfers' },
-  { src: '/images/family-banking-strip-3.png', alt: 'Create savings goal form with goal name and amount fields' },
-  { src: '/images/family-banking-strip-4.png', alt: 'Confirmation screen after creating a savings goal' },
-  { src: '/images/family-banking-strip-5.png', alt: 'Savings screen showing updated balance and savings goal progress' },
+  { src: '/images/family-banking-strip-1.png', alt: "Parent dashboard showing a child's spending and savings balances with quick actions" },
+  { src: '/images/family-banking-strip-2.png', alt: 'Savings screen showing a $15.00 balance and general savings goal' },
+  { src: '/images/family-banking-strip-3.png', alt: 'Create savings goal form with a headphones goal name and $150.00 amount' },
+  { src: '/images/family-banking-strip-4.png', alt: 'Confirmation screen after creating the headphones savings goal' },
+  { src: '/images/family-banking-strip-5.png', alt: 'Savings screen showing an updated $165.00 balance with the headphones goal progress' },
 ]
 
 const outcomeColumns = [
@@ -272,20 +272,18 @@ export default function FamilyBanking() {
               </div>
             </Reveal>
             <Reveal>
-              <CaseStudyCard className="overflow-x-auto p-4 md:p-6">
-                <div className="flex gap-4 md:gap-6" style={{ width: 'max-content' }}>
-                  {stripImages.map((img) => (
-                    <img
-                      key={img.src}
-                      src={img.src}
-                      alt={img.alt}
-                      loading="lazy"
-                      className="h-auto block rounded-[12px]"
-                      style={{ width: 220 }}
-                    />
-                  ))}
-                </div>
-              </CaseStudyCard>
+              <div className="flex gap-3 overflow-x-auto md:grid md:grid-cols-5 md:gap-4 md:overflow-visible">
+                {stripImages.map((img) => (
+                  <img
+                    key={img.src}
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="h-auto block w-full rounded-[12px] shrink-0"
+                    style={{ minWidth: 180 }}
+                  />
+                ))}
+              </div>
             </Reveal>
           </div>
         </section>
