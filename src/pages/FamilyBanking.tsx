@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import CaseStudyCard from '../components/CaseStudyCard'
+import CaseStudyParagraph from '../components/CaseStudyParagraph'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -217,8 +218,8 @@ export default function FamilyBanking() {
             </Reveal>
             <Reveal delay={0.05}>
               <div className="mt-4 mb-10 md:mb-14 flex flex-col gap-5" style={{ color: '#595958' }}>
-                <p className="text-body-18">The existing Chase First Banking experience relied on an external vendor to power core money management capabilities, including spending controls, savings goals, allowances, chores, and transaction history. Moving these capabilities in-house represented a multi-million-dollar strategic investment, but success depended on more than rebuilding features — it required helping over a million customers transition without confusion or increased support calls.</p>
-                <p className="text-body-18">The redesign also needed to improve engagement with key financial management features while preserving familiar mental models for existing customers.</p>
+                <CaseStudyParagraph>The existing Chase First Banking experience relied on an external vendor to power core money management capabilities, including spending controls, savings goals, allowances, chores, and transaction history. Moving these capabilities in-house represented a multi-million-dollar strategic investment, but success depended on more than rebuilding features — it required helping over a million customers transition without confusion or increased support calls.</CaseStudyParagraph>
+                <CaseStudyParagraph>The redesign also needed to improve engagement with key financial management features while preserving familiar mental models for existing customers.</CaseStudyParagraph>
               </div>
             </Reveal>
             <Reveal>
@@ -242,8 +243,8 @@ export default function FamilyBanking() {
             </Reveal>
             <Reveal delay={0.05}>
               <div className="mt-4 mb-10 md:mb-14 flex flex-col gap-5" style={{ color: '#595958' }}>
-                <p className="text-body-18">I joined the project during implementation as a UX Designer responsible for translating validated concepts into production-ready experiences. My primary ownership was the Savings Goals workflow, but I first immersed myself in the usability findings to understand the broader product strategy, customer behaviors, and interaction patterns.</p>
-                <p className="text-body-18">Rather than simply recreating screens, I reviewed usability findings beyond my assigned feature to understand how Savings Goals fit into the overall information architecture. This systems-level understanding allowed me to preserve research-validated interaction patterns, produce implementation-ready designs with clear specifications, anticipate engineering questions before development, and align the delivered experience with the team&apos;s long-term migration strategy.</p>
+                <CaseStudyParagraph>I joined the project during implementation as a UX Designer responsible for translating validated concepts into production-ready experiences. My primary ownership was the Savings Goals workflow, but I first immersed myself in the usability findings to understand the broader product strategy, customer behaviors, and interaction patterns.</CaseStudyParagraph>
+                <CaseStudyParagraph>Rather than simply recreating screens, I reviewed usability findings beyond my assigned feature to understand how Savings Goals fit into the overall information architecture. This systems-level understanding allowed me to preserve research-validated interaction patterns, produce implementation-ready designs with clear specifications, anticipate engineering questions before development, and align the delivered experience with the team&apos;s long-term migration strategy.</CaseStudyParagraph>
               </div>
             </Reveal>
             <Reveal>
@@ -267,8 +268,8 @@ export default function FamilyBanking() {
             </Reveal>
             <Reveal delay={0.05}>
               <div className="mt-4 mb-10 md:mb-14 flex flex-col gap-5" style={{ color: '#595958' }}>
-                <p className="text-body-18">The final implementation integrated Savings Goals into the redesigned parent dashboard, supporting Chase&apos;s broader goal of centralizing money management while maintaining a simple, approachable experience. The design balanced familiarity for existing customers with clearer organization for new users, supporting the transition from the legacy platform.</p>
-                <p className="text-body-18">The work supported a strategic migration affecting approximately 1.5 million Chase First Banking accounts and contributed to a platform modernization expected to save Chase millions by eliminating third-party vendor dependence.</p>
+                <CaseStudyParagraph>The final implementation integrated Savings Goals into the redesigned parent dashboard, supporting Chase&apos;s broader goal of centralizing money management while maintaining a simple, approachable experience. The design balanced familiarity for existing customers with clearer organization for new users, supporting the transition from the legacy platform.</CaseStudyParagraph>
+                <CaseStudyParagraph>The work supported a strategic migration affecting approximately 1.5 million Chase First Banking accounts and contributed to a platform modernization expected to save Chase millions by eliminating third-party vendor dependence.</CaseStudyParagraph>
               </div>
             </Reveal>
             <Reveal>
