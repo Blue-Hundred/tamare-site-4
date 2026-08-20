@@ -3,6 +3,7 @@ import { Link, useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
+import MobileNavMenu from '../components/MobileNavMenu'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 import personasImage from '../imports/Databases/267c205dc382f590b717a76a3b90365da5afb8b2.png'
 import blueprintImage from '../imports/Databases/1887e9d636693dc6c50eebc16511159b07b7d0ff.png'
@@ -232,10 +233,13 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
       </Link>
-      <Link to="/work/applepay" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
-        <span className="font-light sm:font-medium" style={{ ...linkText, fontWeight: undefined }}>Next Project</span>
-        <BackArrow flip />
-      </Link>
+      <div className="ml-auto flex items-center">
+        <Link to="/work/applepay" className="hidden md:flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
+          <span style={linkText}>Next Project</span>
+          <BackArrow flip />
+        </Link>
+        <MobileNavMenu />
+      </div>
     </div>
   )
 }

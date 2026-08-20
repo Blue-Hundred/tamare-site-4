@@ -5,6 +5,7 @@ import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import CaseStudyCard from '../components/CaseStudyCard'
 import CaseStudyParagraph from '../components/CaseStudyParagraph'
+import MobileNavMenu from '../components/MobileNavMenu'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -65,10 +66,13 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
       </Link>
-      <Link to="/work/databases" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
-        <span style={linkText}>Next Project</span>
-        <BackArrow flip />
-      </Link>
+      <div className="ml-auto flex items-center">
+        <Link to="/work/databases" className="hidden md:flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
+          <span style={linkText}>Next Project</span>
+          <BackArrow flip />
+        </Link>
+        <MobileNavMenu />
+      </div>
     </div>
   )
 }

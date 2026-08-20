@@ -8,6 +8,7 @@ import { PostItGrid } from '../components/PostItGrid'
 import KeyUXDiagram from '../components/KeyUXDiagram'
 import CaseStudyCard from '../components/CaseStudyCard'
 import ParticipantCriteriaCard from '../components/ParticipantCriteriaCard'
+import MobileNavMenu from '../components/MobileNavMenu'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -68,10 +69,13 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
       </Link>
-      <Link to="/work/Buy-Online-Pickup-in-Store" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
-        <span style={linkText}>Next Project</span>
-        <BackArrow flip />
-      </Link>
+      <div className="ml-auto flex items-center">
+        <Link to="/work/Buy-Online-Pickup-in-Store" className="hidden md:flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
+          <span style={linkText}>Next Project</span>
+          <BackArrow flip />
+        </Link>
+        <MobileNavMenu />
+      </div>
     </div>
   )
 }
