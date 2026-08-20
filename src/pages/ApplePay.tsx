@@ -302,7 +302,7 @@ export default function ApplePay() {
               </div>
             </Reveal>
             <Reveal>
-              <div className="rounded-[20px] overflow-hidden bg-white p-4 md:p-10" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
+              <CaseStudyCard className="overflow-hidden p-4 md:p-10">
                 <img
                   src="/images/applepay-flows.png"
                   alt="Experience map of the four validated checkout flows across shopping, bag, and receipt stages"
@@ -321,7 +321,7 @@ export default function ApplePay() {
               <h2 className="text-h2 mb-8 md:mb-12" style={{ color: '#0f0f0e' }}>Payment Flow</h2>
             </Reveal>
             <Reveal>
-              <div className="rounded-[20px] overflow-hidden bg-white p-4 md:p-10" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
+              <CaseStudyCard className="overflow-hidden p-4 md:p-10">
                 <img
                   src="/images/applepay-payment-flow.png"
                   alt="Apple Pay payment flow across customer experience, iOS, device security, Apple Pay services, and merchant layers"
