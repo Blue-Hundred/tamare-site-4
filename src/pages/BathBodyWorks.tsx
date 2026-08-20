@@ -461,6 +461,7 @@ export default function BathBodyWorks() {
                       boxDecorationBreak: 'clone',
                       WebkitBoxDecorationBreak: 'clone',
                       padding: '0 0.3em',
+                      marginLeft: '-0.3em',
                     }}
                   >
                     Creating an Omnichannel Pickup Experience
@@ -473,6 +474,7 @@ export default function BathBodyWorks() {
                       boxDecorationBreak: 'clone',
                       WebkitBoxDecorationBreak: 'clone',
                       padding: '0.1em 0.3em',
+                      marginLeft: '-0.3em',
                     }}
                   >
                     Bath &amp; Body Works set out to introduce Buy Online, Pick Up In Store (BOPIS), giving customers the convenience of shopping online while fulfilling their purchase through a nearby store.
@@ -482,8 +484,8 @@ export default function BathBodyWorks() {
             </Reveal>
             <Reveal delay={0.08} className="lg:col-span-5 lg:col-start-8">
               <aside className="bg-white rounded p-4 md:p-5">
-                {meta.map(({ label, value }) => (
-                  <div key={label} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 border-b border-[rgba(15,15,14,0.15)] py-3">
+                {meta.map(({ label, value }, i, arr) => (
+                  <div key={label} className={`flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 py-3 ${i < arr.length - 1 ? 'border-b border-[rgba(15,15,14,0.15)]' : ''}`}>
                     <div className="text-xs font-light tracking-widest sm:w-[150px] shrink-0" style={{ color: '#0f0f0e', letterSpacing: '0.15em', lineHeight: 1.5 }}>
                       {label}
                     </div>
