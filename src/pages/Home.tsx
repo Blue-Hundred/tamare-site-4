@@ -30,7 +30,7 @@ const projects = [
     tags: ['Product Design', 'Service Design'],
     year: '2019',
     image: '/images/bbw-cover.png',
-    href: '/work/bath-body-works',
+    href: '/work/Buy-Online-Pickup-in-Store',
   },
   {
     id: '03',
@@ -39,7 +39,7 @@ const projects = [
     tags: ['Experience Design', 'Experience Mapping'],
     year: '2018',
     image: '/images/bbw-applepay-cover.png',
-    href: '/work/apple-pay',
+    href: '/work/applepay',
   },
   {
     id: '04',

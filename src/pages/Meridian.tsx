@@ -232,7 +232,7 @@ function CaseStudyTopBar() {
           <path d={svgPaths.p32ecd500} fill="black" />
         </svg>
       </div>
-      <Link to="/work/bath-body-works" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
+      <Link to="/work/Buy-Online-Pickup-in-Store" className="flex items-center gap-[10px] ml-auto" style={{ textDecoration: 'none' }}>
         <span className="font-light sm:font-medium" style={{ ...linkText, fontWeight: undefined }}>Next Project</span>
         <BackArrow flip />
       </Link>
@@ -628,7 +628,7 @@ export default function Meridian() {
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="hidden md:block" aria-hidden="true" />
                 <Link
-                  to="/work/bath-body-works"
+                  to="/work/Buy-Online-Pickup-in-Store"
                   aria-label="Next case study: Creating an Omnichannel Pickup Experience"
                   onMouseEnter={() => { setNextHover(true); hoverOn() }}
                   onMouseLeave={() => { setNextHover(false); hoverOff() }}
