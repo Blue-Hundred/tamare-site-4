@@ -60,7 +60,7 @@ function CaseStudyTopBar() {
         <span className="hidden sm:inline" style={linkText}>Back to Portfolio</span>
       </Link>
       <Link to="/" aria-label="Home" className="absolute left-1/2 -translate-x-1/2 flex items-center">
-        <svg width="30" height="40" viewBox="0 0 31.5145 42.0193" fill="none">
+        <svg width="18" height="24" viewBox="0 0 31.5145 42.0193" fill="none">
           <path d={svgPaths.p1b65ed80} fill="black" />
           <path d={svgPaths.p11c45c00} fill="black" />
           <path d={svgPaths.pd915a80} fill="black" />
