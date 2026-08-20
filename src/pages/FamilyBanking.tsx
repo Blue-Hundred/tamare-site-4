@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import CaseStudyCard from '../components/CaseStudyCard'
+import BlurBackground from '../components/BlurBackground'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const contentWidth = 'max-w-[1156px] mx-auto'
@@ -129,14 +130,14 @@ export default function FamilyBanking() {
           </div>
           <div className={`relative z-10 ${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start`}>
             <Reveal className="lg:col-span-6 lg:col-start-1">
-              <div className="rounded-[20px] p-4 md:p-5" style={{ backdropFilter: 'blur(6px)' }}>
+              <BlurBackground>
                 <h1 className="text-h1" style={{ color: '#0f0f0e' }}>
                   Modernizing Family Banking
                 </h1>
                 <p className="text-body-32 mt-4 md:mt-6" style={{ color: '#0f0f0e' }}>
                   Delivering customer-focused outcomes through transformation and replatform.
                 </p>
-              </div>
+              </BlurBackground>
             </Reveal>
             <Reveal delay={0.08} className="lg:col-span-5 lg:col-start-8">
               <aside className="bg-white rounded p-4 md:p-5">
