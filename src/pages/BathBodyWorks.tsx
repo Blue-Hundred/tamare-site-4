@@ -622,9 +622,9 @@ export default function BathBodyWorks() {
             </Reveal>
             <Reveal delay={0.08}>
               <div className="mt-10 md:mt-[70px] grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-  <div className="md:col-span-2 rounded-[20px] overflow-hidden bg-white flex items-center justify-center p-4 md:p-6" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-> <img src="/images/bbw-service-blueprint.png" alt="BOPIS service blueprint for Bath & Body Works Buy Online, Pick Up In Store, mapping personas, frontstage experience, backstage actions, systems, APIs, data flow, pain points, and opportunities across discovery, consideration, purchase, fulfillment, and post-purchase" className="w-full h-auto block m-auto" loading="lazy" />
-  </div>
+                <div className="md:col-span-2 rounded-[20px] overflow-hidden bg-white flex items-center justify-center p-4 md:p-6" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
+                  <img src="/images/bbw-service-blueprint.png" alt="BOPIS service blueprint for Bath & Body Works Buy Online, Pick Up In Store, mapping personas, frontstage experience, backstage actions, systems, APIs, data flow, pain points, and opportunities across discovery, consideration, purchase, fulfillment, and post-purchase" className="w-full h-auto block m-auto" loading="lazy" />
+                </div>
                 <div className="rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
                   <img src="/images/bbw-key-visual-side.png" alt="Mobile view of the Bath & Body Works pickup experience" className="w-full h-full object-cover block" loading="lazy" />
                 </div>
