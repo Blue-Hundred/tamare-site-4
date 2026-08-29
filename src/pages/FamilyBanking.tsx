@@ -57,7 +57,7 @@ function CaseStudyTopBar() {
         <BackArrow />
         <span style={linkText}>
           <span className="sm:hidden">Work</span>
-          <span className="hidden sm:inline">Back to Portfolio</span>
+          <span className="hidden sm:inline">Back to Work</span>
         </span>
       </Link>
       <Link to="/" aria-label="Home" className="absolute left-1/2 -translate-x-1/2 flex items-center">
