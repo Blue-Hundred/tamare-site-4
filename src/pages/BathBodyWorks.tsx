@@ -83,6 +83,27 @@ function SubHead({ children }: { children: ReactNode }) {
   )
 }
 
+// "Section Intro" layout — the reusable H2 → H3 → paragraph combo. The H3
+// subhead sits 16px below the H2 title, and the paragraph body sits 24px below
+// the subhead. Reveals stagger the title and the subhead/body group.
+function SectionIntro({ title, subhead, children }: { title: ReactNode; subhead: ReactNode; children: ReactNode }) {
+  return (
+    <>
+      <Reveal>
+        <h2 className="text-h2" style={{ color: '#0f0f0e' }}>{title}</h2>
+      </Reveal>
+      <Reveal delay={0.05}>
+        <div className="mt-4">
+          <SubHead>{subhead}</SubHead>
+        </div>
+        <div className="text-body-18 flex flex-col gap-5 mt-6 max-w-[960px]" style={{ color: '#595958' }}>
+          {children}
+        </div>
+      </Reveal>
+    </>
+  )
+}
+
 const meta = [
   { label: 'CLIENT', value: 'Bath & Body Works' },
   { label: 'ROLE', value: 'Lead Experience Designer' },
@@ -727,19 +748,11 @@ export default function BathBodyWorks() {
         {/* Beyond Checkout */}
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
           <div className={contentWidth}>
-            <Reveal>
-              <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Beyond Checkout</h2>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <div className="mt-6 md:mt-8">
-                <SubHead>Placing the order wasn&apos;t the end of the BOPIS experience.</SubHead>
-              </div>
-              <div className="text-body-18 flex flex-col gap-5 mt-7 max-w-[960px]" style={{ color: '#595958' }}>
-                <p>Store associates still needed to receive, locate, prepare, and stage the customer&apos;s products before pickup. The customer therefore needed to understand the difference between an order being received and actually being ready.</p>
-                <p>We designed post-purchase experiences that communicated order status and helped customers understand when they should travel to the store. Pickup communications provided the information customers needed to transition from the online experience to the store and successfully retrieve their purchase.</p>
-                <p>The experience didn&apos;t end when the browser closed—it ended when the customer had their products.</p>
-              </div>
-            </Reveal>
+            <SectionIntro title="Beyond Checkout" subhead={<>Placing the order wasn&apos;t the end of the BOPIS experience.</>}>
+              <p>Store associates still needed to receive, locate, prepare, and stage the customer&apos;s products before pickup. The customer therefore needed to understand the difference between an order being received and actually being ready.</p>
+              <p>We designed post-purchase experiences that communicated order status and helped customers understand when they should travel to the store. Pickup communications provided the information customers needed to transition from the online experience to the store and successfully retrieve their purchase.</p>
+              <p>The experience didn&apos;t end when the browser closed—it ended when the customer had their products.</p>
+            </SectionIntro>
             <Reveal delay={0.1}>
               <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 items-start">
                 {[
