@@ -74,12 +74,12 @@ function CaseStudyTopBar() {
   )
 }
 
-// Section subheading — matches the 26px light #464646 style used across the Figma design.
+// Section subheading — rendered as a semantic H3 using the design system's text-h3 token.
 function SubHead({ children }: { children: ReactNode }) {
   return (
-    <p style={{ color: '#464646', fontWeight: 300, fontSize: 'clamp(1.25rem, 2.4vw, 1.625rem)', lineHeight: 1.45, letterSpacing: '-0.02em' }}>
+    <h3 className="text-h3" style={{ color: '#0f0f0e' }}>
       {children}
-    </p>
+    </h3>
   )
 }
 
