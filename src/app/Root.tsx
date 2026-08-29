@@ -189,14 +189,27 @@ function NavItem({ href, label, isActive, hoverOn, hoverOff }: {
 }
 
 // ─── ScrollToTop ─────────────────────────────────────────────────────────────
-// Reset the scroll position to the top whenever the route path changes, so a
-// newly navigated page always starts at the top instead of inheriting the
-// previous page's scroll offset.
-function ScrollToTop() {
+// Reset the scroll position to the top whenever the route path changes OR the
+// case study lock is opened, so a newly loaded/unlocked page always starts at
+// the very top instead of inheriting the previous scroll offset. We also opt
+// out of the browser's native scroll restoration so a reload can't reinstate a
+// stale offset after our reset.
+function ScrollToTop({ locked }: { locked: boolean }) {
   const { pathname } = useLocation()
+
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+  }, [])
+
+  useEffect(() => {
+    // Run after paint so it wins over any layout the browser performs on load.
     window.scrollTo(0, 0)
-  }, [pathname])
+    const id = window.requestAnimationFrame(() => window.scrollTo(0, 0))
+    return () => window.cancelAnimationFrame(id)
+  }, [pathname, locked])
+
   return null
 }
 
@@ -228,7 +241,7 @@ export default function Root() {
 
   return (
     <CursorContext.Provider value={cursorCtx.current}>
-      <ScrollToTop />
+      <ScrollToTop locked={locked} />
       <AnimatePresence>{!loaded && <Loader onDone={() => setLoaded(true)} />}</AnimatePresence>
 
       <motion.div
