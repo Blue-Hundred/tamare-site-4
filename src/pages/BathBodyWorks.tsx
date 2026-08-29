@@ -700,7 +700,7 @@ export default function BathBodyWorks() {
             <div className="flex flex-col gap-16 md:gap-[120px]">
               {experienceSteps.map((step, i) => (
                 <Reveal key={step.title} delay={0.04}>
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                     <div className={`lg:col-span-5 flex flex-col gap-5 ${i % 2 === 1 ? 'lg:order-2 lg:col-start-8' : 'lg:col-start-1'}`}>
                       <span className="w-fit rounded-full px-4 py-2 text-sm" style={{ background: '#e2f3f8', color: '#0f0f0e' }}>{step.badge}</span>
                       <h3 className="text-h3" style={{ color: '#0f0f0e' }}>{step.title}</h3>
