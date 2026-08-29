@@ -55,7 +55,10 @@ function CaseStudyTopBar() {
       style={{ height: 77, borderBottom: '1px solid #d2d2d2' }}>
       <Link to="/#work" className="flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
         <BackArrow />
-        <span className="hidden sm:inline" style={linkText}>Back to Portfolio</span>
+        <span style={linkText}>
+          <span className="sm:hidden">Work</span>
+          <span className="hidden sm:inline">Back to Work</span>
+        </span>
       </Link>
       <Link to="/" aria-label="Home" className="absolute left-1/2 -translate-x-1/2 flex items-center">
         <svg width="18" height="24" viewBox="0 0 31.5145 42.0193" fill="none">
@@ -161,7 +164,7 @@ export default function FamilyBanking() {
               </div>
             </Reveal>
             <Reveal delay={0.08} className="lg:col-span-5 lg:col-start-8">
-              <aside className="bg-white rounded p-4 md:p-5">
+              <aside className="bg-white rounded py-4 md:py-5">
                 {meta.map(({ label, value }, i, arr) => (
                   <div key={label} className={`flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 py-3 ${i < arr.length - 1 ? 'border-b border-[rgba(15,15,14,0.15)]' : ''}`}>
                     <div className="text-xs font-light tracking-widest sm:w-[150px] shrink-0" style={{ color: '#0f0f0e', letterSpacing: '0.15em', lineHeight: 1.5 }}>

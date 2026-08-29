@@ -25,8 +25,20 @@ function Cursor({ ctxRef }: { ctxRef: React.MutableRefObject<CursorCtx> }) {
 
   useEffect(() => { ctxRef.current.setHovered = setCtxHovered }, [ctxRef])
 
-  const rx = useSpring(mx, { stiffness: 90, damping: 20, mass: 0.4 })
-  const ry = useSpring(my, { stiffness: 90, damping: 20, mass: 0.4 })
+  // When the route changes, any element that had set the hover state (e.g. a
+  // homepage project card clicked to navigate) unmounts before its
+  // mouse-leave/hover-end handler can fire, which would otherwise leave the
+  // cursor stuck in its enlarged "hover-link" state on the next page. Reset
+  // both hover sources on navigation so the cursor starts clean; the next
+  // pointer move re-detects any element genuinely under the cursor.
+  const { pathname } = useLocation()
+  useEffect(() => {
+    setCtxHovered(false)
+    setAutoHovered(false)
+  }, [pathname])
+
+  const rx = useSpring(mx, { stiffness: 650, damping: 45, mass: 0.35 })
+  const ry = useSpring(my, { stiffness: 650, damping: 45, mass: 0.35 })
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => { mx.set(e.clientX); my.set(e.clientY) }
@@ -177,14 +189,39 @@ function NavItem({ href, label, isActive, hoverOn, hoverOff }: {
 }
 
 // ─── ScrollToTop ─────────────────────────────────────────────────────────────
-// Reset the scroll position to the top whenever the route path changes, so a
-// newly navigated page always starts at the top instead of inheriting the
-// previous page's scroll offset.
-function ScrollToTop() {
-  const { pathname } = useLocation()
+// Reset the scroll position to the top whenever the route path changes OR the
+// case study lock is opened, so a newly loaded/unlocked page always starts at
+// the very top instead of inheriting the previous scroll offset. We also opt
+// out of the browser's native scroll restoration so a reload can't reinstate a
+// stale offset after our reset.
+function ScrollToTop({ locked }: { locked: boolean }) {
+  const { pathname, hash } = useLocation()
+
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+  }, [])
+
+  useEffect(() => {
+    // When the URL carries a hash (e.g. "/#work" from a case study Back
+    // button), anchor to that section instead of the top. Otherwise reset to
+    // the very top. The rAF pass runs after paint so it wins over any layout
+    // the browser performs on load.
+    const scroll = () => {
+      const id = hash ? hash.slice(1) : ''
+      const target = id ? document.getElementById(id) : null
+      if (target) {
+        target.scrollIntoView({ block: 'start' })
+      } else {
+        window.scrollTo(0, 0)
+      }
+    }
+    scroll()
+    const raf = window.requestAnimationFrame(scroll)
+    return () => window.cancelAnimationFrame(raf)
+  }, [pathname, hash, locked])
+
   return null
 }
 
@@ -216,7 +253,7 @@ export default function Root() {
 
   return (
     <CursorContext.Provider value={cursorCtx.current}>
-      <ScrollToTop />
+      <ScrollToTop locked={locked} />
       <AnimatePresence>{!loaded && <Loader onDone={() => setLoaded(true)} />}</AnimatePresence>
 
       <motion.div

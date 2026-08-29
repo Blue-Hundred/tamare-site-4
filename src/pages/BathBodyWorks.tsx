@@ -55,7 +55,10 @@ function CaseStudyTopBar() {
       style={{ height: 77, borderBottom: '1px solid #d2d2d2' }}>
       <Link to="/#work" className="flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
         <BackArrow />
-        <span className="hidden sm:inline" style={linkText}>Back to Portfolio</span>
+        <span style={linkText}>
+          <span className="sm:hidden">Work</span>
+          <span className="hidden sm:inline">Back to Work</span>
+        </span>
       </Link>
       <Link to="/" aria-label="Home" className="absolute left-1/2 -translate-x-1/2 flex items-center">
         <svg width="18" height="24" viewBox="0 0 31.5145 42.0193" fill="none">
@@ -74,12 +77,47 @@ function CaseStudyTopBar() {
   )
 }
 
-// Section subheading — matches the 26px light #464646 style used across the Figma design.
+// Section subheading — rendered as a semantic H3 using the design system's text-h3 token.
 function SubHead({ children }: { children: ReactNode }) {
   return (
-    <p style={{ color: '#464646', fontWeight: 300, fontSize: 'clamp(1.25rem, 2.4vw, 1.625rem)', lineHeight: 1.45, letterSpacing: '-0.02em' }}>
+    <h3 className="text-h3" style={{ color: '#0f0f0e' }}>
       {children}
-    </p>
+    </h3>
+  )
+}
+
+// "Section Intro" layout — the reusable H2 → H3 → paragraph combo. The H3
+// subhead sits 16px below the H2 title, and the paragraph body sits 24px below
+// the subhead. Reveals stagger the title and the subhead/body group.
+function SectionIntro({ title, subhead, children }: { title: ReactNode; subhead: ReactNode; children: ReactNode }) {
+  return (
+    <>
+      <Reveal>
+        <h2 className="text-h2" style={{ color: '#0f0f0e' }}>{title}</h2>
+      </Reveal>
+      <Reveal delay={0.05}>
+        <div className="mt-4">
+          <SubHead>{subhead}</SubHead>
+        </div>
+        <div className="text-body-18 flex flex-col gap-5 mt-6 max-w-[960px]" style={{ color: '#595958' }}>
+          {children}
+        </div>
+      </Reveal>
+    </>
+  )
+}
+
+// "Image Frame" — reusable padded white container for figures/diagrams. Centers
+// its image and keeps a 16px inset so the artwork clears the rounded corners.
+// Height hugs the content via self-start so it won't stretch in a grid row.
+function ImageFrame({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return (
+    <div
+      className={`self-start rounded-[20px] overflow-hidden bg-white flex items-center justify-center p-4 ${className}`}
+      style={{ border: '1px solid rgba(15,15,14,0.08)' }}
+    >
+      {children}
+    </div>
   )
 }
 
@@ -483,7 +521,7 @@ export default function BathBodyWorks() {
               </div>
             </Reveal>
             <Reveal delay={0.08} className="lg:col-span-5 lg:col-start-8">
-              <aside className="bg-white rounded p-4 md:p-5">
+              <aside className="bg-white rounded py-4 md:py-5">
                 {meta.map(({ label, value }, i, arr) => (
                   <div key={label} className={`flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 py-3 ${i < arr.length - 1 ? 'border-b border-[rgba(15,15,14,0.15)]' : ''}`}>
                     <div className="text-xs font-light tracking-widest sm:w-[150px] shrink-0" style={{ color: '#0f0f0e', letterSpacing: '0.15em', lineHeight: 1.5 }}>
@@ -601,12 +639,12 @@ export default function BathBodyWorks() {
             </Reveal>
             <Reveal delay={0.08}>
               <div className="mt-10 md:mt-[70px] grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-                <div className="md:col-span-2 rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                  <img src="/images/bbw-service-blueprint.png" alt="BOPIS service blueprint for Bath & Body Works Buy Online, Pick Up In Store, mapping personas, frontstage experience, backstage actions, systems, APIs, data flow, pain points, and opportunities across discovery, consideration, purchase, fulfillment, and post-purchase" className="w-full h-auto block" loading="lazy" />
-                </div>
-                <div className="rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                  <img src="/images/bbw-key-visual-side.png" alt="Mobile view of the Bath & Body Works pickup experience" className="w-full h-full object-cover block" loading="lazy" />
-                </div>
+                <ImageFrame className="md:col-span-2">
+                  <img src="/images/bbw-service-blueprint.png" alt="BOPIS service blueprint for Bath & Body Works Buy Online, Pick Up In Store, mapping personas, frontstage experience, backstage actions, systems, APIs, data flow, pain points, and opportunities across discovery, consideration, purchase, fulfillment, and post-purchase" className="w-full h-auto block m-auto" loading="lazy" />
+                </ImageFrame>
+                <ImageFrame>
+                  <img src="/images/bbw-key-visual-side.png" alt="Mobile view of the Bath & Body Works pickup experience" className="w-full h-auto block m-auto" loading="lazy" />
+                </ImageFrame>
               </div>
             </Reveal>
           </div>
@@ -657,12 +695,12 @@ export default function BathBodyWorks() {
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
-              <h2 className="text-h2 mb-10 md:mb-[70px]" style={{ color: '#0f0f0e' }}>Designing the Experience</h2>
+              <h2 className="text-h2 mt-6 mb-6" style={{ color: '#0f0f0e' }}>Designing the Experience</h2>
             </Reveal>
             <div className="flex flex-col gap-16 md:gap-[120px]">
               {experienceSteps.map((step, i) => (
                 <Reveal key={step.title} delay={0.04}>
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                     <div className={`lg:col-span-5 flex flex-col gap-5 ${i % 2 === 1 ? 'lg:order-2 lg:col-start-8' : 'lg:col-start-1'}`}>
                       <span className="w-fit rounded-full px-4 py-2 text-sm" style={{ background: '#e2f3f8', color: '#0f0f0e' }}>{step.badge}</span>
                       <h3 className="text-h3" style={{ color: '#0f0f0e' }}>{step.title}</h3>
@@ -727,19 +765,11 @@ export default function BathBodyWorks() {
         {/* Beyond Checkout */}
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
           <div className={contentWidth}>
-            <Reveal>
-              <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Beyond Checkout</h2>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <div className="mt-6 md:mt-8">
-                <SubHead>Placing the order wasn&apos;t the end of the BOPIS experience.</SubHead>
-              </div>
-              <div className="text-body-18 flex flex-col gap-5 mt-7 max-w-[960px]" style={{ color: '#595958' }}>
-                <p>Store associates still needed to receive, locate, prepare, and stage the customer&apos;s products before pickup. The customer therefore needed to understand the difference between an order being received and actually being ready.</p>
-                <p>We designed post-purchase experiences that communicated order status and helped customers understand when they should travel to the store. Pickup communications provided the information customers needed to transition from the online experience to the store and successfully retrieve their purchase.</p>
-                <p>The experience didn&apos;t end when the browser closed—it ended when the customer had their products.</p>
-              </div>
-            </Reveal>
+            <SectionIntro title="Beyond Checkout" subhead={<>Placing the order wasn&apos;t the end of the BOPIS experience.</>}>
+              <p>Store associates still needed to receive, locate, prepare, and stage the customer&apos;s products before pickup. The customer therefore needed to understand the difference between an order being received and actually being ready.</p>
+              <p>We designed post-purchase experiences that communicated order status and helped customers understand when they should travel to the store. Pickup communications provided the information customers needed to transition from the online experience to the store and successfully retrieve their purchase.</p>
+              <p>The experience didn&apos;t end when the browser closed—it ended when the customer had their products.</p>
+            </SectionIntro>
             <Reveal delay={0.1}>
               <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 items-start">
                 {[
