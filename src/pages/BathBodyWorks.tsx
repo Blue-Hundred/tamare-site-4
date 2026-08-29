@@ -639,9 +639,9 @@ export default function BathBodyWorks() {
                 <ImageFrame className="md:col-span-2">
                   <img src="/images/bbw-service-blueprint.png" alt="BOPIS service blueprint for Bath & Body Works Buy Online, Pick Up In Store, mapping personas, frontstage experience, backstage actions, systems, APIs, data flow, pain points, and opportunities across discovery, consideration, purchase, fulfillment, and post-purchase" className="w-full h-auto block m-auto" loading="lazy" />
                 </ImageFrame>
-                <div className="rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                  <img src="/images/bbw-key-visual-side.png" alt="Mobile view of the Bath & Body Works pickup experience" className="w-full h-full object-cover block" loading="lazy" />
-                </div>
+                <ImageFrame>
+                  <img src="/images/bbw-key-visual-side.png" alt="Mobile view of the Bath & Body Works pickup experience" className="w-full h-auto block m-auto" loading="lazy" />
+                </ImageFrame>
               </div>
             </Reveal>
           </div>
