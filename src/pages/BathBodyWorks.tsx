@@ -104,6 +104,20 @@ function SectionIntro({ title, subhead, children }: { title: ReactNode; subhead:
   )
 }
 
+// "Image Frame" — reusable padded white container for figures/diagrams. Centers
+// its image and keeps a 16px inset so the artwork clears the rounded corners.
+// Height hugs the content via self-start so it won't stretch in a grid row.
+function ImageFrame({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return (
+    <div
+      className={`self-start rounded-[20px] overflow-hidden bg-white flex items-center justify-center p-4 ${className}`}
+      style={{ border: '1px solid rgba(15,15,14,0.08)' }}
+    >
+      {children}
+    </div>
+  )
+}
+
 const meta = [
   { label: 'CLIENT', value: 'Bath & Body Works' },
   { label: 'ROLE', value: 'Lead Experience Designer' },
@@ -622,9 +636,9 @@ export default function BathBodyWorks() {
             </Reveal>
             <Reveal delay={0.08}>
               <div className="mt-10 md:mt-[70px] grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-                <div className="md:col-span-2 self-start rounded-[20px] overflow-hidden bg-white flex items-center justify-center p-4 md:p-6" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
+                <ImageFrame className="md:col-span-2">
                   <img src="/images/bbw-service-blueprint.png" alt="BOPIS service blueprint for Bath & Body Works Buy Online, Pick Up In Store, mapping personas, frontstage experience, backstage actions, systems, APIs, data flow, pain points, and opportunities across discovery, consideration, purchase, fulfillment, and post-purchase" className="w-full h-auto block m-auto" loading="lazy" />
-                </div>
+                </ImageFrame>
                 <div className="rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
                   <img src="/images/bbw-key-visual-side.png" alt="Mobile view of the Bath & Body Works pickup experience" className="w-full h-full object-cover block" loading="lazy" />
                 </div>
