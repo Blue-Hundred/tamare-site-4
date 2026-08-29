@@ -25,8 +25,20 @@ function Cursor({ ctxRef }: { ctxRef: React.MutableRefObject<CursorCtx> }) {
 
   useEffect(() => { ctxRef.current.setHovered = setCtxHovered }, [ctxRef])
 
-  const rx = useSpring(mx, { stiffness: 90, damping: 20, mass: 0.4 })
-  const ry = useSpring(my, { stiffness: 90, damping: 20, mass: 0.4 })
+  // When the route changes, any element that had set the hover state (e.g. a
+  // homepage project card clicked to navigate) unmounts before its
+  // mouse-leave/hover-end handler can fire, which would otherwise leave the
+  // cursor stuck in its enlarged "hover-link" state on the next page. Reset
+  // both hover sources on navigation so the cursor starts clean; the next
+  // pointer move re-detects any element genuinely under the cursor.
+  const { pathname } = useLocation()
+  useEffect(() => {
+    setCtxHovered(false)
+    setAutoHovered(false)
+  }, [pathname])
+
+  const rx = useSpring(mx, { stiffness: 650, damping: 45, mass: 0.35 })
+  const ry = useSpring(my, { stiffness: 650, damping: 45, mass: 0.35 })
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => { mx.set(e.clientX); my.set(e.clientY) }
