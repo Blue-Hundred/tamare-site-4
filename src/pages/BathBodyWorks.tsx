@@ -678,7 +678,7 @@ export default function BathBodyWorks() {
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
-              <h2 className="text-h2 mb-10 md:mb-[70px]" style={{ color: '#0f0f0e' }}>Designing the Experience</h2>
+              <h2 className="text-h2 mt-6 mb-6" style={{ color: '#0f0f0e' }}>Designing the Experience</h2>
             </Reveal>
             <div className="flex flex-col gap-16 md:gap-[120px]">
               {experienceSteps.map((step, i) => (
