@@ -195,7 +195,7 @@ function NavItem({ href, label, isActive, hoverOn, hoverOff }: {
 // out of the browser's native scroll restoration so a reload can't reinstate a
 // stale offset after our reset.
 function ScrollToTop({ locked }: { locked: boolean }) {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
@@ -204,11 +204,23 @@ function ScrollToTop({ locked }: { locked: boolean }) {
   }, [])
 
   useEffect(() => {
-    // Run after paint so it wins over any layout the browser performs on load.
-    window.scrollTo(0, 0)
-    const id = window.requestAnimationFrame(() => window.scrollTo(0, 0))
-    return () => window.cancelAnimationFrame(id)
-  }, [pathname, locked])
+    // When the URL carries a hash (e.g. "/#work" from a case study Back
+    // button), anchor to that section instead of the top. Otherwise reset to
+    // the very top. The rAF pass runs after paint so it wins over any layout
+    // the browser performs on load.
+    const scroll = () => {
+      const id = hash ? hash.slice(1) : ''
+      const target = id ? document.getElementById(id) : null
+      if (target) {
+        target.scrollIntoView({ block: 'start' })
+      } else {
+        window.scrollTo(0, 0)
+      }
+    }
+    scroll()
+    const raf = window.requestAnimationFrame(scroll)
+    return () => window.cancelAnimationFrame(raf)
+  }, [pathname, hash, locked])
 
   return null
 }
