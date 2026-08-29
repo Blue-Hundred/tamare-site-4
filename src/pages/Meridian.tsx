@@ -336,7 +336,7 @@ export default function Meridian() {
               </div>
             </Reveal>
             <Reveal delay={0.08} className="lg:col-span-5 lg:col-start-8">
-              <aside className="bg-white rounded p-4 md:p-5">
+              <aside className="bg-white rounded py-4 md:py-5">
                 {[
                   { label: 'CLIENT', value: 'JPMorgan Chase & Co.' },
                   { label: 'ROLE', value: 'Lead Experience Designer\nLead Experience Researcher' },
