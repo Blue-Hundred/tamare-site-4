@@ -58,7 +58,7 @@ function CaseStudyTopBar() {
       <Link to="/#work" className="flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
         <BackArrow />
         <span style={linkText}>
-          <span className="sm:hidden">Back</span>
+          <span className="sm:hidden">Work</span>
           <span className="hidden sm:inline">Back to Portfolio</span>
         </span>
       </Link>
