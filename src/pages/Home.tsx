@@ -189,8 +189,7 @@ export default function Home() {
           </motion.h1>
 
           <motion.div
-            className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mt-12 pt-5"
-            style={{ borderTop: '1px solid #e0e0e0' }}
+            className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mt-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
