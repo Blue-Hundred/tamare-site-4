@@ -10,12 +10,12 @@ function NavItem({ href, label, isActive, onClick }: { href: string; label: stri
       style={{
         textDecoration: 'none',
         fontSize: '1rem',
-        fontWeight: isActive ? 600 : 400,
+        fontWeight: isActive ? 700 : 500,
         color: '#0f0f0e',
         letterSpacing: '-0.01em',
         position: 'relative',
         paddingBottom: '2px',
-        opacity: isActive ? 1 : hovered ? 1 : 0.45,
+        opacity: 1,
         transition: 'opacity 0.18s, font-weight 0.18s',
       }}
       onMouseEnter={() => setHovered(true)}
@@ -55,12 +55,12 @@ function NavExternalItem({ href, label }: { href: string; label: string }) {
       style={{
         textDecoration: 'none',
         fontSize: '1rem',
-        fontWeight: 400,
+        fontWeight: 500,
         color: '#0f0f0e',
         letterSpacing: '-0.01em',
         position: 'relative',
         paddingBottom: '2px',
-        opacity: hovered ? 1 : 0.45,
+        opacity: 1,
         transition: 'opacity 0.18s',
       }}
       onMouseEnter={() => setHovered(true)}
@@ -106,7 +106,7 @@ export default function NavBar() {
     <>
       <nav
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-8 md:px-14 py-6"
-        style={{ background: '#ffffff', borderBottom: '1px solid rgba(15,15,14,0.06)' }}
+        style={{ background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(15,15,14,0.06)' }}
       >
         <Link to="/" className="flex items-center" style={{ textDecoration: 'none' }} aria-label="Tamaré Reese — home">
           <img src="/tamare-reese-logo.svg" alt="Tamaré Reese" width={132} height={24} style={{ height: 24, width: 'auto', display: 'block' }} />
