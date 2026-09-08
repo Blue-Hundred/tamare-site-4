@@ -195,12 +195,8 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.9, color: '#0f0f0e', fontWeight: 300, display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '2px 0' }}>
-              VP, Lead Experience Designer @ JPMorgan Chase | Previous clients Key Bank and First National Bank
+              VP, Lead Experience Designer @ JPMorgan Chase
             </p>
-            <div className="flex items-center gap-2 self-start md:self-end" style={{ padding: '4px 10px 4px 0', borderRadius: 4 }}>
-              <span className="text-xs font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Available for projects</span>
-              <a href="#contact" className="text-xs font-light underline" style={{ textUnderlineOffset: 4, color: '#0f0f0e' }}>Get in touch</a>
-            </div>
           </motion.div>
         </div>
       </section>
