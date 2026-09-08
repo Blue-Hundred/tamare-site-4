@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { useOutletContext } from 'react-router'
 import {
   motion,
@@ -9,7 +9,7 @@ import {
   useMotionValue,
 } from 'framer-motion'
 import { Link } from 'react-router'
-import PixelBlast from '../components/PixelBlast'
+import LiquidEther from '../components/LiquidEther.jsx'
 import ContactSection from '../components/ContactSection'
 import { CursorContext } from '../app/Root'
 
@@ -138,29 +138,11 @@ function ProjectCard({ p, index, activeProject, setActiveProject }: {
   )
 }
 
-function usePixelSize(base = 3) {
-  const [size, setSize] = useState(base)
-  useEffect(() => {
-    const calc = () => {
-      const w = window.innerWidth
-      if (w < 480) setSize(base * 0.85)
-      else if (w < 768) setSize(base * 0.9)
-      else if (w < 1024) setSize(base * 0.95)
-      else setSize(base)
-    }
-    calc()
-    window.addEventListener('resize', calc)
-    return () => window.removeEventListener('resize', calc)
-  }, [base])
-  return size
-}
-
 type OutletCtx = { loaded: boolean; hoverOn: () => void; hoverOff: () => void }
 
 export default function Home() {
   const { loaded } = useOutletContext<OutletCtx>()
   const [activeProject, setActiveProject] = useState<number | null>(null)
-  const pixelSize = usePixelSize(3)
 
   const { scrollY } = useScroll()
   const heroY = useTransform(scrollY, [0, 600], [0, -80])
@@ -171,8 +153,16 @@ export default function Home() {
       {/* Hero */}
       <section className="px-8 md:px-14 pt-40 pb-24 overflow-hidden" style={{ position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-  <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
-  edgeFade={0.08} speed={2} enableRipples={true} transparent />
+          <LiquidEther
+            colors={['#5227FF', '#FF9FFC', '#B497CF']}
+            style={{ width: '100%', height: '100%' }}
+            mouseForce={20}
+            cursorSize={100}
+            resolution={0.5}
+            autoDemo
+            autoSpeed={0.5}
+            autoIntensity={2.2}
+          />
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col gap-10" style={{ position: 'relative', zIndex: 1 }}>
           <motion.div
