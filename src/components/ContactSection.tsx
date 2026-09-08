@@ -46,19 +46,19 @@ export default function ContactSection() {
   return (
     <section id="contact" className="px-8 md:px-14 py-40" style={{ position: 'relative', background: '#ffffff' }}>
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
-        <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
+        <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
           edgeFade={0.08} speed={2} enableRipples={true} transparent />
       </div>
       <div className="max-w-screen-xl mx-auto" style={{ position: 'relative', zIndex: 1 }}>
         <Reveal>
-          <span className="text-xs font-light tracking-widest" style={{ opacity: 1, color: '#0f0f0e', letterSpacing: '0.15em', background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4, display: 'inline-block' }}>CONTACT</span>
+          <span className="text-xs font-light tracking-widest" style={{ opacity: 1, color: '#0f0f0e', letterSpacing: '0.15em', padding: '4px 10px 4px 0', borderRadius: 4, display: 'inline-block' }}>CONTACT</span>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-light mt-6" style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.05, fontWeight: 400 }}>
-            <span style={{ background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.04em 0.12em' }}>Let&apos;s</span><br />
+          <h2 className="font-light mt-6" style={{ fontSize: 'clamp(1.875rem, 4.5vw, 3.125rem)', letterSpacing: '-0.02em', lineHeight: 1.35, fontWeight: 400 }}>
+            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>Let&apos;s</span><br />
             <a
               href="mailto:tamaredesign@outlook.com"
-              style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s', background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.04em 0.12em' }}
+              style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.5'; hoverOn() }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
             >
@@ -69,13 +69,13 @@ export default function ContactSection() {
         <Reveal delay={0.2}>
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-10 mt-24">
             <div className="flex flex-col gap-2 items-start">
-              <a href="mailto:tamaredesign@outlook.com" className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e', textDecoration: 'none', background: '#ffffff', padding: '3px 8px', borderRadius: 4 }}>tamaredesign@outlook.com</a>
-              <span className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e', background: '#ffffff', padding: '3px 8px', borderRadius: 4 }}>Tamaré Reese</span>
+              <a href="mailto:tamaredesign@outlook.com" className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e', textDecoration: 'none' }}>tamaredesign@outlook.com</a>
+              <span className="text-sm font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Tamaré Reese</span>
             </div>
             <div className="flex items-center gap-8">
               <nav className="flex items-center gap-6" aria-label="Footer">
                 {navLinks.map((item) => {
-                  const linkStyle = { fontSize: 14, fontWeight: 300, color: '#0f0f0e', textDecoration: 'none', transition: 'opacity 0.2s', background: '#ffffff', padding: '3px 8px', borderRadius: 4 } as const
+                  const linkStyle = { fontSize: 14, fontWeight: 300, color: '#0f0f0e', textDecoration: 'none', transition: 'opacity 0.2s' } as const
                   const onEnter = (e: React.MouseEvent) => { (e.currentTarget as HTMLElement).style.opacity = '0.6'; hoverOn() }
                   const onLeave = (e: React.MouseEvent) => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }
                   return 'href' in item ? (

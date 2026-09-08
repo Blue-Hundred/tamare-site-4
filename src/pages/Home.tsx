@@ -208,7 +208,6 @@ export default function Home() {
           <Reveal>
             <div className="flex items-baseline justify-between mb-14">
               <span className="text-xs font-light tracking-widest" style={{ opacity: 1, color: '#0f0f0e', letterSpacing: '0.15em' }}>SELECTED WORK</span>
-              <span className="text-xs font-light" style={{ opacity: 1, color: '#0f0f0e' }}>2018 — Present</span>
             </div>
           </Reveal>
           <div className="grid gap-x-8 gap-y-16" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 480px), 1fr))' }}>
