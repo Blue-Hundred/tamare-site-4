@@ -55,14 +55,14 @@ export default function ContactSection() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-light mt-6" style={{ fontSize: 'clamp(1.875rem, 4.5vw, 3.125rem)', letterSpacing: '-0.02em', lineHeight: 1.35, fontWeight: 400 }}>
-            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>Let&apos;s</span><br />
+            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>Let&apos;s </span>
             <a
               href="mailto:tamaredesign@outlook.com"
               style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.5'; hoverOn() }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
             >
-              Connect.
+              Connect
             </a>
           </h2>
         </Reveal>
