@@ -175,17 +175,6 @@ export default function Home() {
   edgeFade={0.08} speed={2} enableRipples={true} transparent />
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
-          <motion.div
-            className="flex items-center justify-between pb-5 mb-12"
-            style={{ borderBottom: '1px solid #e0e0e0' }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: loaded ? 1 : 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="text-brow" style={{ color: '#0f0f0e' }}>Portfolio</span>
-            <span className="text-brow" style={{ color: '#888888' }}>Index / 2026</span>
-          </motion.div>
-
           <motion.h1
             className="font-light text-balance"
             style={{ fontSize: 'clamp(1.875rem, 4.5vw, 3.125rem)', letterSpacing: '-0.02em', lineHeight: 1.35, fontWeight: 400, maxWidth: 960, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
