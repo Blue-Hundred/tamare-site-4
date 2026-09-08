@@ -174,10 +174,21 @@ export default function Home() {
   <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
   edgeFade={0.08} speed={2} enableRipples={true} transparent />
         </div>
-        <div className="max-w-screen-xl mx-auto flex flex-col gap-10" style={{ position: 'relative', zIndex: 1 }}>
+        <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
+          <motion.div
+            className="flex items-center justify-between pb-5 mb-12"
+            style={{ borderBottom: '1px solid #e0e0e0' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: loaded ? 1 : 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span className="text-brow" style={{ color: '#0f0f0e' }}>Portfolio</span>
+            <span className="text-brow" style={{ color: '#888888' }}>Index / 2026</span>
+          </motion.div>
+
           <motion.h1
-            className="font-light"
-            style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', letterSpacing: '-0.01em', lineHeight: 1.2, fontWeight: 400, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
+            className="font-light text-balance"
+            style={{ fontSize: 'clamp(1.875rem, 4.5vw, 3.125rem)', letterSpacing: '-0.02em', lineHeight: 1.35, fontWeight: 400, maxWidth: 960, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
           >
             <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
               <BlurText text="Hello, I'm Tamare Reese." play={loaded} delay={0.07} />
@@ -189,12 +200,14 @@ export default function Home() {
           </motion.h1>
 
           <motion.div
-            className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 -mt-4"
+            className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mt-12 pt-5"
+            style={{ borderTop: '1px solid #e0e0e0' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.9, color: '#0f0f0e', fontWeight: 300, display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '2px 0' }}>
+            <span className="text-brow shrink-0" style={{ color: '#888888' }}>Currently</span>
+            <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.6, color: '#0f0f0e', fontWeight: 300 }}>
               VP, Lead Experience Designer @ JPMorgan Chase
             </p>
           </motion.div>
