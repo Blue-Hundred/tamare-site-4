@@ -193,16 +193,11 @@ export default function Home() {
             <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
               <BlurText text="Hello, I'm Tamare Reese." play={loaded} delay={0.07} />
             </span>
-          </motion.h1>
-
-          <motion.h2
-            className="font-light"
-            style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.2, fontWeight: 400, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
-          >
+            <br />
             <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
               <BlurText text="I frame problems and craft products, services, and systems." play={loaded} delay={0.12} />
             </span>
-          </motion.h2>
+          </motion.h1>
 
           <motion.div
             className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 -mt-4"
