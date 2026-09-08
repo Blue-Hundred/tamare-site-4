@@ -175,17 +175,6 @@ export default function Home() {
   edgeFade={0.08} speed={2} enableRipples={true} transparent />
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col gap-10" style={{ position: 'relative', zIndex: 1 }}>
-          <motion.div
-            className="flex items-center gap-4"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 16 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            style={{ alignSelf: 'flex-start', padding: '4px 10px 4px 0', borderRadius: 4 }}
-          >
-            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>PRODUCT & SERVICE DESIGNER</span>
-            <span className="text-xs font-light" style={{ color: '#0f0f0e' }}>—</span>
-          </motion.div>
-
           <motion.h1
             className="font-light"
             style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)', letterSpacing: '-0.01em', lineHeight: 1.2, fontWeight: 400, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
