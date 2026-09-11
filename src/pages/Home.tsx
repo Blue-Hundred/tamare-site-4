@@ -184,7 +184,7 @@ export default function Home() {
             </span>
             <br />
             <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="I frame problems and craft products, services, and systems." play={loaded} delay={0.12} />
+              <BlurText text="I frame problems and craft products," play={loaded} delay={0.12} /><br /><BlurText text="services, and systems." play={loaded} delay={0.12} />
             </span>
           </motion.h1>
 
@@ -194,7 +194,7 @@ export default function Home() {
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-brow shrink-0" style={{ color: '#888888' }}>Currently</span>
+            <span className="text-brow shrink-0" style={{ color: '#888888' }}>Most current role</span>
             <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.6, color: '#0f0f0e', fontWeight: 300 }}>
               VP, Lead Experience Designer @ JPMorgan Chase
             </p>
