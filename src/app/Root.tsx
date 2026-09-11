@@ -214,12 +214,24 @@ function ScrollToTop({ locked }: { locked: boolean }) {
       if (target) {
         target.scrollIntoView({ block: 'start' })
       } else {
+        // Reset every scroll surface. iOS Safari does not always honor
+        // window.scrollTo alone (especially right after an input blur closes
+        // the on-screen keyboard), so we also zero the documentElement and
+        // body scroll tops for cross-browser reliability.
         window.scrollTo(0, 0)
+        document.documentElement.scrollTop = 0
+        document.body.scrollTop = 0
       }
     }
     scroll()
     const raf = window.requestAnimationFrame(scroll)
-    return () => window.cancelAnimationFrame(raf)
+    // A second deferred pass covers iOS Safari, where the layout/visual
+    // viewport settles a frame later after the keyboard dismisses.
+    const t = window.setTimeout(scroll, 60)
+    return () => {
+      window.cancelAnimationFrame(raf)
+      window.clearTimeout(t)
+    }
   }, [pathname, hash, locked])
 
   return null
@@ -246,6 +258,11 @@ export default function Root() {
     return window.sessionStorage.getItem('caseStudiesUnlocked') === 'true'
   })
   const unlock = () => {
+    // Blur the password field first so iOS Safari dismisses the on-screen
+    // keyboard and releases any scroll/visual-viewport offset it applied to
+    // keep the input visible — otherwise the unlocked page inherits that
+    // offset and does not start at the top.
+    ;(document.activeElement as HTMLElement | null)?.blur?.()
     window.sessionStorage.setItem('caseStudiesUnlocked', 'true')
     setUnlocked(true)
   }
