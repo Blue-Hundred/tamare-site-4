@@ -134,7 +134,7 @@ function ProjectCard({ p, index, activeProject, setActiveProject }: {
           </span>
           <span style={{ fontSize: '0.7rem', color: '#767675', fontWeight: 300, marginLeft: 'auto' }}>{p.year}</span>
         </div>
-        <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', fontWeight: 300, letterSpacing: '-0.015em', lineHeight: 1.25, color: '#0f0f0e' }}>
+        <h2 className="text-h2">
           {p.title}
         </h2>
         <div className="flex flex-wrap gap-2 pt-1">
@@ -185,41 +185,24 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="px-8 md:px-14 pt-40 pb-24 overflow-hidden" style={{ position: 'relative' }}>
+      <section className="px-8 md:px-14 pt-64 pb-40 overflow-hidden" style={{ position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
           <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
             edgeFade={0.08} speed={2} enableRipples={true} transparent />
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
-            className="font-light text-balance"
-            style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: 'normal', fontWeight: 400, maxWidth: 1200, y: heroY, opacity: heroOpacity, color: '#000000' }}
+            className="text-h1 text-balance"
+            style={{ maxWidth: 1200, y: heroY, opacity: heroOpacity }}
           >
             <BlurLine
-              text="Hello, I'm Tamare Reese."
+              text="Hi, I'm Tamaré, a Columbus-based product designer who frames problems and crafts systems, services, and experiences."
               play={loaded}
               delay={0.05}
-              style={{ fontSize: 'clamp(2.75rem, 6vw, 82px)', letterSpacing: '-0.02em' }}
-            />
-            <BlurLine
-              text="I'm a product and service designer based in Columbus, OH."
-              play={loaded}
-              delay={0.18}
-              style={{ fontSize: 'clamp(1.5rem, 3vw, 36px)', letterSpacing: '-0.02em' }}
+              style={{}}
             />
           </motion.h1>
 
-          <motion.div
-            className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
-            transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="eyebrowLabel shrink-0" style={{ color: '#000000' }}>Recent Role</span>
-            <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.6, color: '#0f0f0e', fontWeight: 300 }}>
-              VP, Lead Experience Designer @ JPMorgan Chase
-            </p>
-          </motion.div>
         </div>
       </section>
 

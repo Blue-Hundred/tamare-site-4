@@ -30,6 +30,8 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 
+const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#0f0f0e' } as const
+
 function usePixelSize(base = 3) {
   const [size, setSize] = useState(base)
   useEffect(() => {
@@ -143,13 +145,12 @@ function MvpStrategy() {
           <div
             key={col.title}
             className="rounded-2xl border border-[#e7e7ea] p-6 md:p-8 flex flex-col gap-6"
-            style={{ borderLeftWidth: 6, borderLeftColor: col.accent }}
           >
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
               <span className="shrink-0 flex items-center justify-center rounded-full" style={{ width: 56, height: 56, backgroundColor: col.tint }}>
                 <col.headerIcon size={26} strokeWidth={2} style={{ color: col.accent }} aria-hidden="true" />
               </span>
-              <h4 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 20, lineHeight: '28px', letterSpacing: '-0.3px' }}>{col.title}</h4>
+              <h4 className="text-h3">{col.title}</h4>
             </div>
             <ul className="flex flex-col">
               {col.items.map((it, i) => (
@@ -171,7 +172,7 @@ function MvpStrategy() {
           <span className="shrink-0 flex items-center justify-center rounded-full" style={{ width: 56, height: 56, backgroundColor: '#efeef8' }}>
             <Target size={26} strokeWidth={2} style={{ color: PURPLE }} aria-hidden="true" />
           </span>
-          <h4 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 20, lineHeight: '28px', letterSpacing: '-0.3px' }}>Product goals</h4>
+          <h4 className="text-h3">Product goals</h4>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-6 lg:gap-x-4">
           {goals.map((g, i) => (
@@ -183,7 +184,7 @@ function MvpStrategy() {
                 {i + 1}
               </span>
               <g.icon size={34} strokeWidth={1.5} style={{ color: PURPLE }} aria-hidden="true" />
-              <h5 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 16, lineHeight: '22px' }}>{g.title}</h5>
+              <h5 className="text-h4">{g.title}</h5>
               <p style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '22px' }}>{g.body}</p>
             </div>
           ))}
@@ -215,7 +216,6 @@ function BackArrow({ flip = false }: { flip?: boolean }) {
 }
 
 function CaseStudyTopBar() {
-  const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#0f0f0e' } as const
   return (
     <div className="fixed top-0 left-0 right-0 z-40 flex items-center px-5 sm:px-8 md:px-9"
       style={{ height: 77, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(15,15,14,0.06)' }}>
@@ -457,7 +457,7 @@ export default function Meridian() {
               <div className="mt-8 md:mt-10 bg-white rounded-[20px] p-6 md:p-10 flex flex-col gap-10 md:gap-[70px]">
                 <div className="flex flex-col gap-8 md:gap-10">
                   <div className="flex flex-col gap-3">
-                    <p style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>Discovery Research</p>
+                    <p className="text-h3">Discovery Research</p>
                     <p className="text-body-18" style={{ color: '#595958' }}>I conducted three rounds of research to understand the challenges behind the fragmented experience.</p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
@@ -471,7 +471,7 @@ export default function Meridian() {
                       <span style={{ color: '#3651D4', fontWeight: 600, fontSize: 16, lineHeight: '24px', letterSpacing: '-0.3px' }}>{item.n}</span>
                     </div>
                         <div className="flex flex-col gap-3">
-                          <h3 style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px' }}>{item.t}</h3>
+                          <h3 className="text-h4">{item.t}</h3>
                           <p className="text-body-18" style={{ color: '#595958' }}>{item.b}</p>
                         </div>
                       </article>
@@ -479,7 +479,7 @@ export default function Meridian() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-8">
-                  <p style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>Round 3 research revealed significant gaps in self-service.</p>
+                  <p className="text-h3">Round 3 research revealed significant gaps in self-service.</p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-9">
                     {[
                       { n: 73, label: 'Of users needed SRE support to complete the onboarding and provisioning processes' },
@@ -660,7 +660,7 @@ export default function Meridian() {
                 >
                   <div className="flex-1 min-w-0 text-right">
                     <div className="flex items-center justify-end gap-[8px]">
-                      <span style={{ color: '#999', fontWeight: 300, fontSize: 13, lineHeight: '22px' }}>Next</span>
+                      <span style={linkText}>Next Project</span>
                       <BackArrow flip />
                     </div>
                     <h3 className="mt-3" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px' }}>Bath &amp; Body Works Apple Pay Integration</h3>

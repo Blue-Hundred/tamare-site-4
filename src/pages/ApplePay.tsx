@@ -40,6 +40,8 @@ function Reveal({ children, delay = 0, className }: { children: ReactNode; delay
   )
 }
 
+const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#0f0f0e' } as const
+
 function BackArrow({ flip = false }: { flip?: boolean }) {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"
@@ -51,7 +53,6 @@ function BackArrow({ flip = false }: { flip?: boolean }) {
 }
 
 function CaseStudyTopBar() {
-  const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#0f0f0e' } as const
   return (
     <div className="fixed top-0 left-0 right-0 z-40 flex items-center px-5 sm:px-8 md:px-9"
       style={{ height: 77, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(15,15,14,0.06)' }}>
@@ -81,9 +82,9 @@ function CaseStudyTopBar() {
 
 function SubHead({ children }: { children: ReactNode }) {
   return (
-    <p style={{ color: '#464646', fontWeight: 300, fontSize: 'clamp(1.25rem, 2.4vw, 1.625rem)', lineHeight: 1.45, letterSpacing: '-0.02em' }}>
-      {children}
-    </p>
+  <p className="text-h3">
+  {children}
+  </p>
   )
 }
 
@@ -411,7 +412,7 @@ export default function ApplePay() {
                 >
                   <div className="flex-1 min-w-0 text-right">
                     <div className="flex items-center justify-end gap-[8px]">
-                      <span style={{ color: '#999', fontWeight: 300, fontSize: 13, lineHeight: '22px' }}>Next</span>
+                      <span style={linkText}>Next Project</span>
                       <BackArrow flip />
                     </div>
                     <h3 className="mt-3" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px' }}>Creating an Omnichannel Pickup Experience</h3>
