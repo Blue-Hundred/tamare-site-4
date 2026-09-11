@@ -69,11 +69,13 @@ body {
 }
 
 .text-h2 {
+  color: #000000;
   font-family: 'DM Sans', sans-serif;
-  font-size: 42px;
+  font-size: 24px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 52px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.24px;
 }
 
 .text-h3 {
@@ -141,9 +143,9 @@ body {
   }
 
   .text-h2 {
-    font-size: 28px;
-    line-height: 36px;
-    letter-spacing: -0.4px;
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: -0.24px;
   }
 
   .text-h3 {
