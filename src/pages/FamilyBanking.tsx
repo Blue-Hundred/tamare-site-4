@@ -51,8 +51,8 @@ function BackArrow({ flip = false }: { flip?: boolean }) {
 function CaseStudyTopBar() {
   const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#0f0f0e' } as const
   return (
-    <div className="fixed top-0 left-0 right-0 z-40 flex items-center px-5 sm:px-8 md:px-9 bg-white"
-      style={{ height: 77, borderBottom: '1px solid #d2d2d2' }}>
+    <div className="fixed top-0 left-0 right-0 z-40 flex items-center px-5 sm:px-8 md:px-9"
+      style={{ height: 77, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(15,15,14,0.06)' }}>
       <Link to="/#work" className="flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
         <BackArrow />
         <span style={linkText}>
