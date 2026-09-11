@@ -194,7 +194,7 @@ export default function Home() {
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-brow shrink-0" style={{ color: '#888888' }}>Recent Role</span>
+            <span className="eyebrowLabel shrink-0" style={{ color: '#888888' }}>Recent Role</span>
             <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.6, color: '#0f0f0e', fontWeight: 300 }}>
               VP, Lead Experience Designer @ JPMorgan Chase
             </p>
