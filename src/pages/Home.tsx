@@ -134,9 +134,9 @@ function ProjectCard({ p, index, activeProject, setActiveProject }: {
           </span>
           <span style={{ fontSize: '0.7rem', color: '#767675', fontWeight: 300, marginLeft: 'auto' }}>{p.year}</span>
         </div>
-<h2 className="text-h2" style={{ color: '#0f0f0e' }}>
-  {p.title}
-  </h2>
+        <h2 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', fontWeight: 300, letterSpacing: '-0.015em', lineHeight: 1.25, color: '#0f0f0e' }}>
+          {p.title}
+        </h2>
         <div className="flex flex-wrap gap-2 pt-1">
           {p.tags.map(t => (
             <span key={t} style={{ fontSize: '0.68rem', fontWeight: 300, color: '#595958', letterSpacing: '0.06em' }}>{t}</span>
