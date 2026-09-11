@@ -148,7 +148,7 @@ function MvpStrategy() {
               <span className="shrink-0 flex items-center justify-center rounded-full" style={{ width: 56, height: 56, backgroundColor: col.tint }}>
                 <col.headerIcon size={26} strokeWidth={2} style={{ color: col.accent }} aria-hidden="true" />
               </span>
-              <h4 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 20, lineHeight: '28px', letterSpacing: '-0.3px' }}>{col.title}</h4>
+              <h4 className="text-h3">{col.title}</h4>
             </div>
             <ul className="flex flex-col">
               {col.items.map((it, i) => (
@@ -170,7 +170,7 @@ function MvpStrategy() {
           <span className="shrink-0 flex items-center justify-center rounded-full" style={{ width: 56, height: 56, backgroundColor: '#efeef8' }}>
             <Target size={26} strokeWidth={2} style={{ color: PURPLE }} aria-hidden="true" />
           </span>
-          <h4 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 20, lineHeight: '28px', letterSpacing: '-0.3px' }}>Product goals</h4>
+          <h4 className="text-h3">Product goals</h4>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-6 lg:gap-x-4">
           {goals.map((g, i) => (
@@ -182,7 +182,7 @@ function MvpStrategy() {
                 {i + 1}
               </span>
               <g.icon size={34} strokeWidth={1.5} style={{ color: PURPLE }} aria-hidden="true" />
-              <h5 style={{ color: '#0f0f0e', fontWeight: 700, fontSize: 16, lineHeight: '22px' }}>{g.title}</h5>
+              <h5 className="text-h4">{g.title}</h5>
               <p style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '22px' }}>{g.body}</p>
             </div>
           ))}
