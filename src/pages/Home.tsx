@@ -183,7 +183,7 @@ export default function Home() {
               <BlurText text="Hello, I'm Tamare Reese." play={loaded} delay={0.07} />
             </span>
             <br />
-            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
+            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0', fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
               <BlurText text="I frame problems and craft products," play={loaded} delay={0.12} />{' '}<BlurText text="services, and systems." play={loaded} delay={0.12} />
             </span>
           </motion.h1>
