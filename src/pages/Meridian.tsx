@@ -143,7 +143,6 @@ function MvpStrategy() {
           <div
             key={col.title}
             className="rounded-2xl border border-[#e7e7ea] p-6 md:p-8 flex flex-col gap-6"
-            style={{ borderLeftWidth: 6, borderLeftColor: col.accent }}
           >
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
               <span className="shrink-0 flex items-center justify-center rounded-full" style={{ width: 56, height: 56, backgroundColor: col.tint }}>
@@ -457,7 +456,7 @@ export default function Meridian() {
               <div className="mt-8 md:mt-10 bg-white rounded-[20px] p-6 md:p-10 flex flex-col gap-10 md:gap-[70px]">
                 <div className="flex flex-col gap-8 md:gap-10">
                   <div className="flex flex-col gap-3">
-                    <p style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>Discovery Research</p>
+                    <p className="text-h3">Discovery Research</p>
                     <p className="text-body-18" style={{ color: '#595958' }}>I conducted three rounds of research to understand the challenges behind the fragmented experience.</p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
@@ -471,7 +470,7 @@ export default function Meridian() {
                       <span style={{ color: '#3651D4', fontWeight: 600, fontSize: 16, lineHeight: '24px', letterSpacing: '-0.3px' }}>{item.n}</span>
                     </div>
                         <div className="flex flex-col gap-3">
-                          <h3 style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px' }}>{item.t}</h3>
+                          <h3 className="text-h4">{item.t}</h3>
                           <p className="text-body-18" style={{ color: '#595958' }}>{item.b}</p>
                         </div>
                       </article>
@@ -479,7 +478,7 @@ export default function Meridian() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-8">
-                  <p style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 20, lineHeight: '30px', letterSpacing: '-0.4px' }}>Round 3 research revealed significant gaps in self-service.</p>
+                  <p className="text-h3">Round 3 research revealed significant gaps in self-service.</p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-9">
                     {[
                       { n: 73, label: 'Of users needed SRE support to complete the onboarding and provisioning processes' },
