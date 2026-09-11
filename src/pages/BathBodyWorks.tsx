@@ -38,6 +38,8 @@ function Reveal({ children, delay = 0, className }: { children: ReactNode; delay
   )
 }
 
+const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#0f0f0e' } as const
+
 function BackArrow({ flip = false }: { flip?: boolean }) {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"
@@ -49,7 +51,6 @@ function BackArrow({ flip = false }: { flip?: boolean }) {
 }
 
 function CaseStudyTopBar() {
-  const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#0f0f0e' } as const
   return (
     <div className="fixed top-0 left-0 right-0 z-40 flex items-center px-5 sm:px-8 md:px-9"
       style={{ height: 77, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(15,15,14,0.06)' }}>
