@@ -199,21 +199,10 @@ export default function Home() {
               text="Hi, I'm Tamare, a Columbus-based product designer who frames problems and crafts systems, services, and experiences."
               play={loaded}
               delay={0.05}
-              style={{ fontSize: 'clamp(2rem, 3.6vw, 44px)', letterSpacing: '-0.88px' }}
+              style={{ fontSize: 'clamp(2rem, 3.6vw, 44px)', letterSpacing: '-0.44px' }}
             />
           </motion.h1>
 
-          <motion.div
-            className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
-            transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="eyebrowLabel shrink-0" style={{ color: '#000000' }}>Recent Role</span>
-            <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.6, color: '#0f0f0e', fontWeight: 300 }}>
-              VP, Lead Experience Designer @ JPMorgan Chase
-            </p>
-          </motion.div>
         </div>
       </section>
 
