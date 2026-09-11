@@ -170,19 +170,9 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="px-8 md:px-14 pt-40 pb-24 overflow-hidden" style={{ position: 'relative' }}>
-        <div
-          aria-hidden="true"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            zIndex: 0,
-            background: 'radial-gradient(circle at 76% 18%, rgba(255, 148, 32, 0.9) 0%, rgba(255, 177, 84, 0.58) 16%, rgba(255, 223, 168, 0.24) 30%, rgba(255, 255, 255, 0) 52%)',
-            opacity: 0.9,
-          }}
-        />
-        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, zIndex: 0, opacity: 0.16 }}>
-          <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.45} patternScale={1.5}
-            edgeFade={0.08} speed={1} enableRipples={true} transparent />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.6} patternScale={1.5}
+            edgeFade={0.18} speed={2} enableRipples={true} transparent />
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
