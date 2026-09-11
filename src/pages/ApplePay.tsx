@@ -163,7 +163,6 @@ export default function ApplePay() {
                 <h1 className="text-h1" style={{ color: '#0f0f0e' }}>
                   <span
                     style={{
-                      background: '#ffffff',
                       boxDecorationBreak: 'clone',
                       WebkitBoxDecorationBreak: 'clone',
                       padding: '0 0.3em',
@@ -176,7 +175,6 @@ export default function ApplePay() {
                 <p className="text-body-18 mt-4 md:mt-6" style={{ color: '#595958' }}>
                   <span
                     style={{
-                      background: '#ffffff',
                       boxDecorationBreak: 'clone',
                       WebkitBoxDecorationBreak: 'clone',
                       padding: '0.1em 0.3em',
