@@ -196,16 +196,10 @@ export default function Home() {
             style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: 'normal', fontWeight: 400, maxWidth: 1200, y: heroY, opacity: heroOpacity, color: '#000000' }}
           >
             <BlurLine
-              text="Hello, I'm Tamare Reese."
+              text="Hi, I'm Tamare, a Columbus-based product designer who frames problems and crafts systems, services, and experiences."
               play={loaded}
               delay={0.05}
               style={{ fontSize: 'clamp(2.75rem, 6vw, 82px)', letterSpacing: '-0.02em' }}
-            />
-            <BlurLine
-              text="I'm a product and service designer based in Columbus, OH."
-              play={loaded}
-              delay={0.18}
-              style={{ fontSize: 'clamp(1.5rem, 3vw, 36px)', letterSpacing: '-0.02em' }}
             />
           </motion.h1>
 
