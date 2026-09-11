@@ -177,7 +177,7 @@ export default function Home() {
         <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
             className="font-light text-balance"
-            style={{ fontSize: 'clamp(1.875rem, 4.5vw, 3.125rem)', letterSpacing: '-0.02em', lineHeight: 1.35, fontWeight: 400, maxWidth: 960, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 'clamp(2.5rem, 6vw, 5rem)', letterSpacing: '-0.045em', lineHeight: 1.06, fontWeight: 300, maxWidth: 900, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
           >
             <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
               <BlurText text="Hello, I'm Tamare Reese." play={loaded} delay={0.07} />
