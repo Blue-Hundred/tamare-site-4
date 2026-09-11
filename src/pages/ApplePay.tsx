@@ -81,9 +81,9 @@ function CaseStudyTopBar() {
 
 function SubHead({ children }: { children: ReactNode }) {
   return (
-    <p style={{ color: '#464646', fontWeight: 300, fontSize: 'clamp(1.25rem, 2.4vw, 1.625rem)', lineHeight: 1.45, letterSpacing: '-0.02em' }}>
-      {children}
-    </p>
+  <p className="text-h3">
+  {children}
+  </p>
   )
 }
 
