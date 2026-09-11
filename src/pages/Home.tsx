@@ -9,8 +9,8 @@ import {
   useMotionValue,
 } from 'framer-motion'
 import { Link } from 'react-router'
-import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
+import PixelBlast from '../components/PixelBlast'
 import { CursorContext } from '../app/Root'
 
 const projects = [
@@ -70,6 +70,22 @@ function BlurText({ text, play, delay = 0.06, className, style }: {
         </motion.span>
       ))}
     </span>
+  )
+}
+
+function BlurLine({ text, play, delay = 0, className, style }: {
+  text: string; play: boolean; delay?: number; className?: string; style?: React.CSSProperties
+}) {
+  return (
+    <motion.span
+      className={className}
+      initial={{ opacity: 0, filter: 'blur(12px)', y: 8 }}
+      animate={play ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      style={{ display: 'block', ...style }}
+    >
+      {text}
+    </motion.span>
   )
 }
 
@@ -170,48 +186,39 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="px-8 md:px-14 pt-40 pb-24 overflow-hidden" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-  <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
-  edgeFade={0.08} speed={2} enableRipples={true} transparent />
+        <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
+          <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
+            edgeFade={0.08} speed={2} enableRipples={true} transparent />
         </div>
-        <div className="max-w-screen-xl mx-auto flex flex-col gap-10" style={{ position: 'relative', zIndex: 1 }}>
-          <motion.div
-            className="flex items-center gap-4"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 16 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            style={{ alignSelf: 'flex-start', background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4 }}
-          >
-            <span className="text-xs font-light tracking-widest" style={{ color: '#0f0f0e', letterSpacing: '0.15em' }}>PRODUCT & SERVICE DESIGNER</span>
-            <span className="text-xs font-light" style={{ color: '#0f0f0e' }}>—</span>
-          </motion.div>
-
+        <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
-            className="font-light"
-            style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.2, fontWeight: 400, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
+            className="font-light text-balance"
+            style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: 'normal', fontWeight: 400, maxWidth: 1200, y: heroY, opacity: heroOpacity, color: '#000000' }}
           >
-            <span style={{ background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="Framing problems," play={loaded} delay={0.07} />
-            </span>
-            <br />
-            <span style={{ background: '#ffffff', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="crafting solutions." play={loaded} delay={0.12} />
-            </span>
+            <BlurLine
+              text="Hello, I'm Tamare Reese."
+              play={loaded}
+              delay={0.05}
+              style={{ fontSize: 'clamp(2.75rem, 6vw, 82px)', letterSpacing: '-0.02em' }}
+            />
+            <BlurLine
+              text="I'm a product and service designer based in Columbus, OH."
+              play={loaded}
+              delay={0.18}
+              style={{ fontSize: 'clamp(1.5rem, 3vw, 36px)', letterSpacing: '-0.02em' }}
+            />
           </motion.h1>
 
           <motion.div
-            className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 -mt-4"
+            className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 mt-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.9, color: '#0f0f0e', fontWeight: 300, display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', background: '#ffffff', padding: '2px 0' }}>
-              Product designer utilizing AI to streamline workflows and simplify experiences.
+            <span className="eyebrowLabel shrink-0" style={{ color: '#000000' }}>Recent Role</span>
+            <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.6, color: '#0f0f0e', fontWeight: 300 }}>
+              VP, Lead Experience Designer @ JPMorgan Chase
             </p>
-            <div className="flex items-center gap-2 self-start md:self-end" style={{ background: '#ffffff', padding: '4px 10px 4px 0', borderRadius: 4 }}>
-              <span className="text-xs font-light" style={{ opacity: 1, color: '#0f0f0e' }}>Available for projects</span>
-              <a href="#contact" className="text-xs font-light underline" style={{ textUnderlineOffset: 4, color: '#0f0f0e' }}>Get in touch</a>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -222,7 +229,6 @@ export default function Home() {
           <Reveal>
             <div className="flex items-baseline justify-between mb-14">
               <span className="text-xs font-light tracking-widest" style={{ opacity: 1, color: '#0f0f0e', letterSpacing: '0.15em' }}>SELECTED WORK</span>
-              <span className="text-xs font-light" style={{ opacity: 1, color: '#0f0f0e' }}>2018 — Present</span>
             </div>
           </Reveal>
           <div className="grid gap-x-8 gap-y-16" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 480px), 1fr))' }}>

@@ -117,14 +117,15 @@ body {
   letter-spacing: -0.52px;
 }
 
-.text-brow {
+.eyebrowLabel {
   font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 30px;
-  letter-spacing: 1.96px;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
+  color: #000000;
 }
 
 /* ── Mobile type scale ─────────────────────────────────────── */

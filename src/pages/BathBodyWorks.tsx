@@ -51,8 +51,8 @@ function BackArrow({ flip = false }: { flip?: boolean }) {
 function CaseStudyTopBar() {
   const linkText = { fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 14, color: '#0f0f0e' } as const
   return (
-    <div className="fixed top-0 left-0 right-0 z-40 flex items-center px-5 sm:px-8 md:px-9 bg-white"
-      style={{ height: 77, borderBottom: '1px solid #d2d2d2' }}>
+    <div className="fixed top-0 left-0 right-0 z-40 flex items-center px-5 sm:px-8 md:px-9"
+      style={{ height: 77, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(15,15,14,0.06)' }}>
       <Link to="/#work" className="flex items-center gap-[10px]" style={{ textDecoration: 'none' }}>
         <BackArrow />
         <span style={linkText}>
@@ -484,9 +484,9 @@ export default function BathBodyWorks() {
       <CaseStudyTopBar />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-white px-4 sm:px-8 md:px-14 pt-28 md:pt-[178px] pb-14 md:pb-20 md:min-h-[723px] flex flex-col justify-center">
+        <section className="relative overflow-hidden bg-white px-4 sm:px-8 md:px-14 pt-28 md:pt-[178px] pb-28 md:pb-[178px] md:min-h-[723px] flex flex-col justify-center">
           <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-            <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.6} patternScale={1.5}
+            <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.6} patternScale={1.5}
               edgeFade={0.18} speed={2} enableRipples={true} transparent />
           </div>
           <div className={`relative z-10 ${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start`}>
@@ -495,7 +495,6 @@ export default function BathBodyWorks() {
                 <h1 className="text-h1" style={{ color: '#0f0f0e' }}>
                   <span
                     style={{
-                      background: '#ffffff',
                       boxDecorationBreak: 'clone',
                       WebkitBoxDecorationBreak: 'clone',
                       padding: '0 0.3em',
@@ -508,7 +507,6 @@ export default function BathBodyWorks() {
                 <p className="text-body-18 mt-4 md:mt-6" style={{ color: '#595958' }}>
                   <span
                     style={{
-                      background: '#ffffff',
                       boxDecorationBreak: 'clone',
                       WebkitBoxDecorationBreak: 'clone',
                       padding: '0.1em 0.3em',
@@ -521,7 +519,7 @@ export default function BathBodyWorks() {
               </div>
             </Reveal>
             <Reveal delay={0.08} className="lg:col-span-5 lg:col-start-8">
-              <aside className="bg-white rounded py-4 md:py-5">
+              <aside>
                 {meta.map(({ label, value }, i, arr) => (
                   <div key={label} className={`flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-0 py-3 ${i < arr.length - 1 ? 'border-b border-[rgba(15,15,14,0.15)]' : ''}`}>
                     <div className="text-xs font-light tracking-widest sm:w-[150px] shrink-0" style={{ color: '#0f0f0e', letterSpacing: '0.15em', lineHeight: 1.5 }}>
