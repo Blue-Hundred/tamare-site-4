@@ -199,7 +199,7 @@ export default function Home() {
               text="Hi, I'm Tamare, a Columbus-based product designer who frames problems and crafts systems, services, and experiences."
               play={loaded}
               delay={0.05}
-              style={{ fontSize: 'clamp(2rem, 4vw, 50px)', letterSpacing: '-1px' }}
+              style={{ fontSize: 'clamp(2rem, 3.6vw, 44px)', letterSpacing: '-0.88px' }}
             />
           </motion.h1>
 
