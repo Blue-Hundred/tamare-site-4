@@ -185,7 +185,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="px-8 md:px-14 pt-40 pb-24 overflow-hidden" style={{ position: 'relative' }}>
+      <section className="px-8 md:px-14 pt-52 pb-32 overflow-hidden" style={{ position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
           <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
             edgeFade={0.08} speed={2} enableRipples={true} transparent />
