@@ -73,6 +73,22 @@ function BlurText({ text, play, delay = 0.06, className, style }: {
   )
 }
 
+function BlurLine({ text, play, delay = 0, className, style }: {
+  text: string; play: boolean; delay?: number; className?: string; style?: React.CSSProperties
+}) {
+  return (
+    <motion.span
+      className={className}
+      initial={{ opacity: 0, filter: 'blur(12px)', y: 8 }}
+      animate={play ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      style={{ display: 'block', ...style }}
+    >
+      {text}
+    </motion.span>
+  )
+}
+
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-60px 0px' })
@@ -177,15 +193,20 @@ export default function Home() {
         <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
             className="font-light text-balance"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '-0.055em', lineHeight: 1.08, fontWeight: 300, maxWidth: 1200, y: heroY, opacity: heroOpacity, color: '#000000' }}
+            style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: 'normal', fontWeight: 400, maxWidth: 1200, y: heroY, opacity: heroOpacity, color: '#000000' }}
           >
-            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="Hello, I'm Tamare Reese." play={loaded} delay={0.07} />
-            </span>
-            <br />
-            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0', fontSize: 'clamp(2rem, 4vw, 5.5rem)' }}>
-              <BlurText text="I craft products, services, and systems." play={loaded} delay={0.12} />
-            </span>
+            <BlurLine
+              text="Hello, I'm Tamare Reese."
+              play={loaded}
+              delay={0.05}
+              style={{ fontSize: 'clamp(2.75rem, 6vw, 82px)', letterSpacing: '-0.02em' }}
+            />
+            <BlurLine
+              text="I craft products, services, and systems."
+              play={loaded}
+              delay={0.18}
+              style={{ fontSize: 'clamp(2rem, 4.5vw, 62px)', letterSpacing: '-0.02em' }}
+            />
           </motion.h1>
 
           <motion.div
