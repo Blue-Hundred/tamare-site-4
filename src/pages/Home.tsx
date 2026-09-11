@@ -202,10 +202,10 @@ export default function Home() {
               style={{ fontSize: 'clamp(2.75rem, 6vw, 82px)', letterSpacing: '-0.02em' }}
             />
             <BlurLine
-              text="I craft products, services, and systems."
+              text="I'm a product and service designer based in Columbus, OH."
               play={loaded}
               delay={0.18}
-              style={{ fontSize: 'clamp(2rem, 4.5vw, 62px)', letterSpacing: '-0.02em' }}
+              style={{ fontSize: 'clamp(1.5rem, 3vw, 36px)', letterSpacing: '-0.02em' }}
             />
           </motion.h1>
 
