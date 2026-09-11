@@ -659,7 +659,7 @@ export default function Meridian() {
                 >
                   <div className="flex-1 min-w-0 text-right">
                     <div className="flex items-center justify-end gap-[8px]">
-                      <span style={{ color: '#999', fontWeight: 300, fontSize: 13, lineHeight: '22px' }}>Next</span>
+                      <span style={linkText}>Next Project</span>
                       <BackArrow flip />
                     </div>
                     <h3 className="mt-3" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px' }}>Bath &amp; Body Works Apple Pay Integration</h3>
