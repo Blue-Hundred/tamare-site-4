@@ -9,8 +9,8 @@ import {
   useMotionValue,
 } from 'framer-motion'
 import { Link } from 'react-router'
-import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
+import PixelBlast from '../components/PixelBlast'
 import { CursorContext } from '../app/Root'
 
 const projects = [
@@ -70,6 +70,22 @@ function BlurText({ text, play, delay = 0.06, className, style }: {
         </motion.span>
       ))}
     </span>
+  )
+}
+
+function BlurLine({ text, play, delay = 0, className, style }: {
+  text: string; play: boolean; delay?: number; className?: string; style?: React.CSSProperties
+}) {
+  return (
+    <motion.span
+      className={className}
+      initial={{ opacity: 0, filter: 'blur(12px)', y: 8 }}
+      animate={play ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      style={{ display: 'block', ...style }}
+    >
+      {text}
+    </motion.span>
   )
 }
 
@@ -170,22 +186,27 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="px-8 md:px-14 pt-40 pb-24 overflow-hidden" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-  <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
-  edgeFade={0.08} speed={2} enableRipples={true} transparent />
+        <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
+          <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
+            edgeFade={0.08} speed={2} enableRipples={true} transparent />
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
             className="font-light text-balance"
-            style={{ fontSize: 'clamp(1.875rem, 4.5vw, 3.125rem)', letterSpacing: '-0.02em', lineHeight: 1.35, fontWeight: 400, maxWidth: 960, y: heroY, opacity: heroOpacity, color: '#0f0f0e' }}
+            style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: 'normal', fontWeight: 400, maxWidth: 1200, y: heroY, opacity: heroOpacity, color: '#000000' }}
           >
-            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="Hello, I'm Tamare Reese." play={loaded} delay={0.07} />
-            </span>
-            <br />
-            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="I frame problems and craft products, services, and systems." play={loaded} delay={0.12} />
-            </span>
+            <BlurLine
+              text="Hello, I'm Tamare Reese."
+              play={loaded}
+              delay={0.05}
+              style={{ fontSize: 'clamp(2.75rem, 6vw, 82px)', letterSpacing: '-0.02em' }}
+            />
+            <BlurLine
+              text="I'm a product and service designer based in Columbus, OH."
+              play={loaded}
+              delay={0.18}
+              style={{ fontSize: 'clamp(1.5rem, 3vw, 36px)', letterSpacing: '-0.02em' }}
+            />
           </motion.h1>
 
           <motion.div
@@ -194,7 +215,7 @@ export default function Home() {
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
             transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-brow shrink-0" style={{ color: '#888888' }}>Currently</span>
+            <span className="eyebrowLabel shrink-0" style={{ color: '#000000' }}>Recent Role</span>
             <p className="font-light" style={{ fontSize: 'clamp(0.875rem, 2vw, 1.15rem)', maxWidth: 720, lineHeight: 1.6, color: '#0f0f0e', fontWeight: 300 }}>
               VP, Lead Experience Designer @ JPMorgan Chase
             </p>
