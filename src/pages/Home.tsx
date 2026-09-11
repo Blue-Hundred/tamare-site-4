@@ -10,6 +10,7 @@ import {
 } from 'framer-motion'
 import { Link } from 'react-router'
 import ContactSection from '../components/ContactSection'
+import PixelBlast from '../components/PixelBlast'
 import { CursorContext } from '../app/Root'
 
 const projects = [
@@ -169,6 +170,10 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="px-8 md:px-14 pt-40 pb-24 overflow-hidden" style={{ position: 'relative' }}>
+        <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
+          <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
+            edgeFade={0.08} speed={2} enableRipples={true} transparent />
+        </div>
         <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
             className="font-light text-balance"
@@ -179,7 +184,7 @@ export default function Home() {
             </span>
             <br />
             <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0', fontSize: 'clamp(2rem, 4vw, 5.5rem)' }}>
-              <BlurText text="I frame problems and craft products," play={loaded} delay={0.12} />{' '}<BlurText text="services, and systems." play={loaded} delay={0.12} />
+              <BlurText text="I craft products, services, and systems." play={loaded} delay={0.12} />
             </span>
           </motion.h1>
 
