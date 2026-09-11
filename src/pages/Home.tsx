@@ -184,7 +184,7 @@ export default function Home() {
             </span>
             <br />
             <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone', padding: '0.12em 0' }}>
-              <BlurText text="I frame problems and craft products," play={loaded} delay={0.12} /><br /><BlurText text="services, and systems." play={loaded} delay={0.12} />
+              <BlurText text="I frame problems and craft products," play={loaded} delay={0.12} />{' '}<BlurText text="services, and systems." play={loaded} delay={0.12} />
             </span>
           </motion.h1>
 
