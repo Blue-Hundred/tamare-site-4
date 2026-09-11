@@ -59,12 +59,13 @@ body {
 
 /* ── Type scale ────────────────────────────────────────────── */
 .text-h1 {
+  color: #000000;
   font-family: 'DM Sans', sans-serif;
-  font-size: 48px;
+  font-size: 44px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 58px;
-  letter-spacing: -0.96px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.44px;
 }
 
 .text-h2 {

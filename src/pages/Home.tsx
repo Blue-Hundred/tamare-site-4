@@ -192,14 +192,14 @@ export default function Home() {
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
-            className="font-light text-balance"
-            style={{ fontFamily: "'DM Sans', sans-serif", lineHeight: 'normal', fontWeight: 400, maxWidth: 1200, y: heroY, opacity: heroOpacity, color: '#000000' }}
+            className="text-h1 text-balance"
+            style={{ maxWidth: 1200, y: heroY, opacity: heroOpacity }}
           >
             <BlurLine
               text="Hi, I'm Tamaré, a Columbus-based product designer who frames problems and crafts systems, services, and experiences."
               play={loaded}
               delay={0.05}
-              style={{ fontSize: 'clamp(2rem, 3.6vw, 44px)', letterSpacing: '-0.44px' }}
+              style={{}}
             />
           </motion.h1>
 
