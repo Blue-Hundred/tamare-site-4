@@ -127,7 +127,7 @@ export default function FamilyBanking() {
       <CaseStudyTopBar />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-white px-4 sm:px-8 md:px-14 pt-28 md:pt-[178px] pb-14 md:pb-20 md:min-h-[608px] flex flex-col justify-center">
+        <section className="relative overflow-hidden bg-white px-4 sm:px-8 md:px-14 pt-28 md:pt-[178px] pb-28 md:pb-[178px] md:min-h-[608px] flex flex-col justify-center">
           <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
             <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
               edgeFade={0.08} speed={2} enableRipples={true} transparent />
