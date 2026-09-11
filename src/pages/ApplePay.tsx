@@ -154,7 +154,7 @@ export default function ApplePay() {
         {/* Hero */}
         <section className="relative overflow-hidden bg-white px-4 sm:px-8 md:px-14 pt-28 md:pt-[178px] pb-14 md:pb-20 md:min-h-[608px] flex flex-col justify-center">
           <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-            <PixelBlast color="#d8d8d8" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
+            <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
               edgeFade={0.08} speed={2} enableRipples={true} transparent />
           </div>
           <div className={`relative z-10 ${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start`}>
