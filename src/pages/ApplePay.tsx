@@ -410,13 +410,13 @@ export default function ApplePay() {
                   className="md:border-l md:border-[#dadada] px-6 sm:px-10 md:px-14 py-10 md:py-12 cursor-pointer outline-none"
                   style={{ backgroundColor: nextHover ? '#f2f2f2' : 'transparent', transition: 'background-color 0.35s ease', textDecoration: 'none', display: 'block' }}
                 >
-                  <div className="flex-1 min-w-0 text-right">
-                    <div className="flex items-center justify-end gap-[8px]">
+                  <div className="flex-1 min-w-0 text-left md:text-right">
+                    <div className="flex items-center justify-start md:justify-end gap-[8px]">
                       <span style={linkText}>Next Project</span>
                       <BackArrow flip />
                     </div>
                     <h3 className="mt-3" style={{ color: '#0f0f0e', fontWeight: 600, fontSize: 18, lineHeight: '26px', letterSpacing: '-0.3px' }}>Creating an Omnichannel Pickup Experience</h3>
-                    <p className="mt-2 ml-auto" style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px', maxWidth: 520 }}>Bath &amp; Body Works set out to introduce Buy Online, Pick Up In Store (BOPIS), giving customers the convenience of shopping online while fulfilling their purchase through a nearby store.</p>
+                    <p className="mt-2 ml-0 md:ml-auto" style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '24px', maxWidth: 520 }}>Bath &amp; Body Works set out to introduce Buy Online, Pick Up In Store (BOPIS), giving customers the convenience of shopping online while fulfilling their purchase through a nearby store.</p>
                   </div>
                 </Link>
               </div>
