@@ -61,9 +61,9 @@ function BlurText({ text, play, delay = 0.06, className, style }: {
       {words.map((word, i) => (
         <motion.span
           key={i}
-          initial={{ opacity: 0, filter: 'blur(12px)', y: 8 }}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: -50 }}
           animate={play ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
-          transition={{ duration: 0.6, delay: i * delay, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, delay: i * delay, ease: [0.22, 1, 0.36, 1] }}
           style={{ display: 'inline-block', whiteSpace: 'pre' }}
         >
           {word}{i < words.length - 1 ? ' ' : ''}
@@ -198,11 +198,10 @@ export default function Home() {
             className="text-h1 text-balance"
             style={{ maxWidth: 1200, y: heroY, opacity: heroOpacity }}
           >
-            <BlurLine
-              text="Hi, I'm Tamaré, a Columbus-based product designer who frames problems and crafts systems, services, and experiences."
-              play={loaded}
-              delay={0.05}
-              style={{}}
+            <BlurText
+                  text="Hi, I'm Tamaré, a Columbus-based product designer who frames problems and crafts systems, services, and experiences."
+                  play={loaded}
+                  delay={0.2}
             />
           </motion.h1>
 
