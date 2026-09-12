@@ -61,9 +61,9 @@ function BlurText({ text, play, delay = 0.06, className, style }: {
       {words.map((word, i) => (
         <motion.span
           key={i}
-          initial={{ opacity: 0, filter: 'blur(12px)', y: -8 }}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: -50 }}
           animate={play ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}}
-          transition={{ duration: 0.6, delay: i * delay, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, delay: i * delay, ease: [0.22, 1, 0.36, 1] }}
           style={{ display: 'inline-block', whiteSpace: 'pre' }}
         >
           {word}{i < words.length - 1 ? ' ' : ''}
