@@ -185,12 +185,15 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="px-8 md:px-14 pt-64 pb-40 overflow-hidden" style={{ position: 'relative' }}>
+      <section
+        className="px-8 md:px-14 pt-28 pb-0 md:pt-64 md:pb-40 overflow-hidden flex flex-col md:block"
+        style={{ position: 'relative', minHeight: '85vh' }}
+      >
         <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
           <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
             edgeFade={0.08} speed={2} enableRipples={true} transparent />
         </div>
-        <div className="max-w-screen-xl mx-auto flex flex-col" style={{ position: 'relative', zIndex: 1 }}>
+        <div className="max-w-screen-xl mx-auto flex flex-col flex-1 justify-center md:flex-none md:justify-start" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
             className="text-h1 text-balance"
             style={{ maxWidth: 1200, y: heroY, opacity: heroOpacity }}
