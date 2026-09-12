@@ -186,8 +186,8 @@ export default function Home() {
     <>
       {/* Hero */}
       <section
-        className="px-8 md:px-14 pt-28 pb-0 md:pt-64 md:pb-40 overflow-hidden flex flex-col md:block"
-        style={{ position: 'relative', minHeight: '85vh' }}
+        className="px-8 md:px-14 pt-28 pb-0 md:pt-64 md:pb-20 overflow-hidden flex flex-col md:block min-h-[85vh] md:min-h-0"
+        style={{ position: 'relative' }}
       >
         <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
           <PixelBlast color="#EDEDED" pixelSize={pixelSize} patternDensity={0.75} patternScale={1.5}
