@@ -42,6 +42,11 @@ const navLinks = [
 export default function ContactSection() {
   const { hoverOn, hoverOff } = useOutletContext<OutletCtx>()
   const pixelSize = usePixelSize(3)
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const headingInView = useInView(headingRef, { once: true, margin: '-60px 0px' })
+  const blurTransition = (i: number) => ({ duration: 0.7, delay: i * 0.2, ease: [0.22, 1, 0.36, 1] as const })
+  const blurInitial = { opacity: 0, filter: 'blur(10px)', y: -50 }
+  const blurAnimate = headingInView ? { opacity: 1, filter: 'blur(0px)', y: 0 } : {}
 
   return (
     <section id="contact" className="px-8 md:px-14 py-40" style={{ position: 'relative', background: '#ffffff' }}>
@@ -54,16 +59,26 @@ export default function ContactSection() {
           <span className="text-xs font-light tracking-widest" style={{ opacity: 1, color: '#0f0f0e', letterSpacing: '0.15em', padding: '4px 10px 4px 0', borderRadius: 4, display: 'inline-block' }}>CONTACT</span>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-light mt-6" style={{ fontSize: 'clamp(1.875rem, 4.5vw, 3.125rem)', letterSpacing: '-0.02em', lineHeight: 1.35, fontWeight: 400 }}>
-            <span style={{ display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}>Let&apos;s </span>
-            <a
+          <h2 ref={headingRef} className="font-light mt-6" style={{ fontSize: 'clamp(1.875rem, 4.5vw, 3.125rem)', letterSpacing: '-0.02em', lineHeight: 1.35, fontWeight: 400 }}>
+            <motion.span
+              initial={blurInitial}
+              animate={blurAnimate}
+              transition={blurTransition(0)}
+              style={{ display: 'inline-block', whiteSpace: 'pre', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}
+            >
+              Let&apos;s{' '}
+            </motion.span>
+            <motion.a
               href="mailto:tamaredesign@outlook.com"
-              style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s', display: 'inline', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}
+              initial={blurInitial}
+              animate={blurAnimate}
+              transition={blurTransition(1)}
+              style={{ textDecoration: 'underline', textUnderlineOffset: '0.1em', textDecorationThickness: '1px', color: '#0f0f0e', opacity: 1, transition: 'opacity 0.2s', display: 'inline-block', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.5'; hoverOn() }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; hoverOff() }}
             >
               Connect
-            </a>
+            </motion.a>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
