@@ -198,11 +198,10 @@ export default function Home() {
             className="text-h1 text-balance"
             style={{ maxWidth: 1200, y: heroY, opacity: heroOpacity }}
           >
-            <BlurLine
+            <BlurText
               text="Hi, I'm Tamaré, a Columbus-based product designer who frames problems and crafts systems, services, and experiences."
               play={loaded}
-              delay={0.05}
-              style={{}}
+              delay={0.06}
             />
           </motion.h1>
 
