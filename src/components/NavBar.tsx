@@ -114,6 +114,7 @@ export default function NavBar() {
           style={{ textDecoration: 'none' }}
           aria-label="Tamaré Reese — home"
           onClick={() => {
+            setMenuOpen(false)
             if (location.pathname === '/') {
               window.scrollTo({ top: 0, behavior: 'smooth' })
             } else {
