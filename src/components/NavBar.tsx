@@ -108,7 +108,19 @@ export default function NavBar() {
         className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-8 md:px-14 py-6"
         style={{ background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(15,15,14,0.06)' }}
       >
-        <Link to="/" className="flex items-center" style={{ textDecoration: 'none' }} aria-label="Tamaré Reese — home">
+        <Link
+          to="/"
+          className="flex items-center"
+          style={{ textDecoration: 'none' }}
+          aria-label="Tamaré Reese — home"
+          onClick={() => {
+            if (location.pathname === '/') {
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            } else {
+              window.scrollTo({ top: 0 })
+            }
+          }}
+        >
           <img src="/tamare-reese-logo.svg" alt="Tamaré Reese" width={132} height={24} style={{ height: 24, width: 'auto', display: 'block' }} />
         </Link>
 
