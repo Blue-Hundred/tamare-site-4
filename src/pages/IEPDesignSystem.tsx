@@ -102,18 +102,8 @@ function CaseStudyTopBar() {
   )
 }
 
-function SectionEyebrow({ n, label }: { n: string; label: string }) {
-  return (
-    <div className="flex items-center gap-3 mb-6 md:mb-8">
-      <span style={{ fontSize: 12, fontWeight: 600, color: IEP.accent, letterSpacing: '0.02em' }}>{n}</span>
-      <span style={{ width: 24, height: 1, background: IEP.border }} aria-hidden="true" />
-      <span
-        style={{ fontSize: 12, fontWeight: 400, color: IEP.muted, letterSpacing: '0.14em', textTransform: 'uppercase' }}
-      >
-        {label}
-      </span>
-    </div>
-  )
+function SectionEyebrow(_props: { n: string; label: string }) {
+  return null
 }
 
 function SectionHeading({ title, body }: { title: string; body?: ReactNode }) {
