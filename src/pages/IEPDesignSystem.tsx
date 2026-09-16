@@ -164,16 +164,38 @@ export default function IEPDesignSystem() {
       n: '01',
       t: 'Fragmented experiences',
       b: 'Common tasks were represented through different navigation, terminology, forms, tables, status treatments, and interaction patterns.',
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1.5" stroke={IEP.accent} strokeWidth="1.6" />
+          <rect x="14" y="4.5" width="6.5" height="6.5" rx="1.5" stroke={IEP.accent} strokeWidth="1.6" strokeDasharray="2.5 2.5" />
+          <rect x="4.5" y="14" width="6.5" height="6.5" rx="1.5" stroke={IEP.accent} strokeWidth="1.6" strokeDasharray="2.5 2.5" />
+          <rect x="14" y="14" width="7" height="7" rx="1.5" stroke={IEP.accent} strokeWidth="1.6" />
+        </svg>
+      ),
     },
     {
       n: '02',
       t: 'Different technologies',
       b: 'Relational, non-relational, and graph databases shared foundational workflows but required different configuration parameters, operational commands, and monitoring information.',
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <ellipse cx="12" cy="5.5" rx="7" ry="2.6" stroke={IEP.accent} strokeWidth="1.6" />
+          <path d="M5 5.5v6c0 1.44 3.13 2.6 7 2.6s7-1.16 7-2.6v-6" stroke={IEP.accent} strokeWidth="1.6" />
+          <path d="M5 11.5v6c0 1.44 3.13 2.6 7 2.6s7-1.16 7-2.6v-6" stroke={IEP.accent} strokeWidth="1.6" />
+        </svg>
+      ),
     },
     {
       n: '03',
       t: 'Scaling beyond one product',
       b: 'The system needed to support four centralized hubs without creating one-off components for every database technology.',
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3l8 4.5-8 4.5-8-4.5L12 3z" stroke={IEP.accent} strokeWidth="1.6" strokeLinejoin="round" />
+          <path d="M4 12l8 4.5 8-4.5" stroke={IEP.accent} strokeWidth="1.6" strokeLinejoin="round" />
+          <path d="M4 16.5L12 21l8-4.5" stroke={IEP.accent} strokeWidth="1.6" strokeLinejoin="round" />
+        </svg>
+      ),
     },
   ]
 
@@ -347,17 +369,22 @@ export default function IEPDesignSystem() {
               />
             </Reveal>
             <Reveal delay={0.06}>
-              <div className="mt-12 md:mt-[80px] grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+              <div className="mt-12 md:mt-[80px] grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
                 {challengeAreas.map(area => (
-                  <div key={area.n} className="flex flex-col gap-4 pt-6" style={{ borderTop: `1px solid ${IEP.border}` }}>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: IEP.accent, letterSpacing: '0.04em' }}>{area.n}</span>
+                  <article key={area.n} className="bg-white rounded-xl p-5 md:p-6 flex flex-col">
+                    <div
+                      className="flex items-center justify-center rounded-[10px] mb-5"
+                      style={{ width: 44, height: 44, background: 'rgba(15,15,14,0.04)' }}
+                    >
+                      {area.icon}
+                    </div>
                     <h3 className="text-h4" style={{ color: '#0f0f0e' }}>
                       {area.t}
                     </h3>
-                    <p className="text-body-18" style={{ color: '#595958' }}>
+                    <p className="text-body-18 mt-2" style={{ color: '#595958' }}>
                       {area.b}
                     </p>
-                  </div>
+                  </article>
                 ))}
               </div>
             </Reveal>
