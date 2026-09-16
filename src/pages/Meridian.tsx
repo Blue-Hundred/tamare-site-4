@@ -462,9 +462,9 @@ export default function Meridian() {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
                     {[
-                      { n: '1', t: 'Stakeholder Interviews & UI Audit', b: 'Engineers had to relearn workflows across database products and frequently relied on support.' },
-                      { n: '2', t: 'Usability Tests', b: 'Engineers had to relearn workflows across database products and frequently relied on support.' },
-                      { n: '3', t: 'Qualitative Interviews', b: 'Engineers had to relearn workflows across database products and frequently relied on support.' },
+    { n: '1', t: 'Stakeholder Interviews & UI Audit', b: 'Stakeholder interviews + UI audits of 9 individual database control planes' },
+    { n: '2', t: 'Usability Tests', b: '13 POC usability tests and experience feedback sessions.' },
+    { n: '3', t: 'Qualitative Interviews', b: '14 qualitative interview sessions with a mix developers and applications owners.' },
                     ].map(item => (
                       <article key={item.n} className="flex flex-col gap-6">
                     <div className="rounded-full flex items-center justify-center shrink-0" style={{ width: 44, height: 44, backgroundColor: '#E9EDFB' }}>
