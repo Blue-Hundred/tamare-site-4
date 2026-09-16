@@ -50,6 +50,15 @@ const projects = [
     image: '/images/family-banking-cover.png',
     href: '/work/family-banking',
   },
+  {
+    id: '05',
+    title: 'IEP Design System',
+    company: 'JPMorgan Chase & Co.',
+    tags: ['Design Systems', 'Product Design', 'Platform Design'],
+    year: '2025',
+    image: '',
+    href: '/work/iep-design-system',
+  },
 ]
 
 function BlurText({ text, play, delay = 0.06, className, style }: {
@@ -107,8 +116,20 @@ function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   const y = useSpring(rawY, { stiffness: 60, damping: 20 })
   return (
     <div ref={ref} style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', borderRadius: 12 }}>
-      <motion.img src={src} alt={alt}
-        style={{ width: '100%', height: '120%', objectFit: 'cover', display: 'block', marginTop: '-10%', y }} />
+      {src ? (
+        <motion.img src={src} alt={alt}
+          style={{ width: '100%', height: '120%', objectFit: 'cover', display: 'block', marginTop: '-10%', y }} />
+      ) : (
+        <motion.div
+          aria-label={alt}
+          role="img"
+          style={{ width: '100%', height: '120%', marginTop: '-10%', y, background: '#f4f4f5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        >
+          <span style={{ fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#a3a3a3', fontWeight: 300 }}>
+            Case study preview
+          </span>
+        </motion.div>
+      )}
     </div>
   )
 }
