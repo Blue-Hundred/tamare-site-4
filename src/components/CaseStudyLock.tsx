@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const PASSWORD = 'tamare2026'
