@@ -87,16 +87,15 @@ export default function SystemArchitectureDiagram({ title }: { title?: string })
                   transition: 'border-color 0.25s ease, background-color 0.25s ease',
                 }}
               >
-                <div className="flex items-baseline justify-between gap-4">
-                  <span style={{ fontSize: 16, fontWeight: 600, color: IEP.ink, letterSpacing: '-0.01em' }}>
-                    {layer.title}
-                  </span>
-                  <span
-                    style={{ fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: IEP.muted, fontWeight: 400 }}
-                  >
-                    Layer {i + 1}
-                  </span>
-                </div>
+                <span
+                  className="block"
+                  style={{ fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: IEP.muted, fontWeight: 400 }}
+                >
+                  Layer {i + 1}
+                </span>
+                <span className="mt-2 block" style={{ fontSize: 16, fontWeight: 600, color: IEP.ink, letterSpacing: '-0.01em' }}>
+                  {layer.title}
+                </span>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {layer.items.map(item => (
                     <span
