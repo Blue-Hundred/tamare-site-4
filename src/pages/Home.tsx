@@ -207,7 +207,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section
-        className="px-8 md:px-14 pt-28 pb-0 md:pt-56 md:pb-20 overflow-hidden flex flex-col md:block min-h-[85vh] md:min-h-[640px]"
+        className="px-8 md:px-14 pt-28 pb-0 md:pt-60 md:pb-20 overflow-hidden flex flex-col md:block min-h-[85vh] md:min-h-[640px]"
         style={{ position: 'relative' }}
       >
         <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
