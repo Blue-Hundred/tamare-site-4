@@ -134,7 +134,7 @@ export default function InteractiveTypeScale() {
 
   return (
     <div
-      className="w-full rounded-2xl p-6 md:p-10 flex flex-col gap-8"
+      className="w-full h-[400px] max-h-[400px] rounded-2xl p-4 md:p-6 flex flex-col gap-4 md:gap-5 overflow-hidden"
       style={{
         border: `1px solid ${borderColor}`,
         background: bgColor,
@@ -153,9 +153,9 @@ export default function InteractiveTypeScale() {
 
       {/* Specimen Area */}
       <div
-        className="relative w-full overflow-hidden rounded-lg flex items-start p-6 md:p-8"
+        className="relative min-h-0 flex-1 w-full overflow-hidden rounded-lg flex items-start p-4 md:p-6"
         style={{
-          minHeight: '400px',
+          minHeight: 0,
           background: isDark ? '#0f0f0e' : '#f8f8f8',
           fontFamily: 'Figtree, sans-serif',
         }}
@@ -168,6 +168,8 @@ export default function InteractiveTypeScale() {
             lineHeight: lh,
             letterSpacing: `${ls}px`,
             color: textColor,
+            maxWidth: '100%',
+            maxHeight: '100%',
             overflow: 'hidden',
             whiteSpace: 'pre-wrap',
             wordBreak: 'break-word',
