@@ -1,4 +1,3 @@
-import { useMemo, useState } from 'react'
 import { IEP } from './tokens'
 
 type IconItem = { label: string; symbol: string; token: string }
@@ -79,30 +78,19 @@ const groups: Record<string, IconItem[]> = {
 }
 
 export default function InteractiveIconLibrary() {
-  const [query, setQuery] = useState('')
-  const [size, setSize] = useState<20 | 24>(24)
-  const filteredGroups = useMemo(() => Object.entries(groups).map(([name, icons]) => [name, icons.filter((icon) => `${icon.label} ${icon.symbol} ${icon.token}`.toLowerCase().includes(query.toLowerCase()))] as const).filter(([, icons]) => icons.length), [query])
-
   return (
     <section className="border-t pt-10 md:pt-14" style={{ borderColor: IEP.border }} aria-labelledby="icon-library-title">
-      <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-        <div>
-            <h3 id="icon-library-title" className="mt-2 text-h3" style={{ color: IEP.ink }}>Material Symbols Icon Library</h3>
-          <p className="mt-3 max-w-3xl text-body-18" style={{ color: IEP.muted }}>Rounded Material Symbols for database and infrastructure workflows. Hover or focus any icon to inspect its semantic token.</p>
-        </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <label className="sr-only" htmlFor="icon-search">Search icons</label>
-          <input id="icon-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search icons" className="h-10 rounded-lg border px-3 text-[13px] outline-none focus:ring-2" style={{ borderColor: IEP.border, color: IEP.ink }} />
-          <div className="flex rounded-lg border p-1" style={{ borderColor: IEP.border }} aria-label="Icon preview size">
-            {[24, 20].map((value) => <button key={value} type="button" onClick={() => setSize(value as 20 | 24)} className="rounded-md px-3 py-1.5 text-[12px]" style={{ background: size === value ? IEP.ink : 'transparent', color: size === value ? '#fff' : IEP.muted }}>{value}×{value}</button>)}
-          </div>
-        </div>
+      <div className="mb-7">
+        <h3 id="icon-library-title" className="text-h3" style={{ color: IEP.ink }}>Material Symbols Icon Library</h3>
+        <p className="mt-2 max-w-2xl text-body-18" style={{ color: IEP.muted }}>A compact set of rounded symbols for database and infrastructure workflows.</p>
       </div>
-      <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {[['24 × 24', 'Base icon size for navigation, actions, cards, and default controls.'], ['20 × 20', 'Dense-interface size for tables, compact controls, and metadata rows.']].map(([title, body]) => <div key={title} className="rounded-xl border p-4" style={{ borderColor: IEP.border, background: '#f8fafc' }}><p className="text-h4" style={{ color: IEP.ink }}>{title}</p><p className="mt-2 text-[12px]" style={{ color: IEP.muted }}>{body}</p></div>)}
-      </div>
-      <div className="flex flex-col gap-10">
-        {filteredGroups.map(([name, icons]) => <div key={name}><h4 className="mb-4 text-h4" style={{ color: IEP.ink }}>{name}</h4><div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">{icons.map((icon) => <button key={icon.token} type="button" className="group rounded-xl border p-4 text-left transition-colors hover:border-[#8db5f0] focus:outline-none focus:ring-2" style={{ borderColor: IEP.border, background: '#f8fafc' }}><span className="flex h-16 items-center rounded-lg bg-white px-3" style={{ color: name === 'Status' && icon.label === 'Healthy' ? '#08a650' : name === 'Status' && icon.label === 'Warning' ? '#c85d00' : name === 'Status' && icon.label === 'Error' ? '#e32636' : IEP.ink }}><span className="material-symbols-rounded" style={{ fontSize: size }}>{icon.symbol}</span></span><span className="mt-4 block text-[14px] font-medium" style={{ color: IEP.ink }}>{icon.label}</span><span className="mt-1 block font-mono text-[11px]" style={{ color: IEP.muted }}>{icon.symbol}</span><span className="mt-2 block max-h-0 overflow-hidden font-mono text-[10px] opacity-0 transition-all group-hover:max-h-6 group-hover:opacity-100 group-focus:max-h-6 group-focus:opacity-100" style={{ color: IEP.accent }}>{icon.token}</span></button>)}</div></div>)}
+      <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10">
+        {Object.entries(groups).flatMap(([name, icons]) => icons.map((icon) => (
+          <button key={icon.token} type="button" aria-label={`${icon.label}, ${name}`} className="group relative flex aspect-square items-center justify-center rounded-xl border transition-all duration-200 hover:-translate-y-1 hover:border-[#8db5f0] hover:bg-[#eef5ff] hover:shadow-[0_8px_20px_rgba(32,88,170,0.14)] focus:outline-none focus:ring-2" style={{ borderColor: IEP.border, background: '#f8fafc', color: IEP.ink }}>
+            <span className="material-symbols-rounded text-[24px] transition-transform duration-200 group-hover:scale-110">{icon.symbol}</span>
+            <span className="pointer-events-none absolute inset-x-1 bottom-1 truncate rounded-md bg-[#162033] px-1 py-1 text-center text-[9px] text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100">{icon.label}</span>
+          </button>
+        ))) }
       </div>
     </section>
   )
