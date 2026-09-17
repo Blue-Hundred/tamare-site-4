@@ -216,7 +216,7 @@ export default function Home() {
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col flex-1 justify-center md:flex-none md:justify-start" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
-            className="text-h1 text-balance"
+            className="text-heading-xl text-balance"
             style={{ maxWidth: 1200, y: heroY, opacity: heroOpacity }}
           >
             <BlurText

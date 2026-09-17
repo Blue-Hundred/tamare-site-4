@@ -139,13 +139,30 @@ body {
    Tailwind `md` breakpoint (768px) so every element using these
    classes scales down automatically on phones. */
 @media (max-width: 767px) {
+  .text-heading-xl {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.28px;
+  }
+
   .text-h1 {
     font-size: 34px;
     line-height: 42px;
     letter-spacing: -0.68px;
   }
 
-  .text-h2 {
+.text-heading-xl {
+  color: #000000;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.32px;
+}
+
+.text-h2 {
+
     font-size: 24px;
     line-height: normal;
     letter-spacing: -0.24px;
