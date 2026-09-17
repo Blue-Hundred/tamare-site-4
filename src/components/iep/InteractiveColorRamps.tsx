@@ -110,7 +110,7 @@ export default function InteractiveColorRamps() {
                     <span className="mt-1 block min-h-4 font-mono text-[11px]" style={{ color: swatch.wcag ? IEP.muted : 'transparent' }}>{swatch.wcag || '—'}</span>
                     {isActive && (
                       <span className="pointer-events-none absolute inset-x-2 bottom-2 rounded bg-[rgba(15,15,14,0.92)] px-2 py-1 text-center text-[11px] text-white shadow-lg">
-                        {swatch.hex}{swatch.wcag ? ` · ${swatch.wcag}` : ' · No WCAG value'}
+                        {swatch.hex}{swatch.wcag ? ` · ${swatch.wcag}` : ''}
                       </span>
                     )}
                   </button>
