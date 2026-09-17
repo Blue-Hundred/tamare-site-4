@@ -59,7 +59,7 @@ export default function ContactSection() {
           <span className="text-xs font-light tracking-widest" style={{ opacity: 1, color: '#0f0f0e', letterSpacing: '0.15em', padding: '4px 10px 4px 0', borderRadius: 4, display: 'inline-block' }}>CONTACT</span>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 ref={headingRef} className="font-light mt-6" style={{ fontSize: 'clamp(1.875rem, 4.5vw, 3.125rem)', letterSpacing: '-0.02em', lineHeight: 1.35, fontWeight: 400 }}>
+          <h2 ref={headingRef} className="text-display-large mt-6">
             <motion.span
               initial={blurInitial}
               animate={blurAnimate}
