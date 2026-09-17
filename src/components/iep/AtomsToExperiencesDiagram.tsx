@@ -69,18 +69,15 @@ export default function AtomsToExperiencesDiagram() {
   const [pinned, setPinned] = useState<string | null>(null)
   const active = hovered ?? pinned
 
+  // Highlight only the active node and the elements directly linked to it.
+  // A full transitive traversal would reach nearly every node in this densely
+  // connected graph, lighting up the whole diagram and hiding the actual reuse
+  // relationship. Direct neighbors keep the trace legible and meaningful.
   const connected = useMemo(() => {
     if (!active) return null
     const seen = new Set<string>([active])
-    const queue = [active]
-    while (queue.length) {
-      const cur = queue.shift() as string
-      for (const next of adj.get(cur) ?? []) {
-        if (!seen.has(next)) {
-          seen.add(next)
-          queue.push(next)
-        }
-      }
+    for (const next of adj.get(active) ?? []) {
+      seen.add(next)
     }
     return seen
   }, [active, adj])
