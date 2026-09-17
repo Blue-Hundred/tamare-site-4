@@ -98,7 +98,7 @@ export default function FoundationsShowcase() {
             height={541}
             loading="lazy"
             decoding="async"
-            className="w-full rounded-xl border object-cover"
+            className="w-full rounded-xl object-cover"
             style={{ borderColor: IEP.border }}
           />
         </div>
