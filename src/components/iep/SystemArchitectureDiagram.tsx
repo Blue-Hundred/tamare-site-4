@@ -46,14 +46,14 @@ export default function SystemArchitectureDiagram({ title }: { title?: string })
         Product experiences are composed from a common system. Hover, focus, or tap a layer to see its role and how it
         connects to the layers around it.
       </p>
-      <div className="flex flex-col">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-4 md:items-stretch">
         {layers.map((layer, i) => {
           const isActive = active === i
           const isNeighbor = active !== null && Math.abs(active - i) === 1
           return (
-            <div key={layer.key} className="flex flex-col">
+            <div key={layer.key} className="relative flex min-w-0 flex-col">
               {i > 0 && (
-                <div className="flex justify-center py-2" aria-hidden="true">
+                <div className="absolute -left-3 top-1/2 z-10 hidden -translate-y-1/2 items-center md:flex" aria-hidden="true">
                   <span
                     style={{
                       fontSize: 16,
@@ -62,8 +62,13 @@ export default function SystemArchitectureDiagram({ title }: { title?: string })
                       transition: 'color 0.25s ease',
                     }}
                   >
-                    ↑
+                    →
                   </span>
+                </div>
+              )}
+              {i > 0 && (
+                <div className="flex justify-center py-1 md:hidden" aria-hidden="true">
+                  <span style={{ fontSize: 16, lineHeight: 1, color: IEP.border }}>↓</span>
                 </div>
               )}
               <button
@@ -89,7 +94,7 @@ export default function SystemArchitectureDiagram({ title }: { title?: string })
                   <span
                     style={{ fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: IEP.muted, fontWeight: 400 }}
                   >
-                    Layer {layers.length - i}
+                    Layer {i + 1}
                   </span>
                 </div>
                 <div className="mt-3 flex flex-wrap gap-2">
