@@ -333,11 +333,17 @@ export default function IEPDesignSystem() {
             </Reveal>
             <Reveal delay={0.08}>
               <div className="mt-10 md:mt-[70px]">
-                <CaseStudyImagePlaceholder
-                  label="Platform experiences built with the IEP Design System"
-                  caption="Dashboard, Create Database Service flow, service details, and operational workflows."
-                  minHeight={474}
-                />
+                <figure className="flex flex-col gap-3">
+                  <img
+                    src="/images/iep-design-system-cover.png"
+                    alt="IEP Design System cover — color tokens 600 #0060F0, 200 #E2E8F0, and 950 #020617 on a blue gradient."
+                    className="w-full rounded-[20px] object-cover"
+                    style={{ aspectRatio: '16 / 9' }}
+                  />
+                  <figcaption style={{ color: '#767675', fontSize: 14, lineHeight: '24px' }}>
+                    Dashboard, Create Database Service flow, service details, and operational workflows.
+                  </figcaption>
+                </figure>
               </div>
             </Reveal>
           </div>
