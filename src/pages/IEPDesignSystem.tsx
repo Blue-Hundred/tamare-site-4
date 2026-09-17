@@ -6,7 +6,6 @@ import ContactSection from '../components/ContactSection'
 import CaseStudyImagePlaceholder from '../components/CaseStudyImagePlaceholder'
 import EcosystemDiagram from '../components/iep/EcosystemDiagram'
 import SystemArchitectureDiagram from '../components/iep/SystemArchitectureDiagram'
-import AtomsToExperiencesDiagram from '../components/iep/AtomsToExperiencesDiagram'
 import VariabilityDiagram from '../components/iep/VariabilityDiagram'
 import ServiceCardShowcase from '../components/iep/ServiceCardShowcase'
 import InteractiveTypeScale from '../components/iep/InteractiveTypeScale'
@@ -591,19 +590,7 @@ export default function IEPDesignSystem() {
           </div>
         </section>
 
-        {/* Interactive diagram — From atoms to experiences */}
-        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[70px]">
-          <div className={contentWidth}>
-            <Reveal>
-              <h2 className="text-h3 mb-8 md:mb-10" style={{ color: '#0f0f0e' }}>
-                Building experiences from the same primitives
-              </h2>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <AtomsToExperiencesDiagram />
-            </Reveal>
-          </div>
-        </section>
+
 
         {/* 06 — Enterprise Forms */}
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
