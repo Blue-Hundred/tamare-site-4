@@ -81,7 +81,7 @@ export default function InteractiveColorRamps() {
         <h2 className="text-h3" style={{ color: IEP.ink }}>Primitive Colors</h2>
         <p className="text-body-14" style={{ color: IEP.muted }}>Hover over a swatch for its HEX and WCAG contrast.</p>
       </div>
-      <div className="flex flex-col divide-y" style={{ borderColor: IEP.border }}>
+      <div className="flex flex-col divide-y" style={{ borderColor: '#e3e8ef' }}>
         {ramps.map((ramp) => (
           <div key={ramp.name} className="py-5 first:pt-0 last:pb-0">
             <div className="mb-3 flex items-baseline gap-4">
