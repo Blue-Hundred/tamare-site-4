@@ -1,4 +1,5 @@
 import { IEP } from './tokens'
+import InteractiveIconLibrary from './InteractiveIconLibrary'
 
 const radiusTokens = [
   ['none', '0px', 'Sharp edges, tables, viewports, borders', 0],
@@ -105,6 +106,7 @@ export default function FoundationsShowcase() {
           />
         </div>
       </section>
+      <InteractiveIconLibrary />
     </div>
   )
 }
