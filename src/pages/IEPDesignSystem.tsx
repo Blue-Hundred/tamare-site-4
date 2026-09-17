@@ -396,11 +396,19 @@ export default function IEPDesignSystem() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-10 md:mt-[70px]">
-                <CaseStudyImagePlaceholder
-                  label="Before: independently evolved database control planes"
-                  caption="Legacy interfaces — Gaia MS SQL, CockroachDB, Gaia Oracle, Gaia MySQL, TigerGraph, Cassandra, and others."
-                  aspect="21 / 9"
-                />
+          <figure className="flex flex-col">
+            <img
+              src="/images/legacy-databases-experiences.png"
+              alt="Before: independently evolved database control planes — legacy interfaces including Gaia MS SQL, CockroachDB, Gaia Oracle, Gaia MySQL, TigerGraph, and Cassandra, each with different navigation, colors, and layouts."
+              className="w-full rounded-[20px] object-cover"
+              style={{ aspectRatio: "21 / 9" }}
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption className="mt-4 text-body-14 text-[#6b6b6b]">
+              Legacy interfaces — Gaia MS SQL, CockroachDB, Gaia Oracle, Gaia MySQL, TigerGraph, Cassandra, and others.
+            </figcaption>
+          </figure>
               </div>
             </Reveal>
           </div>
