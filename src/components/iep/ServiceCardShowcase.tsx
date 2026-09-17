@@ -11,10 +11,10 @@ type Service = {
 }
 
 const services: Service[] = [
-  { tech: 'Graph', product: 'TigerGraph', name: 'graph-prod-01', status: 'Healthy', tone: 'ok', meta: [['Region', 'us-east-1'], ['Vertices', '2.4M'], ['Version', '3.9']] },
-  { tech: 'Relational', product: 'CockroachDB', name: 'sql-core-02', status: 'Healthy', tone: 'ok', meta: [['Region', 'us-east-1'], ['vCPU', '8'], ['Storage', '512 GB']] },
-  { tech: 'Non-relational', product: 'Cassandra', name: 'docstore-07', status: 'Degraded', tone: 'warn', meta: [['Region', 'eu-west-1'], ['Nodes', '6'], ['Throughput', '12k/s']] },
-  { tech: 'Other', product: 'Redis', name: 'cache-11', status: 'Healthy', tone: 'ok', meta: [['Region', 'us-west-2'], ['Memory', '32 GB'], ['TTL', '24h']] },
+  { tech: 'Graph', product: 'TigerGraph', name: 'graph-prod-01', status: 'Healthy', tone: 'ok', meta: [['Environment', 'Production'], ['Region', 'us-east-1'], ['Nodes', '3']] },
+  { tech: 'Relational', product: 'CockroachDB', name: 'sql-core-02', status: 'Healthy', tone: 'ok', meta: [['Environment', 'Production'], ['Region', 'us-east-1'], ['Storage', '512 GB']] },
+  { tech: 'Non-relational', product: 'Cassandra', name: 'docstore-07', status: 'Degraded', tone: 'warn', meta: [['Environment', 'Production'], ['Region', 'eu-west-1'], ['Nodes', '6']] },
+  { tech: 'Other', product: 'Redis', name: 'cache-11', status: 'Healthy', tone: 'ok', meta: [['Environment', 'Production'], ['Region', 'us-west-2'], ['Memory', '32 GB']] },
 ]
 
 function Region({ label, show, children }: { label: string; show: boolean; children: ReactNode }) {
@@ -70,18 +70,13 @@ function ServiceCard({ service, show }: { service: Service; show: boolean }) {
         </div>
       </Region>
       <Region label="Actions" show={show}>
-        <div className="flex items-center gap-2">
-          <span
-            style={{ fontSize: 11, fontWeight: 500, color: '#fff', background: IEP.ink, padding: '5px 12px', borderRadius: 8 }}
-          >
-            Manage
-          </span>
-          <span
-            style={{ fontSize: 11, fontWeight: 500, color: IEP.ink, padding: '5px 12px', borderRadius: 8, border: `1px solid ${IEP.border}` }}
-          >
-            Details
-          </span>
-        </div>
+        <span
+          className="inline-flex items-center gap-1.5 self-start"
+          style={{ fontSize: 11, fontWeight: 500, color: IEP.ink, padding: '5px 12px', borderRadius: 8, border: `1px solid ${IEP.border}` }}
+        >
+          View service
+          <span aria-hidden="true">→</span>
+        </span>
       </Region>
     </div>
   )
