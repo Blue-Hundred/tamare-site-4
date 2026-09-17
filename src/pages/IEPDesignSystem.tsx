@@ -520,8 +520,8 @@ export default function IEPDesignSystem() {
                   <InteractiveColorRamps />
                 </div>
                 <img
-                  src="/images/iep-color-tokens-reference.png"
-                  alt="Color Tokens reference showing semantic light and dark mode mappings for background, text, border, icon, and status tokens."
+                  src="/images/iep-semantic-colors-reference.png"
+                  alt="Semantic Colors reference showing light and dark mode mappings for background, text, border, icon, and status tokens."
                   width={1824}
                   height={1365}
                   loading="lazy"
