@@ -436,32 +436,6 @@ export default function IEPDesignSystem() {
                 }
               />
             </Reveal>
-            <Reveal delay={0.06}>
-              <div className="mt-12 md:mt-[70px] grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                {[
-                  { t: 'Foundations', b: 'The shared visual and behavioral language of the platform.' },
-                  { t: 'Components', b: 'Reusable building blocks for common interface interactions.' },
-                  {
-                    t: 'Patterns',
-                    b: 'Combinations of components that solved recurring database workflows while allowing technology-specific configuration.',
-                  },
-                ].map((level, i) => (
-                  <div
-                    key={level.t}
-                    className="rounded-xl p-6 flex flex-col gap-3"
-                    style={{ border: `1px solid ${IEP.border}`, background: '#fff' }}
-                  >
-                    <span style={{ fontSize: 12, fontWeight: 600, color: IEP.accent, letterSpacing: '0.06em' }}>
-                      {`0${i + 1}`}
-                    </span>
-                    <h3 className="text-h4" style={{ color: '#0f0f0e' }}>
-                      {level.t}
-                    </h3>
-                    <p style={{ color: '#595958', fontSize: 14, fontWeight: 300, lineHeight: '22px' }}>{level.b}</p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
           </div>
         </section>
 
@@ -469,12 +443,7 @@ export default function IEPDesignSystem() {
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[70px]">
           <div className={contentWidth}>
             <Reveal>
-              <h2 className="text-h3 mb-8 md:mb-10" style={{ color: '#0f0f0e' }}>
-                System architecture
-              </h2>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <SystemArchitectureDiagram />
+              <SystemArchitectureDiagram title="System architecture" />
             </Reveal>
           </div>
         </section>

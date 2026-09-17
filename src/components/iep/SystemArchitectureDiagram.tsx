@@ -29,7 +29,7 @@ const layers = [
   },
 ] as const
 
-export default function SystemArchitectureDiagram() {
+export default function SystemArchitectureDiagram({ title }: { title?: string }) {
   const [hovered, setHovered] = useState<number | null>(null)
   const [pinned, setPinned] = useState<number | null>(null)
   const reduce = useReducedMotion() ?? false
@@ -37,6 +37,11 @@ export default function SystemArchitectureDiagram() {
 
   return (
     <div className="rounded-[20px] bg-white p-5 md:p-8" style={{ border: `1px solid ${IEP.cardBorder}` }}>
+      {title && (
+        <h2 className="text-h3 mb-6 md:mb-8" style={{ color: '#0f0f0e' }}>
+          {title}
+        </h2>
+      )}
       <p className="mb-6" style={{ fontSize: 13, color: IEP.muted, fontWeight: 300 }}>
         Product experiences are composed from a common system. Hover, focus, or tap a layer to see its role and how it
         connects to the layers around it.
