@@ -506,6 +506,15 @@ export default function IEPDesignSystem() {
             <Reveal delay={0.1}>
               <div className="mt-10 md:mt-[50px]">
                 <InteractiveTypeScale />
+                <img
+                  src="/images/iep-typography-reference.png"
+                  alt="Figtree typography reference showing weights, alphabet specimens, type scale, and design variables."
+                  width={1824}
+                  height={1360}
+                  loading="lazy"
+                  decoding="async"
+                  className="mt-6 w-full rounded-[20px] object-cover"
+                />
               </div>
             </Reveal>
           </div>
