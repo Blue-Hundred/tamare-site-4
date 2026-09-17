@@ -56,7 +56,7 @@ const projects = [
     company: 'JPMorgan Chase & Co.',
     tags: ['Design Systems', 'Product Design', 'Platform Design'],
     year: '2025',
-    image: '',
+    image: '/images/iep-design-system-cover.png',
     href: '/work/iep-design-system',
   },
 ]
