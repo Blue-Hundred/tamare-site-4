@@ -14,10 +14,10 @@ const radiusTokens = [
 const spacingTokens = [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96]
 
 const elevationTokens = [
-  ['None', 'none', 'Background sections, inline frames'],
-  ['Small', 'y4 blur12 spread0 (8%)', 'Active states, clickable cards, filters'],
-  ['Medium', 'y8 blur24 spread-4 (12%)', 'Popovers, dropdowns, floating menus'],
-  ['Large', 'y16 blur40 spread-8 (18%)', 'Modals, priority focus panels, drawers'],
+  ['None', 'none', 'Background sections, inline frames', '/images/iep-shadow-0.png'],
+  ['Small', 'y4 blur12 spread0 (8%)', 'Active states, clickable cards, filters', '/images/iep-shadow-8.png'],
+  ['Medium', 'y8 blur24 spread-4 (12%)', 'Popovers, dropdowns, floating menus', '/images/iep-shadow-12.png'],
+  ['Large', 'y16 blur40 spread-8 (18%)', 'Modals, priority focus panels, drawers', '/images/iep-shadow-18.png'],
 ] as const
 
 function FoundationTitle({ title, body }: { title: string; body: string }) {
@@ -52,7 +52,7 @@ export default function FoundationsShowcase() {
       <section>
         <FoundationTitle title="Elevation" body="Visual depth communicates content hierarchy and focus priorities. Rather than decorative flare, the elevation scale leverages shadow properties to establish semantic layer ordering." />
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {elevationTokens.map(([name, value, usage]) => (
+          {elevationTokens.map(([name, value, usage, image]) => (
             <div key={name} className="rounded-xl border p-5" style={{ borderColor: IEP.border, background: '#f8fafc' }}>
               <h4 className="text-[16px] font-medium" style={{ color: IEP.ink }}>Elevation: {name}</h4>
               <div className="mt-5 flex h-32 items-center justify-center rounded-lg" style={{ background: '#fff' }}>
@@ -60,6 +60,15 @@ export default function FoundationsShowcase() {
               </div>
               <p className="mt-4 font-mono text-[12px]" style={{ color: IEP.muted }}>Value: {value}</p>
               <p className="mt-1 text-[12px] leading-5" style={{ color: IEP.muted }}>Usage: {usage}</p>
+              <img
+                src={image}
+                alt={`${name} elevation shadow settings`}
+                width={262}
+                height={282}
+                loading="lazy"
+                decoding="async"
+                className="mt-5 w-full rounded-lg object-contain"
+              />
             </div>
           ))}
         </div>
