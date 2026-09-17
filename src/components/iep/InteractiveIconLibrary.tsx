@@ -87,8 +87,7 @@ export default function InteractiveIconLibrary() {
     <section className="border-t pt-10 md:pt-14" style={{ borderColor: IEP.border }} aria-labelledby="icon-library-title">
       <div className="mb-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-mono text-[11px] uppercase tracking-[0.16em]" style={{ color: IEP.accent }}>Icons</p>
-          <h3 id="icon-library-title" className="mt-2 text-h3" style={{ color: IEP.ink }}>Material Symbols Icon Library</h3>
+            <h3 id="icon-library-title" className="mt-2 text-h3" style={{ color: IEP.ink }}>Material Symbols Icon Library</h3>
           <p className="mt-3 max-w-3xl text-body-18" style={{ color: IEP.muted }}>Rounded Material Symbols for database and infrastructure workflows. Hover or focus any icon to inspect its semantic token.</p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
