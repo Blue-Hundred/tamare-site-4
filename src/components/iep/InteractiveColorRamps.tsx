@@ -106,8 +106,7 @@ export default function InteractiveColorRamps() {
                   >
                     <span className="mb-2 block aspect-[1.7] w-full rounded-md border" style={{ background: swatch.hex, borderColor: 'rgba(15,15,14,0.08)' }} />
                     <span className="block text-body-14 font-medium" style={{ color: IEP.ink }}>{swatch.step}</span>
-                    <span className="block truncate font-mono text-[12px]" style={{ color: IEP.muted }}>{swatch.hex}</span>
-                    <span className="mt-1 block min-h-4 font-mono text-[11px]" style={{ color: swatch.wcag ? IEP.muted : 'transparent' }}>{swatch.wcag || '—'}</span>
+                    <span className="mt-1 block min-h-4" aria-hidden="true" />
                     {isActive && (
                       <span className="pointer-events-none absolute inset-x-2 bottom-2 rounded bg-[rgba(15,15,14,0.92)] px-2 py-1 text-center text-[11px] text-white shadow-lg">
                         {swatch.hex}{swatch.wcag ? ` · ${swatch.wcag}` : ''}
