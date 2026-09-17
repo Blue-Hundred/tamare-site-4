@@ -79,7 +79,7 @@ export default function InteractiveColorRamps() {
     <section className="w-full overflow-hidden rounded-[20px] border p-5 md:p-8" style={{ borderColor: IEP.cardBorder, background: IEP.surface }} aria-label="Primitive color ramps">
       <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
         <h2 className="text-h3" style={{ color: IEP.ink }}>Primitive Colors</h2>
-        <p className="text-body-14" style={{ color: IEP.muted }}>Hover a swatch for its token, hex, and WCAG contrast.</p>
+        <p className="text-body-14" style={{ color: IEP.muted }}>Hover over a swatch for its HEX and WCAG contrast.</p>
       </div>
       <div className="flex flex-col divide-y" style={{ borderColor: IEP.border }}>
         {ramps.map((ramp) => (
