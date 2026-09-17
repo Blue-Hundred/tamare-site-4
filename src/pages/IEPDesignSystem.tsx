@@ -10,6 +10,7 @@ import AtomsToExperiencesDiagram from '../components/iep/AtomsToExperiencesDiagr
 import VariabilityDiagram from '../components/iep/VariabilityDiagram'
 import ServiceCardShowcase from '../components/iep/ServiceCardShowcase'
 import InteractiveTypeScale from '../components/iep/InteractiveTypeScale'
+import InteractiveColorRamps from '../components/iep/InteractiveColorRamps'
 import GovernanceDiagram from '../components/iep/GovernanceDiagram'
 import { IEP } from '../components/iep/tokens'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
@@ -515,6 +516,9 @@ export default function IEPDesignSystem() {
                   decoding="async"
                   className="mt-6 w-full rounded-[20px] object-cover"
                 />
+                <div className="mt-6">
+                  <InteractiveColorRamps />
+                </div>
               </div>
             </Reveal>
           </div>
