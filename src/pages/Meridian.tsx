@@ -177,12 +177,7 @@ function MvpStrategy() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-6 lg:gap-x-4">
           {goals.map((g, i) => (
             <div key={g.title} className="relative rounded-xl border border-[#e7e7ea] pt-8 px-5 pb-6 flex flex-col gap-4">
-              <span
-                className="absolute -top-4 left-5 flex items-center justify-center rounded-full text-white"
-                style={{ width: 32, height: 32, backgroundColor: PURPLE, fontSize: 13, fontWeight: 600 }}
-              >
-                {i + 1}
-              </span>
+
               <g.icon size={34} strokeWidth={1.5} style={{ color: PURPLE }} aria-hidden="true" />
               <h5 className="text-h4">{g.title}</h5>
               <p style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '22px' }}>{g.body}</p>
@@ -457,7 +452,7 @@ export default function Meridian() {
               <div className="mt-8 md:mt-10 bg-white rounded-[20px] p-6 md:p-10 flex flex-col gap-10 md:gap-[70px]">
                 <div className="flex flex-col gap-8 md:gap-10">
                   <div className="flex flex-col gap-3">
-                    <p className="text-h3">Discovery Research</p>
+                    <p className="text-heading-l">Discovery Research</p>
                     <p className="text-body-18" style={{ color: '#595958' }}>I conducted three rounds of research to understand the challenges behind the fragmented experience.</p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
