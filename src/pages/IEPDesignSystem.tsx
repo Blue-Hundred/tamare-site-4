@@ -9,6 +9,7 @@ import SystemArchitectureDiagram from '../components/iep/SystemArchitectureDiagr
 import AtomsToExperiencesDiagram from '../components/iep/AtomsToExperiencesDiagram'
 import VariabilityDiagram from '../components/iep/VariabilityDiagram'
 import ServiceCardShowcase from '../components/iep/ServiceCardShowcase'
+import InteractiveTypeScale from '../components/iep/InteractiveTypeScale'
 import GovernanceDiagram from '../components/iep/GovernanceDiagram'
 import { IEP } from '../components/iep/tokens'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
@@ -504,7 +505,7 @@ export default function IEPDesignSystem() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-10 md:mt-[50px]">
-                <CaseStudyImagePlaceholder label="IEP Design System — Foundations" aspect="16 / 9" />
+                <InteractiveTypeScale />
               </div>
             </Reveal>
           </div>
