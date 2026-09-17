@@ -445,7 +445,7 @@ export default function IEPDesignSystem() {
                       forms, tables, service cards, status indicators, configuration controls, operational actions,
                       notifications, and documentation patterns.
                     </p>
-                    <p>This allowed the experience to be separated into four levels.</p>
+                    <p>This allowed the experience to be separated into four layers.</p>
                   </>
                 }
               />
