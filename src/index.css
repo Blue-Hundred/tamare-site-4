@@ -134,11 +134,27 @@ body {
   color: #000000;
 }
 
+.text-display-large {
+  color: #000000;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: -0.48px;
+}
+
 /* ── Mobile type scale ─────────────────────────────────────── */
 /* Global mobile alternates for the type scale. Applies below the
    Tailwind `md` breakpoint (768px) so every element using these
    classes scales down automatically on phones. */
 @media (max-width: 767px) {
+  .text-display-large {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.36px;
+  }
+
   .text-heading-xl {
     font-size: 28px;
     line-height: 36px;
@@ -150,16 +166,6 @@ body {
     line-height: 42px;
     letter-spacing: -0.68px;
   }
-
-.text-heading-xl {
-  color: #000000;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 40px;
-  letter-spacing: -0.32px;
-}
 
 .text-h2 {
 
