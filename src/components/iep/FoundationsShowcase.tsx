@@ -76,13 +76,15 @@ export default function FoundationsShowcase() {
 
       <section>
         <FoundationTitle title="Grid System" body="The IEP Layout foundation is structured around a fluid, responsive 12-column grid. This layout ensures visual alignment and dense structure across administrative screens and database consoles." />
-        <div className="rounded-xl border p-5 md:p-6" style={{ borderColor: IEP.border, background: '#fff' }}>
-          <h4 className="text-h4" style={{ color: IEP.ink }}>Schematic Layout Visualization</h4>
-          <div className="mt-5 grid grid-cols-4 gap-2 md:grid-cols-8 lg:grid-cols-12">
-            {Array.from({ length: 12 }, (_, i) => <div key={i} className="flex h-24 items-center justify-center rounded border text-[12px]" style={{ borderColor: '#f0b4b4', background: '#fff2f2', color: '#c0392b' }}>{i + 1}</div>)}
-          </div>
-          <div className="mt-4 flex flex-wrap justify-between gap-3 font-mono text-[12px]" style={{ color: IEP.muted }}><span>← Margin (80px) →</span><span>← Gutter (24px) →</span><span>12 Columns (Stretch)</span></div>
-        </div>
+        <img
+          src="/images/iep-spacing-columns.png"
+          alt="Responsive grid reference showing desktop 12-column, tablet 8-column, and mobile 4-column layouts with margin and gutter measurements."
+          width={1440}
+          height={403}
+          loading="lazy"
+          decoding="async"
+          className="w-full rounded-xl object-cover"
+        />
       </section>
 
       <section>
