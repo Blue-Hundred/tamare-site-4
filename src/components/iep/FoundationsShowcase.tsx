@@ -78,8 +78,20 @@ export default function FoundationsShowcase() {
 
       <section>
         <FoundationTitle title="Spacing Foundations" body="The IEP Design System layout methodology is structured strictly around a 4px baseline grid. This ruleset ensures robust visual cadence, predictable responsive flow, and dense layout structures across dashboard screens and technical consoles." />
-        <div className="overflow-hidden rounded-xl border" style={{ borderColor: IEP.border }}>
-          {spacingTokens.map((px) => <div key={px} className="flex items-center gap-5 border-b px-4 py-3 last:border-b-0" style={{ borderColor: IEP.border, background: '#f8fafc' }}><code className="w-24 text-[12px]" style={{ color: IEP.ink }}>space/{px / 4 || 0}</code><span className="w-16 font-mono text-[13px]" style={{ color: IEP.ink }}>{px}px</span><span className="h-2 rounded-full" style={{ width: Math.max(px * 2, 4), background: IEP.accent }} /></div>)}
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
+          <div className="overflow-hidden rounded-xl border" style={{ borderColor: IEP.border }}>
+            {spacingTokens.map((px) => <div key={px} className="flex items-center gap-5 border-b px-4 py-3 last:border-b-0" style={{ borderColor: IEP.border, background: '#f8fafc' }}><code className="w-24 text-[12px]" style={{ color: IEP.ink }}>space/{px / 4 || 0}</code><span className="w-16 font-mono text-[13px]" style={{ color: IEP.ink }}>{px}px</span><span className="h-2 rounded-full" style={{ width: Math.max(px * 2, 4), background: IEP.accent }} /></div>)}
+          </div>
+          <img
+            src="/images/iep-spacing-interface.png"
+            alt="Figma Variables spacing interface showing spacing and corner-radius token groups."
+            width={748}
+            height={541}
+            loading="lazy"
+            decoding="async"
+            className="w-full rounded-xl border object-cover"
+            style={{ borderColor: IEP.border }}
+          />
         </div>
       </section>
     </div>
