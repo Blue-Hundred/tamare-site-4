@@ -519,6 +519,15 @@ export default function IEPDesignSystem() {
                 <div className="mt-6">
                   <InteractiveColorRamps />
                 </div>
+                <img
+                  src="/images/iep-color-tokens-reference.png"
+                  alt="Color Tokens reference showing semantic light and dark mode mappings for background, text, border, icon, and status tokens."
+                  width={1824}
+                  height={1365}
+                  loading="lazy"
+                  decoding="async"
+                  className="mt-6 w-full rounded-[20px] object-cover"
+                />
               </div>
             </Reveal>
           </div>
