@@ -52,7 +52,7 @@ const projects = [
   },
   {
     id: '05',
-    title: 'IEP Design System',
+    title: 'IEP Databases Design System',
     company: 'JPMorgan Chase & Co.',
     tags: ['Design Systems', 'Product Design', 'Platform Design'],
     year: '2025',

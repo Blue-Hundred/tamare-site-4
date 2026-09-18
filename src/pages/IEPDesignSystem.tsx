@@ -250,7 +250,7 @@ export default function IEPDesignSystem() {
                       marginLeft: '-0.3em',
                     }}
                   >
-                    IEP Design System
+                    IEP Databases Design System
                   </span>
                 </h1>
                 <p className="text-body-18 mt-4 md:mt-6" style={{ color: '#595958' }}>
