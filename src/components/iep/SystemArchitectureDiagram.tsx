@@ -80,7 +80,7 @@ export default function SystemArchitectureDiagram({ title }: { title?: string })
                 onFocus={() => setHovered(i)}
                 onBlur={() => setHovered(null)}
                 onClick={() => setPinned(pinned === i ? null : i)}
-                className="text-left rounded-xl px-5 py-5 md:px-6 outline-none w-full"
+                className="text-center rounded-xl px-5 py-5 md:px-6 outline-none w-full"
                 style={{
                   border: `1px solid ${isActive ? IEP.accent : isNeighbor ? '#c7cdf0' : IEP.border}`,
                   background: isActive ? IEP.accentTint : '#fff',
@@ -96,7 +96,7 @@ export default function SystemArchitectureDiagram({ title }: { title?: string })
                 <span className="mt-2 block" style={{ fontSize: 16, fontWeight: 600, color: IEP.ink, letterSpacing: '-0.01em' }}>
                   {layer.title}
                 </span>
-                <div className="mt-3 flex flex-wrap gap-2">
+                <div className="mt-3 flex flex-wrap justify-center gap-2">
                   {layer.items.map(item => (
                     <span
                       key={item}
