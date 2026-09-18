@@ -1,17 +1,16 @@
-import { useRef, useState, useEffect, Fragment, type ReactNode } from 'react'
+import { useRef, useState, useEffect, type ReactNode } from 'react'
 import { Link, useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import CaseStudyImagePlaceholder from '../components/CaseStudyImagePlaceholder'
-import EcosystemDiagram from '../components/iep/EcosystemDiagram'
 import SystemArchitectureDiagram from '../components/iep/SystemArchitectureDiagram'
-import VariabilityDiagram from '../components/iep/VariabilityDiagram'
+import DesignProcessDiagram from '../components/iep/DesignProcessDiagram'
 import ServiceCardShowcase from '../components/iep/ServiceCardShowcase'
 import InteractiveTypeScale from '../components/iep/InteractiveTypeScale'
 import InteractiveColorRamps from '../components/iep/InteractiveColorRamps'
 import FoundationsShowcase from '../components/iep/FoundationsShowcase'
-import GovernanceDiagram from '../components/iep/GovernanceDiagram'
+import ButtonMatrix from '../components/iep/ButtonMatrix'
 import { IEP } from '../components/iep/tokens'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
@@ -104,10 +103,6 @@ function CaseStudyTopBar() {
   )
 }
 
-function SectionEyebrow(_props: { n: string; label: string }) {
-  return null
-}
-
 function SectionHeading({ title, body }: { title: string; body?: ReactNode }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -123,32 +118,21 @@ function SectionHeading({ title, body }: { title: string; body?: ReactNode }) {
   )
 }
 
-function StepChain({ steps }: { steps: string[] }) {
+function PillLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      {steps.map((step, i) => (
-        <Fragment key={step}>
-          <span
-            style={{
-              fontSize: 13,
-              fontWeight: 400,
-              color: IEP.ink,
-              padding: '5px 12px',
-              borderRadius: 100,
-              border: `1px solid ${IEP.border}`,
-              background: '#fff',
-            }}
-          >
-            {step}
-          </span>
-          {i < steps.length - 1 && (
-            <span aria-hidden="true" style={{ color: IEP.muted, fontSize: 13 }}>
-              →
-            </span>
-          )}
-        </Fragment>
-      ))}
-    </div>
+    <span
+      className="inline-flex items-center rounded-full bg-white"
+      style={{
+        padding: '10px 20px',
+        border: `1px solid ${IEP.border}`,
+        boxShadow: '0 6px 16px rgba(15,15,14,0.06)',
+        color: '#0f0f0e',
+        fontSize: 18,
+        fontWeight: 500,
+      }}
+    >
+      {children}
+    </span>
   )
 }
 
@@ -201,29 +185,22 @@ export default function IEPDesignSystem() {
     },
   ]
 
+  const accessibilityItems = [
+    {
+      t: 'Color contrast',
+      b: 'Text, icons, and interactive states meet WCAG AA contrast targets across both light and dark modes.',
+    },
+    {
+      t: 'Keyboard accessible and focus visible',
+      b: 'Every interactive component is reachable by keyboard with a clear, consistent focus indicator.',
+    },
+    {
+      t: 'Readability',
+      b: 'Type scale, line length, and spacing are tuned for dense operational screens without sacrificing clarity.',
+    },
+  ]
+
   const foundationItems = ['Typography', 'Color', 'Spacing', 'Grid', 'Iconography', 'Radius', 'Elevation', 'Interaction states']
-
-  const componentGroups = [
-    { title: 'Inputs & Controls', items: ['Text fields', 'Selects', 'Autocomplete', 'Checkboxes', 'Radio controls', 'Toggles', 'Segmented controls', 'Technical parameter inputs'] },
-    { title: 'Navigation', items: ['Global navigation', 'Side navigation', 'Tabs', 'Breadcrumbs', 'Page headers', 'Contextual navigation'] },
-    { title: 'Data Display', items: ['Tables', 'Service cards', 'Key/value pairs', 'Metadata', 'Tags', 'Status indicators', 'Metrics'] },
-    { title: 'Feedback', items: ['Alerts', 'Banners', 'Validation', 'Notifications', 'Loading states', 'Empty states', 'Progress indicators'] },
-    { title: 'Actions', items: ['Buttons', 'Button groups', 'Overflow menus', 'Contextual actions', 'Confirmation dialogs', 'Destructive actions'] },
-    { title: 'Containers', items: ['Cards', 'Panels', 'Accordions', 'Drawers', 'Modals', 'Sections'] },
-  ]
-
-  const patterns = [
-    { title: 'Create Service', steps: ['Configuration', 'Validation', 'Review', 'Provisioning', 'Confirmation'] },
-    { title: 'Service Management', steps: ['Identity', 'Health', 'Configuration', 'Resources', 'Operational Actions'] },
-    { title: 'Operational Actions', steps: ['Action', 'Context', 'Confirmation', 'Processing', 'Completion'] },
-    { title: 'System Feedback', steps: ['Status', 'Severity', 'Explanation', 'Recommended Action'] },
-  ]
-
-  const formStages = [
-    { label: 'Legacy forms', placeholder: 'Legacy provisioning experiences' },
-    { label: 'Shared form system', placeholder: 'IEP form components and states' },
-    { label: 'Database-specific configuration', placeholder: 'Final Create Database Service experience' },
-  ]
 
   return (
     <div style={{ background: '#f9f9f9' }}>
@@ -303,58 +280,9 @@ export default function IEPDesignSystem() {
           </div>
         </section>
 
-        {/* 01 — Overview */}
-        <section className="px-4 sm:px-8 md:px-14 pt-16 pb-4 md:py-[88px]">
-          <div className={contentWidth}>
-            <Reveal>
-              <SectionEyebrow n="01" label="Overview" />
-            </Reveal>
-            <Reveal>
-              <SectionHeading
-                title="Designing the system behind the platform"
-                body={
-                  <>
-                    <p>
-                      Enterprise engineers relied on more than ten independently developed database control planes to
-                      provision, configure, monitor, and manage database services.
-                    </p>
-                    <p>
-                      As the organization moved toward four centralized database hubs, the challenge extended beyond
-                      redesigning individual screens. We needed a shared experience foundation that could standardize
-                      common workflows while supporting meaningful differences between relational, non-relational, graph,
-                      and other database technologies.
-                    </p>
-                    <p>
-                      I developed the IEP Design System as the reusable foundation for that transformation — establishing
-                      shared primitives, components, patterns, and interaction standards that allowed distinct database
-                      experiences to be built from the same underlying system.
-                    </p>
-                  </>
-                }
-              />
-            </Reveal>
-            <Reveal delay={0.08}>
-              <div className="mt-10 md:mt-[70px]">
-                <figure className="flex flex-col gap-3">
-                  <img
-src="/images/iep-databases-design-system-cover.png"
-  alt="Figma design workspace showing the IEP Databases Design System Foundations page with primitive and semantic color token boards."
-                    className="w-full rounded-[20px] object-cover"
-                    style={{ aspectRatio: '16 / 9' }}
-                  />
-
-                </figure>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* 02 — The Challenge */}
+        {/* The Challenge */}
         <section className="px-4 sm:px-8 md:px-14 pt-16 pb-4 md:py-[90px]">
           <div className={contentWidth}>
-            <Reveal>
-              <SectionEyebrow n="02" label="The Challenge" />
-            </Reveal>
             <Reveal>
               <SectionHeading
                 title="From 10+ control planes to 4 centralized hubs"
@@ -375,70 +303,63 @@ src="/images/iep-databases-design-system-cover.png"
               />
             </Reveal>
             <Reveal delay={0.06}>
-              <div className="mt-12 md:mt-[80px] grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-                {challengeAreas.map(area => (
-                  <article key={area.n} className="bg-white rounded-xl p-5 md:p-6 flex flex-col">
-                    <div
-                      className="flex items-center justify-center rounded-[10px] mb-5"
-                      style={{ width: 44, height: 44, background: 'rgba(15,15,14,0.04)' }}
+              <div className="mt-12 md:mt-[70px] grid grid-cols-1 lg:grid-cols-12">
+                <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-3">
+                  {challengeAreas.map(area => (
+                    <article
+                      key={area.n}
+                      className="flex items-start gap-4 rounded-xl bg-white p-5"
+                      style={{ border: `1px solid ${IEP.border}` }}
                     >
-                      {area.icon}
-                    </div>
-                    <h3 className="text-h4" style={{ color: '#0f0f0e' }}>
-                      {area.t}
-                    </h3>
-                    <p className="text-body-18 mt-2" style={{ color: '#595958' }}>
-                      {area.b}
-                    </p>
-                  </article>
-                ))}
+                      <div
+                        className="flex shrink-0 items-center justify-center rounded-[10px]"
+                        style={{ width: 44, height: 44, background: 'rgba(15,15,14,0.04)' }}
+                      >
+                        {area.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-h4" style={{ color: '#0f0f0e' }}>
+                          {area.t}
+                        </h3>
+                        <p className="text-body-14 mt-1.5" style={{ color: '#595958' }}>
+                          {area.b}
+                        </p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-10 md:mt-[70px]">
-          <figure className="flex flex-col">
-            <img
-              src="/images/legacy-databases-experiences.png"
-              alt="Before: independently evolved database control planes — legacy interfaces including Gaia MS SQL, CockroachDB, Gaia Oracle, Gaia MySQL, TigerGraph, and Cassandra, each with different navigation, colors, and layouts."
-              className="w-full rounded-[20px] object-cover"
-              style={{ aspectRatio: "21 / 9" }}
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption className="mt-4 text-body-14 text-[#6b6b6b]">
-              Legacy interfaces — Gaia MS SQL, CockroachDB, Gaia Oracle, Gaia MySQL, TigerGraph, Cassandra, and others.
-            </figcaption>
-          </figure>
+                <figure className="flex flex-col">
+                  <img
+                    src="/images/legacy-databases-experiences.png"
+                    alt="Before: independently evolved database control planes — legacy interfaces including Gaia MS SQL, CockroachDB, Gaia Oracle, Gaia MySQL, TigerGraph, and Cassandra, each with different navigation, colors, and layouts."
+                    className="w-full rounded-[20px] object-cover"
+                    style={{ aspectRatio: '21 / 9' }}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption className="mt-4 text-body-14 text-[#6b6b6b]">
+                    Legacy interfaces — Gaia MS SQL, CockroachDB, Gaia Oracle, Gaia MySQL, TigerGraph, Cassandra, and others.
+                  </figcaption>
+                </figure>
               </div>
             </Reveal>
           </div>
         </section>
 
-        {/* Interactive diagram — Consolidating the ecosystem */}
-        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[70px]">
+        {/* Finding the common layer — dark */}
+        <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]" style={{ background: '#3c4a5c' }}>
           <div className={contentWidth}>
-            <Reveal>
-              <h2 className="text-h3 mb-8 md:mb-10" style={{ color: '#0f0f0e' }}>
-                Consolidating the ecosystem
-              </h2>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <EcosystemDiagram />
-            </Reveal>
-          </div>
-        </section>
-
-        {/* 03 — Defining the System */}
-        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
-          <div className={contentWidth}>
-            <Reveal>
-              <SectionEyebrow n="03" label="Defining the System" />
-            </Reveal>
-            <Reveal>
-              <SectionHeading
-                title="Finding the common layer"
-                body={
-                  <>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <Reveal className="lg:col-span-4">
+                <div>
+                  <h2 className="text-h2" style={{ color: '#ffffff' }}>
+                    Finding the common layer
+                  </h2>
+                  <div className="text-body-18 mt-5 flex flex-col gap-4" style={{ color: 'rgba(255,255,255,0.82)' }}>
                     <p>The work began by treating the existing control planes as a dataset.</p>
                     <p>
                       I audited recurring structures and interactions across database products — including navigation,
@@ -446,28 +367,138 @@ src="/images/iep-databases-design-system-cover.png"
                       notifications, and documentation patterns.
                     </p>
                     <p>This allowed the experience to be separated into four layers.</p>
-                  </>
-                }
-              />
-            </Reveal>
+                  </div>
+                </div>
+              </Reveal>
+              <Reveal delay={0.08} className="lg:col-span-8">
+                <SystemArchitectureDiagram />
+              </Reveal>
+            </div>
           </div>
         </section>
 
-        {/* Interactive diagram — System architecture */}
-        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[70px]">
+        {/* The Design Process */}
+        <section className="px-4 sm:px-8 md:px-14 pt-16 pb-4 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
-              <SystemArchitectureDiagram title="System architecture" />
+              <h2 className="text-h2 text-center" style={{ color: '#0f0f0e' }}>
+                The design process
+              </h2>
+            </Reveal>
+            <Reveal delay={0.06}>
+              <div className="mt-10 md:mt-[60px]">
+                <DesignProcessDiagram />
+              </div>
             </Reveal>
           </div>
         </section>
 
-        {/* 04 — Foundations */}
+        {/* Design System Goals */}
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
-              <SectionEyebrow n="04" label="Foundations" />
+              <div className="max-w-[720px]">
+                <h2 className="text-h2" style={{ color: '#0f0f0e' }}>
+                  Design system goals
+                </h2>
+                <p className="text-body-18 mt-4" style={{ color: '#595958' }}>
+                  Three principles guided every decision — the system had to be accessible, scalable across viewports,
+                  and universal enough to serve every database control plane product.
+                </p>
+              </div>
             </Reveal>
+
+            {/* Accessibility */}
+            <Reveal delay={0.05}>
+              <div className="mt-12 md:mt-[70px] grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
+                <div className="lg:col-span-4">
+                  <PillLabel>Accessibility</PillLabel>
+                </div>
+                <div className="lg:col-span-8 flex flex-col gap-6">
+                  <div>
+                    <h3 className="text-h4" style={{ color: '#0f0f0e' }}>
+                      Ensuring accessibility throughout the system
+                    </h3>
+                    <p className="text-body-18 mt-2" style={{ color: '#595958' }}>
+                      Accessibility is crucial throughout the development of a design system. It was built into the
+                      foundations rather than added at the end.
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    {accessibilityItems.map(item => (
+                      <article
+                        key={item.t}
+                        className="flex items-start gap-4 rounded-xl bg-white p-5"
+                        style={{ border: `1px solid ${IEP.border}` }}
+                      >
+                        <div
+                          className="flex shrink-0 items-center justify-center rounded-[10px]"
+                          style={{ width: 40, height: 40, background: IEP.accentTint }}
+                        >
+                          <span style={{ width: 12, height: 12, borderRadius: 4, background: IEP.accent }} aria-hidden="true" />
+                        </div>
+                        <div>
+                          <h4 className="text-[16px] font-medium" style={{ color: '#0f0f0e' }}>
+                            {item.t}
+                          </h4>
+                          <p className="text-body-14 mt-1.5" style={{ color: '#595958' }}>
+                            {item.b}
+                          </p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Scalable */}
+            <Reveal delay={0.05}>
+              <div className="mt-12 md:mt-[70px] grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
+                <div className="lg:col-span-4">
+                  <PillLabel>Scalable</PillLabel>
+                </div>
+                <div className="lg:col-span-8">
+                  <h3 className="text-h4" style={{ color: '#0f0f0e' }}>
+                    All components seamlessly scale across viewports
+                  </h3>
+                  <p className="text-body-18 mt-2" style={{ color: '#595958' }}>
+                    The same components adapt from wide operational consoles down to compact layouts without breaking
+                    hierarchy, density, or interaction behavior.
+                  </p>
+                  <div className="mt-6">
+                    <CaseStudyImagePlaceholder label="Responsive database dashboard across viewports" aspect="16 / 9" />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Universal */}
+            <Reveal delay={0.05}>
+              <div className="mt-12 md:mt-[70px] grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
+                <div className="lg:col-span-4">
+                  <PillLabel>Universal</PillLabel>
+                </div>
+                <div className="lg:col-span-8">
+                  <h3 className="text-h4" style={{ color: '#0f0f0e' }}>
+                    Components and patterns work across every database product
+                  </h3>
+                  <p className="text-body-18 mt-2" style={{ color: '#595958' }}>
+                    A single service-card component represents different database technologies while preserving the same
+                    hierarchy and interaction behavior.
+                  </p>
+                  <div className="mt-6">
+                    <ServiceCardShowcase />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* Establishing a shared language — Foundations */}
+        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
+          <div className={contentWidth}>
             <Reveal>
               <SectionHeading
                 title="Establishing a shared language"
@@ -532,297 +563,46 @@ src="/images/iep-databases-design-system-cover.png"
           </div>
         </section>
 
-        {/* 05 — Component Architecture */}
+        {/* Buttons */}
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
-              <SectionEyebrow n="05" label="Component Architecture" />
-            </Reveal>
-            <Reveal>
-              <SectionHeading
-                title="Building reusable components around behavior"
-                body={
-                  <>
-                    <p>The component library translated those foundations into reusable interface building blocks.</p>
-                    <p>Components were structured around shared behaviors rather than individual database products.</p>
-                    <p>
-                      Instead of creating technology-specific versions of basic controls, the system defined flexible
-                      components that could accept different labels, helper text, validation, data, states, and
-                      configuration requirements.
-                    </p>
-                  </>
-                }
-              />
-            </Reveal>
-            <Reveal delay={0.06}>
-              <div className="mt-12 md:mt-[70px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-                {componentGroups.map(group => (
-                  <div
-                    key={group.title}
-                    className="rounded-xl p-6 flex flex-col gap-4"
-                    style={{ border: `1px solid ${IEP.border}`, background: '#fff' }}
-                  >
-                    <h3 style={{ fontSize: 12, fontWeight: 600, color: IEP.accent, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                      {group.title}
-                    </h3>
-                    <ul className="flex flex-col gap-2">
-                      {group.items.map(item => (
-                        <li key={item} style={{ fontSize: 14, fontWeight: 300, color: '#595958', lineHeight: '20px' }}>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+              <div className="max-w-[720px]">
+                <h2 className="text-h2" style={{ color: '#0f0f0e' }}>
+                  Buttons
+                </h2>
+                <p className="text-body-18 mt-4" style={{ color: '#595958' }}>
+                  A complete set of button sizes and variants, defined once and reused across every database hub in both
+                  light and dark surfaces.
+                </p>
               </div>
             </Reveal>
-            <Reveal delay={0.1}>
+            <Reveal delay={0.06}>
               <div className="mt-10 md:mt-[50px]">
-                <CaseStudyImagePlaceholder
-                  label="IEP Component Library"
-                  caption="Representative components, variants, states, and component properties."
-                  aspect="16 / 9"
-                />
+                <ButtonMatrix />
               </div>
             </Reveal>
           </div>
         </section>
 
-
-
-        {/* 06 — Enterprise Forms */}
-        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
-          <div className={contentWidth}>
-            <Reveal>
-              <SectionEyebrow n="06" label="Enterprise Forms" />
-            </Reveal>
-            <Reveal>
-              <SectionHeading
-                title="Standardizing complex configuration"
-                body={
-                  <>
-                    <p>
-                      Provisioning became one of the most important system patterns because creating a database service
-                      could require numerous technical parameters.
-                    </p>
-                    <p>Across legacy control planes, those parameters were presented differently even when the underlying interaction was similar.</p>
-                    <p>
-                      The system standardized the experience surrounding configuration — including labels, descriptions,
-                      defaults, required fields, validation, dependencies, advanced settings, progressive disclosure, and
-                      review states — while allowing each database technology to define the parameters themselves.
-                    </p>
-                  </>
-                }
-              />
-            </Reveal>
-            <Reveal delay={0.06}>
-              <div className="mt-12 md:mt-[70px] grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-                {formStages.map((stage, i) => (
-                  <div key={stage.label} className="flex flex-col gap-4">
-                    <div className="flex items-center gap-3">
-                      <span style={{ fontSize: 12, fontWeight: 600, color: IEP.accent }}>{`0${i + 1}`}</span>
-                      <span style={{ fontSize: 12, letterSpacing: '0.1em', textTransform: 'uppercase', color: IEP.muted, fontWeight: 500 }}>
-                        {stage.label}
-                      </span>
-                    </div>
-                    <CaseStudyImagePlaceholder label={stage.placeholder} aspect="4 / 3" />
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* 07 — Reusable Patterns */}
-        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
-          <div className={contentWidth}>
-            <Reveal>
-              <SectionEyebrow n="07" label="Reusable Patterns" />
-            </Reveal>
-            <Reveal>
-              <SectionHeading
-                title="From components to workflows"
-                body={
-                  <>
-                    <p>Individual components solved interaction problems. Patterns solved workflow problems.</p>
-                    <p>
-                      Frequently repeated combinations of components became documented patterns that could be reused
-                      across the four database hubs.
-                    </p>
-                  </>
-                }
-              />
-            </Reveal>
-            <Reveal delay={0.06}>
-              <div className="mt-12 md:mt-[70px] grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-                {patterns.map(pattern => (
-                  <div
-                    key={pattern.title}
-                    className="rounded-xl p-6 flex flex-col gap-4"
-                    style={{ border: `1px solid ${IEP.border}`, background: '#fff' }}
-                  >
-                    <h3 className="text-h4" style={{ color: '#0f0f0e' }}>
-                      {pattern.title}
-                    </h3>
-                    <StepChain steps={pattern.steps} />
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="mt-10 md:mt-[50px]">
-                <CaseStudyImagePlaceholder label="Representative pattern UI examples" aspect="16 / 9" />
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* 08 — Designing Variability */}
-        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
-          <div className={contentWidth}>
-            <Reveal>
-              <SectionEyebrow n="08" label="Designing Variability" />
-            </Reveal>
-            <Reveal>
-              <SectionHeading
-                title="Consistency without forcing sameness"
-                body={
-                  <>
-                    <p>One of the hardest system decisions was determining where consistency should stop.</p>
-                    <p>
-                      Database technologies could share an interaction model while requiring different configuration
-                      options. Standardizing every parameter would have created abstractions that did not accurately
-                      reflect the underlying technology.
-                    </p>
-                    <p>
-                      Instead, the system standardized the experience surrounding the data while allowing
-                      technology-specific information and controls to change.
-                    </p>
-                  </>
-                }
-              />
-            </Reveal>
-            <Reveal delay={0.06}>
-              <div className="mt-12 md:mt-[70px]">
-                <VariabilityDiagram />
-              </div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <blockquote
-                className="mt-12 md:mt-[80px] font-light text-balance"
-                style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)', letterSpacing: '-0.02em', lineHeight: 1.35, color: '#0f0f0e', maxWidth: 900 }}
-              >
-                &ldquo;A scalable system isn&apos;t one where everything is the same. It&apos;s one where the rules for
-                variation are intentional.&rdquo;
-              </blockquote>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* 09 — One system, multiple database experiences */}
-        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
-          <div className={contentWidth}>
-            <Reveal>
-              <SectionEyebrow n="09" label="One System, Multiple Experiences" />
-            </Reveal>
-            <Reveal>
-              <SectionHeading
-                title="One foundation. Multiple technologies."
-                body={
-                  <>
-                    <p>
-                      Once the system was established, the same primitives could be composed into experiences appropriate
-                      for each database hub.
-                    </p>
-                    <p>
-                      A service card could represent different database technologies while preserving the same hierarchy
-                      and interaction behavior. Status could communicate health consistently regardless of the
-                      infrastructure underneath it. Provisioning could maintain the same structural model while exposing
-                      entirely different database parameters.
-                    </p>
-                  </>
-                }
-              />
-            </Reveal>
-            <Reveal delay={0.06}>
-              <div className="mt-12 md:mt-[70px]">
-                <ServiceCardShowcase />
-              </div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="mt-10 md:mt-[50px]">
-                <CaseStudyImagePlaceholder label="Final product screenshots across database technologies" aspect="16 / 9" />
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* 10 — Governance */}
-        <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
-          <div className={contentWidth}>
-            <Reveal>
-              <SectionEyebrow n="10" label="Governance" />
-            </Reveal>
-            <Reveal>
-              <SectionHeading
-                title="Creating a system that could evolve"
-                body={
-                  <>
-                    <p>A design system only creates value when teams can use and evolve it.</p>
-                    <p>
-                      New requirements were evaluated against the existing system before introducing additional
-                      components. This created a framework for balancing consistency with continued product evolution.
-                    </p>
-                  </>
-                }
-              />
-            </Reveal>
-            <Reveal delay={0.06}>
-              <div className="mt-12 md:mt-[70px]">
-                <GovernanceDiagram />
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        {/* 11 — Outcome */}
+        {/* Design Examples */}
         <section className="px-4 sm:px-8 md:px-14 py-16 md:py-[90px]">
           <div className={contentWidth}>
             <Reveal>
-              <SectionEyebrow n="11" label="Outcome" />
+              <div className="max-w-[720px]">
+                <h2 className="text-h2" style={{ color: '#0f0f0e' }}>
+                  Design examples
+                </h2>
+                <p className="text-body-18 mt-4" style={{ color: '#595958' }}>
+                  Foundations, components, and patterns composed into real database control plane experiences.
+                </p>
+              </div>
             </Reveal>
-            <Reveal>
-              <SectionHeading
-                title="Building for scale"
-                body={
-                  <>
-                    <p>
-                      The IEP Design System changed the design problem from creating individual database interfaces to
-                      creating a platform capable of supporting an ecosystem.
-                    </p>
-                    <p>
-                      The system provided a shared foundation for four centralized hubs while preserving the flexibility
-                      required by individual technologies.
-                    </p>
-                    <p>
-                      Reusable components reduced unnecessary variation, patterns standardized common workflows, and
-                      explicit rules for variability prevented consistency from becoming constraint.
-                    </p>
-                    <p>
-                      Most importantly, the system established an experience foundation that could continue evolving as
-                      additional database capabilities were brought into IEP.
-                    </p>
-                  </>
-                }
-              />
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="mt-10 md:mt-[70px]">
-                <CaseStudyImagePlaceholder
-                  label="One experience foundation. Multiple database technologies."
-                  caption="Database dashboard, Create Database Service workflow, service details, and operational experience."
-                  minHeight={474}
-                />
+            <Reveal delay={0.06}>
+              <div className="mt-10 md:mt-[50px] flex flex-col gap-5 md:gap-6">
+                <CaseStudyImagePlaceholder label="Databases Overview — dashboard" aspect="16 / 9" />
+                <CaseStudyImagePlaceholder label="Service details — Booking Platform" aspect="16 / 9" />
+                <CaseStudyImagePlaceholder label="Create Database Service — guided flow with AI assistant" aspect="16 / 9" />
               </div>
             </Reveal>
           </div>
