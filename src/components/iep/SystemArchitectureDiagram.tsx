@@ -40,16 +40,9 @@ export default function SystemArchitectureDiagram({ title }: { title?: string })
                   <span style={{ fontSize: 16, lineHeight: 1, color: IEP.border }}>↓</span>
                 </div>
               )}
-              <button
-                type="button"
-                aria-pressed={pinned === i}
-                aria-expanded={isActive}
-                onMouseEnter={() => setHovered(i)}
-                onMouseLeave={() => setHovered(null)}
-                onFocus={() => setHovered(i)}
-                onBlur={() => setHovered(null)}
-                onClick={() => setPinned(pinned === i ? null : i)}
-                className="flex h-full w-full flex-col rounded-xl px-5 py-5 text-center md:px-6"
+  <div
+  className="flex h-full w-full flex-col rounded-xl px-5 py-5 text-center md:px-6"
+
                 style={{ border: `1px solid ${IEP.border}`, background: '#fff' }}
               >
                 <span
@@ -79,8 +72,8 @@ export default function SystemArchitectureDiagram({ title }: { title?: string })
                     </span>
                   ))}
                 </div>
-              </button>
-            </div>
+  </div>
+  </div>
           )
         })}
       </div>
