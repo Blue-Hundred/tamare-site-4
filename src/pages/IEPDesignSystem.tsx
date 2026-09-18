@@ -303,7 +303,7 @@ export default function IEPDesignSystem() {
           <div className={contentWidth}>
   <Reveal>
   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-  <h2 className="text-h2 lg:col-span-5 lg:sticky lg:top-[93px] lg:self-start lg:z-10" style={{ color: '#0f0f0e' }}>
+  <h2 className="text-h2 lg:col-span-5 lg:sticky lg:top-[128px] lg:self-start lg:z-10" style={{ color: '#0f0f0e' }}>
   From 10+ control planes to 4 centralized hubs
   </h2>
   <div className="lg:col-span-6 lg:col-start-7 flex flex-col">
