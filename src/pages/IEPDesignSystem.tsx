@@ -342,9 +342,7 @@ src="/images/iep-databases-design-system-cover.png"
                     className="w-full rounded-[20px] object-cover"
                     style={{ aspectRatio: '16 / 9' }}
                   />
-                  <figcaption style={{ color: '#767675', fontSize: 14, lineHeight: '24px' }}>
-                    Dashboard, Create Database Service flow, service details, and operational workflows.
-                  </figcaption>
+
                 </figure>
               </div>
             </Reveal>
