@@ -120,7 +120,7 @@ export default function ServiceCardShowcase() {
           <span style={{ fontSize: 13, fontWeight: 500, color: show ? IEP.accent : IEP.ink }}>Show shared structure</span>
         </button>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
         {services.map(service => (
           <div key={service.tech} className="flex flex-col gap-2">
             <span style={{ fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', color: IEP.muted, fontWeight: 500 }}>
