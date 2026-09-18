@@ -72,8 +72,7 @@ export default function About() {
             {/* Bio */}
             <div className="flex flex-col justify-between h-full gap-12 pt-2">
               <motion.h1
-                className="font-light"
-                style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', letterSpacing: '-0.01em', lineHeight: 1.05, fontWeight: 400 }}
+                className="text-display-large"
                 initial={{ opacity: 0, y: 32 }}
                 animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 32 }}
                 transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}

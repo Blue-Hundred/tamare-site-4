@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
 
 const PASSWORD = 'tamare2026'
@@ -99,6 +100,15 @@ export default function CaseStudyLock({ onUnlock }: { onUnlock: () => void }) {
             </span>
           )}
         </div>
+
+        <Link
+          to="/"
+          className="mt-8 inline-flex items-center transition-colors hover:text-[#0f0f0e]"
+          style={{ fontSize: 14, fontWeight: 300, color: '#595958' }}
+        >
+          <span aria-hidden="true" style={{ marginRight: 6 }}>&#8592;</span>
+          Back to homepage
+        </Link>
       </motion.div>
     </div>
   )

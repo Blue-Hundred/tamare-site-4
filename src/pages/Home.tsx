@@ -50,6 +50,15 @@ const projects = [
     image: '/images/family-banking-cover.png',
     href: '/work/family-banking',
   },
+  {
+    id: '05',
+    title: 'IEP Databases Design System',
+    company: 'JPMorgan Chase & Co.',
+    tags: ['Design Systems', 'Product Design', 'Platform Design'],
+    year: '2025',
+    image: '/images/iep-design-system-cover.png',
+    href: '/work/iep-design-system',
+  },
 ]
 
 function BlurText({ text, play, delay = 0.06, className, style }: {
@@ -107,8 +116,20 @@ function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   const y = useSpring(rawY, { stiffness: 60, damping: 20 })
   return (
     <div ref={ref} style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', borderRadius: 12 }}>
-      <motion.img src={src} alt={alt}
-        style={{ width: '100%', height: '120%', objectFit: 'cover', display: 'block', marginTop: '-10%', y }} />
+      {src ? (
+        <motion.img src={src} alt={alt}
+          style={{ width: '100%', height: '120%', objectFit: 'cover', display: 'block', marginTop: '-10%', y }} />
+      ) : (
+        <motion.div
+          aria-label={alt}
+          role="img"
+          style={{ width: '100%', height: '120%', marginTop: '-10%', y, background: '#f4f4f5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        >
+          <span style={{ fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#a3a3a3', fontWeight: 300 }}>
+            Case study preview
+          </span>
+        </motion.div>
+      )}
     </div>
   )
 }
@@ -186,7 +207,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section
-        className="px-8 md:px-14 pt-28 pb-0 md:pt-64 md:pb-20 overflow-hidden flex flex-col md:block min-h-[85vh] md:min-h-0"
+        className="px-8 md:px-14 pt-28 pb-0 md:pt-60 md:pb-20 overflow-hidden flex flex-col md:block min-h-[85vh] md:min-h-[640px]"
         style={{ position: 'relative' }}
       >
         <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0, zIndex: 0 }}>
@@ -195,7 +216,7 @@ export default function Home() {
         </div>
         <div className="max-w-screen-xl mx-auto flex flex-col flex-1 justify-center md:flex-none md:justify-start" style={{ position: 'relative', zIndex: 1 }}>
           <motion.h1
-            className="text-h1 text-balance"
+            className="text-display-large text-balance"
             style={{ maxWidth: 1200, y: heroY, opacity: heroOpacity }}
           >
             <BlurText

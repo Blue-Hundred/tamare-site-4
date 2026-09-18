@@ -134,7 +134,7 @@ function MvpStrategy() {
   return (
     <div className="bg-white rounded-[20px] p-6 md:p-10 flex flex-col gap-10 md:gap-14">
       <div className="flex flex-col items-center gap-3 text-center">
-        <h3 className="text-h2 text-balance" style={{ color: '#0f0f0e' }}>MVP Strategy: Simplify. Automate. Empower.</h3>
+        <h3 className="text-heading-l text-balance" style={{ color: '#0f0f0e' }}>MVP Strategy: Simplify. Automate. Empower.</h3>
         <p className="text-body-18 max-w-[720px] text-pretty" style={{ color: '#566072' }}>
           Building a unified experience that reduces operational overhead and empowers engineers to deliver faster.
         </p>
@@ -177,12 +177,7 @@ function MvpStrategy() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-8 gap-x-6 lg:gap-x-4">
           {goals.map((g, i) => (
             <div key={g.title} className="relative rounded-xl border border-[#e7e7ea] pt-8 px-5 pb-6 flex flex-col gap-4">
-              <span
-                className="absolute -top-4 left-5 flex items-center justify-center rounded-full text-white"
-                style={{ width: 32, height: 32, backgroundColor: PURPLE, fontSize: 13, fontWeight: 600 }}
-              >
-                {i + 1}
-              </span>
+
               <g.icon size={34} strokeWidth={1.5} style={{ color: PURPLE }} aria-hidden="true" />
               <h5 className="text-h4">{g.title}</h5>
               <p style={{ color: 'rgb(89, 89, 88)', fontSize: 14, fontWeight: 300, lineHeight: '22px' }}>{g.body}</p>
@@ -197,7 +192,7 @@ function MvpStrategy() {
 function SectionHeading({ title, body }: { title: string; body?: ReactNode }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-      <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>{title}</h2>
+      <h2 className="text-heading-l lg:col-span-5" style={{ color: '#0f0f0e' }}>{title}</h2>
       {body ? (
         <div className="text-body-18 lg:col-span-6 lg:col-start-7 flex flex-col gap-5" style={{ color: '#595958' }}>{body}</div>
       ) : null}
@@ -310,7 +305,7 @@ export default function Meridian() {
           <div className={`relative z-10 ${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start`}>
             <Reveal className="lg:col-span-6 lg:col-start-1">
               <div>
-                <h1 className="text-h1" style={{ color: '#0f0f0e' }}>
+                <h1 className="text-display-large" style={{ color: '#0f0f0e' }}>
                   <span
                     style={{
                       boxDecorationBreak: 'clone',
@@ -363,7 +358,7 @@ export default function Meridian() {
           <div className={contentWidth}>
             <Reveal>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mt-8 mb-8 md:mt-[80px] md:mb-[132px]">
-                <h2 className="text-h2 lg:col-span-5" style={{ color: '#0f0f0e' }}>Summary</h2>
+                <h2 className="text-heading-l lg:col-span-5" style={{ color: '#0f0f0e' }}>Summary</h2>
                 <div className="text-body-18 lg:col-span-6 lg:col-start-7" style={{ color: '#595958' }}>
                   <p>Enterprise engineers relied on more than ten independent database control planes to provision and manage database services. Each product had evolved independently, resulting in inconsistent workflows, terminology, navigation patterns, and operational experiences. Engineers frequently switched between systems, searched multiple documentation sources, and relied on tribal knowledge to complete routine tasks.</p>
                   <p className="mt-5">The long-term vision was to create a shared experience that could scale across database products while providing a consistent foundation for the Integrated Engineers Portal (IEP).</p>
@@ -389,7 +384,7 @@ export default function Meridian() {
           <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12 md:mb-[132px]`}>
             <Reveal className="lg:col-span-5">
               <div>
-                <h2 className="text-h2" style={{ color: '#0f0f0e' }}>The Challenge</h2>
+                <h2 className="text-heading-l" style={{ color: '#0f0f0e' }}>The Challenge</h2>
                 <p className="text-body-18 mt-5" style={{ color: '#595958' }}>
                   Enterprise engineers relied on more than 10+ independent database control planes across relational, non-relational, and graph technologies. Although engineers performed many of the same tasks across products, each control plane had different navigation, terminology, provisioning workflows, documentation, and operational experiences.
                 </p>
@@ -457,7 +452,7 @@ export default function Meridian() {
               <div className="mt-8 md:mt-10 bg-white rounded-[20px] p-6 md:p-10 flex flex-col gap-10 md:gap-[70px]">
                 <div className="flex flex-col gap-8 md:gap-10">
                   <div className="flex flex-col gap-3">
-                    <p className="text-h3">Discovery Research</p>
+                    <p className="text-heading-l">Discovery Research</p>
                     <p className="text-body-18" style={{ color: '#595958' }}>I conducted three rounds of research to understand the challenges behind the fragmented experience.</p>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
@@ -504,7 +499,7 @@ export default function Meridian() {
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
               <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12`}>
                 <Reveal className="lg:col-span-5">
-                  <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Defining Personas and Service Blueprint</h2>
+                  <h2 className="text-heading-l" style={{ color: '#0f0f0e' }}>Defining Personas and Service Blueprint</h2>
                 </Reveal>
                 <Reveal delay={0.08} className="lg:col-span-6 lg:col-start-7">
                   <p className="text-body-18" style={{ color: '#595958' }}>
@@ -530,7 +525,7 @@ export default function Meridian() {
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-16 md:py-[90px]">
           <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12`}>
             <Reveal className="lg:col-span-5">
-              <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Redesigning the Information Architecture</h2>
+              <h2 className="text-heading-l" style={{ color: '#0f0f0e' }}>Redesigning the Information Architecture</h2>
             </Reveal>
             <Reveal delay={0.06} className="lg:col-span-6 lg:col-start-7">
               <p className="text-body-18" style={{ color: '#595958' }}>
@@ -554,7 +549,7 @@ export default function Meridian() {
           <div className={`${contentWidth} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-24 md:mb-[140px]`}>
             <Reveal className="lg:col-span-5">
               <article>
-                <h2 className="text-h2" style={{ color: '#0f0f0e' }}>Results</h2>
+                <h2 className="text-heading-l" style={{ color: '#0f0f0e' }}>Results</h2>
                 <p className="text-body-18 mt-5" style={{ color: '#595958' }}>
                   We launched Cloud Relational Databases and established the foundation for future control planes, consolidating previously fragmented experience into a consistent and scaleable product.
                 </p>
