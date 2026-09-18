@@ -3,7 +3,7 @@ import { Link, useOutletContext } from 'react-router'
 import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
-import CaseStudyImagePlaceholder from '../components/CaseStudyImagePlaceholder'
+import CaseStudyImage from '../components/CaseStudyImage'
 import SystemArchitectureDiagram from '../components/iep/SystemArchitectureDiagram'
 import DesignProcessDiagram from '../components/iep/DesignProcessDiagram'
 import ServiceCardShowcase from '../components/iep/ServiceCardShowcase'
@@ -624,9 +624,30 @@ export default function IEPDesignSystem() {
             </Reveal>
             <Reveal delay={0.06}>
               <div className="mt-10 md:mt-[50px] flex flex-col gap-5 md:gap-6">
-                <CaseStudyImagePlaceholder label="Databases Overview — dashboard" aspect="16 / 9" />
-                <CaseStudyImagePlaceholder label="Service details — Booking Platform" aspect="16 / 9" />
-                <CaseStudyImagePlaceholder label="Create Database Service — guided flow with AI assistant" aspect="16 / 9" />
+                <CaseStudyImage
+                  src="/case-study/databases-overview.png"
+                  alt="Databases Overview dashboard showing service-ready alerts, recent services, performance and health, applications, an AI assistant prompt, and a pricing panel."
+                  caption="Databases Overview — dashboard"
+                  aspect="1720 / 1330"
+                  width={1720}
+                  height={1330}
+                />
+                <CaseStudyImage
+                  src="/case-study/service-details-booking-platform.png"
+                  alt="Booking Platform service details page with an app metadata grid, service details, and a health check list."
+                  caption="Service details — Booking Platform"
+                  aspect="1720 / 1330"
+                  width={1720}
+                  height={1330}
+                />
+                <CaseStudyImage
+                  src="/case-study/create-database-service.png"
+                  alt="Create Database Service guided flow on the requirements step, with an AI assistant panel recommending a starting size."
+                  caption="Create Database Service — guided flow with AI assistant"
+                  aspect="1720 / 1330"
+                  width={1720}
+                  height={1330}
+                />
               </div>
             </Reveal>
           </div>
