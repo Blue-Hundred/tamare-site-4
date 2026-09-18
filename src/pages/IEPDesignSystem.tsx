@@ -500,40 +500,42 @@ export default function IEPDesignSystem() {
         {/* Establishing a shared language — Foundations */}
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
           <div className={contentWidth}>
-            <Reveal>
-              <SectionHeading
-                title="Establishing a shared language"
-                body={
-                  <>
-                    <p>The foundations established the visual and behavioral rules shared across all four database hubs.</p>
-                    <p>
-                      Their purpose extended beyond visual consistency. Foundations removed repeated design decisions and
-                      created predictable interaction behavior across the platform.
-                    </p>
-                  </>
-                }
-              />
-            </Reveal>
-            <Reveal delay={0.06}>
-              <div className="mt-10 md:mt-[60px] flex flex-wrap gap-2.5">
-                {foundationItems.map(item => (
-                  <span
-                    key={item}
-                    style={{
-                      fontSize: 13,
-                      fontWeight: 400,
-                      color: IEP.ink,
-                      padding: '8px 14px',
-                      borderRadius: 100,
-                      border: `1px solid ${IEP.border}`,
-                      background: '#fff',
-                    }}
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </Reveal>
+  <Reveal>
+  <div className="flex flex-col gap-8 md:gap-10">
+  <h2 className="text-h2 max-w-4xl" style={{ color: '#0f0f0e' }}>
+  Establishing a shared language
+  </h2>
+  <div className="flex max-w-6xl flex-col gap-5 text-body-18" style={{ color: '#595958' }}>
+  <p>The foundations established the visual and behavioral rules shared across all four database hubs.</p>
+  <p>
+  Their purpose extended beyond visual consistency. Foundations removed repeated design decisions and
+  created predictable interaction behavior across the platform.
+  </p>
+  </div>
+  </div>
+  </Reveal>
+  <Reveal delay={0.06}>
+  <div className="mt-10 flex flex-nowrap gap-4 overflow-x-auto border-y border-[#e6e6e4] py-5 md:mt-[60px] md:gap-5 md:py-6">
+  {foundationItems.map(item => (
+  <span
+  key={item}
+  className="shrink-0 whitespace-nowrap"
+  style={{
+  fontSize: 18,
+  lineHeight: '28px',
+  fontWeight: 400,
+  color: IEP.ink,
+  padding: '12px 24px',
+  borderRadius: 100,
+  border: `1px solid ${IEP.border}`,
+  background: '#fff',
+  }}
+  >
+  {item}
+  </span>
+  ))}
+  </div>
+  </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-10 md:mt-[50px]">
                 <InteractiveTypeScale />
