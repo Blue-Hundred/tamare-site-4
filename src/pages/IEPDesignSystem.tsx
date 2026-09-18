@@ -189,14 +189,32 @@ export default function IEPDesignSystem() {
     {
       t: 'Color contrast',
       b: 'Text, icons, and interactive states meet WCAG AA contrast targets across both light and dark modes.',
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.5" stroke={IEP.accent} strokeWidth="1.6" />
+          <path d="M12 3.5a8.5 8.5 0 0 0 0 17V3.5z" fill={IEP.accent} />
+        </svg>
+      ),
     },
     {
       t: 'Keyboard accessible and focus visible',
       b: 'Every interactive component is reachable by keyboard with a clear, consistent focus indicator.',
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2.5" y="6" width="19" height="12" rx="2" stroke={IEP.accent} strokeWidth="1.6" />
+          <path d="M6 9.5h.01M9 9.5h.01M12 9.5h.01M15 9.5h.01M18 9.5h.01M6 12.5h.01M9 12.5h.01M15 12.5h.01M18 12.5h.01" stroke={IEP.accent} strokeWidth="1.8" strokeLinecap="round" />
+          <path d="M8.5 15.3h7" stroke={IEP.accent} strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+      ),
     },
     {
       t: 'Readability',
       b: 'Type scale, line length, and spacing are tuned for dense operational screens without sacrificing clarity.',
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 5.5h14M5 5.5v2M12 5.5v13M12 18.5H9.5M12 18.5h2.5M19 5.5v2" stroke={IEP.accent} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
     },
   ]
 
@@ -434,7 +452,7 @@ export default function IEPDesignSystem() {
                           className="flex shrink-0 items-center justify-center rounded-[10px]"
                           style={{ width: 40, height: 40, background: IEP.accentTint }}
                         >
-                          <span style={{ width: 12, height: 12, borderRadius: 4, background: IEP.accent }} aria-hidden="true" />
+                          {item.icon}
                         </div>
                         <div>
                           <h4 className="text-[16px] font-medium" style={{ color: '#0f0f0e' }}>
