@@ -59,8 +59,7 @@ export default function FoundationsShowcase() {
               <div className="mt-5 flex h-32 items-center justify-center rounded-lg" style={{ background: '#fff' }}>
                 <div className="rounded-lg border px-6 py-3 text-[14px] font-medium" style={{ color: IEP.ink, borderColor: IEP.border, boxShadow: name === 'Small' ? '0 4px 12px rgba(2,6,23,.08)' : name === 'Medium' ? '0 8px 24px -4px rgba(2,6,23,.12)' : name === 'Large' ? '0 16px 40px -8px rgba(2,6,23,.18)' : 'none' }}>{name === 'None' ? 'Flat Card' : name === 'Small' ? 'Active Card' : name === 'Medium' ? 'Popover / Tooltip' : 'Modal Dialog'}</div>
               </div>
-              <p className="mt-1 text-[12px] leading-5" style={{ color: IEP.muted }}>Usage: {usage}</p>
-              <img
+                          <img
                 src={image}
                 alt={`${name} elevation shadow settings`}
                 width={262}

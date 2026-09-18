@@ -86,7 +86,7 @@ export default function InteractiveIconLibrary() {
       </div>
       <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10">
         {Object.entries(groups).flatMap(([name, icons]) => icons.map((icon) => (
-          <button key={icon.token} type="button" aria-label={`${icon.label}, ${name}`} className="group relative flex aspect-square items-center justify-center rounded-xl border transition-all duration-200 hover:-translate-y-1 hover:border-[#8db5f0] hover:bg-[#eef5ff] hover:shadow-[0_8px_20px_rgba(32,88,170,0.14)] focus:outline-none focus:ring-2" style={{ borderColor: IEP.border, background: '#f8fafc', color: IEP.ink }}>
+          <button key={icon.token} type="button" aria-label={`${icon.label}, ${name}`} className="group relative flex aspect-square items-center justify-center rounded-xl border transition-all duration-200 hover:-translate-y-1 hover:border-[#8db5f0] hover:bg-[#eef5ff] hover:shadow-[0_8px_20px_rgba(32,88,170,0.14)] focus:outline-none focus:ring-2" style={{ borderColor: IEP.border, background: '#fff', color: IEP.ink }}>
             <span className="material-symbols-rounded text-[24px] transition-transform duration-200 group-hover:scale-110">{icon.symbol}</span>
             <span className="pointer-events-none absolute inset-x-1 bottom-1 truncate rounded-md bg-[#162033] px-1 py-1 text-center text-[9px] text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100">{icon.label}</span>
           </button>
