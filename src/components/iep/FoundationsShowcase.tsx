@@ -53,13 +53,12 @@ export default function FoundationsShowcase() {
       <section>
         <FoundationTitle title="Elevation" body="Visual depth communicates content hierarchy and focus priorities. Rather than decorative flare, the elevation scale leverages shadow properties to establish semantic layer ordering." />
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {elevationTokens.map(([name, value, usage, image]) => (
+          {elevationTokens.map(([name, , usage, image]) => (
             <div key={name} className="rounded-xl border p-5" style={{ borderColor: IEP.border, background: '#f8fafc' }}>
               <h4 className="text-[16px] font-medium" style={{ color: IEP.ink }}>Elevation: {name}</h4>
               <div className="mt-5 flex h-32 items-center justify-center rounded-lg" style={{ background: '#fff' }}>
                 <div className="rounded-lg border px-6 py-3 text-[14px] font-medium" style={{ color: IEP.ink, borderColor: IEP.border, boxShadow: name === 'Small' ? '0 4px 12px rgba(2,6,23,.08)' : name === 'Medium' ? '0 8px 24px -4px rgba(2,6,23,.12)' : name === 'Large' ? '0 16px 40px -8px rgba(2,6,23,.18)' : 'none' }}>{name === 'None' ? 'Flat Card' : name === 'Small' ? 'Active Card' : name === 'Medium' ? 'Popover / Tooltip' : 'Modal Dialog'}</div>
               </div>
-              <p className="mt-4 font-mono text-[12px]" style={{ color: IEP.muted }}>Value: {value}</p>
               <p className="mt-1 text-[12px] leading-5" style={{ color: IEP.muted }}>Usage: {usage}</p>
               <img
                 src={image}
