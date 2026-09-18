@@ -505,7 +505,7 @@ export default function IEPDesignSystem() {
   <h2 className="text-h2 max-w-4xl" style={{ color: '#0f0f0e' }}>
   Establishing a shared language
   </h2>
-  <div className="flex max-w-6xl flex-col gap-5 text-body-18" style={{ color: '#595958' }}>
+  <div className="flex max-w-[720px] flex-col gap-5 text-body-18" style={{ color: '#595958' }}>
   <p>The foundations established the visual and behavioral rules shared across all four database hubs.</p>
   <p>
   Their purpose extended beyond visual consistency. Foundations removed repeated design decisions and
@@ -515,17 +515,17 @@ export default function IEPDesignSystem() {
   </div>
   </Reveal>
   <Reveal delay={0.06}>
-  <div className="mt-10 flex flex-nowrap gap-4 overflow-x-auto border-y border-[#e6e6e4] py-5 md:mt-[60px] md:gap-5 md:py-6">
+  <div className="mt-10 flex flex-nowrap gap-2.5 overflow-x-auto md:mt-[60px]">
   {foundationItems.map(item => (
   <span
   key={item}
   className="shrink-0 whitespace-nowrap"
   style={{
-  fontSize: 18,
-  lineHeight: '28px',
+  fontSize: 13,
+  lineHeight: '20px',
   fontWeight: 400,
   color: IEP.ink,
-  padding: '12px 24px',
+  padding: '8px 14px',
   borderRadius: 100,
   border: `1px solid ${IEP.border}`,
   background: '#fff',
