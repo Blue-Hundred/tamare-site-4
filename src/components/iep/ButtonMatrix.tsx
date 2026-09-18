@@ -23,7 +23,7 @@ const sizeStyle: Record<Size, { padding: string; fontSize: number; dot: number }
 function variantStyle(variant: Variant, dark: boolean): { background: string; color: string; border: string; dot: string } {
   switch (variant) {
     case 'primary':
-      return { background: IEP.accent, color: '#fff', border: 'transparent', dot: '#fff' }
+      return { background: '#0060F0', color: '#fff', border: 'transparent', dot: '#fff' }
     case 'neutralSolid':
       return { background: dark ? '#3a3a40' : '#1c1c1e', color: '#fff', border: 'transparent', dot: '#8a8a92' }
     case 'neutralLight':
