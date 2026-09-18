@@ -43,21 +43,21 @@ const projects = [
   },
   {
     id: '04',
-    title: 'Apple Pay Integration',
-    company: 'Bath & Body Works',
-    tags: ['Experience Design', 'Experience Mapping'],
-    year: '2018',
-    image: '/images/bbw-applepay-cover.png',
-    href: '/work/applepay',
-  },
-  {
-    id: '05',
     title: 'Modernizing Family Banking',
     company: 'JPMorgan Chase',
     tags: ['Experience Design', 'UI Design and Delivery'],
     year: '2025',
     image: '/images/family-banking-cover.png',
     href: '/work/family-banking',
+  },
+  {
+    id: '05',
+    title: 'Apple Pay Integration',
+    company: 'Bath & Body Works',
+    tags: ['Experience Design', 'Experience Mapping'],
+    year: '2018',
+    image: '/images/bbw-applepay-cover.png',
+    href: '/work/applepay',
   },
 ]
 
