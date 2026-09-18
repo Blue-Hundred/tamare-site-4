@@ -288,7 +288,8 @@ export default function IEPDesignSystem() {
   <h2 className="text-h2 lg:col-span-5 lg:sticky lg:top-8 lg:self-start lg:z-10" style={{ color: '#0f0f0e' }}>
   From 10+ control planes to 4 centralized hubs
   </h2>
-  <div className="text-body-18 lg:col-span-6 lg:col-start-7 flex flex-col gap-5" style={{ color: '#595958' }}>
+  <div className="lg:col-span-6 lg:col-start-7 flex flex-col">
+  <div className="text-body-18 flex flex-col gap-5" style={{ color: '#595958' }}>
   <p>
   More than ten database control planes had evolved independently over time. Although they supported many of the same
   fundamental tasks, each product used different navigation models, terminology, forms, tables, status treatments,
@@ -300,37 +301,34 @@ export default function IEPDesignSystem() {
   coexist within one scalable experience system.
   </p>
   </div>
+  <div className="mt-12 md:mt-[70px] flex flex-col gap-3">
+    {challengeAreas.map(area => (
+      <article
+        key={area.n}
+        className="flex items-start gap-4 rounded-xl bg-white p-5"
+        style={{ border: `1px solid ${IEP.border}` }}
+      >
+        <div
+          className="flex shrink-0 items-center justify-center rounded-[10px]"
+          style={{ width: 44, height: 44, background: '#fff', border: `1px solid ${IEP.border}` }}
+          aria-label={`${area.t} icon`}
+        >
+          {area.icon}
+        </div>
+        <div>
+          <h3 className="text-h4" style={{ color: '#0f0f0e' }}>
+            {area.t}
+          </h3>
+          <p className="text-body-14 mt-1.5" style={{ color: '#595958' }}>
+            {area.b}
+          </p>
+        </div>
+      </article>
+    ))}
+  </div>
+  </div>
   </div>
   </Reveal>
-            <Reveal delay={0.06}>
-              <div className="mt-12 md:mt-[70px] grid grid-cols-1 lg:grid-cols-12">
-                <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-3">
-                  {challengeAreas.map(area => (
-                    <article
-                      key={area.n}
-                      className="flex items-start gap-4 rounded-xl bg-white p-5"
-                      style={{ border: `1px solid ${IEP.border}` }}
-                    >
-                      <div
-                        className="flex shrink-0 items-center justify-center rounded-[10px]"
-                        style={{ width: 44, height: 44, background: '#fff', border: `1px solid ${IEP.border}` }}
-                        aria-label={`${area.t} icon`}
-                      >
-                        {area.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-h4" style={{ color: '#0f0f0e' }}>
-                          {area.t}
-                        </h3>
-                        <p className="text-body-14 mt-1.5" style={{ color: '#595958' }}>
-                          {area.b}
-                        </p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-10 md:mt-[70px]">
                 <figure className="flex flex-col">
