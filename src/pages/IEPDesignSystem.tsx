@@ -283,25 +283,25 @@ export default function IEPDesignSystem() {
         {/* The Challenge */}
         <section className="px-4 sm:px-8 md:px-14 pt-16 pb-4 md:py-[90px]">
           <div className={contentWidth}>
-  <Reveal className="lg:sticky lg:top-8 lg:z-10">
-  <SectionHeading
-  title="From 10+ control planes to 4 centralized hubs"
-                body={
-                  <>
-                    <p>
-                      More than ten database control planes had evolved independently over time. Although they supported
-                      many of the same fundamental tasks, each product used different navigation models, terminology,
-                      forms, tables, status treatments, configuration patterns, and operational workflows.
-                    </p>
-                    <p>Simply combining the existing applications would have carried those inconsistencies into the new platform.</p>
-                    <p>
-                      The challenge became determining what should be shared, what needed to remain technology-specific,
-                      and how both could coexist within one scalable experience system.
-                    </p>
-                  </>
-                }
-              />
-            </Reveal>
+  <Reveal>
+  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+  <h2 className="text-h2 lg:col-span-5 lg:sticky lg:top-8 lg:self-start lg:z-10" style={{ color: '#0f0f0e' }}>
+  From 10+ control planes to 4 centralized hubs
+  </h2>
+  <div className="text-body-18 lg:col-span-6 lg:col-start-7 flex flex-col gap-5" style={{ color: '#595958' }}>
+  <p>
+  More than ten database control planes had evolved independently over time. Although they supported many of the same
+  fundamental tasks, each product used different navigation models, terminology, forms, tables, status treatments,
+  configuration patterns, and operational workflows.
+  </p>
+  <p>Simply combining the existing applications would have carried those inconsistencies into the new platform.</p>
+  <p>
+  The challenge became determining what should be shared, what needed to remain technology-specific, and how both could
+  coexist within one scalable experience system.
+  </p>
+  </div>
+  </div>
+  </Reveal>
             <Reveal delay={0.06}>
               <div className="mt-12 md:mt-[70px] grid grid-cols-1 lg:grid-cols-12">
                 <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-3">
