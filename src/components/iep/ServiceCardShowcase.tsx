@@ -94,13 +94,13 @@ function ServiceCard({ service, show }: { service: Service; show: boolean }) {
           <div className="flex items-center gap-2.5 min-w-0">
             <span
               className="inline-flex items-center justify-center shrink-0"
-              style={{ width: 34, height: 34, borderRadius: 100, border: `1px solid ${IEP.border}`, background: '#fff' }}
+              style={{ width: 28, height: 28, borderRadius: 100, border: `1px solid ${IEP.border}`, background: '#fff' }}
               aria-hidden="true"
             >
               {service.logo ? (
                 <img src={service.logo} alt="" width={18} height={18} style={{ display: 'block' }} />
               ) : (
-                <span style={{ fontSize: 11, fontWeight: 600, color: IEP.accent }}>{service.product.slice(0, 2)}</span>
+                <span style={{ fontSize: 10, fontWeight: 600, color: IEP.accent }}>{service.product.slice(0, 2)}</span>
               )}
             </span>
             <span className="truncate" style={{ fontSize: 15, fontWeight: 600, color: IEP.ink }}>

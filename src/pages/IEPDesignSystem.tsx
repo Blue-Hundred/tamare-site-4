@@ -313,7 +313,8 @@ export default function IEPDesignSystem() {
                     >
                       <div
                         className="flex shrink-0 items-center justify-center rounded-[10px]"
-                        style={{ width: 44, height: 44, background: 'rgba(15,15,14,0.04)' }}
+                        style={{ width: 44, height: 44, background: '#fff', border: `1px solid ${IEP.border}` }}
+                        aria-label={`${area.t} icon`}
                       >
                         {area.icon}
                       </div>
