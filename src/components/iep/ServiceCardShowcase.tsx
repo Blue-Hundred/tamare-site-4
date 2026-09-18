@@ -4,17 +4,62 @@ import { IEP } from './tokens'
 type Service = {
   tech: string
   product: string
-  name: string
+  id: string
+  env: string
   status: string
   tone: 'ok' | 'warn'
+  size: string
+  logo: string | null
   meta: [string, string][]
 }
 
+const CDN = 'https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons'
+
 const services: Service[] = [
-  { tech: 'Graph', product: 'TigerGraph', name: 'graph-prod-01', status: 'Healthy', tone: 'ok', meta: [['Environment', 'Production'], ['Region', 'us-east-1'], ['Nodes', '3']] },
-  { tech: 'Relational', product: 'CockroachDB', name: 'sql-core-02', status: 'Healthy', tone: 'ok', meta: [['Environment', 'Production'], ['Region', 'us-east-1'], ['Storage', '512 GB']] },
-  { tech: 'Non-relational', product: 'Cassandra', name: 'docstore-07', status: 'Degraded', tone: 'warn', meta: [['Environment', 'Production'], ['Region', 'eu-west-1'], ['Nodes', '6']] },
-  { tech: 'Other', product: 'Redis', name: 'cache-11', status: 'Healthy', tone: 'ok', meta: [['Environment', 'Production'], ['Region', 'us-west-2'], ['Memory', '32 GB']] },
+  {
+    tech: 'Graph',
+    product: 'TigerGraph',
+    id: 'D0002',
+    env: 'PROD',
+    status: 'Active',
+    tone: 'ok',
+    size: 'Large',
+    logo: null,
+    meta: [['Deployment', '900123'], ['Service', '932407'], ['Nodes', '3'], ['Provider', 'AWS'], ['Version', '4.2.0']],
+  },
+  {
+    tech: 'Relational',
+    product: 'CockroachDB',
+    id: 'D0004',
+    env: 'PROD',
+    status: 'Active',
+    tone: 'ok',
+    size: 'Large',
+    logo: `${CDN}/cockroachdb/default.svg`,
+    meta: [['Deployment', '900123'], ['Service', '932407'], ['Nodes', '3'], ['Provider', 'AWS'], ['Version', '24.2.0']],
+  },
+  {
+    tech: 'Non-relational',
+    product: 'Cassandra',
+    id: 'D0005',
+    env: 'PROD',
+    status: 'Degraded',
+    tone: 'warn',
+    size: 'Medium',
+    logo: `${CDN}/cassandra/default.svg`,
+    meta: [['Deployment', '900123'], ['Service', '932407'], ['Nodes', '6'], ['Provider', 'AWS'], ['Version', '4.1.3']],
+  },
+  {
+    tech: 'Other',
+    product: 'Redis',
+    id: 'D0006',
+    env: 'PROD',
+    status: 'Active',
+    tone: 'ok',
+    size: 'Medium',
+    logo: `${CDN}/redis/default.svg`,
+    meta: [['Deployment', '900123'], ['Service', '932407'], ['Nodes', '3'], ['Provider', 'AWS'], ['Version', '7.2.4']],
+  },
 ]
 
 function Region({ label, show, children }: { label: string; show: boolean; children: ReactNode }) {
@@ -40,43 +85,55 @@ function Region({ label, show, children }: { label: string; show: boolean; child
 }
 
 function ServiceCard({ service, show }: { service: Service; show: boolean }) {
-  const statusColor = service.tone === 'ok' ? '#2f9e6b' : '#c07d1a'
+  const statusFg = service.tone === 'ok' ? '#2f9e6b' : '#c07d1a'
+  const statusBg = service.tone === 'ok' ? 'rgba(47,158,107,0.1)' : 'rgba(192,125,26,0.12)'
   return (
-    <div className="rounded-xl p-4 flex flex-col gap-3" style={{ border: `1px solid ${IEP.border}`, background: '#fff' }}>
+    <div className="rounded-2xl p-5 flex flex-col gap-4" style={{ border: `1px solid ${IEP.border}`, background: '#fff' }}>
       <Region label="Header" show={show}>
         <div className="flex items-center justify-between gap-2">
-          <span style={{ fontSize: 14, fontWeight: 600, color: IEP.ink }}>{service.name}</span>
+          <div className="flex items-center gap-2.5 min-w-0">
+            <span
+              className="inline-flex items-center justify-center shrink-0"
+              style={{ width: 34, height: 34, borderRadius: 100, border: `1px solid ${IEP.border}`, background: '#fff' }}
+              aria-hidden="true"
+            >
+              {service.logo ? (
+                <img src={service.logo} alt="" width={18} height={18} style={{ display: 'block' }} />
+              ) : (
+                <span style={{ fontSize: 11, fontWeight: 600, color: IEP.accent }}>{service.product.slice(0, 2)}</span>
+              )}
+            </span>
+            <span className="truncate" style={{ fontSize: 15, fontWeight: 600, color: IEP.ink }}>
+              {service.id} {service.product}
+            </span>
+          </div>
           <span
-            style={{ fontSize: 10, fontWeight: 500, color: IEP.body, padding: '2px 8px', borderRadius: 100, border: `1px solid ${IEP.border}` }}
+            className="shrink-0"
+            style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.06em', color: IEP.muted, padding: '3px 9px', borderRadius: 100, border: `1px solid ${IEP.border}` }}
           >
-            {service.product}
+            {service.env}
           </span>
         </div>
       </Region>
       <Region label="Status" show={show}>
-        <span className="flex items-center gap-1.5" style={{ fontSize: 12, color: statusColor, fontWeight: 500 }}>
-          <span style={{ width: 8, height: 8, borderRadius: 100, background: statusColor }} aria-hidden="true" />
-          {service.status}
-        </span>
+        <div className="flex items-center gap-2">
+          <span style={{ fontSize: 12, fontWeight: 500, color: statusFg, background: statusBg, padding: '3px 10px', borderRadius: 100 }}>
+            {service.status}
+          </span>
+          <span style={{ fontSize: 12, fontWeight: 500, color: IEP.ink, background: '#f4f4f5', padding: '3px 10px', borderRadius: 100 }}>
+            {service.size}
+          </span>
+        </div>
       </Region>
       <Region label="Metadata" show={show}>
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-2">
           {service.meta.map(([k, v]) => (
             <div key={k} className="flex items-center justify-between gap-2">
-              <span style={{ fontSize: 12, color: IEP.muted, fontWeight: 300 }}>{k}</span>
-              <span style={{ fontSize: 12, color: IEP.ink, fontWeight: 400 }}>{v}</span>
+              <span style={{ fontSize: 13, color: IEP.muted, fontWeight: 400 }}>{k}</span>
+              <span style={{ fontSize: 13, color: IEP.ink, fontWeight: 600 }}>{v}</span>
             </div>
           ))}
         </div>
-      </Region>
-      <Region label="Actions" show={show}>
-        <span
-          className="inline-flex items-center gap-1.5 self-start"
-          style={{ fontSize: 11, fontWeight: 500, color: IEP.ink, padding: '5px 12px', borderRadius: 8, border: `1px solid ${IEP.border}` }}
-        >
-          View service
-          <span aria-hidden="true">→</span>
-        </span>
       </Region>
     </div>
   )
