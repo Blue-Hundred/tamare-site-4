@@ -283,9 +283,9 @@ export default function IEPDesignSystem() {
         {/* The Challenge */}
         <section className="px-4 sm:px-8 md:px-14 pt-16 pb-4 md:py-[90px]">
           <div className={contentWidth}>
-            <Reveal>
-              <SectionHeading
-                title="From 10+ control planes to 4 centralized hubs"
+  <Reveal className="lg:sticky lg:top-8 lg:z-10">
+  <SectionHeading
+  title="From 10+ control planes to 4 centralized hubs"
                 body={
                   <>
                     <p>
