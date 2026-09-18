@@ -467,9 +467,14 @@ export default function IEPDesignSystem() {
                     The same components adapt from wide operational consoles down to compact layouts without breaking
                     hierarchy, density, or interaction behavior.
                   </p>
-                  <div className="mt-6">
-                    <CaseStudyImagePlaceholder label="Responsive database dashboard across viewports" aspect="16 / 9" />
-                  </div>
+  <figure className="mt-6">
+  <img
+  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Design%20System%20View%20ports%20image-HrJ3BSYSW0iLSaHOKBvj7xYd6R5VZJ.png"
+  alt="Responsive database dashboard across desktop and mobile viewports"
+  className="w-full rounded-[20px]"
+  loading="lazy"
+  />
+  </figure>
                 </div>
               </div>
             </Reveal>
@@ -515,7 +520,7 @@ export default function IEPDesignSystem() {
   </div>
   </Reveal>
   <Reveal delay={0.06}>
-  <div className="mt-10 flex flex-nowrap gap-2.5 overflow-x-auto md:mt-[60px]">
+  <div className="mt-6 flex flex-nowrap gap-2.5 overflow-x-auto md:mt-8">
   {foundationItems.map(item => (
   <span
   key={item}
