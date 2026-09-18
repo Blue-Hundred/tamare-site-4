@@ -337,8 +337,8 @@ export default function IEPDesignSystem() {
               <div className="mt-10 md:mt-[70px]">
                 <figure className="flex flex-col gap-3">
                   <img
-                    src="/images/iep-design-system-cover.png"
-                    alt="IEP Design System cover — color tokens 600 #0060F0, 200 #E2E8F0, and 950 #020617 on a blue gradient."
+src="/images/iep-databases-design-system-cover.png"
+  alt="Figma design workspace showing the IEP Databases Design System Foundations page with primitive and semantic color token boards."
                     className="w-full rounded-[20px] object-cover"
                     style={{ aspectRatio: '16 / 9' }}
                   />
