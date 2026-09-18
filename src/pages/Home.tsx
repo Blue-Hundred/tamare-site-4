@@ -34,12 +34,12 @@ const projects = [
   },
   {
     id: '03',
-    title: 'Apple Pay Integration',
-    company: 'Bath & Body Works',
-    tags: ['Experience Design', 'Experience Mapping'],
-    year: '2018',
-    image: '/images/bbw-applepay-cover.png',
-    href: '/work/applepay',
+    title: 'IEP Databases Design System',
+    company: 'JPMorgan Chase & Co.',
+    tags: ['Design Systems', 'Product Design', 'Platform Design'],
+    year: '2025',
+    image: '/images/iep-design-system-cover.png',
+    href: '/work/iep-design-system',
   },
   {
     id: '04',
@@ -52,12 +52,12 @@ const projects = [
   },
   {
     id: '05',
-    title: 'IEP Databases Design System',
-    company: 'JPMorgan Chase & Co.',
-    tags: ['Design Systems', 'Product Design', 'Platform Design'],
-    year: '2025',
-    image: '/images/iep-design-system-cover.png',
-    href: '/work/iep-design-system',
+    title: 'Apple Pay Integration',
+    company: 'Bath & Body Works',
+    tags: ['Experience Design', 'Experience Mapping'],
+    year: '2018',
+    image: '/images/bbw-applepay-cover.png',
+    href: '/work/applepay',
   },
 ]
 
