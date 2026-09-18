@@ -18,12 +18,12 @@ export default function SystemArchitectureDiagram({ title }: { title?: string })
       <p className="mb-6" style={{ fontSize: 13, color: IEP.muted, fontWeight: 300 }}>
         Product experiences are composed from a common system. A shared system connects foundations, components, experience patterns, and product experiences.
       </p>
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-4 md:items-stretch">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:items-stretch">
         {layers.map((layer, i) => {
           return (
             <div key={layer.key} className="relative flex min-w-0 flex-col">
-              {i > 0 && (
-                <div className="absolute -left-3 top-1/2 z-10 hidden -translate-y-1/2 items-center md:flex" aria-hidden="true">
+              {i % 2 === 1 && (
+                <div className="absolute -left-3 top-1/2 z-10 hidden -translate-y-1/2 items-center sm:flex" aria-hidden="true">
                   <span
                     style={{
                       fontSize: 16,
