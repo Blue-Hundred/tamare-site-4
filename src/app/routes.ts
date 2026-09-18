@@ -6,6 +6,7 @@ import Meridian from '../pages/Meridian'
 import BathBodyWorks from '../pages/BathBodyWorks'
 import ApplePay from '../pages/ApplePay'
 import FamilyBanking from '../pages/FamilyBanking'
+import IEPDesignSystem from '../pages/IEPDesignSystem'
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
       { path: 'work/Buy-Online-Pickup-in-Store', Component: BathBodyWorks },
       { path: 'work/applepay', Component: ApplePay },
       { path: 'work/family-banking', Component: FamilyBanking },
+      { path: 'work/iep-design-system', Component: IEPDesignSystem },
     ],
   },
 ])
