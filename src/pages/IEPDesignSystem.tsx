@@ -501,7 +501,7 @@ export default function IEPDesignSystem() {
         <section className="px-4 sm:px-8 md:px-14 pt-6 pb-4 md:py-[90px]">
           <div className={contentWidth}>
   <Reveal>
-  <div className="flex flex-col gap-8 md:gap-10">
+  <div className="flex flex-col gap-4">
   <h2 className="text-h2 max-w-4xl" style={{ color: '#0f0f0e' }}>
   Establishing a shared language
   </h2>
