@@ -34,6 +34,15 @@ const projects = [
   },
   {
     id: '03',
+    title: 'IEP Databases Design System',
+    company: 'JPMorgan Chase & Co.',
+    tags: ['Design Systems', 'Product Design', 'Platform Design'],
+    year: '2025',
+    image: '/images/iep-design-system-cover.png',
+    href: '/work/iep-design-system',
+  },
+  {
+    id: '04',
     title: 'Apple Pay Integration',
     company: 'Bath & Body Works',
     tags: ['Experience Design', 'Experience Mapping'],
@@ -42,22 +51,13 @@ const projects = [
     href: '/work/applepay',
   },
   {
-    id: '04',
+    id: '05',
     title: 'Modernizing Family Banking',
     company: 'JPMorgan Chase',
     tags: ['Experience Design', 'UI Design and Delivery'],
     year: '2025',
     image: '/images/family-banking-cover.png',
     href: '/work/family-banking',
-  },
-  {
-    id: '05',
-    title: 'IEP Databases Design System',
-    company: 'JPMorgan Chase & Co.',
-    tags: ['Design Systems', 'Product Design', 'Platform Design'],
-    year: '2025',
-    image: '/images/iep-design-system-cover.png',
-    href: '/work/iep-design-system',
   },
 ]
 
