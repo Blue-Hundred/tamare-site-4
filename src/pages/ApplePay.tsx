@@ -209,7 +209,7 @@ export default function ApplePay() {
           <Reveal className={`block ${contentWidth}`}>
             <div className="rounded-[20px] overflow-hidden relative flex items-center justify-center" style={{ background: '#014ba6' }}>
               <img
-                src="/images/applepay-hero.png"
+                src="/images/applepay-hero.webp"
                 alt="Bath & Body Works desktop checkout showing the Apple Pay 'Scan Code with iPhone' modal"
                 className="w-full h-auto block"
                 loading="lazy"
@@ -326,7 +326,7 @@ export default function ApplePay() {
             <Reveal>
               <CaseStudyCard className="overflow-hidden p-4 md:p-10">
                 <img
-                  src="/images/applepay-flows.png"
+                  src="/images/applepay-flows.webp"
                   alt="Experience map of the four validated checkout flows across shopping, bag, and receipt stages"
                   className="w-full h-auto block"
                   loading="lazy"
@@ -345,7 +345,7 @@ export default function ApplePay() {
             <Reveal>
               <CaseStudyCard className="overflow-hidden p-4 md:p-10">
                 <img
-                  src="/images/applepay-payment-flow.png"
+                  src="/images/applepay-payment-flow.webp"
                   alt="Apple Pay payment flow across customer experience, iOS, device security, Apple Pay services, and merchant layers"
                   className="w-full h-auto block"
                   loading="lazy"
@@ -362,7 +362,7 @@ export default function ApplePay() {
               <Reveal>
                 <div className="rounded-[20px] overflow-hidden flex items-center justify-center">
                   <img
-                    src="/images/applepay-results.png"
+                    src="/images/applepay-results.webp"
                     alt="Bath & Body Works secure checkout on an iPhone with Apple Pay and PayPal options"
                     className="w-full h-auto block"
                     loading="lazy"
