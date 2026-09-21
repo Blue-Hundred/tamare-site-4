@@ -175,21 +175,21 @@ const experienceSteps = [
     badge: 'Step 1: Store Selection',
     title: 'Making Store Selection Part of Shopping',
     body: 'One of the foundational interactions was establishing where customers wanted to shop. We introduced store selection into the digital journey so customers could connect product discovery with local availability and make more informed purchasing decisions. Customers could search nearby locations, review relevant store information, and establish a preferred store that would carry through the shopping experience.',
-    images: ['/images/bbw-mobile-1.png', '/images/bbw-mobile-2.png'],
+    images: ['/images/bbw-mobile-1.webp', '/images/bbw-mobile-2.webp'],
     alt: 'Mobile store selection — a Pick Up In Store modal where customers set their location and choose a preferred store',
   },
   {
     badge: 'Step 2: Product Discovery',
     title: 'Bringing Pickup Availability Into Product Discovery',
     body: 'Once customers selected a store, pickup availability became part of the shopping experience. We surfaced fulfillment information on product pages so customers could understand whether an item was available for pickup before committing to the purchase. Bringing this information forward connected product discovery with fulfillment rather than waiting until checkout to introduce pickup constraints.',
-    images: ['/images/bbw-mobile-3.png', '/images/bbw-mobile-4.png'],
+    images: ['/images/bbw-mobile-3.webp', '/images/bbw-mobile-4.webp'],
     alt: 'Mobile product listing and product detail screens showing in-store pickup availability at the selected store',
   },
   {
     badge: 'Step 3: Shopping Bag',
     title: 'Pickup needed to remain understandable as customers continued shopping.',
     body: 'We developed patterns for communicating selected-store information and fulfillment availability across product listings, product details, the shopping bag, and checkout. Maintaining this context helped create continuity as customers moved deeper into the purchase journey.',
-    images: ['/images/bbw-mobile-5.png', '/images/bbw-mobile-6.png'],
+    images: ['/images/bbw-mobile-5.webp', '/images/bbw-mobile-6.webp'],
     alt: 'Mobile shopping bag screens confirming items added for pickup and the shipping and pickup choices before checkout',
   },
 ]
@@ -541,7 +541,7 @@ export default function BathBodyWorks() {
           <Reveal className={`block ${contentWidth}`}>
             <div className="rounded-[20px] overflow-hidden relative" style={{ background: '#ecf8ff' }}>
               <img
-                src="/images/bbw-hero-dashboard.png"
+                src="/images/bbw-hero-dashboard.webp"
                 alt="Bath & Body Works Buy Online, Pick Up In Store experience shown across desktop and mobile"
                 className="w-full h-auto block"
                 loading="lazy"
@@ -571,7 +571,7 @@ export default function BathBodyWorks() {
           <Reveal className={`block ${contentWidth}`}>
             <div className="rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
               <img
-                src="/images/bbw-store-photo.png"
+                src="/images/bbw-store-photo.webp"
                 alt="Inside a Bath & Body Works store where online pickup orders are staged and handed to customers"
                 className="w-full h-auto block"
                 style={{ maxHeight: 560, objectFit: 'cover', objectPosition: 'center' }}
@@ -639,10 +639,10 @@ export default function BathBodyWorks() {
             <Reveal delay={0.08}>
               <div className="mt-10 md:mt-[70px] grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
                 <ImageFrame className="md:col-span-2">
-                  <img src="/images/bbw-service-blueprint.png" alt="BOPIS service blueprint for Bath & Body Works Buy Online, Pick Up In Store, mapping personas, frontstage experience, backstage actions, systems, APIs, data flow, pain points, and opportunities across discovery, consideration, purchase, fulfillment, and post-purchase" className="w-full h-auto block m-auto" loading="lazy" />
+                  <img src="/images/bbw-service-blueprint.webp" alt="BOPIS service blueprint for Bath & Body Works Buy Online, Pick Up In Store, mapping personas, frontstage experience, backstage actions, systems, APIs, data flow, pain points, and opportunities across discovery, consideration, purchase, fulfillment, and post-purchase" className="w-full h-auto block m-auto" loading="lazy" />
                 </ImageFrame>
                 <ImageFrame>
-                  <img src="/images/bbw-key-visual-side.png" alt="Mobile view of the Bath & Body Works pickup experience" className="w-full h-auto block m-auto" loading="lazy" />
+                  <img src="/images/bbw-key-visual-side.webp" alt="Mobile view of the Bath & Body Works pickup experience" className="w-full h-auto block m-auto" loading="lazy" />
                 </ImageFrame>
               </div>
             </Reveal>
@@ -732,7 +732,7 @@ export default function BathBodyWorks() {
                   <div className="lg:col-span-6 lg:col-start-7">
                     <div className="grid grid-cols-2 gap-4 md:gap-5">
                       <div className="rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                        <img src="/images/bbw-order-summary-v2.png" alt="Order summary showing a mixed fulfillment cart — items being shipped alongside items being picked up at the Taylor Square store — with subtotals and a $70.09 order total" className="w-full h-auto block" loading="lazy" />
+                        <img src="/images/bbw-order-summary-v2.webp" alt="Order summary showing a mixed fulfillment cart — items being shipped alongside items being picked up at the Taylor Square store — with subtotals and a $70.09 order total" className="w-full h-auto block" loading="lazy" />
                       </div>
                     </div>
                   </div>
@@ -752,7 +752,7 @@ export default function BathBodyWorks() {
                   </div>
                   <div className="lg:col-span-6 lg:order-1 lg:col-start-1">
                     <div className="rounded-[20px] overflow-hidden bg-white" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
-                      <img src="/images/bbw-cart-fulfillment.png" alt="Cart line items showing ship-it and pick-up-in-store options, including order-limit and unavailable-for-pickup states" className="w-full h-auto block" loading="lazy" />
+                      <img src="/images/bbw-cart-fulfillment.webp" alt="Cart line items showing ship-it and pick-up-in-store options, including order-limit and unavailable-for-pickup states" className="w-full h-auto block" loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -772,9 +772,9 @@ export default function BathBodyWorks() {
             <Reveal delay={0.1}>
               <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 items-start">
                 {[
-                  { src: '/images/bbw-email-1.png', alt: 'Order confirmation email — "Thanks for your order!" — with an order-status stepper and Taylor Square pickup details' },
-                  { src: '/images/bbw-email-2.png', alt: 'Ready-for-pickup email — "Stop in and see an associate!" — with the status stepper advanced to Ready for Pickup' },
-                  { src: '/images/bbw-email-3.png', alt: 'Pickup-complete email — "Thanks for stopping in." — with picked-up items, receipt, and billing details' },
+                  { src: '/images/bbw-email-1.webp', alt: 'Order confirmation email — "Thanks for your order!" — with an order-status stepper and Taylor Square pickup details' },
+                  { src: '/images/bbw-email-2.webp', alt: 'Ready-for-pickup email — "Stop in and see an associate!" — with the status stepper advanced to Ready for Pickup' },
+                  { src: '/images/bbw-email-3.webp', alt: 'Pickup-complete email — "Thanks for stopping in." — with picked-up items, receipt, and billing details' },
                 ].map(e => (
                   <div key={e.src} className="rounded-[12px] overflow-hidden bg-white" style={{ boxShadow: '0 10px 30px rgba(0,0,0,0.10)' }}>
                     <img src={e.src} alt={e.alt} className="w-full h-auto block" loading="lazy" />
@@ -795,7 +795,7 @@ export default function BathBodyWorks() {
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5">
                 {[1, 2, 3, 4, 5, 6].map(n => (
                   <div key={n} className="rounded-[16px] overflow-hidden" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.12)' }}>
-                    <img src={`/images/bbw-mobile-${n}.png`} alt={`Mobile BOPIS screen ${n} of 6 from the pickup shopping flow`} className="w-full h-auto block" loading="lazy" />
+                    <img src={`/images/bbw-mobile-${n}.webp`} alt={`Mobile BOPIS screen ${n} of 6 from the pickup shopping flow`} className="w-full h-auto block" loading="lazy" />
                   </div>
                 ))}
               </div>

@@ -6,9 +6,9 @@ import ProfileCard from '../components/ProfileCard'
 import VinylRecord from '../components/VinylRecord'
 
 const vinyls = [
-  { cover: '/images/vinyl-cover-1.png', record: '/images/vinyl-record-1.png', title: 'Bruno Mars — The Romantic' },
-  { cover: '/images/vinyl-cover-2.png', record: '/images/vinyl-record-2.png', title: 'Marvin Gaye — Live at the London Palladium' },
-  { cover: '/images/vinyl-cover-3.png', record: '/images/vinyl-record-3.png', title: 'Michael Jackson — Xscape' },
+  { cover: '/images/vinyl-cover-1.webp', record: '/images/vinyl-record-1.webp', title: 'Bruno Mars — The Romantic' },
+  { cover: '/images/vinyl-cover-2.webp', record: '/images/vinyl-record-2.webp', title: 'Marvin Gaye — Live at the London Palladium' },
+  { cover: '/images/vinyl-cover-3.webp', record: '/images/vinyl-record-3.webp', title: 'Michael Jackson — Xscape' },
 ]
 
 const awards = [
@@ -56,7 +56,7 @@ export default function About() {
               className="flex justify-center md:justify-start"
             >
               <ProfileCard
-                avatarUrl="/images/profile-avatar.png"
+                avatarUrl="/images/profile-avatar.webp"
                 iconUrl="/images/profile-logo-pattern.svg"
                 name="Tamaré Reese"
                 title="Product Designer"

@@ -1,12 +1,12 @@
 import svgPaths from "./svg-4toy70dlwj";
 import imgScreenshot20260813At45559Pm1 from "./da1da6c8bcea5086bd2df95e2f35a570d112aaae.png";
-import imgChatGptImageAug102026031519Pm1 from "./246c5a6d9c942f00012f575ad446d86a09c5dab6.png";
-import imgImage3 from "./c38b9a065ae6afc6e3f13f2d46efee0586b97afa.png";
-import imgScreenshot20260811At115810Pm1 from "./d837be23860c1da0ac7bcafedc4dc6b06b226433.png";
-import imgScreenshot20260812At120115Am1 from "./e32937999a0fce8d57bcb9ae5e6c08abacbd1f3b.png";
-import imgDatabasesPersonas1 from "./267c205dc382f590b717a76a3b90365da5afb8b2.png";
-import imgServiceblueprintFinal1 from "./1887e9d636693dc6c50eebc16511159b07b7d0ff.png";
-import imgScreenshot20260813At94151Pm1 from "./7ce4bc39f07fc8486e1ef10871168d0b20e56d2c.png";
+import imgChatGptImageAug102026031519Pm1 from "./246c5a6d9c942f00012f575ad446d86a09c5dab6.webp";
+import imgImage3 from "./c38b9a065ae6afc6e3f13f2d46efee0586b97afa.webp";
+import imgScreenshot20260811At115810Pm1 from "./d837be23860c1da0ac7bcafedc4dc6b06b226433.webp";
+import imgScreenshot20260812At120115Am1 from "./e32937999a0fce8d57bcb9ae5e6c08abacbd1f3b.webp";
+import imgDatabasesPersonas1 from "./267c205dc382f590b717a76a3b90365da5afb8b2.webp";
+import imgServiceblueprintFinal1 from "./1887e9d636693dc6c50eebc16511159b07b7d0ff.webp";
+import imgScreenshot20260813At94151Pm1 from "./7ce4bc39f07fc8486e1ef10871168d0b20e56d2c.webp";
 
 function Frame() {
   return (

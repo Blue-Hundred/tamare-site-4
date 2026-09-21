@@ -4,8 +4,8 @@ import { motion, useInView } from 'framer-motion'
 import PixelBlast from '../components/PixelBlast'
 import ContactSection from '../components/ContactSection'
 import svgPaths from '../imports/Databases/svg-4toy70dlwj'
-import personasImage from '../imports/Databases/267c205dc382f590b717a76a3b90365da5afb8b2.png'
-import blueprintImage from '../imports/Databases/1887e9d636693dc6c50eebc16511159b07b7d0ff.png'
+import personasImage from '../imports/Databases/267c205dc382f590b717a76a3b90365da5afb8b2.webp'
+import blueprintImage from '../imports/Databases/1887e9d636693dc6c50eebc16511159b07b7d0ff.webp'
 import {
   Headset,
   Settings,
@@ -369,7 +369,7 @@ export default function Meridian() {
             <Reveal delay={0.08}>
               <div className="mt-6 md:mt-[70px] rounded-[20px] bg-white overflow-hidden min-h-[180px] md:min-h-[474px]">
                 <img
-                  src="/images/databases-cover.png"
+                  src="/images/databases-cover.webp"
                   alt="Perspective mockup of the Cloud Relational Databases dashboard showing the My Databases view with recent services, performance and health, applications, pricing charts, and the product knowledge base"
                   className="w-full h-full object-cover"
                   style={{ minHeight: 'inherit' }}
@@ -404,7 +404,7 @@ export default function Meridian() {
           <Reveal delay={0.1}>
             <div className={`${contentWidth} mt-4 md:mt-[70px]`}>
               <img
-                src="/images/legacy-databases-experiences.png"
+                src="/images/legacy-databases-experiences.webp"
                 alt="Collage of legacy database control-plane interfaces — Gaia MS SQL, Cockroach DB, Oracle Services, MySQL, TigerGraph, and Cassandra dashboards — each with different navigation, terminology, and visual styling"
                 className="w-full h-auto block rounded-[20px]"
                 loading="lazy"
@@ -430,8 +430,8 @@ export default function Meridian() {
             <Reveal delay={0.04}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {[
-                  { src: '/images/ui-audit.png', alt: 'Zoomed-out UI audit board mapping every existing database control plane side by side, from DB Portal to Gaia MS SQL', caption: 'UI Audit' },
-                  { src: '/images/databases-synthesis.png', alt: 'Research synthesis board grouping customer friction points, risks, design process, and ideal UX states into color-coded sticky notes', caption: 'Synthesis' },
+                  { src: '/images/ui-audit.webp', alt: 'Zoomed-out UI audit board mapping every existing database control plane side by side, from DB Portal to Gaia MS SQL', caption: 'UI Audit' },
+                  { src: '/images/databases-synthesis.webp', alt: 'Research synthesis board grouping customer friction points, risks, design process, and ideal UX states into color-coded sticky notes', caption: 'Synthesis' },
                 ].map(img => (
                   <figure key={img.caption} className="flex flex-col gap-3">
                     <div className="bg-white rounded-[20px] overflow-hidden" style={{ border: '1px solid rgba(15,15,14,0.08)' }}>
@@ -509,10 +509,10 @@ export default function Meridian() {
             <Reveal delay={0.12} className="lg:col-span-12">
               <div className="grid grid-cols-1 gap-5 md:gap-6">
                 <div className="rounded-[10px] overflow-hidden bg-white">
-                  <img src={personasImage} alt="Persona boards" className="w-full h-auto block" />
+                  <img src={personasImage} alt="Persona boards" className="w-full h-auto block" loading="lazy" />
                 </div>
                 <div className="rounded-[10px] overflow-hidden bg-white">
-                  <img src={blueprintImage} alt="Service blueprint map" className="w-full h-auto block" />
+                  <img src={blueprintImage} alt="Service blueprint map" className="w-full h-auto block" loading="lazy" />
                 </div>
               </div>
             </Reveal>
@@ -535,7 +535,7 @@ export default function Meridian() {
             <Reveal delay={0.1} className="lg:col-span-12">
               <div className="grid grid-cols-1 gap-5 md:gap-6">
                 <div className="rounded-[20px] overflow-hidden md:mt-[100px]">
-                  <img src="/images/databases-information-architecture.png" alt="Information architecture diagram mapping the Databases hub into seven top-level sections and a second row of user-journey screens ending in the numbered Create Database Service provisioning flow" className="w-full h-auto block" loading="lazy" />
+                  <img src="/images/databases-information-architecture.webp" alt="Information architecture diagram mapping the Databases hub into seven top-level sections and a second row of user-journey screens ending in the numbered Create Database Service provisioning flow" className="w-full h-auto block" loading="lazy" />
                 </div>
 
               </div>
