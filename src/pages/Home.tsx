@@ -21,7 +21,6 @@ const projects = [
     tags: ['Product Design', 'Experience Research', 'Service Design'],
     year: '2025-2026',
     image: '/images/databases-cover.png',
-    video: '/videos/databases-cover-motion.mov',
     href: '/work/databases',
   },
   {
@@ -110,7 +109,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   )
 }
 
-function ParallaxImage({ src, video, alt }: { src: string; video?: string; alt: string }) {
+function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const rawY = useTransform(scrollYProgress, [0, 1], ['6%', '-6%'])
@@ -118,22 +117,8 @@ function ParallaxImage({ src, video, alt }: { src: string; video?: string; alt: 
   return (
     <div ref={ref} style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', borderRadius: 12 }}>
   {src ? (
-  video ? (
-  <motion.video
-  src={video}
-  poster={src}
-  aria-label={alt}
-  autoPlay
-  muted
-  loop
-  playsInline
-  preload="metadata"
-  style={{ width: '100%', height: '120%', objectFit: 'cover', display: 'block', marginTop: '-10%', y }}
-  />
-  ) : (
   <motion.img src={src} alt={alt}
   style={{ width: '100%', height: '120%', objectFit: 'cover', display: 'block', marginTop: '-10%', y }} />
-  )
   ) : (
         <motion.div
           aria-label={alt}
@@ -161,7 +146,7 @@ function ProjectCard({ p, index, activeProject, setActiveProject }: {
       animate={{ opacity: dimmed ? 0.3 : 1 }}
       transition={{ duration: 0.3 }}
     >
-      <ParallaxImage src={p.image} video={p.video} alt={p.title} />
+      <ParallaxImage src={p.image} alt={p.title} />
       <div className="pt-5 flex flex-col gap-3">
         <div className="flex items-center gap-3">
           <span style={{ fontSize: '0.65rem', color: '#767675', letterSpacing: '0.1em', fontWeight: 300 }}>{p.id}</span>
