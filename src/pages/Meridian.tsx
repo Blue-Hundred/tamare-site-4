@@ -537,9 +537,7 @@ export default function Meridian() {
                 <div className="rounded-[20px] overflow-hidden md:mt-[100px]">
                   <img src="/images/databases-information-architecture.png" alt="Information architecture diagram mapping the Databases hub into seven top-level sections and a second row of user-journey screens ending in the numbered Create Database Service provisioning flow" className="w-full h-auto block" loading="lazy" />
                 </div>
-                <div className="rounded-[20px] overflow-hidden md:mt-[80px]">
-                  <img src="/images/databases-components.png" alt="Databases design system component library organized into nine groups: navigation, dashboard and overview components, resource and service cards, tables and lists, search and filters, detail sections, steps and progress, form components, and actions and feedback" className="w-full h-auto block" loading="lazy" />
-                </div>
+
               </div>
             </Reveal>
           </div>
@@ -580,13 +578,13 @@ export default function Meridian() {
               <div className="rounded-none overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
                 <video
                   className="w-full h-auto block"
-                  src="/videos/databases-monitoring-flow.mp4"
+                  src="/videos/cpu-ai-experience.mov"
                   autoPlay
                   loop
                   muted
                   playsInline
                   preload="metadata"
-                  aria-label="Screen recording walking through the database monitoring flow"
+                  aria-label="Screen recording of the CPU AI database experience"
                 />
               </div>
             </Reveal>
@@ -595,43 +593,13 @@ export default function Meridian() {
               <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
                 <video
                   className="w-full h-auto block"
-                  src="/videos/databases-nav-to-service-flow.mp4"
+                  src="/videos/navigation-to-service-detail.mp4"
                   autoPlay
                   loop
                   muted
                   playsInline
                   preload="metadata"
                   aria-label="Screen recording walking through navigating from the databases hub to a specific service"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <h3 className="mt-[60px] mb-4 text-body-18" style={{ color: '#0f0f0e', fontWeight: 500 }}>Create Database Service - Set Repave Schedule with AI Assistant</h3>
-              <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
-                <video
-                  className="w-full h-auto block"
-                  src="/videos/databases-repave-schedule.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  aria-label="Screen recording walking through scheduling a database repave"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <h3 className="mt-[60px] mb-4 text-body-18" style={{ color: '#0f0f0e', fontWeight: 500 }}>Database Service provisioning failure - Submit ticket with AI Assistant</h3>
-              <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
-                <video
-                  className="w-full h-auto block"
-                  src="/videos/databases-provisioning-error.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  aria-label="Screen recording walking through a database provisioning error state"
                 />
               </div>
             </Reveal>

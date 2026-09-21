@@ -116,10 +116,10 @@ function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   const y = useSpring(rawY, { stiffness: 60, damping: 20 })
   return (
     <div ref={ref} style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', borderRadius: 12 }}>
-      {src ? (
-        <motion.img src={src} alt={alt}
-          style={{ width: '100%', height: '120%', objectFit: 'cover', display: 'block', marginTop: '-10%', y }} />
-      ) : (
+  {src ? (
+  <motion.img src={src} alt={alt}
+  style={{ width: '100%', height: '120%', objectFit: 'cover', display: 'block', marginTop: '-10%', y }} />
+  ) : (
         <motion.div
           aria-label={alt}
           role="img"
@@ -220,9 +220,9 @@ export default function Home() {
             style={{ maxWidth: 1200, y: heroY, opacity: heroOpacity }}
           >
             <BlurText
-                  text="Hi, I'm Tamaré, a Columbus-based product designer who frames problems and crafts systems, services, and experiences."
-                  play={loaded}
-                  delay={0.2}
+              text="Hi, I’m Tamaré, a Columbus-based product designer who turns complex problems into thoughtful systems, services, and digital experiences."
+              play={loaded}
+              delay={0.2}
             />
           </motion.h1>
 
