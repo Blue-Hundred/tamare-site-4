@@ -20,7 +20,7 @@ const projects = [
     company: 'JPMorgan Chase & Co.',
     tags: ['Product Design', 'Experience Research', 'Service Design'],
     year: '2025-2026',
-    image: '/images/databases-cover.png',
+    image: '/images/databases-cover.webp',
     href: '/work/databases',
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     company: 'Bath & Body Works',
     tags: ['Product Design', 'Service Design'],
     year: '2019',
-    image: '/images/bbw-cover.png',
+    image: '/images/bbw-cover.webp',
     href: '/work/Buy-Online-Pickup-in-Store',
   },
   {
@@ -38,7 +38,7 @@ const projects = [
     company: 'JPMorgan Chase & Co.',
     tags: ['Design Systems', 'Product Design', 'Platform Design'],
     year: '2025',
-    image: '/images/iep-design-system-cover.png',
+    image: '/images/iep-design-system-cover.webp',
     href: '/work/iep-design-system',
   },
   {
@@ -47,7 +47,7 @@ const projects = [
     company: 'JPMorgan Chase',
     tags: ['Experience Design', 'UI Design and Delivery'],
     year: '2025',
-    image: '/images/family-banking-cover.png',
+    image: '/images/family-banking-cover.webp',
     href: '/work/family-banking',
   },
   {
@@ -56,7 +56,7 @@ const projects = [
     company: 'Bath & Body Works',
     tags: ['Experience Design', 'Experience Mapping'],
     year: '2018',
-    image: '/images/bbw-applepay-cover.png',
+    image: '/images/bbw-applepay-cover.webp',
     href: '/work/applepay',
   },
 ]

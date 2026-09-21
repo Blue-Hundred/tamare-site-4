@@ -351,7 +351,7 @@ export default function IEPDesignSystem() {
               <div className="mt-10 md:mt-[70px]">
                 <figure className="flex flex-col">
                   <img
-                    src="/images/legacy-databases-experiences.png"
+                    src="/images/legacy-databases-experiences.webp"
                     alt="Before: independently evolved database control planes — legacy interfaces including Gaia MS SQL, CockroachDB, Gaia Oracle, Gaia MySQL, TigerGraph, and Cassandra, each with different navigation, colors, and layouts."
                     className="w-full rounded-[20px] object-cover"
                     style={{ aspectRatio: '21 / 9' }}
@@ -561,7 +561,7 @@ export default function IEPDesignSystem() {
               <div className="mt-10 md:mt-[50px]">
                 <InteractiveTypeScale />
                 <img
-                  src="/images/iep-typography-reference.png"
+                  src="/images/iep-typography-reference.webp"
                   alt="Figtree typography reference showing weights, alphabet specimens, type scale, and design variables."
                   width={1824}
                   height={1360}
@@ -573,7 +573,7 @@ export default function IEPDesignSystem() {
                   <InteractiveColorRamps />
                 </div>
                 <img
-                  src="/images/iep-semantic-colors-reference.png"
+                  src="/images/iep-semantic-colors-reference.webp"
                   alt="Semantic Colors reference showing light and dark mode mappings for background, text, border, icon, and status tokens."
                   width={1824}
                   height={1365}
@@ -625,7 +625,7 @@ export default function IEPDesignSystem() {
             <Reveal delay={0.06}>
               <div className="mt-10 md:mt-[50px] flex flex-col gap-5 md:gap-6">
                 <CaseStudyImage
-                  src="/case-study/databases-overview.png"
+                  src="/case-study/databases-overview.webp"
                   alt="Databases Overview dashboard showing service-ready alerts, recent services, performance and health, applications, an AI assistant prompt, and a pricing panel."
                   caption="Databases Overview — dashboard"
                   aspect="1720 / 1330"
@@ -633,7 +633,7 @@ export default function IEPDesignSystem() {
                   height={1330}
                 />
                 <CaseStudyImage
-                  src="/case-study/service-details-booking-platform.png"
+                  src="/case-study/service-details-booking-platform.webp"
                   alt="Booking Platform service details page with an app metadata grid, service details, and a health check list."
                   caption="Service details — Booking Platform"
                   aspect="1720 / 1330"
@@ -641,7 +641,7 @@ export default function IEPDesignSystem() {
                   height={1330}
                 />
                 <CaseStudyImage
-                  src="/case-study/create-database-service.png"
+                  src="/case-study/create-database-service.webp"
                   alt="Create Database Service guided flow on the requirements step, with an AI assistant panel recommending a starting size."
                   caption="Create Database Service — guided flow with AI assistant"
                   aspect="1720 / 1330"

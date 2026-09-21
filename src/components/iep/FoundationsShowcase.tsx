@@ -15,10 +15,10 @@ const radiusTokens = [
 const spacingTokens = [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96]
 
 const elevationTokens = [
-  ['None', 'none', 'Background sections, inline frames', '/images/iep-shadow-0.png'],
-  ['Small', 'y4 blur12 spread0 (8%)', 'Active states, clickable cards, filters', '/images/iep-shadow-8.png'],
-  ['Medium', 'y8 blur24 spread-4 (12%)', 'Popovers, dropdowns, floating menus', '/images/iep-shadow-12.png'],
-  ['Large', 'y16 blur40 spread-8 (18%)', 'Modals, priority focus panels, drawers', '/images/iep-shadow-18.png'],
+  ['None', 'none', 'Background sections, inline frames', '/images/iep-shadow-0.webp'],
+  ['Small', 'y4 blur12 spread0 (8%)', 'Active states, clickable cards, filters', '/images/iep-shadow-8.webp'],
+  ['Medium', 'y8 blur24 spread-4 (12%)', 'Popovers, dropdowns, floating menus', '/images/iep-shadow-12.webp'],
+  ['Large', 'y16 blur40 spread-8 (18%)', 'Modals, priority focus panels, drawers', '/images/iep-shadow-18.webp'],
 ] as const
 
 function FoundationTitle({ title, body }: { title: string; body: string }) {
@@ -76,7 +76,7 @@ export default function FoundationsShowcase() {
       <section>
         <FoundationTitle title="Grid System" body="The IEP Layout foundation is structured around a fluid, responsive 12-column grid. This layout ensures visual alignment and dense structure across administrative screens and database consoles." />
         <img
-          src="/images/iep-spacing-columns.png"
+          src="/images/iep-spacing-columns.webp"
           alt="Responsive grid reference showing desktop 12-column, tablet 8-column, and mobile 4-column layouts with margin and gutter measurements."
           width={1440}
           height={403}
@@ -93,7 +93,7 @@ export default function FoundationsShowcase() {
             {spacingTokens.map((px) => <div key={px} className="flex items-center gap-5 border-b px-4 py-3 last:border-b-0" style={{ borderColor: IEP.border, background: '#f8fafc' }}><code className="w-24 text-[12px]" style={{ color: IEP.ink }}>space/{px / 4 || 0}</code><span className="w-16 font-mono text-[13px]" style={{ color: IEP.ink }}>{px}px</span><span className="h-2 rounded-full" style={{ width: Math.max(px * 2, 4), background: IEP.accent }} /></div>)}
           </div>
           <img
-            src="/images/iep-spacing-interface.png"
+            src="/images/iep-spacing-interface.webp"
             alt="Figma Variables spacing interface showing spacing and corner-radius token groups."
             width={748}
             height={541}

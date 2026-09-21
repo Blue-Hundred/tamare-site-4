@@ -87,11 +87,11 @@ const meta = [
 ]
 
 const stripImages = [
-  { src: '/images/family-banking-strip-1.png', alt: "Child's account dashboard showing spending and savings balances with quick actions" },
-  { src: '/images/family-banking-strip-2.png', alt: 'Savings screen showing a $15.00 balance and general savings goal' },
-  { src: '/images/family-banking-strip-3.png', alt: 'Create savings goal form with a headphones goal name and $150.00 amount' },
-  { src: '/images/family-banking-strip-4.png', alt: 'Confirmation screen after creating the headphones savings goal' },
-  { src: '/images/family-banking-strip-5.png', alt: 'Savings screen showing an updated $165.00 balance with the headphones goal progress' },
+  { src: '/images/family-banking-strip-1.webp', alt: "Child's account dashboard showing spending and savings balances with quick actions" },
+  { src: '/images/family-banking-strip-2.webp', alt: 'Savings screen showing a $15.00 balance and general savings goal' },
+  { src: '/images/family-banking-strip-3.webp', alt: 'Create savings goal form with a headphones goal name and $150.00 amount' },
+  { src: '/images/family-banking-strip-4.webp', alt: 'Confirmation screen after creating the headphones savings goal' },
+  { src: '/images/family-banking-strip-5.webp', alt: 'Savings screen showing an updated $165.00 balance with the headphones goal progress' },
 ]
 
 const outcomeColumns = [
@@ -184,7 +184,7 @@ export default function FamilyBanking() {
           <Reveal className={`block ${contentWidth}`}>
             <div className="rounded-[20px] overflow-hidden relative flex items-center justify-center h-[280px] sm:h-[360px] md:h-[474px]" style={{ background: '#014ba6' }}>
               <img
-                src="/images/family-banking-hero.png"
+                src="/images/family-banking-hero.webp"
                 alt="Family Banking parent dashboard showing a child's spending and savings balances on an iPhone"
                 className="w-full h-full object-cover block"
                 loading="lazy"
@@ -222,10 +222,10 @@ export default function FamilyBanking() {
                 </div>
                 <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-4">
                   <CaseStudyCard className="overflow-hidden">
-                    <img src="/images/family-banking-research-1.png" alt="Usability research findings on overall satisfaction with the Family Banking experience" className="w-full h-auto block" loading="lazy" />
+                    <img src="/images/family-banking-research-1.webp" alt="Usability research findings on overall satisfaction with the Family Banking experience" className="w-full h-auto block" loading="lazy" />
                   </CaseStudyCard>
                   <CaseStudyCard className="overflow-hidden">
-                    <img src="/images/family-banking-research-2.png" alt="Usability research findings on creating savings goals" className="w-full h-auto block" loading="lazy" />
+                    <img src="/images/family-banking-research-2.webp" alt="Usability research findings on creating savings goals" className="w-full h-auto block" loading="lazy" />
                   </CaseStudyCard>
                 </div>
               </div>
@@ -248,7 +248,7 @@ export default function FamilyBanking() {
             <Reveal>
               <CaseStudyCard className="overflow-hidden p-4 md:p-10">
                 <img
-                  src="/images/family-banking-define.png"
+                  src="/images/family-banking-define.webp"
                   alt="Usability findings on overall satisfaction and creating savings goals, with supporting phone mockups"
                   className="w-full h-auto block"
                   loading="lazy"
@@ -273,7 +273,7 @@ export default function FamilyBanking() {
             <Reveal>
               <CaseStudyCard className="overflow-hidden p-4 md:p-10">
                 <img
-                  src="/images/family-banking-design-flow.png"
+                  src="/images/family-banking-design-flow.webp"
                   alt="Create Savings Goal flow shown side by side for parent and child experiences"
                   className="w-full h-auto block"
                   loading="lazy"
