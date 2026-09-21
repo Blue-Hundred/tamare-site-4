@@ -593,7 +593,7 @@ export default function Meridian() {
               <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
                 <video
                   className="w-full h-auto block"
-                  src="/videos/databases-nav-to-service-flow.mp4"
+                  src="/videos/navigation-to-service-detail.mp4"
                   autoPlay
                   loop
                   muted
