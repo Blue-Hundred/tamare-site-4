@@ -603,6 +603,21 @@ export default function Meridian() {
                 />
               </div>
             </Reveal>
+            <Reveal delay={0.12}>
+              <h3 className="mt-[60px] mb-4 text-body-18" style={{ color: '#0f0f0e', fontWeight: 500 }}>Create a database service with AI assistance</h3>
+              <div className="overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.16)] bg-white">
+                <video
+                  className="w-full h-auto block"
+                  src="/videos/create-database-service.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="Screen recording of creating a database service with AI assistance"
+                />
+              </div>
+            </Reveal>
           </div>
         </section>
 
